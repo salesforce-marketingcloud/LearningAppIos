@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; settings = {ASSET_TAGS = (); }; };
+		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; settings = {ASSET_TAGS = (); }; };
 		84D31EAA1BC6D1E400E31DAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EA91BC6D1E400E31DAE /* main.m */; };
 		84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */; };
 		84D31EB01BC6D1E400E31DAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EAF1BC6D1E400E31DAE /* ViewController.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPush.h"; sourceTree = "<group>"; };
+		842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPush.m"; sourceTree = "<group>"; };
+		842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPushConstants.h"; sourceTree = "<group>"; };
+		842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPushConstants.m"; sourceTree = "<group>"; };
 		84D31EA51BC6D1E400E31DAE /* MarketingCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketingCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D31EA91BC6D1E400E31DAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D31EAB1BC6D1E400E31DAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		842ED54D1BD0392700CCDA0E /* Addition */ = {
+			isa = PBXGroup;
+			children = (
+				842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */,
+				842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */,
+				842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */,
+				842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */,
+			);
+			name = Addition;
+			sourceTree = "<group>";
+		};
 		84D31E9C1BC6D1E400E31DAE = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,7 @@
 		84D31EA71BC6D1E400E31DAE /* MarketingCloud */ = {
 			isa = PBXGroup;
 			children = (
+				842ED54D1BD0392700CCDA0E /* Addition */,
 				84D31EAB1BC6D1E400E31DAE /* AppDelegate.h */,
 				84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */,
 				84D31EAE1BC6D1E400E31DAE /* ViewController.h */,
@@ -274,6 +292,8 @@
 				84D31EB01BC6D1E400E31DAE /* ViewController.m in Sources */,
 				84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */,
 				84D31EAA1BC6D1E400E31DAE /* main.m in Sources */,
+				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
+				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +519,7 @@
 				84D31ED41BC6D1E400E31DAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84D31ED51BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloudTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +528,7 @@
 				84D31ED71BC6D1E400E31DAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84D31ED81BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloudUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +537,7 @@
 				84D31EDA1BC6D1E400E31DAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

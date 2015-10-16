@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; settings = {ASSET_TAGS = (); }; };
 		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; settings = {ASSET_TAGS = (); }; };
+		842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */; settings = {ASSET_TAGS = (); }; };
 		84D31EAA1BC6D1E400E31DAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EA91BC6D1E400E31DAE /* main.m */; };
 		84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */; };
 		84D31EB01BC6D1E400E31DAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EAF1BC6D1E400E31DAE /* ViewController.m */; };
@@ -41,6 +42,26 @@
 		842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPush.m"; sourceTree = "<group>"; };
 		842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPushConstants.h"; sourceTree = "<group>"; };
 		842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPushConstants.m"; sourceTree = "<group>"; };
+		842ED5551BD03ADD00CCDA0E /* ETBulkUpdateShim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBulkUpdateShim.h; sourceTree = "<group>"; };
+		842ED5561BD03ADD00CCDA0E /* ETEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEvent.h; sourceTree = "<group>"; };
+		842ED5571BD03ADD00CCDA0E /* ETFenceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFenceMessage.h; sourceTree = "<group>"; };
+		842ED5581BD03ADD00CCDA0E /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
+		842ED5591BD03ADD00CCDA0E /* ETKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETKeyValueStore.h; sourceTree = "<group>"; };
+		842ED55A1BD03ADD00CCDA0E /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
+		842ED55B1BD03ADD00CCDA0E /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
+		842ED55C1BD03ADD00CCDA0E /* ETLocationUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationUpdate.h; sourceTree = "<group>"; };
+		842ED55D1BD03ADD00CCDA0E /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
+		842ED55E1BD03ADD00CCDA0E /* ETPhoneHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPhoneHome.h; sourceTree = "<group>"; };
+		842ED55F1BD03ADD00CCDA0E /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
+		842ED5601BD03ADD00CCDA0E /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
+		842ED5611BD03ADD00CCDA0E /* ETRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegistration.h; sourceTree = "<group>"; };
+		842ED5621BD03ADD00CCDA0E /* ETSqliteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSqliteHelper.h; sourceTree = "<group>"; };
+		842ED5631BD03ADD00CCDA0E /* ETStatsUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETStatsUpdate.h; sourceTree = "<group>"; };
+		842ED5641BD03ADD00CCDA0E /* ETURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETURLConnection.h; sourceTree = "<group>"; };
+		842ED5651BD03ADD00CCDA0E /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
+		842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.0.2.a"; sourceTree = "<group>"; };
+		842ED5671BD03ADD00CCDA0E /* PIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIEvent.h; sourceTree = "<group>"; };
+		842ED5681BD03ADD00CCDA0E /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		84D31EA51BC6D1E400E31DAE /* MarketingCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketingCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D31EA91BC6D1E400E31DAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D31EAB1BC6D1E400E31DAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +117,33 @@
 			name = Addition;
 			sourceTree = "<group>";
 		};
+		842ED5541BD03AAB00CCDA0E /* JB4A */ = {
+			isa = PBXGroup;
+			children = (
+				842ED5551BD03ADD00CCDA0E /* ETBulkUpdateShim.h */,
+				842ED5561BD03ADD00CCDA0E /* ETEvent.h */,
+				842ED5571BD03ADD00CCDA0E /* ETFenceMessage.h */,
+				842ED5581BD03ADD00CCDA0E /* ETGenericUpdate.h */,
+				842ED5591BD03ADD00CCDA0E /* ETKeyValueStore.h */,
+				842ED55A1BD03ADD00CCDA0E /* ETLandingPagePresenter.h */,
+				842ED55B1BD03ADD00CCDA0E /* ETLocationManager.h */,
+				842ED55C1BD03ADD00CCDA0E /* ETLocationUpdate.h */,
+				842ED55D1BD03ADD00CCDA0E /* ETMessage.h */,
+				842ED55E1BD03ADD00CCDA0E /* ETPhoneHome.h */,
+				842ED55F1BD03ADD00CCDA0E /* ETPush.h */,
+				842ED5601BD03ADD00CCDA0E /* ETRegion.h */,
+				842ED5611BD03ADD00CCDA0E /* ETRegistration.h */,
+				842ED5621BD03ADD00CCDA0E /* ETSqliteHelper.h */,
+				842ED5631BD03ADD00CCDA0E /* ETStatsUpdate.h */,
+				842ED5641BD03ADD00CCDA0E /* ETURLConnection.h */,
+				842ED5651BD03ADD00CCDA0E /* ExactTargetEnhancedPushDataSource.h */,
+				842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */,
+				842ED5671BD03ADD00CCDA0E /* PIEvent.h */,
+				842ED5681BD03ADD00CCDA0E /* PushConstants.h */,
+			);
+			name = JB4A;
+			sourceTree = "<group>";
+		};
 		84D31E9C1BC6D1E400E31DAE = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +167,7 @@
 		84D31EA71BC6D1E400E31DAE /* MarketingCloud */ = {
 			isa = PBXGroup;
 			children = (
+				842ED5541BD03AAB00CCDA0E /* JB4A */,
 				842ED54D1BD0392700CCDA0E /* Addition */,
 				84D31EAB1BC6D1E400E31DAE /* AppDelegate.h */,
 				84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */,
@@ -226,6 +276,15 @@
 				TargetAttributes = {
 					84D31EA41BC6D1E400E31DAE = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = RNQ52E7G3P;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					84D31EBD1BC6D1E400E31DAE = {
 						CreatedOnToolsVersion = 7.0;
@@ -434,9 +493,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MarketingCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oktana.MarketingCloud;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MarketingCloud",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.exacttarget.internal.js-052914PushTester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -445,9 +510,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MarketingCloud/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oktana.MarketingCloud;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MarketingCloud",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.exacttarget.internal.js-052914PushTester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

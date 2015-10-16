@@ -16,8 +16,9 @@
 #ifdef DEBUG
     // Set to YES to enable logging while debugging
     [ETPush setETLoggerToRequiredState:YES];
+    
     // configure and set initial settings of the JB4ASDK
-    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug
+    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the id
                                               andAccessToken:kETAccessToken_Debug
                                                withAnalytics:YES
                                          andLocationServices:YES
@@ -67,27 +68,23 @@
     return YES;
 }
 
-- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
-{
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     // inform the JB4ASDK of the notification settings requested
     [[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // inform the JB4ASDK of the device token
     [[ETPush pushManager] registerDeviceToken:deviceToken];
 }
 
--(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     // inform the JB4ASDK that the device failed to register and did not receive a device token
     [[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     // inform the JB4ASDK that the device received a local notification
     [[ETPush pushManager] handleLocalNotification:notification];
 }
@@ -103,8 +100,7 @@
         
         // indicate a silent push
         [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-    }
-    else {
+    } else {
         // received a remote notification...
         
         // clear the badge

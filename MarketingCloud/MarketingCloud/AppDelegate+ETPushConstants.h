@@ -8,10 +8,16 @@
 
 @interface AppDelegate (ETPushConstants)
 
+
+// application debug id
 FOUNDATION_EXPORT NSString *const kETAppID_Debug;
+// access token debug
 FOUNDATION_EXPORT NSString *const kETAccessToken_Debug;
+// application prod Id
 FOUNDATION_EXPORT NSString *const kETAppID_Prod;
+// access token prod
 FOUNDATION_EXPORT NSString *const kETAccessToken_Prod;
+
 FOUNDATION_EXPORT NSString *const kMessageTypeLocation;
 FOUNDATION_EXPORT NSString *const kUserDefaultsLastPushReceivedDate;
 FOUNDATION_EXPORT NSString *const kUserDefaultsPushUserInfo;

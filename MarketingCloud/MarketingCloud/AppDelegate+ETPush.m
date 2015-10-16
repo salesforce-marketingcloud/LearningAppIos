@@ -14,21 +14,21 @@
     NSError *error = nil;
     
 #ifdef DEBUG
-    // Set to YES to enable logging while debugging
+    // To enable Debug Log set to YES
     [ETPush setETLoggerToRequiredState:YES];
     
-    // configure and set initial settings of the JB4ASDK
-    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the id
-                                              andAccessToken:kETAccessToken_Debug
+    // Configure and set initial settings of the JB4ASDK
+    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
+                                              andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
                                                withAnalytics:YES
                                          andLocationServices:YES
                                                andCloudPages:YES
                                              withPIAnalytics:YES
                                                        error:&error];
 #else
-    // configure and set initial settings of the JB4ASDK
-    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod
-                                              andAccessToken:kETAccessToken_Prod
+    // Configure and set initial settings of the JB4ASDK
+    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod          // set the Production ID
+                                              andAccessToken:kETAccessToken_Prod    // set the Production Access Token
                                                withAnalytics:YES
                                          andLocationServices:YES
                                                andCloudPages:YES
@@ -36,12 +36,12 @@
                                                        error:&error];
 #endif
     //
-    // if configureSDKWithAppID returns NO, check the error object for detailed failure info. See PushConstants.h for codes.
-    // the features of the JB4ASDK will NOT be useable unless configureSDKWithAppID returns YES.
+    // If configureSDKWithAppID returns NO, check the error object for detailed failure info. See PushConstants.h for codes.
+    // The features of the JB4ASDK will NOT be useable unless configureSDKWithAppID returns YES.
     //
     if (!successful) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            // something failed in the configureSDKWithAppID call - show what the error is
+            // something has failed in the configureSDKWithAppID call - show error message
             [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Failed configureSDKWithAppID!", @"Failed configureSDKWithAppID!")
                                         message:[error localizedDescription]
                                        delegate:nil
@@ -69,7 +69,7 @@
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-    // inform the JB4ASDK of the notification settings requested
+    // inform the JB4ASDK of the requested notification settings
     [[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
 }
 
@@ -94,7 +94,7 @@
     // inform the JB4ASDK that the device received a remote notification
     [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
     
-    // is it a silent push?
+    // Is it a silent push?
     if (userInfo[@"aps"][@"content-available"]) {
         // received a silent remote notification...
         

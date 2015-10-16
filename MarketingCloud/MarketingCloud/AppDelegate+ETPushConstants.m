@@ -14,7 +14,7 @@ NSString *const kETAccessToken_Debug                 = @"udsrye8sszckfa9dgkdh5jx
 NSString *const kETAppID_Prod                        = @"cc868934-afe4-4b27-901c-c1a53d5d9fcb";
 NSString *const kETAccessToken_Prod                  = @"z9jr695rxjtznzr9sx8yu25c";
 
-//Constants used for Strings
+// Constants used for Strings
 NSString *const kMessageTypeLocation                 = @"Location";
 NSString *const kUserDefaultsLastPushReceivedDate    = @"ud_lastPushReceivedDate";
 NSString *const kUserDefaultsPushUserInfo            = @"ud_pushUserInfo";

@@ -9,13 +9,13 @@
 @interface AppDelegate (ETPushConstants)
 
 
-// application debug id
+// Debug Application ID
 FOUNDATION_EXPORT NSString *const kETAppID_Debug;
-// access token debug
+// Debug Access Token
 FOUNDATION_EXPORT NSString *const kETAccessToken_Debug;
-// application prod Id
+// Production Application ID
 FOUNDATION_EXPORT NSString *const kETAppID_Prod;
-// access token prod
+// Production Access Token
 FOUNDATION_EXPORT NSString *const kETAccessToken_Prod;
 
 FOUNDATION_EXPORT NSString *const kMessageTypeLocation;

@@ -10,9 +10,9 @@
 		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; settings = {ASSET_TAGS = (); }; };
 		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; settings = {ASSET_TAGS = (); }; };
 		842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */; settings = {ASSET_TAGS = (); }; };
+		84B068DE1BD1437F00FE115D /* MCHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B068DD1BD1437F00FE115D /* MCHomeView.m */; settings = {ASSET_TAGS = (); }; };
 		84D31EAA1BC6D1E400E31DAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EA91BC6D1E400E31DAE /* main.m */; };
 		84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */; };
-		84D31EB01BC6D1E400E31DAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EAF1BC6D1E400E31DAE /* ViewController.m */; };
 		84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB11BC6D1E400E31DAE /* Main.storyboard */; };
 		84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB41BC6D1E400E31DAE /* Assets.xcassets */; };
 		84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB61BC6D1E400E31DAE /* LaunchScreen.storyboard */; };
@@ -62,12 +62,12 @@
 		842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.0.2.a"; sourceTree = "<group>"; };
 		842ED5671BD03ADD00CCDA0E /* PIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIEvent.h; sourceTree = "<group>"; };
 		842ED5681BD03ADD00CCDA0E /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
+		84B068DC1BD1437F00FE115D /* MCHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCHomeView.h; sourceTree = "<group>"; };
+		84B068DD1BD1437F00FE115D /* MCHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCHomeView.m; sourceTree = "<group>"; };
 		84D31EA51BC6D1E400E31DAE /* MarketingCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketingCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D31EA91BC6D1E400E31DAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84D31EAB1BC6D1E400E31DAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		84D31EAE1BC6D1E400E31DAE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		84D31EAF1BC6D1E400E31DAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84D31EB21BC6D1E400E31DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D31EB41BC6D1E400E31DAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D31EB71BC6D1E400E31DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -144,6 +144,15 @@
 			name = JB4A;
 			sourceTree = "<group>";
 		};
+		84B068DB1BD1435F00FE115D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84B068DC1BD1437F00FE115D /* MCHomeView.h */,
+				84B068DD1BD1437F00FE115D /* MCHomeView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		84D31E9C1BC6D1E400E31DAE = {
 			isa = PBXGroup;
 			children = (
@@ -167,12 +176,11 @@
 		84D31EA71BC6D1E400E31DAE /* MarketingCloud */ = {
 			isa = PBXGroup;
 			children = (
+				84B068DB1BD1435F00FE115D /* Views */,
 				842ED5541BD03AAB00CCDA0E /* JB4A */,
 				842ED54D1BD0392700CCDA0E /* Addition */,
 				84D31EAB1BC6D1E400E31DAE /* AppDelegate.h */,
 				84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */,
-				84D31EAE1BC6D1E400E31DAE /* ViewController.h */,
-				84D31EAF1BC6D1E400E31DAE /* ViewController.m */,
 				84D31EB11BC6D1E400E31DAE /* Main.storyboard */,
 				84D31EB41BC6D1E400E31DAE /* Assets.xcassets */,
 				84D31EB61BC6D1E400E31DAE /* LaunchScreen.storyboard */,
@@ -348,7 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D31EB01BC6D1E400E31DAE /* ViewController.m in Sources */,
+				84B068DE1BD1437F00FE115D /* MCHomeView.m in Sources */,
 				84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */,
 				84D31EAA1BC6D1E400E31DAE /* main.m in Sources */,
 				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,

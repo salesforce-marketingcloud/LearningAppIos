@@ -43,6 +43,4 @@
     self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
 }
 
-
-
 @end

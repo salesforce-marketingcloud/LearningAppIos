@@ -50,7 +50,8 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     // created object MCTag and add in tags array
     for (NSString* nameTag in [setOfTags allObjects]) {
         tag = [[MCTag alloc] init];
-        tag.name = nameTag;
+        tag.name    = nameTag;
+        tag.on      = true;
         [self.tags addObject:tag];
     }
 }

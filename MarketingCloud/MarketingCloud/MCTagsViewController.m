@@ -22,12 +22,12 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 @interface MCTagsViewController () <MCTagTableCellDelegate>
 
 /**
- Array all tag object
+ Array of all tag object
  */
 @property(nonatomic, strong) NSMutableArray *tags;
 
 /**
- Text field. name nuew tag
+ Text field, new tag name.
  */
 @property (weak, nonatomic) IBOutlet UITextField *tagName;
 
@@ -47,7 +47,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     
     MCTag *tag;
     
-    // created object MCTag and add in tags array
+    // create object MCTag and add to tags array
     for (NSString* nameTag in [setOfTags allObjects]) {
         tag = [[MCTag alloc] init];
         tag.name    = nameTag;
@@ -96,7 +96,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     tag.on      = recive;
     
     /**
-      Add or remove tags for the current device.
+     Add or remove tags for the current device.
      */
     if (recive) {
         [[ETPush pushManager] addTag:tag.name];
@@ -108,8 +108,8 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 
 - (IBAction)newTag:(id)sender {
     /**
-     Tags don't have to be defined inside of MobilePush before using them. You can create them at will
-     Create new tag
+     Tags don't have to be defined inside of MobilePush before using them. You can create them at will.
+     Create new tag.
      */
     MCTag *tag = [[MCTag alloc]init];
     tag.name = self.tagName.text;
@@ -118,7 +118,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     // add tag in tags array
     [self.tags addObject:tag];
     
-    // add tafs for the current device.
+    // add tags for the current device.
     [[ETPush pushManager] addTag:tag.name];
     
     self.tagName.text  = @"";

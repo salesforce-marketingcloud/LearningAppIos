@@ -21,8 +21,8 @@
 
 - (void)configureWithTag:(MCTag *)tag indexPath:(NSIndexPath *)indexPath {
     /**
-    Cell defaults
-    */
+     Cell defaults
+     */
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.accessoryType  = UITableViewCellAccessoryNone;
     

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f1T-4N-J5O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f1T-4N-J5O">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,6 +19,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XEb-je-tGl">
                                 <rect key="frame" x="20" y="28" width="560" height="211"/>
+                                <animations/>
                                 <string key="text">Use setSubscriberKey() to implement a specific value as the unique identifier for the contact. You can use a mobile number, email address, device ID, or other appropriate value as necessary.
 
 By default, the Salesforce Marketing Cloud generates a default subscriberKey value if your app does not set that value using setSubscriberKey(). The getSubscriberKey() method returns the value set in the last setSubscriberKey() call and will return a nil value until you call setSubscriberKey(). The getSubscriberKey() method retrieves only the local copy of the value and not the value from the Salesforce Marketing Cloud.</string>
@@ -27,6 +28,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubscriberKey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7En-yn-Bh7">
                                 <rect key="frame" x="20" y="251" width="119" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="U7u-jA-Fap"/>
                                     <constraint firstAttribute="width" constant="119" id="mRJ-Cp-DKS"/>
@@ -37,6 +39,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14j-KN-Ck7">
                                 <rect key="frame" x="142" y="247" width="438" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZmC-Dl-Ldt"/>
                                 </constraints>
@@ -45,6 +48,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-5c-zr9">
                                 <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ef0-8r-YMT"/>
                                 </constraints>
@@ -55,6 +59,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0G1-Z4-0Jx">
                                 <rect key="frame" x="20" y="323" width="560" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="f07-O2-cpI"/>
                                 </constraints>
@@ -64,6 +69,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0G1-Z4-0Jx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="45y-Y6-4in"/>
@@ -100,6 +106,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GrL-9Q-kwD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="W3p-0D-RI5">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
@@ -107,6 +114,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tag name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6O9-qR-eXd">
                                     <rect key="frame" x="16" y="70" width="501" height="30"/>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="501" id="Cyd-mt-XC6"/>
                                     </constraints>
@@ -115,6 +123,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4E-vv-fo3">
                                     <rect key="frame" x="531" y="70" width="53" height="30"/>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="47m-5w-gki"/>
                                         <constraint firstAttribute="width" constant="53" id="OIu-RP-ap7"/>
@@ -129,6 +138,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkZ-Uk-fPU">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="21"/>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="MAz-Cd-mcJ"/>
                                             </constraints>
@@ -137,6 +147,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="PkZ-Uk-fPU" firstAttribute="centerX" secondItem="PtX-xF-e9j" secondAttribute="centerX" id="KVx-cT-UCR"/>
                                         <constraint firstAttribute="bottom" secondItem="PkZ-Uk-fPU" secondAttribute="bottom" id="hME-qh-X1U"/>
@@ -144,6 +155,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                                     </constraints>
                                 </stackView>
                             </subviews>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="r4E-vv-fo3" firstAttribute="leading" secondItem="6O9-qR-eXd" secondAttribute="trailing" constant="14" id="TFY-WA-MMh"/>
@@ -165,17 +177,20 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNN-vb-bmC">
                                             <rect key="frame" x="533" y="6" width="51" height="31"/>
+                                            <animations/>
                                             <connections>
                                                 <action selector="norificationSwichChanged:" destination="mqU-1C-Vvg" eventType="valueChanged" id="ykF-Ok-ipM"/>
                                             </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFX-uW-sie">
                                             <rect key="frame" x="8" y="11" width="517" height="21"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="eNN-vb-bmC" secondAttribute="bottom" constant="-2" id="0sd-N2-xce"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="eNN-vb-bmC" secondAttribute="trailing" constant="10" id="EUF-1V-Mmi"/>
@@ -186,6 +201,7 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                                         <constraint firstItem="ZFX-uW-sie" firstAttribute="top" secondItem="KTW-6h-PSy" secondAttribute="topMargin" constant="3" id="huw-U2-MKl"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="notificationSwitch" destination="eNN-vb-bmC" id="Gdn-iP-Yrl"/>
                                     <outlet property="titleLabel" destination="ZFX-uW-sie" id="UCl-p1-Udq"/>
@@ -206,6 +222,67 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
             </objects>
             <point key="canvasLocation" x="764" y="107"/>
         </scene>
+        <!--GeoLocation-->
+        <scene sceneID="T9o-Iw-blp">
+            <objects>
+                <viewController title="GeoLocation" id="BId-AQ-n9T" customClass="MCGeoLocationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yav-33-ia8"/>
+                        <viewControllerLayoutGuide type="bottom" id="oL3-GP-4lA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KYR-R7-uze">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bR-AT-qDG">
+                                <rect key="frame" x="0.0" y="65" width="600" height="486"/>
+                                <animations/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GeoNotification " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3O-Lh-pVz">
+                                <rect key="frame" x="20" y="28" width="123" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="123" id="AeW-Se-fs4"/>
+                                    <constraint firstAttribute="height" constant="21" id="K9Q-wh-eWM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tc1-HJ-7XG">
+                                <rect key="frame" x="151" y="23" width="51" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="3Uo-g9-kWE"/>
+                                    <constraint firstAttribute="height" constant="31" id="9FV-lo-nKp"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changedLocationNotification:" destination="BId-AQ-n9T" eventType="valueChanged" id="6B9-Al-ian"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0bR-AT-qDG" firstAttribute="leading" secondItem="KYR-R7-uze" secondAttribute="leadingMargin" constant="-20" id="Usb-Wh-b3X"/>
+                            <constraint firstItem="Tc1-HJ-7XG" firstAttribute="leading" secondItem="g3O-Lh-pVz" secondAttribute="trailing" constant="8" id="aj7-8a-NsT"/>
+                            <constraint firstItem="oL3-GP-4lA" firstAttribute="top" secondItem="0bR-AT-qDG" secondAttribute="bottom" id="eWQ-JI-MRl"/>
+                            <constraint firstItem="0bR-AT-qDG" firstAttribute="top" secondItem="Tc1-HJ-7XG" secondAttribute="bottom" constant="11" id="gF2-Sl-prq"/>
+                            <constraint firstItem="g3O-Lh-pVz" firstAttribute="leading" secondItem="KYR-R7-uze" secondAttribute="leadingMargin" id="gKL-ON-Ids"/>
+                            <constraint firstItem="g3O-Lh-pVz" firstAttribute="top" secondItem="yav-33-ia8" secondAttribute="bottom" constant="8" id="on4-1F-d1K"/>
+                            <constraint firstItem="Tc1-HJ-7XG" firstAttribute="top" secondItem="yav-33-ia8" secondAttribute="bottom" constant="3" id="qeZ-am-wIv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0bR-AT-qDG" secondAttribute="trailing" constant="-20" id="xOm-Ju-fuq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="GeoLocation" id="Akn-bg-CdK"/>
+                    <connections>
+                        <outlet property="geoLocationNotification" destination="Tc1-HJ-7XG" id="EBu-sI-4Ih"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGp-FQ-3ZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="323" y="779"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kla-hz-FAT">
             <objects>
@@ -213,11 +290,13 @@ By default, the Salesforce Marketing Cloud generates a default subscriberKey val
                     <tabBar key="tabBar" contentMode="scaleToFill" id="sbI-fi-PLN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cYl-sF-RwB"/>
                         <segue destination="Kjj-7g-1HW" kind="relationship" relationship="viewControllers" id="k0u-ej-DSH"/>
+                        <segue destination="BId-AQ-n9T" kind="relationship" relationship="viewControllers" id="JPe-JH-bzg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWb-oN-PfY" userLabel="First Responder" sceneMemberID="firstResponder"/>

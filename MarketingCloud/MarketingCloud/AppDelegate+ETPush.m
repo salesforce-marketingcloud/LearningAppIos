@@ -70,7 +70,7 @@
         [[ETPush pushManager] registerUserNotificationSettings:settings];
         [[ETPush pushManager] registerForRemoteNotifications];
         /**
-         start geoLocation
+         Start geoLocation
          */
         [[ETLocationManager locationManager]startWatchingLocation];
         
@@ -85,7 +85,7 @@
         [ETRegion retrieveProximityFromET];
         
         /**
-         inform the JB4ASDK of the launch options - possibly UIApplicationLaunchOptionsRemoteNotificationKey or UIApplicationLaunchOptionsLocalNotificationKey
+         Inform the JB4ASDK of the launch options - possibly UIApplicationLaunchOptionsRemoteNotificationKey or UIApplicationLaunchOptionsLocalNotificationKey
          */
          [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
     }

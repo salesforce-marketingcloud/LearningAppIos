@@ -7,7 +7,7 @@
 //
 #import "MCGeoLocationViewController.h"
 
-// framework
+// Framework
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
@@ -37,7 +37,7 @@
 
 - (void) drawGeofences {
     /**
-     get all monitor regions
+     Get all monitor regions.
     */
     NSArray *monitoredRegions = [[[ETLocationManager locationManager] monitoredRegions] allObjects];
     
@@ -52,7 +52,7 @@
     }
 }
 /**
- Places a geofence on a map with a pin and a circle
+ Places a geofence on a map with a pin and a circle.
 */
 - (void)placeGeofenceOnMap:(CLCircularRegion *)geofence {
     [self palceRegionOnMap: geofence.center
@@ -61,7 +61,7 @@
 }
 
 /**
- Places a beacon on a map with a pin and a circle
+ Places a beacon on a map with a pin and a circle.
 */
 - (void)placeBeaconOnMap:(CLBeaconRegion *)beacon {
     

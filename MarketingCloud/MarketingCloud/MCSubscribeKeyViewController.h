@@ -7,6 +7,6 @@
 //
 #import <UIKit/UIKit.h>
 
-@interface MCHomeView : UIViewController
+@interface MCSubscribeKeyViewController : UIViewController
 
 @end

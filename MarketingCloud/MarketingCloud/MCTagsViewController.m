@@ -92,6 +92,13 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     
 }
 
+#pragma mark - <UITextFieldDelegate>
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 #pragma mark - tag cell view  delegate
 
 - (void) notificationRecive:(BOOL)recive indexPath:(NSIndexPath*)indexPath {

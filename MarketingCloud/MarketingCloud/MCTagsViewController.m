@@ -130,13 +130,13 @@ static NSString *cellIdentifier = @"MCTagTableCell";
      [self.tags addObject:tag];
     
     /**
-     add tags for the current device.
+     Add tags for the current device.
      */
     [[ETPush pushManager] addTag:tag.name];
     
     self.tagName.text  = @"";
     /**
-     reload table
+     Reload table
      */
     [self.tableView reloadData];
 }

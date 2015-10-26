@@ -23,9 +23,9 @@
      */
     successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
                                               andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
-                                               withAnalytics:YES
-                                         andLocationServices:YES
-                                               andCloudPages:YES
+                                               withAnalytics:YES                    //
+                                         andLocationServices:YES                    // set geoLocation
+                                               andCloudPages:YES                    //
                                              withPIAnalytics:YES
                                                        error:&error];
 #else
@@ -35,7 +35,7 @@
     successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod          // set the Production ID
                                               andAccessToken:kETAccessToken_Prod    // set the Production Access Token
                                                withAnalytics:YES
-                                         andLocationServices:YES
+                                         andLocationServices:YES                    // set geoLocation 
                                                andCloudPages:YES
                                              withPIAnalytics:YES
                                                        error:&error];
@@ -47,7 +47,7 @@
     if (!successful) {
         dispatch_async(dispatch_get_main_queue(), ^{
             /**
-               something has failed in the configureSDKWithAppID call - show error message
+               Something has failed in the configureSDKWithAppID call - show error message
              */
             [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Failed configureSDKWithAppID!", @"Failed configureSDKWithAppID!")
                                         message:[error localizedDescription]
@@ -95,21 +95,21 @@
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     /**
-     inform the JB4ASDK of the requested notification settings
+     Inform the JB4ASDK of the requested notification settings
     */
     [[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     /**
-      inform the JB4ASDK of the device token
+      Inform the JB4ASDK of the device token
      */
     [[ETPush pushManager] registerDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     /**
-     inform the JB4ASDK that the device failed to register and did not receive a device token
+     Inform the JB4ASDK that the device failed to register and did not receive a device token
     */
     [[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
 }
@@ -117,14 +117,14 @@
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     /**
-     inform the JB4ASDK that the device received a local notification
+     Inform the JB4ASDK that the device received a local notification
      */
     [[ETPush pushManager] handleLocalNotification:notification];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
     /**
-      inform the JB4ASDK that the device received a remote notification
+      Inform the JB4ASDK that the device received a remote notification
      */
     [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
     

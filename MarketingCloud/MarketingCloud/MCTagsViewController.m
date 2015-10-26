@@ -37,17 +37,20 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // pushManager returns the list of tags as a NSSet collection
-    NSSet *setOfTags = [[ETPush pushManager] allTags];
-    
-    // init mutable array
+    /**
+      PushManager returns the list of tags as a NSSet collection
+     */
+     NSSet *setOfTags = [[ETPush pushManager] allTags];
+    /**
+      Init mutable array
+     */
     self.tags = [[NSMutableArray alloc]initWithCapacity:setOfTags.count];
     
     
     MCTag *tag;
-    
-    // create object MCTag and add to tags array
+    /**
+     Create object MCTag and add to tags array
+    */
     for (NSString* nameTag in [setOfTags allObjects]) {
         tag = [[MCTag alloc] init];
         tag.name    = nameTag;
@@ -89,6 +92,13 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     
 }
 
+#pragma mark - <UITextFieldDelegate>
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
+}
+
 #pragma mark - tag cell view  delegate
 
 - (void) notificationRecive:(BOOL)recive indexPath:(NSIndexPath*)indexPath {
@@ -114,16 +124,20 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     MCTag *tag = [[MCTag alloc]init];
     tag.name = self.tagName.text;
     tag.on = YES;
+    /**
+     Add tag in tags array
+    */
+     [self.tags addObject:tag];
     
-    // add tag in tags array
-    [self.tags addObject:tag];
-    
-    // add tags for the current device.
+    /**
+     add tags for the current device.
+     */
     [[ETPush pushManager] addTag:tag.name];
     
     self.tagName.text  = @"";
-    
-    // reload table
+    /**
+     reload table
+     */
     [self.tableView reloadData];
 }
 

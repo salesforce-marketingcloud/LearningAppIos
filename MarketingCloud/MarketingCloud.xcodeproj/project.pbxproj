@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; settings = {ASSET_TAGS = (); }; };
-		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; settings = {ASSET_TAGS = (); }; };
-		842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */; settings = {ASSET_TAGS = (); }; };
-		846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC0911BD5349E000D8062 /* MCTagsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		84B068DE1BD1437F00FE115D /* MCHomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B068DD1BD1437F00FE115D /* MCHomeView.m */; settings = {ASSET_TAGS = (); }; };
-		84D170011BD58F9100D563F7 /* MCTagTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D170001BD58F9100D563F7 /* MCTagTableCell.m */; settings = {ASSET_TAGS = (); }; };
-		84D170051BD6819900D563F7 /* MCTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D170041BD6819900D563F7 /* MCTag.m */; settings = {ASSET_TAGS = (); }; };
+		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; };
+		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; };
+		842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */; };
+		846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC0911BD5349E000D8062 /* MCTagsViewController.m */; };
+		849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849146011BD953ED0086C40D /* MCGeoLocationViewController.m */; };
+		849146041BDA4F300086C40D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146031BDA4F300086C40D /* MapKit.framework */; };
+		849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146051BDA57B10086C40D /* CoreLocation.framework */; };
+		84B068DE1BD1437F00FE115D /* MCSubscribeKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B068DD1BD1437F00FE115D /* MCSubscribeKeyViewController.m */; };
+		84D170011BD58F9100D563F7 /* MCTagTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D170001BD58F9100D563F7 /* MCTagTableCell.m */; };
+		84D170051BD6819900D563F7 /* MCTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D170041BD6819900D563F7 /* MCTag.m */; };
 		84D31EAA1BC6D1E400E31DAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EA91BC6D1E400E31DAE /* main.m */; };
 		84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */; };
 		84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB11BC6D1E400E31DAE /* Main.storyboard */; };
@@ -67,8 +70,12 @@
 		842ED5681BD03ADD00CCDA0E /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		846FC0901BD5349E000D8062 /* MCTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagsViewController.h; sourceTree = "<group>"; };
 		846FC0911BD5349E000D8062 /* MCTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTagsViewController.m; sourceTree = "<group>"; };
-		84B068DC1BD1437F00FE115D /* MCHomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCHomeView.h; sourceTree = "<group>"; };
-		84B068DD1BD1437F00FE115D /* MCHomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCHomeView.m; sourceTree = "<group>"; };
+		849146001BD953ED0086C40D /* MCGeoLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGeoLocationViewController.h; sourceTree = "<group>"; };
+		849146011BD953ED0086C40D /* MCGeoLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGeoLocationViewController.m; sourceTree = "<group>"; };
+		849146031BDA4F300086C40D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		849146051BDA57B10086C40D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		84B068DC1BD1437F00FE115D /* MCSubscribeKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSubscribeKeyViewController.h; sourceTree = "<group>"; };
+		84B068DD1BD1437F00FE115D /* MCSubscribeKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSubscribeKeyViewController.m; sourceTree = "<group>"; };
 		84D16FFF1BD58F9100D563F7 /* MCTagTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagTableCell.h; sourceTree = "<group>"; };
 		84D170001BD58F9100D563F7 /* MCTagTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTagTableCell.m; sourceTree = "<group>"; };
 		84D170031BD6819900D563F7 /* MCTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTag.h; sourceTree = "<group>"; };
@@ -94,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
+				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
 				842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,12 +162,30 @@
 			name = JB4A;
 			sourceTree = "<group>";
 		};
+		849145FF1BD93DC20086C40D /* GeoLocation */ = {
+			isa = PBXGroup;
+			children = (
+				849146001BD953ED0086C40D /* MCGeoLocationViewController.h */,
+				849146011BD953ED0086C40D /* MCGeoLocationViewController.m */,
+			);
+			name = GeoLocation;
+			sourceTree = "<group>";
+		};
+		8491460A1BDABFC30086C40D /* SubscribeKey */ = {
+			isa = PBXGroup;
+			children = (
+				84B068DC1BD1437F00FE115D /* MCSubscribeKeyViewController.h */,
+				84B068DD1BD1437F00FE115D /* MCSubscribeKeyViewController.m */,
+			);
+			name = SubscribeKey;
+			sourceTree = "<group>";
+		};
 		84B068DB1BD1435F00FE115D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8491460A1BDABFC30086C40D /* SubscribeKey */,
+				849145FF1BD93DC20086C40D /* GeoLocation */,
 				84D170061BD6896900D563F7 /* Tag */,
-				84B068DC1BD1437F00FE115D /* MCHomeView.h */,
-				84B068DD1BD1437F00FE115D /* MCHomeView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -186,6 +213,8 @@
 		84D31E9C1BC6D1E400E31DAE = {
 			isa = PBXGroup;
 			children = (
+				849146051BDA57B10086C40D /* CoreLocation.framework */,
+				849146031BDA4F300086C40D /* MapKit.framework */,
 				84D31EA71BC6D1E400E31DAE /* MarketingCloud */,
 				84D31EC11BC6D1E400E31DAE /* MarketingCloudTests */,
 				84D31ECC1BC6D1E400E31DAE /* MarketingCloudUITests */,
@@ -387,11 +416,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B068DE1BD1437F00FE115D /* MCHomeView.m in Sources */,
+				84B068DE1BD1437F00FE115D /* MCSubscribeKeyViewController.m in Sources */,
 				846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */,
 				84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */,
 				84D31EAA1BC6D1E400E31DAE /* main.m in Sources */,
 				84D170011BD58F9100D563F7 /* MCTagTableCell.m in Sources */,
+				849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */,
 				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
 				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,

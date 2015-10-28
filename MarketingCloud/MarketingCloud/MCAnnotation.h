@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+// Framework
+#import <MapKit/MapKit.h>
 
-@interface MCAnnotation : MKAnnotation
+@interface MCAnnotation : NSObject <MKAnnotation>
+@property(nonatomic, copy)      NSString *image;
+@property(nonatomic, assign)    CLLocationCoordinate2D coordinate;
+@property(nonatomic, copy)      NSString *title;
+@property(nonatomic, copy)      NSString *subtitle;
 
 @end

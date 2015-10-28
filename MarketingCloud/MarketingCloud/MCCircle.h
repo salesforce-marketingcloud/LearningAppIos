@@ -9,5 +9,10 @@
 #import <MapKit/MapKit.h>
 
 @interface MCCircle : MKCircle
+@property (nonatomic, strong) UIColor *strokeColor;
+
++ (instancetype)circleWithCenterCoordinate:(CLLocationCoordinate2D)coord
+                                    radius:(CLLocationDistance)radius
+                               strokeColor:(UIColor *)color;
 
 @end

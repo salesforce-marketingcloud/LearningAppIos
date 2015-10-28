@@ -13,6 +13,11 @@
 
 // Libraries
 #import "ETPush.h"
+#import "ETEvent.h"
+
+// helper
+#import "MCCircle.h"
+#import "MCAnnotation.h"
 
 @interface MCGeoLocationViewController () <MKMapViewDelegate>
 @property (nonatomic, weak) IBOutlet UISwitch *geoLocationNotification;
@@ -40,7 +45,7 @@
      Get all monitor regions.
     */
     NSArray *monitoredRegions = [[[ETLocationManager locationManager] monitoredRegions] allObjects];
-    
+
     NSLog(@"monitoredRegions = %@",monitoredRegions);
     
     for (NSObject *region in monitoredRegions) {
@@ -55,9 +60,11 @@
  Places a geofence on a map with a pin and a circle.
 */
 - (void)placeGeofenceOnMap:(CLCircularRegion *)geofence {
-    [self palceRegionOnMap: geofence.center
-                    radius: geofence.radius
-                     title: geofence.identifier];
+    [self palceRegionOnMap:geofence.center
+                    radius:geofence.radius
+                     title:geofence.identifier
+               strokeColor:[UIColor redColor]
+                 imageName:nil];
 }
 
 /**
@@ -66,25 +73,29 @@
 - (void)placeBeaconOnMap:(CLBeaconRegion *)beacon {
     
     ETRegion *region = [ETRegion getBeaconRegionForRegionWithProximityUUID:[beacon.proximityUUID UUIDString]];
+
+    [self palceRegionOnMap:CLLocationCoordinate2DMake([region.latitude doubleValue], [region.longitude doubleValue])
+                    radius:[region.radius doubleValue]
+                     title:region.regionName
+               strokeColor:[UIColor blueColor]
+                 imageName:@"beacon"];
     
-    [self palceRegionOnMap: CLLocationCoordinate2DMake([region.latitude doubleValue], [region.longitude doubleValue])
-                    radius: [region.radius doubleValue]
-                     title: region.regionName];
 }
 
-- (void) palceRegionOnMap:(CLLocationCoordinate2D)center radius:(CLLocationDistance) radius title:(NSString *)title {
+- (void) palceRegionOnMap:(CLLocationCoordinate2D)center radius:(CLLocationDistance)radius title:(NSString *)title strokeColor:(UIColor *)color imageName:(NSString *)image {
     /**
      Add the pin
     */
-    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+    MCAnnotation *pin = [[MCAnnotation alloc] init];
     pin.coordinate = center;
     pin.title = title;
-    
+    pin.image = image;
     [self.mapView addAnnotation:pin];
+    
     /**
      Add the circle
     */
-    MKCircle *circle = [MKCircle circleWithCenterCoordinate:center radius:radius];
+    MCCircle *circle = [MCCircle circleWithCenterCoordinate:center radius:radius strokeColor:color];
     [self.mapView addOverlay:circle];
 }
 
@@ -92,15 +103,33 @@
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
     
-    if ([overlay isKindOfClass:[MKCircle class]]) {
+    if ([overlay isKindOfClass:[MCCircle class]]) {
         
         MKCircleRenderer* circleRenderer    = [[MKCircleRenderer alloc]initWithOverlay:overlay];
         circleRenderer.lineWidth            = 1.0;
-        circleRenderer.strokeColor          = [UIColor purpleColor];
-        circleRenderer.fillColor            = [[UIColor purpleColor] colorWithAlphaComponent:0.4];
+        circleRenderer.strokeColor          = ((MCCircle *)overlay).strokeColor;
+        circleRenderer.fillColor            = [((MCCircle *)overlay).strokeColor colorWithAlphaComponent:0.4];
         return circleRenderer;
     }
     
+    return nil;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[MCAnnotation class]]) {
+        static NSString * const identifier = @"MCAnnotation";
+        
+        MKAnnotationView* annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (annotationView) {
+            annotationView.annotation = annotation;
+        } else {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                          reuseIdentifier:identifier];
+        }
+        annotationView.image = [UIImage imageNamed:((MCAnnotation *)annotation).image];
+        return annotationView;
+    }
     return nil;
 }
 

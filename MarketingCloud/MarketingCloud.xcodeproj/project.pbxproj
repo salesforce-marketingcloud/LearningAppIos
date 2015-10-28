@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */; };
+		8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */; };
 		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; };
 		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; };
-		842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */; };
 		846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC0911BD5349E000D8062 /* MCTagsViewController.m */; };
 		849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849146011BD953ED0086C40D /* MCGeoLocationViewController.m */; };
 		849146041BDA4F300086C40D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146031BDA4F300086C40D /* MapKit.framework */; };
 		849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146051BDA57B10086C40D /* CoreLocation.framework */; };
+		8491461F1BDFBF550086C40D /* libJB4ASDK-4.0.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491461C1BDFBF550086C40D /* libJB4ASDK-4.0.2.a */; };
 		84B068DE1BD1437F00FE115D /* MCSubscribeKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B068DD1BD1437F00FE115D /* MCSubscribeKeyViewController.m */; };
 		84D170011BD58F9100D563F7 /* MCTagTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D170001BD58F9100D563F7 /* MCTagTableCell.m */; };
 		84D170051BD6819900D563F7 /* MCTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D170041BD6819900D563F7 /* MCTag.m */; };
@@ -44,36 +46,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCircle.h; sourceTree = "<group>"; };
+		8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCircle.m; sourceTree = "<group>"; };
+		8417EA5F1BE0EBAB00DD21F7 /* MCAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAnnotation.h; sourceTree = "<group>"; };
+		8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAnnotation.m; sourceTree = "<group>"; };
 		842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPush.h"; sourceTree = "<group>"; };
 		842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPush.m"; sourceTree = "<group>"; };
 		842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPushConstants.h"; sourceTree = "<group>"; };
 		842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPushConstants.m"; sourceTree = "<group>"; };
-		842ED5551BD03ADD00CCDA0E /* ETBulkUpdateShim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETBulkUpdateShim.h; sourceTree = "<group>"; };
-		842ED5561BD03ADD00CCDA0E /* ETEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEvent.h; sourceTree = "<group>"; };
-		842ED5571BD03ADD00CCDA0E /* ETFenceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETFenceMessage.h; sourceTree = "<group>"; };
-		842ED5581BD03ADD00CCDA0E /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
-		842ED5591BD03ADD00CCDA0E /* ETKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETKeyValueStore.h; sourceTree = "<group>"; };
-		842ED55A1BD03ADD00CCDA0E /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
-		842ED55B1BD03ADD00CCDA0E /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
-		842ED55C1BD03ADD00CCDA0E /* ETLocationUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationUpdate.h; sourceTree = "<group>"; };
-		842ED55D1BD03ADD00CCDA0E /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
-		842ED55E1BD03ADD00CCDA0E /* ETPhoneHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPhoneHome.h; sourceTree = "<group>"; };
-		842ED55F1BD03ADD00CCDA0E /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
-		842ED5601BD03ADD00CCDA0E /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
-		842ED5611BD03ADD00CCDA0E /* ETRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegistration.h; sourceTree = "<group>"; };
-		842ED5621BD03ADD00CCDA0E /* ETSqliteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSqliteHelper.h; sourceTree = "<group>"; };
-		842ED5631BD03ADD00CCDA0E /* ETStatsUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETStatsUpdate.h; sourceTree = "<group>"; };
-		842ED5641BD03ADD00CCDA0E /* ETURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETURLConnection.h; sourceTree = "<group>"; };
-		842ED5651BD03ADD00CCDA0E /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
-		842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.0.2.a"; sourceTree = "<group>"; };
-		842ED5671BD03ADD00CCDA0E /* PIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIEvent.h; sourceTree = "<group>"; };
-		842ED5681BD03ADD00CCDA0E /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		846FC0901BD5349E000D8062 /* MCTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagsViewController.h; sourceTree = "<group>"; };
 		846FC0911BD5349E000D8062 /* MCTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTagsViewController.m; sourceTree = "<group>"; };
 		849146001BD953ED0086C40D /* MCGeoLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGeoLocationViewController.h; sourceTree = "<group>"; };
 		849146011BD953ED0086C40D /* MCGeoLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGeoLocationViewController.m; sourceTree = "<group>"; };
 		849146031BDA4F300086C40D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		849146051BDA57B10086C40D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8491460B1BDFBF550086C40D /* ETBulkUpdateShim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETBulkUpdateShim.h; path = JB4A/ETBulkUpdateShim.h; sourceTree = "<group>"; };
+		8491460C1BDFBF550086C40D /* ETEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETEvent.h; path = JB4A/ETEvent.h; sourceTree = "<group>"; };
+		8491460D1BDFBF550086C40D /* ETFenceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETFenceMessage.h; path = JB4A/ETFenceMessage.h; sourceTree = "<group>"; };
+		8491460E1BDFBF550086C40D /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGenericUpdate.h; path = JB4A/ETGenericUpdate.h; sourceTree = "<group>"; };
+		8491460F1BDFBF550086C40D /* ETKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETKeyValueStore.h; path = JB4A/ETKeyValueStore.h; sourceTree = "<group>"; };
+		849146101BDFBF550086C40D /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETLandingPagePresenter.h; path = JB4A/ETLandingPagePresenter.h; sourceTree = "<group>"; };
+		849146111BDFBF550086C40D /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETLocationManager.h; path = JB4A/ETLocationManager.h; sourceTree = "<group>"; };
+		849146121BDFBF550086C40D /* ETLocationUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETLocationUpdate.h; path = JB4A/ETLocationUpdate.h; sourceTree = "<group>"; };
+		849146131BDFBF550086C40D /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETMessage.h; path = JB4A/ETMessage.h; sourceTree = "<group>"; };
+		849146141BDFBF550086C40D /* ETPhoneHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETPhoneHome.h; path = JB4A/ETPhoneHome.h; sourceTree = "<group>"; };
+		849146151BDFBF550086C40D /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETPush.h; path = JB4A/ETPush.h; sourceTree = "<group>"; };
+		849146161BDFBF550086C40D /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETRegion.h; path = JB4A/ETRegion.h; sourceTree = "<group>"; };
+		849146171BDFBF550086C40D /* ETRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETRegistration.h; path = JB4A/ETRegistration.h; sourceTree = "<group>"; };
+		849146181BDFBF550086C40D /* ETSqliteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSqliteHelper.h; path = JB4A/ETSqliteHelper.h; sourceTree = "<group>"; };
+		849146191BDFBF550086C40D /* ETStatsUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETStatsUpdate.h; path = JB4A/ETStatsUpdate.h; sourceTree = "<group>"; };
+		8491461A1BDFBF550086C40D /* ETURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETURLConnection.h; path = JB4A/ETURLConnection.h; sourceTree = "<group>"; };
+		8491461B1BDFBF550086C40D /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExactTargetEnhancedPushDataSource.h; path = JB4A/ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
+		8491461C1BDFBF550086C40D /* libJB4ASDK-4.0.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.0.2.a"; path = "JB4A/libJB4ASDK-4.0.2.a"; sourceTree = "<group>"; };
+		8491461D1BDFBF550086C40D /* PIEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PIEvent.h; path = JB4A/PIEvent.h; sourceTree = "<group>"; };
+		8491461E1BDFBF550086C40D /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PushConstants.h; path = JB4A/PushConstants.h; sourceTree = "<group>"; };
 		84B068DC1BD1437F00FE115D /* MCSubscribeKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSubscribeKeyViewController.h; sourceTree = "<group>"; };
 		84B068DD1BD1437F00FE115D /* MCSubscribeKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSubscribeKeyViewController.m; sourceTree = "<group>"; };
 		84D16FFF1BD58F9100D563F7 /* MCTagTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagTableCell.h; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 			files = (
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
 				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
-				842ED5691BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a in Frameworks */,
+				8491461F1BDFBF550086C40D /* libJB4ASDK-4.0.2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,26 +144,26 @@
 		842ED5541BD03AAB00CCDA0E /* JB4A */ = {
 			isa = PBXGroup;
 			children = (
-				842ED5551BD03ADD00CCDA0E /* ETBulkUpdateShim.h */,
-				842ED5561BD03ADD00CCDA0E /* ETEvent.h */,
-				842ED5571BD03ADD00CCDA0E /* ETFenceMessage.h */,
-				842ED5581BD03ADD00CCDA0E /* ETGenericUpdate.h */,
-				842ED5591BD03ADD00CCDA0E /* ETKeyValueStore.h */,
-				842ED55A1BD03ADD00CCDA0E /* ETLandingPagePresenter.h */,
-				842ED55B1BD03ADD00CCDA0E /* ETLocationManager.h */,
-				842ED55C1BD03ADD00CCDA0E /* ETLocationUpdate.h */,
-				842ED55D1BD03ADD00CCDA0E /* ETMessage.h */,
-				842ED55E1BD03ADD00CCDA0E /* ETPhoneHome.h */,
-				842ED55F1BD03ADD00CCDA0E /* ETPush.h */,
-				842ED5601BD03ADD00CCDA0E /* ETRegion.h */,
-				842ED5611BD03ADD00CCDA0E /* ETRegistration.h */,
-				842ED5621BD03ADD00CCDA0E /* ETSqliteHelper.h */,
-				842ED5631BD03ADD00CCDA0E /* ETStatsUpdate.h */,
-				842ED5641BD03ADD00CCDA0E /* ETURLConnection.h */,
-				842ED5651BD03ADD00CCDA0E /* ExactTargetEnhancedPushDataSource.h */,
-				842ED5661BD03ADD00CCDA0E /* libJB4ASDK-4.0.2.a */,
-				842ED5671BD03ADD00CCDA0E /* PIEvent.h */,
-				842ED5681BD03ADD00CCDA0E /* PushConstants.h */,
+				8491460B1BDFBF550086C40D /* ETBulkUpdateShim.h */,
+				8491460C1BDFBF550086C40D /* ETEvent.h */,
+				8491460D1BDFBF550086C40D /* ETFenceMessage.h */,
+				8491460E1BDFBF550086C40D /* ETGenericUpdate.h */,
+				8491460F1BDFBF550086C40D /* ETKeyValueStore.h */,
+				849146101BDFBF550086C40D /* ETLandingPagePresenter.h */,
+				849146111BDFBF550086C40D /* ETLocationManager.h */,
+				849146121BDFBF550086C40D /* ETLocationUpdate.h */,
+				849146131BDFBF550086C40D /* ETMessage.h */,
+				849146141BDFBF550086C40D /* ETPhoneHome.h */,
+				849146151BDFBF550086C40D /* ETPush.h */,
+				849146161BDFBF550086C40D /* ETRegion.h */,
+				849146171BDFBF550086C40D /* ETRegistration.h */,
+				849146181BDFBF550086C40D /* ETSqliteHelper.h */,
+				849146191BDFBF550086C40D /* ETStatsUpdate.h */,
+				8491461A1BDFBF550086C40D /* ETURLConnection.h */,
+				8491461B1BDFBF550086C40D /* ExactTargetEnhancedPushDataSource.h */,
+				8491461C1BDFBF550086C40D /* libJB4ASDK-4.0.2.a */,
+				8491461D1BDFBF550086C40D /* PIEvent.h */,
+				8491461E1BDFBF550086C40D /* PushConstants.h */,
 			);
 			name = JB4A;
 			sourceTree = "<group>";
@@ -165,6 +171,10 @@
 		849145FF1BD93DC20086C40D /* GeoLocation */ = {
 			isa = PBXGroup;
 			children = (
+				8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */,
+				8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */,
+				8417EA5F1BE0EBAB00DD21F7 /* MCAnnotation.h */,
+				8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */,
 				849146001BD953ED0086C40D /* MCGeoLocationViewController.h */,
 				849146011BD953ED0086C40D /* MCGeoLocationViewController.m */,
 			);
@@ -419,9 +429,11 @@
 				84B068DE1BD1437F00FE115D /* MCSubscribeKeyViewController.m in Sources */,
 				846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */,
 				84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */,
+				8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */,
 				84D31EAA1BC6D1E400E31DAE /* main.m in Sources */,
 				84D170011BD58F9100D563F7 /* MCTagTableCell.m in Sources */,
 				849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */,
+				8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */,
 				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
 				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,
@@ -572,6 +584,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
+					"$(PROJECT_DIR)/MarketingCloud/JB4A",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exacttarget.internal.js-052914PushTester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -589,6 +602,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
+					"$(PROJECT_DIR)/MarketingCloud/JB4A",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exacttarget.internal.js-052914PushTester";
 				PRODUCT_NAME = "$(TARGET_NAME)";

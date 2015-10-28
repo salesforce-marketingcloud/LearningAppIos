@@ -83,7 +83,7 @@
     ETRegion *region = [ETRegion getBeaconRegionForRegionWithProximityUUID:[beacon.proximityUUID UUIDString]];
 
     [self palceRegionOnMap:CLLocationCoordinate2DMake([region.latitude doubleValue], [region.longitude doubleValue])
-                    radius:[region.radius doubleValue]
+                    radius:([region.radius doubleValue] == 0? 10 : [region.radius doubleValue])
                      title:region.regionName
                strokeColor:[UIColor blueColor]
                  imageName:@"beacon"];
@@ -134,6 +134,7 @@
         } else {
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                           reuseIdentifier:identifier];
+            annotationView.canShowCallout = YES;
         }
         annotationView.image = [UIImage imageNamed:((MCAnnotation *)annotation).image];
         return annotationView;

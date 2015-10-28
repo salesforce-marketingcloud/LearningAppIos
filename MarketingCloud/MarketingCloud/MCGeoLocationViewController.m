@@ -3,7 +3,7 @@
 //  MarketingCloud
 //
 //  Created by Mathias on 10/22/15.
-//  Copyright © 2015 Oktana. All rights reserved.
+//  Copyright © 2015 Salesforce Marketing Cloud. All rights reserved.
 //
 #import "MCGeoLocationViewController.h"
 
@@ -32,12 +32,20 @@
     self.mapView.delegate = self;
     
     self.geoLocationNotification.on = [[ETLocationManager locationManager]getWatchingLocation];
-    [self drawGeofences];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.mapView removeAnnotations:[self.mapView annotations]];
+    [self.mapView removeOverlays:[self.mapView overlays]];
+    [self drawGeofences];
 }
 
 - (void) drawGeofences {
@@ -64,7 +72,7 @@
                     radius:geofence.radius
                      title:geofence.identifier
                strokeColor:[UIColor redColor]
-                 imageName:nil];
+                 imageName:@"annotation"];
 }
 
 /**
@@ -108,7 +116,7 @@
         MKCircleRenderer* circleRenderer    = [[MKCircleRenderer alloc]initWithOverlay:overlay];
         circleRenderer.lineWidth            = 1.0;
         circleRenderer.strokeColor          = ((MCCircle *)overlay).strokeColor;
-        circleRenderer.fillColor            = [((MCCircle *)overlay).strokeColor colorWithAlphaComponent:0.4];
+        circleRenderer.fillColor            = [((MCCircle *)overlay).strokeColor colorWithAlphaComponent:0.3];
         return circleRenderer;
     }
     

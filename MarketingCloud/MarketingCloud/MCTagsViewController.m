@@ -3,7 +3,7 @@
 //  MarketingCloud
 //
 //  Created by admin on 10/19/15.
-//  Copyright © 2015 Oktana. All rights reserved.
+//  Copyright © 2015 Salesforce Marketing Cloud. All rights reserved.
 //
 
 #import "MCTagsViewController.h"

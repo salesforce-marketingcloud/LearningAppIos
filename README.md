@@ -281,7 +281,7 @@ Follow these steps in order to connect this MobilePush app to the correct Market
 
     ![image alt text](imgReadMe/image_13.png)
 
-In an Enterprise 2.0 account, ensure that you select the correct business unit for your app integration.
+    In an Enterprise 2.0 account, ensure that you select the correct business unit for your app integration.
 
 4. Click **Integrate**.
 

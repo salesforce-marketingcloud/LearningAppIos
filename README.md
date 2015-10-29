@@ -320,6 +320,7 @@ The SDK can now be configured with the App ID and Access Token, as explained in 
 
 The boolean parameters `withAnalytics`, `andLocationServices`, `andCloudPages` and `withPIAnalytics` enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to `NO`.
 
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
 ```objective-c
 successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
                                           andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
@@ -329,9 +330,10 @@ successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         
                                          withPIAnalytics:NO
                                                    error:&error];
 ```
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
+
 If the configuration is successful and returns YES, the push notifications are registered.
 
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L65)
 ```objective-c
 UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
                                         UIUserNotificationTypeBadge |
@@ -345,6 +347,7 @@ UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTy
 [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
 ```
 If the configuration is unsuccessful an error message is shown:
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L49)
 ```objective-c
 dispatch_async(dispatch_get_main_queue(), ^{
     /**
@@ -367,10 +370,12 @@ To update the subscriber key, you should create a feature for the user to introd
 **MCSubscribeKeyViewController.m**
 
 To get the subscriber key, use the following snippet (you can assign this value to any variable):
+[view the code](/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L47)
 ```objective-c
 self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
 ```
 To set the subscriber key, use the following snippet (substitute self.subscriberKey.text with the appropriate value):
+[view the code](/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L39)
 ```objective-c
 [[ETPush pushManager] setSubscriberKey:self.subscriberKey.text];
 ```

@@ -329,6 +329,7 @@ successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         
                                          withPIAnalytics:NO
                                                    error:&error];
 ```
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
 If the configuration is successful and returns YES, the push notifications are registered.
 
 ```objective-c

@@ -39,16 +39,6 @@ This project provides a template for creating a mobile app (Android or iOS) that
 
 The code in this repository includes all of the code used to run the fully functional APK. However, the API keys have been removed. To debug, modify or create a new app the following keys must be set within the corresponding file.
 
-For Android (`secrets.xml`):
-
-1. `app_id`: the App ID for your development app as defined in the App Center section of the Marketing Cloud.
-
-2. `gcm_sender_id`: the Google Cloud Messaging ID as defined in the Google Cloud Developers Console for your app.
-
-3. `access_token`: the Access Token for your development app as defined in the App Center section of the Marketing Cloud.
-
-NB: You can use different keys for the staging/testing phase and the production phase.  Staging/testing keys are indicated by the prefix `staging_`.
-
 For iOS (`AppDelegate+ETPushConstants.m`):
 
 1. `kETAppID_Prod`: the App ID for your development app as defined in the App Center section of the Marketing Cloud.

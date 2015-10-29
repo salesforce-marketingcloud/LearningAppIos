@@ -347,6 +347,7 @@ UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTy
 [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
 ```
 If the configuration is unsuccessful an error message is shown:
+
 [view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L49)
 ```objective-c
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -370,11 +371,13 @@ To update the subscriber key, you should create a feature for the user to introd
 **MCSubscribeKeyViewController.m**
 
 To get the subscriber key, use the following snippet (you can assign this value to any variable):
+
 [view the code](/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L47)
 ```objective-c
 self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
 ```
 To set the subscriber key, use the following snippet (substitute self.subscriberKey.text with the appropriate value):
+
 [view the code](/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L39)
 ```objective-c
 [[ETPush pushManager] setSubscriberKey:self.subscriberKey.text];

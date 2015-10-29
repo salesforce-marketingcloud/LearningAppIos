@@ -469,6 +469,7 @@ When the application becomes active, Location Services are initiated through the
 }
 ```
 **MCGeoLocationViewController.m**
+
 To check if locations are active, use the boolean method:
 
 [view the code](/MarketingCloud/MarketingCloud/MCGeoLocationViewController.m#L34)

@@ -390,14 +390,20 @@ To implement contact segmentation by tags, include code to set tags for subscrip
 **MCTagsViewController.m**
 
 To add a tag:
+
+[view the code](/MarketingCloud/MarketingCloud/MCTagsViewController.m#L112)
 ```objective-c
 [[ETPush pushManager] addTag:@"tag"];
 ```
 To remove a tag:
+
+[view the code](/MarketingCloud/MarketingCloud/MCTagsViewController.m#L114)
 ```objective-c
 [[ETPush pushManager] removeTag:@"tag"];
 ```
 To get all the tags:
+
+[view the code](/MarketingCloud/MarketingCloud/MCTagsViewController.m#L43)
 ```objective-c
 [[ETPush pushManager] allTags];
 ```
@@ -408,6 +414,8 @@ To get all the tags:
 **AppDelegate+ETPush.m**
 
 To implement location services, pass a `YES` value for the `andLocationServices` parameter and use `ETLocationManager` to monitor location and geofence for a user.
+
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
 ```objective-c
 successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
                                           andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
@@ -420,6 +428,8 @@ successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         
 Make sure you also add the "NSLocationAlwaysUsageDescription" key to your application’s *.plist file. See docs: [NSLocationAlwaysUsageDescription](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) and [NSLocationUsageDescription](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW27).
 
 After push notifications are registered, start watching locations to retrieve the fence and location notifications from ET Geofences and Beacons:
+
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L73)
 ```objective-c
 /**   
  Start geoLocation
@@ -438,6 +448,7 @@ After push notifications are registered, start watching locations to retrieve th
 ```
 When the application enters background mode, Location Services are disabled through the MobilePush SDK.
 
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L152)
 ```objective-c
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     /**
@@ -447,6 +458,8 @@ When the application enters background mode, Location Services are disabled thro
 }
 ```
 When the application becomes active, Location Services are initiated through the MobilePush SDK.
+
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L159)
 ```objective-c
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     /**
@@ -457,12 +470,16 @@ When the application becomes active, Location Services are initiated through the
 ```
 **MCGeoLocationViewController.m**
 To check if locations are active, use the boolean method:
+
+[view the code](/MarketingCloud/MarketingCloud/MCGeoLocationViewController.m#L34)
 ```objective-c
 [[ETLocationManager locationManager]getWatchingLocation]
 ```
 If locations are active it returns `YES`, otherwise it returns `NO`.
 
 To obtain the monitored regions use this method:
+
+[view the code](/MarketingCloud/MarketingCloud/MCGeoLocationViewController.m#L55)
 ```objective-c
 [[ETLocationManager locationManager] monitoredRegions]
 ```

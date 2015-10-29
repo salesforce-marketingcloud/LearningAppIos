@@ -39,7 +39,7 @@ This project provides a template for creating a mobile app (for iOS) that uses t
 
 The code in this repository includes all of the code used to run the fully functional APK. However, the API keys have been removed. To debug, modify or create a new app the following keys must be set within the corresponding file.
 
-For iOS (`AppDelegate+ETPushConstants.m`):
+**AppDelegate+ETPushConstants.m**
 
 1. `kETAppID_Prod`: the App ID for your development app as defined in the App Center section of the Marketing Cloud.
 

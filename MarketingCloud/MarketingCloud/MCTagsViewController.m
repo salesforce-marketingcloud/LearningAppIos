@@ -38,11 +38,11 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     /**
-      PushManager returns the list of tags as a NSSet collection
+     PushManager returns the list of tags as a NSSet collection
      */
-     NSSet *setOfTags = [[ETPush pushManager] allTags];
+    NSSet *setOfTags = [[ETPush pushManager] allTags];
     /**
-      Init mutable array
+     Init mutable array
      */
     self.tags = [[NSMutableArray alloc]initWithCapacity:setOfTags.count];
     
@@ -50,7 +50,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     MCTag *tag;
     /**
      Create object MCTag and add to tags array
-    */
+     */
     for (NSString* nameTag in [setOfTags allObjects]) {
         tag = [[MCTag alloc] init];
         tag.name    = nameTag;
@@ -115,7 +115,14 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     }
     
 }
-
+/**
+ Adds a new tag to the SDK so that it is sent to the server and be able to receive push notifications.
+ Reloads the table to display the tag.
+ 
+ @param sender An ID of a component of the user interface.
+ 
+ @return An action for the method to display in the view.
+ */
 - (IBAction)newTag:(id)sender {
     /**
      Tags don't have to be defined inside of MobilePush before using them. You can create them at will.
@@ -126,8 +133,8 @@ static NSString *cellIdentifier = @"MCTagTableCell";
     tag.on = YES;
     /**
      Add tag in tags array
-    */
-     [self.tags addObject:tag];
+     */
+    [self.tags addObject:tag];
     
     /**
      Add tags for the current device.

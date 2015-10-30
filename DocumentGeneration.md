@@ -16,7 +16,7 @@ The docs are stored at `/Users/YourUserName/Library/Developer/Shared/Documentati
 
 1. Go to the docset folder (`/Users/YourUserName/Library/Developer/Shared/Documentation/DocSets/com.yourcompanysite.YourProjectName.docset`).
 
-2. In the Finder right mouse click on the docset file for context menu.
+2. In the Finder right-click on the docset file for context menu.
 
 3. Choose "Show package content".
 

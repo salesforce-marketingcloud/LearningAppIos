@@ -70,6 +70,7 @@
         
         [[ETPush pushManager] registerUserNotificationSettings:settings];
         [[ETPush pushManager] registerForRemoteNotifications];
+        
         /**
          Start geoLocation
          */
@@ -122,6 +123,11 @@
      */
     [[ETPush pushManager] handleLocalNotification:notification];
 }
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+
+    [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
+}
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
     /**
@@ -153,14 +159,14 @@
     /**
      Use this method to disable Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager locationManager]stopWatchingLocation];
+    [[ETLocationManager locationManager]startWatchingLocation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     /**
      Use this method to initiate Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager locationManager]startWatchingLocation];
+    [[ETLocationManager locationManager]stopWatchingLocation];
 }
 
 

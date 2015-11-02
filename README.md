@@ -493,13 +493,14 @@ To obtain the monitored regions use this method:
 
 In the call to configureSDKWithAppID, pass a `YES` value for the withAnalytics parameter.
 
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
 ```objective-c
 successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
                                           andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
                                            withAnalytics:YES                    //
                                      andLocationServices:YES                    // set geoLocation
-                                           andCloudPages:YES                    //
-                                         withPIAnalytics:YES
+                                           andCloudPages:NO                     //
+                                         withPIAnalytics:NO 
                                                    error:&error];
 ```
 

@@ -32,7 +32,7 @@
 }
 
 - (IBAction)norificationSwichChanged:(UISwitch *)sender {
-    [self.delegate notificationRecive: sender.on
+    [self.delegate notificationReceive: sender.on
                             indexPath: self.indexPath];
 }
 

@@ -101,7 +101,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 
 #pragma mark - tag cell view  delegate
 
-- (void) notificationRecive:(BOOL)recive indexPath:(NSIndexPath*)indexPath {
+- (void) notificationReceive:(BOOL)recive indexPath:(NSIndexPath*)indexPath {
     MCTag *tag  = self.tags[indexPath.row];
     tag.on      = recive;
     

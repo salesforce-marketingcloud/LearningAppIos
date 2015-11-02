@@ -150,13 +150,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8417EA621BE0FCDE00DD21F7 /* Index */ = {
+		8417EA621BE0FCDE00DD21F7 /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
 				8417EA631BE1186300DD21F7 /* MCInboxViewController.h */,
 				8417EA641BE1186300DD21F7 /* MCInboxViewController.m */,
 			);
-			name = Index;
+			name = Inbox;
 			sourceTree = "<group>";
 		};
 		8417EA691BE26F2F00DD21F7 /* Home */ = {
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				8417EA691BE26F2F00DD21F7 /* Home */,
-				8417EA621BE0FCDE00DD21F7 /* Index */,
+				8417EA621BE0FCDE00DD21F7 /* Inbox */,
 				8491460A1BDABFC30086C40D /* SubscribeKey */,
 				849145FF1BD93DC20086C40D /* GeoLocation */,
 				84D170061BD6896900D563F7 /* Tag */,
@@ -789,6 +789,7 @@
 				84E639BE1BE194210058894B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

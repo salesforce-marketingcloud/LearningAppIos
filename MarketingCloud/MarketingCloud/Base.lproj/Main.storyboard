@@ -364,6 +364,46 @@
             </objects>
             <point key="canvasLocation" x="-6" y="597"/>
         </scene>
+        <!--Readme-->
+        <scene sceneID="9rX-sg-6ay">
+            <objects>
+                <viewController id="1xa-dL-Drq" customClass="MCReadmeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="99d-jQ-KIY"/>
+                        <viewControllerLayoutGuide type="bottom" id="H2g-a0-koK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KOd-fk-Oov">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-GL-ZCz">
+                                <rect key="frame" x="9" y="20" width="581" height="531"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ygV-GL-ZCz" secondAttribute="trailing" constant="-10" id="Et5-l1-OgU"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="top" secondItem="99d-jQ-KIY" secondAttribute="bottom" id="G0h-Hh-9fn"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="centerX" secondItem="KOd-fk-Oov" secondAttribute="centerX" id="HZf-nE-K5Y"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="leading" secondItem="KOd-fk-Oov" secondAttribute="leadingMargin" constant="-11" id="RU0-Aa-8cg"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="leading" secondItem="KOd-fk-Oov" secondAttribute="leadingMargin" constant="-11" id="TQg-by-AwT"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="bottom" secondItem="H2g-a0-koK" secondAttribute="top" id="UpS-wG-cAg"/>
+                            <constraint firstItem="H2g-a0-koK" firstAttribute="top" secondItem="ygV-GL-ZCz" secondAttribute="bottom" id="hMH-0U-c4d"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="top" secondItem="99d-jQ-KIY" secondAttribute="bottom" id="jpK-nT-oFx"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Readme" image="help" id="dQz-dd-4St"/>
+                    <connections>
+                        <outlet property="readmeWeb" destination="ygV-GL-ZCz" id="qOI-HH-Ppi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIU-4Q-qtQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="-1481"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kla-hz-FAT">
             <objects>
@@ -375,6 +415,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="1xa-dL-Drq" kind="relationship" relationship="viewControllers" id="XnA-GE-BNU"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cYl-sF-RwB"/>
                         <segue destination="Kjj-7g-1HW" kind="relationship" relationship="viewControllers" id="k0u-ej-DSH"/>
                         <segue destination="BId-AQ-n9T" kind="relationship" relationship="viewControllers" id="JPe-JH-bzg"/>
@@ -388,6 +429,7 @@
     </scenes>
     <resources>
         <image name="email" width="20" height="20"/>
+        <image name="help" width="20" height="20"/>
         <image name="key" width="20" height="20"/>
         <image name="location" width="20" height="20"/>
         <image name="tags" width="20" height="20"/>

@@ -26,8 +26,8 @@
                                               andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
                                                withAnalytics:YES                    //
                                          andLocationServices:YES                    // set geoLocation
-                                               andCloudPages:YES                    //
-                                             withPIAnalytics:YES
+                                               andCloudPages:NO                     //
+                                             withPIAnalytics:NO
                                                        error:&error];
 #else
     /**
@@ -37,8 +37,8 @@
                                               andAccessToken:kETAccessToken_Prod    // set the Production Access Token
                                                withAnalytics:YES
                                          andLocationServices:YES                    // set geoLocation 
-                                               andCloudPages:YES
-                                             withPIAnalytics:YES
+                                               andCloudPages:NO
+                                             withPIAnalytics:NO
                                                        error:&error];
 #endif
     /**

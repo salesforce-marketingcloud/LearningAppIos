@@ -20,30 +20,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    /**
-     The getSubscriberKey() method returns the value
-     The getSubscriberKey() method retrieves only the local copy of the value and not the value from the Salesforce Marketing Cloud.
-     */
-     self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
+    self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/**
+ Uses setSubscriberKey method to save the text as the Subscriber Key.
+
+ @param sender An ID of a component of the user interface.
+ 
+ @return An action for the method to display in the view.
+ */
 - (IBAction)saveSubscriberKey:(id)sender {
-    /**
-     Use setSubscriberKey() to implement a specific value as the unique identifier for the contact.
-     You can use a mobile number, email address, device ID, or other appropriate value as necessary.
-     */
     [[ETPush pushManager] setSubscriberKey:self.subscriberKey.text];
 }
 
+/**
+ Uses getSubscriberKey method to get the Subscriber Key and sets it in the UITextField.
+ 
+ @param sender An ID of a component of the user interface.
+ 
+ @return An action for the method to display in the view.
+ */
 - (IBAction)reloadSubscriberKey:(id)sender {
-    /**
-     The getSubscriberKey() method returns the value
-     The getSubscriberKey() method retrieves only the local copy of the value and not the value from the Salesforce Marketing Cloud.
-    */
     self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
 }
 

@@ -48,10 +48,13 @@
     [self drawGeofences];
 }
 
+/**
+ Adds annotation per regions to map, for both beacons and geofences.
+ */
 - (void) drawGeofences {
     /**
      Get all monitor regions.
-    */
+     */
     NSArray *monitoredRegions = [[[ETLocationManager locationManager] monitoredRegions] allObjects];
 
     NSLog(@"monitoredRegions = %@",monitoredRegions);
@@ -64,9 +67,12 @@
         }
     }
 }
+
 /**
  Places a geofence on a map with a pin and a circle.
-*/
+ 
+ @param geofence the geofence to draw on the map
+ */
 - (void)placeGeofenceOnMap:(CLCircularRegion *)geofence {
     [self palceRegionOnMap:geofence.center
                     radius:geofence.radius
@@ -77,7 +83,9 @@
 
 /**
  Places a beacon on a map with a pin and a circle.
-*/
+ 
+ @param beacon the beacon to draw on the map
+ */
 - (void)placeBeaconOnMap:(CLBeaconRegion *)beacon {
     
     ETRegion *region = [ETRegion getBeaconRegionForRegionWithProximityUUID:[beacon.proximityUUID UUIDString]];
@@ -90,10 +98,24 @@
     
 }
 
-- (void) palceRegionOnMap:(CLLocationCoordinate2D)center radius:(CLLocationDistance)radius title:(NSString *)title strokeColor:(UIColor *)color imageName:(NSString *)image {
+/**
+ Creates the annotation and circles to add to map.
+ 
+ @param center The coordinates of the circle center and position of the annotation
+ @param radius The circle radius
+ @param title Text displayed when the annotation is tapped
+ @param color The color of the circle
+ @param image Name of the image which appears on the annotation
+ */
+
+- (void) palceRegionOnMap:(CLLocationCoordinate2D)center
+                   radius:(CLLocationDistance)radius
+                    title:(NSString *)title
+              strokeColor:(UIColor *)color
+                imageName:(NSString *)image {
     /**
      Add the pin
-    */
+     */
     MCAnnotation *pin = [[MCAnnotation alloc] init];
     pin.coordinate = center;
     pin.title = title;
@@ -102,7 +124,7 @@
     
     /**
      Add the circle
-    */
+     */
     MCCircle *circle = [MCCircle circleWithCenterCoordinate:center radius:radius strokeColor:color];
     [self.mapView addOverlay:circle];
 }

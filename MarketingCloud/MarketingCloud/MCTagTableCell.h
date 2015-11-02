@@ -12,7 +12,13 @@
 
 @protocol MCTagTableCellDelegate <NSObject>
 
-- (void) notificationRecive:(BOOL)recive indexPath:(NSIndexPath*)indexPath;
+/** 
+ Executes when a tag changes state, true or false
+ 
+ @param receive The state of the tag, true or false
+ @param indexPath The position of the cell in the table
+ */
+- (void) notificationReceive:(BOOL)receive indexPath:(NSIndexPath*)indexPath;
 
 @end
 

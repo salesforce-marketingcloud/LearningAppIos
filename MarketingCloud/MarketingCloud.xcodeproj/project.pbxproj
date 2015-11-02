@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */; };
 		8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */; };
+		8417EA651BE1186300DD21F7 /* MCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA641BE1186300DD21F7 /* MCInboxViewController.m */; };
 		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; };
 		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; };
 		846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC0911BD5349E000D8062 /* MCTagsViewController.m */; };
@@ -50,6 +51,8 @@
 		8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCircle.m; sourceTree = "<group>"; };
 		8417EA5F1BE0EBAB00DD21F7 /* MCAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAnnotation.h; sourceTree = "<group>"; };
 		8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAnnotation.m; sourceTree = "<group>"; };
+		8417EA631BE1186300DD21F7 /* MCInboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCInboxViewController.h; sourceTree = "<group>"; };
+		8417EA641BE1186300DD21F7 /* MCInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCInboxViewController.m; sourceTree = "<group>"; };
 		842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPush.h"; sourceTree = "<group>"; };
 		842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPush.m"; sourceTree = "<group>"; };
 		842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPushConstants.h"; sourceTree = "<group>"; };
@@ -130,6 +133,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8417EA621BE0FCDE00DD21F7 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				8417EA631BE1186300DD21F7 /* MCInboxViewController.h */,
+				8417EA641BE1186300DD21F7 /* MCInboxViewController.m */,
+			);
+			name = Index;
+			sourceTree = "<group>";
+		};
 		842ED54D1BD0392700CCDA0E /* Addition */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +205,7 @@
 		84B068DB1BD1435F00FE115D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8417EA621BE0FCDE00DD21F7 /* Index */,
 				8491460A1BDABFC30086C40D /* SubscribeKey */,
 				849145FF1BD93DC20086C40D /* GeoLocation */,
 				84D170061BD6896900D563F7 /* Tag */,
@@ -431,6 +444,7 @@
 				84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */,
 				8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */,
 				84D31EAA1BC6D1E400E31DAE /* main.m in Sources */,
+				8417EA651BE1186300DD21F7 /* MCInboxViewController.m in Sources */,
 				84D170011BD58F9100D563F7 /* MCTagTableCell.m in Sources */,
 				849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */,
 				8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */,

@@ -1,13 +1,13 @@
 //
-//  MCAnnotation.m
+//  MCInboxViewController.h
 //  MarketingCloud
 //
 //  Created by Mathias on 10/28/15.
 //  Copyright © 2015 Salesforce Marketing Cloud. All rights reserved.
 //
 
-#import "MCAnnotation.h"
+#import <UIKit/UIKit.h>
 
-@implementation MCAnnotation
+@interface MCInboxViewController : UIViewController
 
 @end

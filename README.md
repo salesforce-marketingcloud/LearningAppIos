@@ -12,6 +12,8 @@
 
     5. [Beacon and Geofence Messages](#0006)
 
+    6. [Analytics](#0006b)
+
 2. [iOS](#0017)
 
     1. [Previous steps](#0018)
@@ -31,6 +33,8 @@
     4. [Tag Implementation](#0025)
 
     5. [Beacon and Geofence Message Implementation](#0026)
+
+    6. [Implement Analytics in your Mobile App](#0026b)
 
 <a name="0001"></a>
 # About
@@ -102,6 +106,13 @@ You can use the location capabilities of the *JB4A SDK* to target messages to a 
 2. Ensure that you use version 7.8.0 or earlier of Google Play Services to enable geolocation for your app.
 
 3. You must receive user permission to implement location services.
+
+<a name="0006b"></a>
+## Analytics
+
+Mobile Application Analytics enables marketers to gather mobile app actions and behaviors from users and provides powerful visualizations of the data. The data helps you make informative decisions about how to structure your customer journeys, design your client facing experiences and tailor your digital marketing campaigns. The collected data is also available inside the Salesforce Marketing Cloud – ready to be used to segment messaging lists, provide highly personalized messaging content and drive 1:1  Custom Journeys.
+
+After enabling the analytics feature in your app, visit the Web & Mobile Analytics application within the Marketing Cloud.
 
 <a name="0017"></a>
 # iOS
@@ -474,3 +485,24 @@ To obtain the monitored regions use this method:
 ```objective-c
 [[ETLocationManager locationManager] monitoredRegions]
 ```
+
+<a name="0026b"></a>
+## Implement Analytics in your Mobile App
+
+**AppDelegate+ETPush.m**
+
+In the call to configureSDKWithAppID, pass a `YES` value for the withAnalytics parameter.
+
+```objective-c
+successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
+                                          andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
+                                           withAnalytics:YES                    //
+                                     andLocationServices:YES                    // set geoLocation
+                                           andCloudPages:YES                    //
+                                         withPIAnalytics:YES
+                                                   error:&error];
+```
+
+To see your new Web and Mobile Analytics, open the Web and Mobile Analytics app within the Marketing Cloud and agree to the Terms and Conditions to get started.
+
+![image alt text](imgReadMe/image_30.png)

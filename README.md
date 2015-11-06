@@ -14,7 +14,7 @@
 
     6. [Analytics](#0006b)
 
-2. [iOS](#0017)
+2. [Implementation on iOS](#0017)
 
     1. [Previous steps](#0018)
 
@@ -115,7 +115,7 @@ Mobile Application Analytics enables marketers to gather mobile app actions and 
 After enabling the analytics feature in your app, visit the Web & Mobile Analytics application within the Marketing Cloud.
 
 <a name="0017"></a>
-# iOS
+# Implementation on iOS
 
 <a name="0018"></a>
 ## Previous steps

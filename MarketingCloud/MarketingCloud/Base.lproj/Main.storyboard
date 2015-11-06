@@ -523,14 +523,10 @@
                         <constraints>
                             <constraint firstItem="IVs-g4-dq1" firstAttribute="centerX" secondItem="ygV-GL-ZCz" secondAttribute="centerX" id="2Yd-Di-4E9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ygV-GL-ZCz" secondAttribute="trailing" constant="-10" id="Et5-l1-OgU"/>
-                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="top" secondItem="99d-jQ-KIY" secondAttribute="bottom" constant="72" id="G0h-Hh-9fn"/>
-                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="centerX" secondItem="KOd-fk-Oov" secondAttribute="centerX" id="HZf-nE-K5Y"/>
-                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="leading" secondItem="KOd-fk-Oov" secondAttribute="leadingMargin" constant="-11" id="RU0-Aa-8cg"/>
-                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="leading" secondItem="KOd-fk-Oov" secondAttribute="leadingMargin" constant="-11" id="TQg-by-AwT"/>
-                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="bottom" secondItem="H2g-a0-koK" secondAttribute="top" id="UpS-wG-cAg"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="bottom" secondItem="H2g-a0-koK" secondAttribute="top" id="Fxf-2g-G6O"/>
                             <constraint firstItem="IVs-g4-dq1" firstAttribute="leading" secondItem="KOd-fk-Oov" secondAttribute="leading" id="Ycp-XI-FRW"/>
-                            <constraint firstItem="H2g-a0-koK" firstAttribute="top" secondItem="ygV-GL-ZCz" secondAttribute="bottom" id="hMH-0U-c4d"/>
-                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="top" secondItem="99d-jQ-KIY" secondAttribute="bottom" constant="72" id="jpK-nT-oFx"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="top" secondItem="99d-jQ-KIY" secondAttribute="bottom" constant="72" id="aOo-zr-j7F"/>
+                            <constraint firstItem="ygV-GL-ZCz" firstAttribute="leading" secondItem="KOd-fk-Oov" secondAttribute="leadingMargin" constant="-11" id="uQa-bp-g0f"/>
                             <constraint firstItem="IVs-g4-dq1" firstAttribute="top" secondItem="KOd-fk-Oov" secondAttribute="top" id="wZy-OG-c2L"/>
                         </constraints>
                     </view>

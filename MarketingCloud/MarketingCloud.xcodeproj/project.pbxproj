@@ -656,7 +656,7 @@
 					"$(PROJECT_DIR)/MarketingCloud",
 					"$(PROJECT_DIR)/MarketingCloud/JB4A",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.exacttarget.internal.js-052914PushTester";
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.marketingcloud.ios.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -674,7 +674,7 @@
 					"$(PROJECT_DIR)/MarketingCloud",
 					"$(PROJECT_DIR)/MarketingCloud/JB4A",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.exacttarget.internal.js-052914PushTester";
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.marketingcloud.ios.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

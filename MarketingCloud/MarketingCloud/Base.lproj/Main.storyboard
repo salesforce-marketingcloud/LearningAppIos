@@ -386,12 +386,13 @@
                                         <color key="textColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tc1-HJ-7XG">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tc1-HJ-7XG">
                                         <rect key="frame" x="209" y="59" width="51" height="31"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="49" id="10J-40-6lA"/>
-                                            <constraint firstAttribute="height" constant="31" id="yOC-4P-QnM"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="9is-0W-Mmn"/>
+                                            <constraint firstAttribute="height" constant="31" id="Vsh-St-Ee0"/>
+                                            <constraint firstAttribute="width" constant="49" id="obz-Hz-cWL"/>
                                         </constraints>
                                     </switch>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vwb-Us-6BX">
@@ -427,6 +428,7 @@
                                 <constraints>
                                     <constraint firstItem="g3O-Lh-pVz" firstAttribute="leading" secondItem="7kS-Jc-fld" secondAttribute="trailing" constant="19" id="5VM-Ak-ird"/>
                                     <constraint firstAttribute="bottom" secondItem="g3O-Lh-pVz" secondAttribute="bottom" constant="8" id="C6b-mS-tQZ"/>
+                                    <constraint firstItem="Tc1-HJ-7XG" firstAttribute="leading" secondItem="g3O-Lh-pVz" secondAttribute="trailing" constant="8" id="Eer-XO-4Cy"/>
                                     <constraint firstItem="7kS-Jc-fld" firstAttribute="leading" secondItem="7G0-Vk-2qJ" secondAttribute="leading" constant="8" id="HwK-pv-9j9"/>
                                     <constraint firstItem="7kS-Jc-fld" firstAttribute="centerY" secondItem="7G0-Vk-2qJ" secondAttribute="centerY" id="YKb-LK-goG"/>
                                     <constraint firstAttribute="bottom" secondItem="Tc1-HJ-7XG" secondAttribute="bottom" id="Z4q-9q-T6D"/>
@@ -434,9 +436,17 @@
                                     <constraint firstItem="vwb-Us-6BX" firstAttribute="centerY" secondItem="7G0-Vk-2qJ" secondAttribute="centerY" id="eTy-KZ-Zhc"/>
                                     <constraint firstAttribute="height" constant="93" id="kRm-hj-s1z"/>
                                     <constraint firstItem="Tc1-HJ-7XG" firstAttribute="leading" secondItem="g3O-Lh-pVz" secondAttribute="trailing" constant="8" id="oYQ-FO-bzO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tc1-HJ-7XG" secondAttribute="bottom" constant="3" id="vSQ-MT-6u2"/>
                                     <constraint firstItem="vwb-Us-6BX" firstAttribute="centerX" secondItem="7G0-Vk-2qJ" secondAttribute="centerX" id="xUm-kK-vRE"/>
                                     <constraint firstAttribute="bottom" secondItem="Tc1-HJ-7XG" secondAttribute="bottom" id="zct-EU-PXp"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Z4q-9q-T6D"/>
+                                        <exclude reference="ajb-wF-NgE"/>
+                                        <exclude reference="zct-EU-PXp"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <animations/>

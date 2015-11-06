@@ -12,6 +12,8 @@
 
     5. [Beacon and Geofence Messages](#0006)
 
+    6. [Analytics](#0006b)
+
 2. [iOS](#0017)
 
     1. [Previous steps](#0018)
@@ -31,6 +33,8 @@
     4. [Tag Implementation](#0025)
 
     5. [Beacon and Geofence Message Implementation](#0026)
+
+    6. [Implement Analytics in your Mobile App](#0026b)
 
 <a name="0001"></a>
 # About
@@ -102,6 +106,13 @@ You can use the location capabilities of the *JB4A SDK* to target messages to a 
 2. Ensure that you use version 7.8.0 or earlier of Google Play Services to enable geolocation for your app.
 
 3. You must receive user permission to implement location services.
+
+<a name="0006b"></a>
+## Analytics
+
+Mobile Application Analytics enables marketers to gather mobile app actions and behaviors from users and provides powerful visualizations of the data. The data helps you make informative decisions about how to structure your customer journeys, design your client facing experiences and tailor your digital marketing campaigns. The collected data is also available inside the Salesforce Marketing Cloud – ready to be used to segment messaging lists, provide highly personalized messaging content and drive 1:1  Custom Journeys.
+
+After enabling the analytics feature in your app, visit the Web & Mobile Analytics application within the Marketing Cloud.
 
 <a name="0017"></a>
 # iOS
@@ -310,7 +321,7 @@ The SDK can now be configured with the App ID and Access Token, as explained in 
 
 The boolean parameters `withAnalytics`, `andLocationServices`, `andCloudPages` and `withPIAnalytics` enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to `NO`.
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25-L31)
 ```objective-c
 successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
                                           andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
@@ -323,7 +334,7 @@ successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         
 
 If the configuration is successful and returns YES, the push notifications are registered.
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L65)
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L65-L92)
 ```objective-c
 UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
                                         UIUserNotificationTypeBadge |
@@ -338,7 +349,7 @@ UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTy
 ```
 If the configuration is unsuccessful an error message is shown:
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L49)
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L49-L59)
 ```objective-c
 dispatch_async(dispatch_get_main_queue(), ^{
     /**
@@ -362,7 +373,7 @@ To update the subscriber key, you should create a feature for the user to introd
 
 To get the subscriber key, use the following snippet (you can assign this value to any variable):
 
-[view the code](/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L47)
+[view the code](/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L50)
 ```objective-c
 self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
 ```
@@ -405,7 +416,7 @@ To get all the tags:
 
 To implement location services, pass a `YES` value for the `andLocationServices` parameter and use `ETLocationManager` to monitor location and geofence for a user.
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25-L31)
 ```objective-c
 successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
                                           andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
@@ -419,7 +430,7 @@ Make sure you also add the "NSLocationAlwaysUsageDescription" key to your applic
 
 After push notifications are registered, start watching locations to retrieve the fence and location notifications from ET Geofences and Beacons:
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L73)
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L74-L92)
 ```objective-c
 /**   
  Start geoLocation
@@ -438,7 +449,7 @@ After push notifications are registered, start watching locations to retrieve th
 ```
 When the application enters background mode, Location Services are disabled through the MobilePush SDK.
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L152)
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L158-L163)
 ```objective-c
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     /**
@@ -449,7 +460,7 @@ When the application enters background mode, Location Services are disabled thro
 ```
 When the application becomes active, Location Services are initiated through the MobilePush SDK.
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L159)
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L165-L170)
 ```objective-c
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     /**
@@ -470,7 +481,29 @@ If locations are active it returns `YES`, otherwise it returns `NO`.
 
 To obtain the monitored regions use this method:
 
-[view the code](/MarketingCloud/MarketingCloud/MCGeoLocationViewController.m#L55)
+[view the code](/MarketingCloud/MarketingCloud/MCGeoLocationViewController.m#L58)
 ```objective-c
 [[ETLocationManager locationManager] monitoredRegions]
 ```
+
+<a name="0026b"></a>
+## Implement Analytics in your Mobile App
+
+**AppDelegate+ETPush.m**
+
+In the call to configureSDKWithAppID, pass a `YES` value for the withAnalytics parameter.
+
+[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25)
+```objective-c
+successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
+                                          andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
+                                           withAnalytics:YES                    //
+                                     andLocationServices:YES                    // set geoLocation
+                                           andCloudPages:NO                     //
+                                         withPIAnalytics:NO 
+                                                   error:&error];
+```
+
+To see your new Web and Mobile Analytics, open the Web and Mobile Analytics app within the Marketing Cloud and agree to the Terms and Conditions to get started.
+
+![image alt text](imgReadMe/image_30.png)

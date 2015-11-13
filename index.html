@@ -1,173 +1,582 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Learning App iOS by salesforce-marketingcloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Learning App iOS</h1>
+      <h2 class="project-tagline">Mobile Engagement SDK App built to demonstrate and teach developers to use the SDK</h2>
+      <a href="https://github.com/salesforce-marketingcloud/LearningAppIos" class="btn">View on GitHub</a>
+      <a href="https://github.com/salesforce-marketingcloud/LearningAppIos/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/salesforce-marketingcloud/LearningAppIos/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-	<title>MarketingCloud Reference</title>
+    <section class="main-content">
+      <p><img src="imgReadMe/marketing_cloud_logo.png" alt="Marketing Cloud"></p>
 
-	<link rel="stylesheet" href="css/style.css">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
-</head>
-<body class="appledoc">
-	<header>
-		<div class="container" class="hide-in-xcode">
-			
-			<h1 id="library-title">
-				<a href="index.html">MarketingCloud </a>
-			</h1>
+<h1>
+<a id="readme" class="anchor" href="#readme" aria-hidden="true"><span class="octicon octicon-link"></span></a>README</h1>
 
-			<p id="developer-home">
-				<a href="index.html">Salesforce</a>
-			</p>
-			
-		</div>
-	</header>
+<ol>
+<li>
+<p><a href="#0001">About</a></p>
 
-	<aside>
-		<div class="container">
-			<nav>
-				<ul id="header-buttons" role="toolbar">
-					<li><a href="hierarchy.html">Hierarchy</a></li>
-				</ul>
-			</nav>
-		</div>
-	</aside>
+<ol>
+<li><p><a href="#0002">Marketing Cloud App Center</a></p></li>
+<li><p><a href="#0003">Push Notifications</a></p></li>
+<li><p><a href="#0004">Subscriber key</a></p></li>
+<li><p><a href="#0005">Tags</a></p></li>
+<li><p><a href="#0006">Beacon and Geofence Messages</a></p></li>
+<li><p><a href="#0006b">Analytics</a></p></li>
+</ol>
+</li>
+<li>
+<p><a href="#0017">Implementation on iOS</a></p>
 
-	<article>
-		<div id="overview-contents" class="container">
-			<div id="content">
-				<main role="main">
-					<h1 class="title">MarketingCloud Reference</h1>
+<ol>
+<li>
+<p><a href="#0018">Previous steps</a></p>
 
-					
+<ol>
+<li><p><a href="#0019">iOS Provisioning Panel</a></p></li>
+<li>
+<p><a href="#0020">Create your apps in the App Center</a></p>
 
-					<div class="index-container">
-						
+<ol>
+<li><p><a href="#0021">Add app to App Center</a></p></li>
+<li><p><a href="#0022">Integrate App Center app</a></p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><a href="#0023">Implementing the SDK Push Notifications</a></p></li>
+<li><p><a href="#0024">Subscriber Key Implementation</a></p></li>
+<li><p><a href="#0025">Tag Implementation</a></p></li>
+<li><p><a href="#0026">Beacon and Geofence Message Implementation</a></p></li>
+<li><p><a href="#0026b">Implement Analytics in your Mobile App</a></p></li>
+</ol>
+</li>
+</ol>
 
-						
-						<div class="index-column">
-							<h2 class="index-title">Class References</h2>
-							<ul>
-								
-								<li><a href="Classes/AppDelegate.html">AppDelegate</a></li>
-								
-								<li><a href="Classes/ETBulkUpdateShim.html">ETBulkUpdateShim</a></li>
-								
-								<li><a href="Classes/ETEvent.html">ETEvent</a></li>
-								
-								<li><a href="Classes/ETFenceMessage.html">ETFenceMessage</a></li>
-								
-								<li><a href="Classes/ETGenericUpdate.html">ETGenericUpdate</a></li>
-								
-								<li><a href="Classes/ETKeyValueStore.html">ETKeyValueStore</a></li>
-								
-								<li><a href="Classes/ETLandingPagePresenter.html">ETLandingPagePresenter</a></li>
-								
-								<li><a href="Classes/ETLocationManager.html">ETLocationManager</a></li>
-								
-								<li><a href="Classes/ETLocationUpdate.html">ETLocationUpdate</a></li>
-								
-								<li><a href="Classes/ETMessage.html">ETMessage</a></li>
-								
-								<li><a href="Classes/ETPhoneHome.html">ETPhoneHome</a></li>
-								
-								<li><a href="Classes/ETPush.html">ETPush</a></li>
-								
-								<li><a href="Classes/ETRegion.html">ETRegion</a></li>
-								
-								<li><a href="Classes/ETRegistration.html">ETRegistration</a></li>
-								
-								<li><a href="Classes/ETSqliteHelper.html">ETSqliteHelper</a></li>
-								
-								<li><a href="Classes/ETURLConnection.html">ETURLConnection</a></li>
-								
-								<li><a href="Classes/ExactTargetEnhancedPushDataSource.html">ExactTargetEnhancedPushDataSource</a></li>
-								
-								<li><a href="Classes/MCCircle.html">MCCircle</a></li>
-								
-								<li><a href="Classes/MCGeoLocationViewController.html">MCGeoLocationViewController</a></li>
-								
-								<li><a href="Classes/MCInboxViewController.html">MCInboxViewController</a></li>
-								
-								<li><a href="Classes/MCSubscribeKeyViewController.html">MCSubscribeKeyViewController</a></li>
-								
-								<li><a href="Classes/MCTagTableCell.html">MCTagTableCell</a></li>
-								
-								<li><a href="Classes/MCTagsViewController.html">MCTagsViewController</a></li>
-								
-								<li><a href="Classes/PIEvent.html">PIEvent</a></li>
-								
-							</ul>
-						</div>
-						
+<p><a name="0001"></a></p>
 
-						
-						<div class="index-column">
-							
-							<h2 class="index-title">Protocol References</h2>
-							<ul>
-								
-								<li><a href="Protocols/ETGenericUpdateObjectProtocol.html">ETGenericUpdateObjectProtocol</a></li>
-								
-								<li><a href="Protocols/ExactTargetOpenDirectDelegate.html">ExactTargetOpenDirectDelegate</a></li>
-								
-								<li><a href="Protocols/MCTagTableCellDelegate.html">MCTagTableCellDelegate</a></li>
-								
-							</ul>
-							
+<h1>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span class="octicon octicon-link"></span></a>About</h1>
 
-							
-							<h2 class="index-title">Constant References</h2>
-							<ul>
-								
-									<li><a href="Constants/ETRegionRequestType.html">ETRegionRequestType</a></li>
-								
-									<li><a href="Constants/GenericUpdateSendMethod.html">GenericUpdateSendMethod</a></li>
-								
-									<li><a href="Constants/LocationUpdateAppState.html">LocationUpdateAppState</a></li>
-								
-									<li><a href="Constants/MPMessageSource.html">MPMessageSource</a></li>
-								
-									<li><a href="Constants/MobilePushContentType.html">MobilePushContentType</a></li>
-								
-									<li><a href="Constants/MobilePushGeofenceType.html">MobilePushGeofenceType</a></li>
-								
-									<li><a href="Constants/MobilePushMessageFrequencyUnit.html">MobilePushMessageFrequencyUnit</a></li>
-								
-									<li><a href="Constants/MobilePushMessageType.html">MobilePushMessageType</a></li>
-								
-									<li><a href="Constants/MobilePushStatisticType.html">MobilePushStatisticType</a></li>
-								
-									<li><a href="Constants/NSURLConnResponse.html">NSURLConnResponse</a></li>
-								
-									<li><a href="Constants/PIEventType.html">PIEventType</a></li>
-								
-									<li><a href="Constants/configureSDKWithAppIDError.html">configureSDKWithAppIDError</a></li>
-								
-							</ul>
-							
+<p>This project provides a template for creating a mobile app (for iOS) that uses the Journey Builder for Apps SDK.  It is also a UI for exploring its features and provides a mechanism to collect and send debugging information to learn about the workings of the SDK as you explore.</p>
 
-							
-						</div>
-						
-					</div>
+<p>The code in this repository includes all of the code used to run the fully functional APK including an App ID and Access Token to let you test and debug the application. These keys will trigger an hourly automated push message of a timestamp, indicating that the application is properly setup. To create a new app the following keys must be set with your own values within the corresponding file.</p>
 
-					<footer>
-						<div class="footer-copyright">
-							
-							<p class="copyright">Copyright &copy; 2015 Salesforce. All rights reserved. Updated: 2015-11-06</p>
-							
-							
-							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
-							
-						</div>
-					</footer>
-				</main>
-			</div>
-		</div>
-	</article>
+<p><strong>AppDelegate+ETPushConstants.m</strong></p>
 
-	<script src="js/script.js"></script>
-</body>
+<ol>
+<li><p><code>kETAppID_Prod</code>: the App ID for your development app as defined in the App Center section of the Marketing Cloud.</p></li>
+<li><p><code>kETAccessToken_Prod</code>: the Access Token for your development app as defined in the App Center section of the Marketing Cloud.</p></li>
+</ol>
+
+<p>NB: You can use different keys for the staging/testing phase and the production phase.  Staging/testing keys are called <code>kETAppID_Debug</code> and <code>kETAccessToken_Debug</code>.
+<a name="0002"></a></p>
+
+<h2>
+<a id="marketing-cloud-app-center" class="anchor" href="#marketing-cloud-app-center" aria-hidden="true"><span class="octicon octicon-link"></span></a>Marketing Cloud App Center</h2>
+
+<p>App Center is the central development console for using Fuel’s APIs and building Marketing Cloud apps.</p>
+
+<p>In order to connect your app to the Marketing Cloud, you must first create a MobilePush app in the App Center. </p>
+
+<p>Each app in App Center represents an application connected to the Marketing Cloud. App Center currently manages four types of connected apps:</p>
+
+<ul>
+<li><p><em>API Integration</em> allows you to leverage the Marketing Cloud APIs. Create an API Integration app when you want to use Fuel APIs to automate tasks or integrate business systems. API Integration apps utilize an OAuth2 client credentials flow to acquire access tokens directly from the Fuel authentication service.</p></li>
+<li><p><em>Marketing Cloud apps</em> represent apps that live within the Salesforce Marketing Cloud and launch via the Marketing Cloud app menu. Marketing Cloud apps include custom apps built by your organization or apps installed from the Salesforce Marketing Cloud HubExchange. Marketing Cloud apps utilize a JSON Web Token (JWT) to acquire access tokens on behalf of logged in users.</p></li>
+<li><p><em>Application Extensions</em> allow you to extend the Marketing Cloud with custom Journey Builder activities, Cloud Editor Blocks, and Automation Studio activities.</p></li>
+<li><p><em>MobilePush apps</em> represent apps built for the iOS, Android, or Blackberry mobile platforms that use MobilePush to communicate with their users via push messages. The Salesforce Marketing Cloud classifies MobilePush apps as consumer-grade applications and utilize long-lived limited access tokens.</p></li>
+</ul>
+
+<p>If you haven’t already, you should <a href="https://appcenter-auth.exacttargetapps.com/create">create an App Center account</a>.</p>
+
+<p>If you have an App Center account, you can <a href="https://appcenter-auth.exacttargetapps.com/redirect">log in to that account</a>.
+<a name="0003"></a></p>
+
+<h2>
+<a id="push-notifications" class="anchor" href="#push-notifications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Push Notifications</h2>
+
+<p>MobilePush lets you create and send targeted push messages based on cross-channel consumer data to encourage app usage and deliver increased ROI.  With MobilePush, you view how users navigate through your app and because MobilePush is built on the Salesforce Marketing Cloud, you can easily integrate push message campaigns with any email, SMS, or social campaigns.
+<a name="0004"></a></p>
+
+<h2>
+<a id="subscriber-key" class="anchor" href="#subscriber-key" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subscriber key</h2>
+
+<p>A subscriber is a person who has opted to receive communications from your organization. </p>
+
+<p>A valid email address is required to receive emails and a phone number to receive SMS messages.  Additional information about subscribers can be tracked using profile and preference attributes.</p>
+
+<p>The Subscriber Key serves to identify your subscribers.</p>
+
+<p>It can be set to a specific value provided by the subscriber such as a phone number, email address, or other appropriate value but most importantly a value that you choose.</p>
+
+<p>For example, using a subscriber key to identify a subscriber with a value other than the email address would allow you to:</p>
+
+<ul>
+<li><p>Maintain multiple sets of subscriber attributes for a single email address. For example, if a family shares an email address, you can use a subscriber key to uniquely identify each member of the family.</p></li>
+<li><p>Include a single email address multiple times on a list. For example, if a message interaction sends a separate message for each car a subscriber owns, it may be appropriate for a single subscriber to receive multiple messages.</p></li>
+</ul>
+
+<p>The Salesforce Marketing Cloud interface as well as the Web Service SOAP API support functionality around subscribers identified with a subscriber key.
+<a name="0005"></a></p>
+
+<h2>
+<a id="tags" class="anchor" href="#tags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tags</h2>
+
+<p>Tags let you implement contact segmentation. You can set tags for subscriptions as defined by user choice.  Additionally, use tags to collect information from the mobile app and for unstructured data or data that can contain many potential unknown values. For example, you can use tags when the number of potential attribute names exceeds the number of potential values of an individual attribute (such as the favorite brand specified by a contact).
+<a name="0006"></a></p>
+
+<h2>
+<a id="beacon-and-geofence-messages" class="anchor" href="#beacon-and-geofence-messages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beacon and Geofence Messages</h2>
+
+<p>You can use the location capabilities of the <em>JB4A SDK</em> to target messages to a segmented group of contacts.  Send personalized messages to increase engagement. The app pre-downloads geofence messages and triggers those messages when a mobile device crosses a geofence boundary.  To use this functionality:</p>
+
+<ol>
+<li><p>The account must have access to both MobilePush and Location Services.</p></li>
+<li><p>Ensure that you use version 7.8.0 or earlier of Google Play Services to enable geolocation for your app.</p></li>
+<li><p>You must receive user permission to implement location services.</p></li>
+</ol>
+
+<p><a name="0006b"></a></p>
+
+<h2>
+<a id="analytics" class="anchor" href="#analytics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Analytics</h2>
+
+<p>Mobile Application Analytics enables marketers to gather mobile app actions and behaviors from users and provides powerful visualizations of the data. The data helps you make informative decisions about how to structure your customer journeys, design your client facing experiences and tailor your digital marketing campaigns. The collected data is also available inside the Salesforce Marketing Cloud – ready to be used to segment messaging lists, provide highly personalized messaging content and drive 1:1  Custom Journeys.</p>
+
+<p>After enabling the analytics feature in your app, visit the Web &amp; Mobile Analytics application within the Marketing Cloud.</p>
+
+<p><a name="0017"></a></p>
+
+<h1>
+<a id="implementation-on-ios" class="anchor" href="#implementation-on-ios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation on iOS</h1>
+
+<p><a name="0018"></a></p>
+
+<h2>
+<a id="previous-steps" class="anchor" href="#previous-steps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Previous steps</h2>
+
+<ol>
+<li><p>iOS Provisioning Panel</p></li>
+<li><p>Create your apps in the App Center</p></li>
+</ol>
+
+<p><a name="0019"></a></p>
+
+<h3>
+<a id="ios-provisioning-panel" class="anchor" href="#ios-provisioning-panel" aria-hidden="true"><span class="octicon octicon-link"></span></a>iOS Provisioning Panel</h3>
+
+<p>You must provision your mobile app in the iOS Provisioning Panel. The certificates issued in the process remain valid for one year. Ensure that you repeat this procedure once per year before your certificates expire to maintain app functionality. Follow the instructions below to integrate version 3.4.2 of the Journey Builder for Apps SDK with your iOS mobile app.</p>
+
+<ol>
+<li><p>Log in at the iOS Dev Center.</p></li>
+<li>
+<p>Click Certificates, Identifiers &amp; Profiles.</p>
+
+<p><img src="imgReadMe/image_16.jpg" alt="image alt text"></p>
+</li>
+<li>
+<p>Click Identifiers.</p>
+
+<p><img src="imgReadMe/image_17.jpg" alt="image alt text"></p>
+</li>
+<li>
+<p>Click the + icon to create a new app.</p>
+
+<p><img src="imgReadMe/image_18.jpg" alt="image alt text"></p>
+</li>
+<li>
+<p>Enter a name for the app in the Name text field.</p>
+
+<p><img src="imgReadMe/image_19.jpg" alt="image alt text"></p>
+</li>
+<li><p>Enter an explicit app ID in the Bundle ID field.</p></li>
+<li><p>Click the checkbox next to Push Notifications.</p></li>
+<li><p>Click Continue.</p></li>
+<li><p>Click Submit to confirm your app ID creation.</p></li>
+<li>
+<p>Select your app in the presented list.</p>
+
+<p><img src="imgReadMe/image_20.jpg" alt="image alt text"></p>
+</li>
+<li><p>Click Edit.</p></li>
+<li>
+<p>Click Create Certificate... under Development SSL Certificate or Production SSL Certificate depending on the instance of the app you provision. Note that you must repeat these steps for both the development and production instances of this app.</p>
+
+<p><img src="imgReadMe/image_21.jpg" alt="image alt text"></p>
+</li>
+<li>
+<p>Launch Keychain Access on your Mac.</p>
+
+<p><img src="imgReadMe/image_22.jpg" alt="image alt text"></p>
+</li>
+<li><p>Click Keychain Access.</p></li>
+<li><p>Click Certificate Assistant.</p></li>
+<li><p>Click Request a Certificate from a Certificate Authority...</p></li>
+<li>
+<p>Enter your email address in the User Email Address field.</p>
+
+<p><img src="imgReadMe/image_23.jpg" alt="image alt text"></p>
+</li>
+<li><p>Enter a recognizable name for the certificate in the Common Name field.</p></li>
+<li><p>Click Saved to disk.</p></li>
+<li><p>Click Continue.</p></li>
+<li>
+<p>Enter a filename for the saved certificate.</p>
+
+<p><img src="imgReadMe/image_24.jpg" alt="image alt text"></p>
+</li>
+<li><p>Choose a location at which to save the certificate.</p></li>
+<li><p>Click Save.</p></li>
+<li><p>Return to the iOS Dev Center website.</p></li>
+<li>
+<p>Click Continue.</p>
+
+<p><img src="imgReadMe/image_25.jpg" alt="image alt text"></p>
+</li>
+<li><p>Click Choose File.</p></li>
+<li>
+<p>Select the file saved in step 23.</p>
+
+<p><img src="imgReadMe/image_26.jpg" alt="image alt text"></p>
+</li>
+<li><p>Click Generate.</p></li>
+<li>
+<p>Click Download.</p>
+
+<p><img src="imgReadMe/image_27.jpg" alt="image alt text"></p>
+</li>
+<li><p>Double-click the downloaded file to install the certificate in Keychain Access.</p></li>
+<li>
+<p>Select the certificate in Keychain Access.</p>
+
+<p><img src="imgReadMe/image_28.jpg" alt="image alt text"></p>
+</li>
+<li><p>Right-click on the certificate.</p></li>
+<li><p>Select Export. Ensure that you select only the certificate entry when exporting your certifications. Selecting multiple lines for export will cause an upload failure. Ensure you do not export the certificate as an embedded key.</p></li>
+<li><p>Select a location to which to save the certificate.</p></li>
+<li><p>Click Save.</p></li>
+<li>
+<p>Optionally, enter a password in the Password field.</p>
+
+<p><img src="imgReadMe/image_29.jpg" alt="image alt text"></p>
+</li>
+<li><p>If you entered a password, enter that password again in the Verify field.</p></li>
+<li><p>If you entered a password, Click OK.</p></li>
+<li><p>Use the production and development certificates (the .p12 files) created in the previous steps along with the passwords to add to your MobilePush app in the the <em>Create your apps in the App Center</em> step.</p></li>
+</ol>
+
+<p><a name="0020"></a></p>
+
+<h3>
+<a id="create-your-apps-in-the-app-center" class="anchor" href="#create-your-apps-in-the-app-center" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create your apps in the App Center</h3>
+
+<p>In order to connect your app to your Marketing Cloud account, you must follow these steps:</p>
+
+<ol>
+<li><p>Add app to App Center.</p></li>
+<li><p>Integrate the App Center app to your Marketing Cloud account.</p></li>
+<li><p>Add the Provisioning info created in the iOS Dev Center to the app in the App Center.</p></li>
+</ol>
+
+<p><a name="0021"></a></p>
+
+<h4>
+<a id="add-app-to-app-center" class="anchor" href="#add-app-to-app-center" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add app to App Center</h4>
+
+<p>To create a new MobilePush app:</p>
+
+<ol>
+<li><p><a href="https://appcenter-auth.exacttargetapps.com/redirect">Log in to the App Center</a> (<a href="https://appcenter-auth.exacttargetapps.com/create">create an account</a> if necessary).</p></li>
+<li>
+<p>Create a new app and select the MobilePush template</p>
+
+<p><img src="imgReadMe/image_10.png" alt="image alt text"></p>
+</li>
+<li>
+<p>Fill in, at a minimum, the mandatory fields in this form.</p>
+
+<p><img src="imgReadMe/image_11.png" alt="image alt text"></p>
+
+<p><em>Depending on your setup, repeat this process if you plan on using different instances for production and development.</em></p>
+
+<p>Note the following about the required fields:</p>
+
+<ol>
+<li><p>The <strong>Name</strong> can be anything you choose.</p></li>
+<li><p>The <strong>Package</strong> has no correlation to anything outside of the MarketingCloud ecosystem and can be <strong>any</strong> unique identifier for your application.</p></li>
+<li><p>The <strong>Description</strong> &amp; <strong>MobilePush Icon</strong> fields are optional but will help you identify your application within your Marketing Cloud account. </p></li>
+</ol>
+</li>
+<li><p>Click <strong>Next</strong> in order to integrate this new app with your Marketing Cloud account.</p></li>
+</ol>
+
+<p><a name="0022"></a></p>
+
+<h4>
+<a id="integrate-app-center-app" class="anchor" href="#integrate-app-center-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>Integrate App Center app</h4>
+
+<p>The MobilePush app created in the App Center must be connected to a specific Marketing Cloud account. You must have a login for your Marketing Cloud account in order to connect this MobilePush app to the correct Marketing Cloud account.</p>
+
+<p>Follow these steps in order to connect this MobilePush app to the correct Marketing Cloud account:</p>
+
+<ol>
+<li>
+<p>Select an account (or New…) in the <strong>Account</strong> drop-down.</p>
+
+<p><img src="imgReadMe/image_12.png" alt="image alt text"></p>
+</li>
+<li><p>Select the <strong>Production ExactTarget Account</strong> button <em>unless otherwise instructed by your Salesforce Marketing Cloud relationship manager.</em></p></li>
+<li>
+<p>Click <strong>Link to Account</strong>.</p>
+
+<p>A popup window (pictured below) will appear.</p>
+
+<p><img src="imgReadMe/image_13.png" alt="image alt text"></p>
+
+<p>In an Enterprise 2.0 account, ensure that you select the correct business unit for your app integration.</p>
+</li>
+<li><p>Click <strong>Integrate</strong>.</p></li>
+<li><p>In the APNS Client section, click <strong>Choose File</strong> and upload the APNS certificate provided when you created your app in the<a href="https://developer.apple.com/devcenter/ios/"> iOS Dev Center</a>.</p></li>
+<li>
+<p>Type in the APNS certificate password in the <strong>Password</strong> field.</p>
+
+<p><img src="imgReadMe/image_14.png" alt="image alt text"></p>
+</li>
+<li><p>When you have all the fields required for your application’s platform(s) populated, click <em>Next</em>.</p></li>
+<li>
+<p>Review the information you provided and check for any potential errors and click <strong>Finish</strong>.</p>
+
+<p>You should be presented with a <em>Success!</em> message and an application details screen. Any of the areas can be edited by clicking the edit icon associated with the <strong>Summary</strong> or <strong>Application Provisioning</strong> sections.</p>
+
+<p><img src="imgReadMe/image_15.png" alt="image alt text"></p>
+</li>
+</ol>
+
+<p><a name="0023"></a></p>
+
+<h2>
+<a id="implementing-the-sdk-push-notifications" class="anchor" href="#implementing-the-sdk-push-notifications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementing the SDK Push Notifications</h2>
+
+<p><strong>AppDelegate+ETPushConstants.m</strong></p>
+
+<p>The SDK can now be configured with the App ID and Access Token, as explained in the <em>About</em> section.  Update <code>kETAppID_Prod</code> and <code>kETAccessToken_Prod</code> with their respective values.</p>
+
+<p><strong>AppDelegate+ETPush.m</strong></p>
+
+<p>The boolean parameters <code>withAnalytics</code>, <code>andLocationServices</code>, <code>andCloudPages</code> and <code>withPIAnalytics</code> enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to <code>NO</code>.</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25-L31">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>successful = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">configureSDKWithAppID:</span><span class="pl-c1">kETAppID_Debug</span>         <span class="pl-c">// set the Debug ID</span>
+                                          <span class="pl-c1">andAccessToken:</span><span class="pl-c1">kETAccessToken_Debug</span>   <span class="pl-c">// set the Debug Access Token</span>
+                                           <span class="pl-c1">withAnalytics:</span><span class="pl-c1">NO</span>                     
+                                     <span class="pl-c1">andLocationServices:</span><span class="pl-c1">NO</span>                     <span class="pl-c">// set geoLocation</span>
+                                           <span class="pl-c1">andCloudPages:</span><span class="pl-c1">NO</span>                     
+                                         <span class="pl-c1">withPIAnalytics:</span><span class="pl-c1">NO</span>
+                                                   <span class="pl-c1">error:</span>&amp;error];</pre></div>
+
+<p>If the configuration is successful and returns YES, the push notifications are registered.</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L65-L92">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>UIUserNotificationSettings *settings = [UIUserNotificationSettings <span class="pl-c1">settingsForTypes:</span>
+                                        UIUserNotificationTypeBadge |
+                                        UIUserNotificationTypeSound |
+                                        UIUserNotificationTypeAlert
+                                                                         <span class="pl-c1">categories:</span><span class="pl-c1">nil</span>];
+
+[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">registerUserNotificationSettings:</span>settings];
+[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">registerForRemoteNotifications</span>];
+…
+[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">applicationLaunchedWithOptions:</span>launchOptions];</pre></div>
+
+<p>If the configuration is unsuccessful an error message is shown:</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L49-L59">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-en">dispatch_async</span>(dispatch_get_main_queue(), ^{
+    <span class="pl-c">/**</span>
+<span class="pl-c">     Something has failed in the configureSDKWithAppID call - show error message</span>
+<span class="pl-c">     */</span>
+    [[[UIAlertView <span class="pl-c1">alloc</span>] <span class="pl-c1">initWithTitle:</span>NSLocalizedString(<span class="pl-s"><span class="pl-pds">@"</span>Failed configureSDKWithAppID!<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>Failed configureSDKWithAppID!<span class="pl-pds">"</span></span>)
+                                <span class="pl-c1">message:</span>[error <span class="pl-c1">localizedDescription</span>]
+                                <span class="pl-c1">elegate:</span><span class="pl-c1">nil</span>
+                      <span class="pl-c1">cancelButtonTitle:</span>NSLocalizedString(<span class="pl-s"><span class="pl-pds">@"</span>OK<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">@"</span>OK<span class="pl-pds">"</span></span>)
+                      <span class="pl-c1">otherButtonTitles:</span><span class="pl-c1">nil</span>] <span class="pl-c1">show</span>];
+});</pre></div>
+
+<p>Check the error object for detailed failure info. See file PushConstants.h for codes.</p>
+
+<p><a name="0024"></a></p>
+
+<h2>
+<a id="subscriber-key-implementation" class="anchor" href="#subscriber-key-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subscriber Key Implementation</h2>
+
+<p>To update the subscriber key, you should create a feature for the user to introduce a value, and then set this new value in the pushManager.</p>
+
+<p><strong>MCSubscribeKeyViewController.m</strong></p>
+
+<p>To get the subscriber key, use the following snippet (you can assign this value to any variable):</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L50">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>self.subscriberKey.text = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">getSubscriberKey</span>];</pre></div>
+
+<p>To set the subscriber key, use the following snippet (substitute self.subscriberKey.text with the appropriate value):</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/MCSubscribeKeyViewController.m#L39">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">setSubscriberKey:</span><span class="pl-v">self</span>.subscriberKey.text];</pre></div>
+
+<p><a name="0025"></a></p>
+
+<h2>
+<a id="tag-implementation" class="anchor" href="#tag-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tag Implementation</h2>
+
+<p>To implement contact segmentation by tags, include code to set tags for subscriptions as defined by user choice.</p>
+
+<p><strong>MCTagsViewController.m</strong></p>
+
+<p>To add a tag:</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/MCTagsViewController.m#L112">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">addTag:</span><span class="pl-s"><span class="pl-pds">@"</span>tag<span class="pl-pds">"</span></span>];</pre></div>
+
+<p>To remove a tag:</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/MCTagsViewController.m#L114">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">removeTag:</span><span class="pl-s"><span class="pl-pds">@"</span>tag<span class="pl-pds">"</span></span>];</pre></div>
+
+<p>To get all the tags:</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/MCTagsViewController.m#L43">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">allTags</span>];</pre></div>
+
+<p><a name="0026"></a></p>
+
+<h2>
+<a id="beacon-and-geofence-message-implementation" class="anchor" href="#beacon-and-geofence-message-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beacon and Geofence Message Implementation</h2>
+
+<p><strong>AppDelegate+ETPush.m</strong></p>
+
+<p>To implement location services, pass a <code>YES</code> value for the <code>andLocationServices</code> parameter and use <code>ETLocationManager</code> to monitor location and geofence for a user.</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25-L31">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>successful = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">configureSDKWithAppID:</span><span class="pl-c1">kETAppID_Debug</span>         <span class="pl-c">// set the Debug ID</span>
+                                          <span class="pl-c1">andAccessToken:</span><span class="pl-c1">kETAccessToken_Debug</span>   <span class="pl-c">// set the Debug Access Token</span>
+                                           <span class="pl-c1">withAnalytics:</span><span class="pl-c1">NO</span>                     
+                                     <span class="pl-c1">andLocationServices:</span><span class="pl-c1">YES</span>                    <span class="pl-c">// set geoLocation</span>
+                                           <span class="pl-c1">andCloudPages:</span><span class="pl-c1">NO</span>                     
+                                         <span class="pl-c1">withPIAnalytics:</span><span class="pl-c1">NO</span>
+                                                   <span class="pl-c1">error:</span>&amp;error];</pre></div>
+
+<p>Make sure you also add the "NSLocationAlwaysUsageDescription" key to your application’s *.plist file. See docs: <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18">NSLocationAlwaysUsageDescription</a> and <a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW27">NSLocationUsageDescription</a>.</p>
+
+<p>After push notifications are registered, start watching locations to retrieve the fence and location notifications from ET Geofences and Beacons:</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L74-L92">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-c">/**   </span>
+<span class="pl-c"> Start geoLocation</span>
+<span class="pl-c"> */</span>
+[[ETLocationManager <span class="pl-c1">locationManager</span>]startWatchingLocation];
+
+<span class="pl-c">/**</span>
+<span class="pl-c"> Begins fence retrieval from ET of Geofences.</span>
+<span class="pl-c"> */</span>
+[ETRegion <span class="pl-c1">retrieveGeofencesFromET</span>];
+
+<span class="pl-c">/**</span>
+<span class="pl-c"> Begins fence retrieval from ET of Beacons.</span>
+<span class="pl-c"> */</span>
+[ETRegion <span class="pl-c1">retrieveProximityFromET</span>];</pre></div>
+
+<p>When the application enters background mode, Location Services are disabled through the MobilePush SDK.</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L158-L163">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)applicationDidEnterBackground:(UIApplication *)application {
+    <span class="pl-c">/**</span>
+<span class="pl-c">     Use this method to disable Location Services through the MobilePush SDK.</span>
+<span class="pl-c">     */</span>
+    [[ETLocationManager <span class="pl-c1">locationManager</span>]stopWatchingLocation];
+}</pre></div>
+
+<p>When the application becomes active, Location Services are initiated through the MobilePush SDK.</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L165-L170">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)applicationDidBecomeActive:(UIApplication *)application {
+    <span class="pl-c">/**</span>
+<span class="pl-c">     Use this method to initiate Location Services through the MobilePush SDK.</span>
+<span class="pl-c">     */</span>
+    [[ETLocationManager <span class="pl-c1">locationManager</span>]startWatchingLocation];
+}</pre></div>
+
+<p><strong>MCGeoLocationViewController.m</strong></p>
+
+<p>To check if locations are active, use the boolean method:</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/MCGeoLocationViewController.m#L34">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>[[ETLocationManager <span class="pl-c1">locationManager</span>]getWatchingLocation]</pre></div>
+
+<p>If locations are active it returns <code>YES</code>, otherwise it returns <code>NO</code>.</p>
+
+<p>To obtain the monitored regions use this method:</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/MCGeoLocationViewController.m#L58">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>[[ETLocationManager <span class="pl-c1">locationManager</span>] <span class="pl-c1">monitoredRegions</span>]</pre></div>
+
+<p><a name="0026b"></a></p>
+
+<h2>
+<a id="implement-analytics-in-your-mobile-app" class="anchor" href="#implement-analytics-in-your-mobile-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implement Analytics in your Mobile App</h2>
+
+<p><strong>AppDelegate+ETPush.m</strong></p>
+
+<p>In the call to configureSDKWithAppID, pass a <code>YES</code> value for the withAnalytics parameter.</p>
+
+<p><a href="/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25">view the code</a></p>
+
+<div class="highlight highlight-source-objc"><pre>successful = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">configureSDKWithAppID:</span><span class="pl-c1">kETAppID_Debug</span>         <span class="pl-c">// set the Debug ID</span>
+                                          <span class="pl-c1">andAccessToken:</span><span class="pl-c1">kETAccessToken_Debug</span>   <span class="pl-c">// set the Debug Access Token</span>
+                                           <span class="pl-c1">withAnalytics:</span><span class="pl-c1">YES</span>                    <span class="pl-c">//</span>
+                                     <span class="pl-c1">andLocationServices:</span><span class="pl-c1">YES</span>                    <span class="pl-c">// set geoLocation</span>
+                                           <span class="pl-c1">andCloudPages:</span><span class="pl-c1">NO</span>                     <span class="pl-c">//</span>
+                                         <span class="pl-c1">withPIAnalytics:</span><span class="pl-c1">NO</span> 
+                                                   <span class="pl-c1">error:</span>&amp;error];</pre></div>
+
+<p>To see your new Web and Mobile Analytics, open the Web and Mobile Analytics app within the Marketing Cloud and agree to the Terms and Conditions to get started.</p>
+
+<p><img src="imgReadMe/image_30.png" alt="image alt text"></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/salesforce-marketingcloud/LearningAppIos">Learning App iOS</a> is maintained by <a href="https://github.com/salesforce-marketingcloud">salesforce-marketingcloud</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
 </html>

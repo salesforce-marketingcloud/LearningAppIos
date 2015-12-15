@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.readmeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://github.com/romina-oktana/marketing-cloud-SDK-iOS/blob/readme/README.md#readme"]]];
+    // https://github.com/romina-oktana/marketing-cloud-SDK-iOS/blob/readme/README.md#readme
+    [self.readmeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://salesforce-marketingcloud.github.io/JB4A-SDK-iOS/"]]];
 }
 
 - (void)didReceiveMemoryWarning {

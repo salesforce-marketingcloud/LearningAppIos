@@ -42,6 +42,7 @@
 		84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB61BC6D1E400E31DAE /* LaunchScreen.storyboard */; };
 		84D31EC31BC6D1E400E31DAE /* MarketingCloudTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EC21BC6D1E400E31DAE /* MarketingCloudTests.m */; };
 		84D31ECE1BC6D1E400E31DAE /* MarketingCloudUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */; };
+		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		84D31EC91BC6D1E400E31DAE /* MarketingCloudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketingCloudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketingCloudUITests.m; sourceTree = "<group>"; };
 		84D31ECF1BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5104FBD1C21EF11006D6884 /* MCOfficialDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOfficialDocViewController.h; sourceTree = "<group>"; };
+		B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCOfficialDocViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,7 @@
 		84B068DB1BD1435F00FE115D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5104FBC1C21EED4006D6884 /* OfficialDocs */,
 				8417EA691BE26F2F00DD21F7 /* Home */,
 				8417EA621BE0FCDE00DD21F7 /* Inbox */,
 				8491460A1BDABFC30086C40D /* SubscribeKey */,
@@ -332,6 +336,15 @@
 				849146031BDA4F300086C40D /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5104FBC1C21EED4006D6884 /* OfficialDocs */ = {
+			isa = PBXGroup;
+			children = (
+				B5104FBD1C21EF11006D6884 /* MCOfficialDocViewController.h */,
+				B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */,
+			);
+			name = OfficialDocs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +517,7 @@
 				849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */,
 				8417EA6C1BE2709100DD21F7 /* MCReadmeViewController.m in Sources */,
 				8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */,
+				B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */,
 				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
 				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,

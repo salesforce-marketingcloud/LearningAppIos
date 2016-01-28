@@ -13,7 +13,6 @@
 
 // Libraries
 #import "ETPush.h"
-#import "ETEvent.h"
 
 // helper
 #import "MCCircle.h"

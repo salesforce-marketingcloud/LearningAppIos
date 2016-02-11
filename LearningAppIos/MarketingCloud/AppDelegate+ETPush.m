@@ -6,6 +6,8 @@
 #import "AppDelegate+ETPush.h"
 #import "ETPush.h" // From the SDK
 #import "AppDelegate+ETPushConstants.h"
+#import "ETAnalytics.h"
+#import "ETKeyValueStore.h"
 
 @implementation AppDelegate (ETPush)
 
@@ -26,8 +28,8 @@
                                               andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
                                                withAnalytics:YES                    //
                                          andLocationServices:YES                    // set geoLocation
-                                               andCloudPages:NO                     //
-                                             withPIAnalytics:NO
+                                               andCloudPages:YES                     //
+                                             withPIAnalytics:YES
                                                        error:&error];
 #else
     /**
@@ -37,8 +39,8 @@
                                               andAccessToken:kETAccessToken_Prod    // set the Production Access Token
                                                withAnalytics:YES
                                          andLocationServices:YES                    // set geoLocation 
-                                               andCloudPages:NO
-                                             withPIAnalytics:NO
+                                               andCloudPages:YES
+                                             withPIAnalytics:YES
                                                        error:&error];
 #endif
     /**
@@ -57,6 +59,8 @@
                               otherButtonTitles:nil] show];
             
         });
+			[ETAnalytics trackPageView:@"data://SDKInitializationFailed" andTitle:[error localizedDescription] andItem:nil andSearch:nil];
+
     }
     else {
         /**
@@ -74,7 +78,7 @@
         /**
          Start geoLocation
          */
-        [[ETLocationManager locationManager]startWatchingLocation];
+        [[ETLocationManager sharedInstance]startWatchingLocation];
         
         /**
          Begins fence retrieval from ET of Geofences.
@@ -90,8 +94,9 @@
          Inform the JB4ASDK of the launch options - possibly UIApplicationLaunchOptionsRemoteNotificationKey or UIApplicationLaunchOptionsLocalNotificationKey
          */
          [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
+				 [ETAnalytics trackPageView:@"data://SDKInitializationCompletedSuccessfully" andTitle:@"SDK Initialization Completed" andItem:nil andSearch:nil];
     }
-    
+
     return YES;
 }
 
@@ -114,6 +119,8 @@
      Inform the JB4ASDK that the device failed to register and did not receive a device token
     */
     [[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
+		[ETAnalytics trackPageView:@"data://applicationDidFailToRegisterForRemoteNotificationsWithError" andTitle:[error localizedDescription] andItem:nil andSearch:nil];
+
 }
 
 
@@ -123,6 +130,7 @@
      */
     [[ETPush pushManager] handleLocalNotification:notification];
 }
+
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
 
@@ -159,16 +167,14 @@
     /**
      Use this method to disable Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager locationManager]startWatchingLocation];
+    [[ETLocationManager sharedInstance]startWatchingLocation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     /**
      Use this method to initiate Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager locationManager]stopWatchingLocation];
+    [[ETLocationManager sharedInstance]stopWatchingLocation];
 }
-
-
 
 @end

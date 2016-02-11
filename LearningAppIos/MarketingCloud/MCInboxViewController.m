@@ -11,6 +11,7 @@
 // Libraries
 #import "ETMessage.h"
 #import "ExactTargetEnhancedPushDataSource.h"
+#import "ETAnalytics.h"
 
 
 @interface MCInboxViewController ()<UITableViewDelegate>
@@ -44,6 +45,8 @@
      * This is a reference to the tableview in UIViewController. We need a reference to it to reload data periodically.
      */
     [self.dataSource setInboxTableView:self.inboxTable];
+		[ETAnalytics trackPageView:@"data://CloudPageInboxIndex" andTitle:@"CloudPage Inbox Index" andItem:nil andSearch:nil];
+
     
 }
 

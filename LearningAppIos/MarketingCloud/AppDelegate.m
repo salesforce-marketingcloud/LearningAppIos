@@ -18,8 +18,11 @@
     // This line is a required addition to your AppDelegate.m's method of the same name.
     // it is responsible for the initialization of the SDK from our category.
     [self application:application shouldInitETSDKWithOptions:launchOptions];
-    
+	
     return YES;
 }
+
+
+
 
 @end

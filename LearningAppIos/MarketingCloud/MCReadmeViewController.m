@@ -1,10 +1,9 @@
-//
-//  MCReadmeViewController.m
-//  MarketingCloud
-//
-//  Created by Mathias on 10/29/15.
-//  Copyright © 2015 Oktana. All rights reserved.
-//
+/*
+ * Copyright (c) 2016, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+ */
 
 #import "MCReadmeViewController.h"
 #import "ETAnalytics.h"

@@ -1,10 +1,9 @@
-//
-//  MCOfficialDocViewController.m
-//  MarketingCloud
-//
-//  Created by Kevin Poorman on 12/16/15.
-//  Copyright © 2015 Oktana. All rights reserved.
-//
+/*
+ * Copyright (c) 2016, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+ */
 
 #import "MCOfficialDocViewController.h"
 #import "ETAnalytics.h"

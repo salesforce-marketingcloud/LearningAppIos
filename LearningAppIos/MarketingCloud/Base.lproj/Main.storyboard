@@ -39,26 +39,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gK7-1Y-Y7Y"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPk-Ce-cL7">
-                                <rect key="frame" x="20" y="95" width="103" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="WdI-le-VSM"/>
-                                    <constraint firstAttribute="height" constant="21" id="mUQ-na-pbr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azU-Yx-V5E">
-                                <rect key="frame" x="20" y="116" width="560" height="71"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="fj3-up-XCR"/>
-                                </constraints>
-                                <string key="text">Your subscriber key provides a key for the Contact Record and can be used to tie together multiple channels/device for each Contact.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0v-5c-zr9">
                                 <rect key="frame" x="20" y="262" width="560" height="30"/>
                                 <constraints>
@@ -115,6 +95,26 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPk-Ce-cL7">
+                                <rect key="frame" x="20" y="95" width="103" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="WdI-le-VSM"/>
+                                    <constraint firstAttribute="height" constant="21" id="mUQ-na-pbr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azU-Yx-V5E">
+                                <rect key="frame" x="20" y="116" width="560" height="71"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="fj3-up-XCR"/>
+                                </constraints>
+                                <string key="text">Your subscriber key provides a key for the Contact Record and can be used to tie together multiple channels/device for each Contact.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

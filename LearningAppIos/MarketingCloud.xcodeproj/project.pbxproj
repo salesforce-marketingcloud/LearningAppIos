@@ -43,6 +43,8 @@
 		84D31ECE1BC6D1E400E31DAE /* MarketingCloudUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5AB3A321C62856D00961A06 /* libJB4ASDK-4.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AB3A301C62856D00961A06 /* libJB4ASDK-4.1.0.a */; };
+		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
+		B5C75EA31C7F6E10001A9D92 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B5C75EA21C7F6E10001A9D92 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		B5AB3A2F1C62856D00961A06 /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
 		B5AB3A301C62856D00961A06 /* libJB4ASDK-4.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.1.0.a"; sourceTree = "<group>"; };
 		B5AB3A311C62856D00961A06 /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
+		B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		B5C75EA21C7F6E10001A9D92 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +255,8 @@
 		84D31E9C1BC6D1E400E31DAE = {
 			isa = PBXGroup;
 			children = (
+				B5C75EA21C7F6E10001A9D92 /* README.md */,
+				B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */,
 				84D31EA71BC6D1E400E31DAE /* MarketingCloud */,
 				84D31EC11BC6D1E400E31DAE /* MarketingCloudTests */,
 				84D31ECC1BC6D1E400E31DAE /* MarketingCloudUITests */,
@@ -448,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */,
 				84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */,
 				84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */,
 				84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */,
@@ -503,6 +510,7 @@
 				8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */,
 				B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */,
 				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
+				B5C75EA31C7F6E10001A9D92 /* README.md in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
 				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,
 			);

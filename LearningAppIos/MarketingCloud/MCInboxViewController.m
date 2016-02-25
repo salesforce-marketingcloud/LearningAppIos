@@ -1,16 +1,18 @@
 //
 //  MCInboxViewController.m
-//  MarketingCloud
-//
-//  Created by Mathias on 10/28/15.
-//  Copyright © 2015 Salesforce Marketing Cloud. All rights reserved.
-//
+/*
+ * Copyright (c) 2016, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license.
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+ */
 
 #import "MCInboxViewController.h"
 
 // Libraries
 #import "ETMessage.h"
 #import "ExactTargetEnhancedPushDataSource.h"
+#import "ETAnalytics.h"
 
 
 @interface MCInboxViewController ()<UITableViewDelegate>
@@ -44,6 +46,8 @@
      * This is a reference to the tableview in UIViewController. We need a reference to it to reload data periodically.
      */
     [self.dataSource setInboxTableView:self.inboxTable];
+		[ETAnalytics trackPageView:@"data://CloudPageInboxIndex" andTitle:@"CloudPage Inbox Index" andItem:nil andSearch:nil];
+
     
 }
 

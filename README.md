@@ -323,7 +323,7 @@ The SDK can now be configured with the App ID and Access Token, as explained in 
 
 The boolean parameters `withAnalytics`, `andLocationServices`, `andCloudPages` and `withPIAnalytics` enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to `NO`.
 
-[view the code](/MarketingCloud/MarketingCloud/AppDelegate%2BETPush.m#L25-L31)
+[view the code](/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L25-L31)
 ```objective-c
 successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
                                           andAccessToken:kETAccessToken_Debug   // set the Debug Access Token

@@ -378,7 +378,7 @@
 
 <p>The boolean parameters <code>withAnalytics</code>, <code>andLocationServices</code>, <code>andCloudPages</code> and <code>withPIAnalytics</code> enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to <code>NO</code>.</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L25-L31">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L25-L31">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>successful = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">configureSDKWithAppID:</span><span class="pl-c1">kETAppID_Debug</span>         <span class="pl-c">// set the Debug ID</span>
                                           <span class="pl-c1">andAccessToken:</span><span class="pl-c1">kETAccessToken_Debug</span>   <span class="pl-c">// set the Debug Access Token</span>
@@ -390,7 +390,7 @@
 
 <p>If the configuration is successful and returns YES, the push notifications are registered.</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L65-L92">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L65-L92">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>UIUserNotificationSettings *settings = [UIUserNotificationSettings <span class="pl-c1">settingsForTypes:</span>
                                         UIUserNotificationTypeBadge |
@@ -405,7 +405,7 @@
 
 <p>If the configuration is unsuccessful an error message is shown:</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L49-L59">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L49-L59">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre><span class="pl-en">dispatch_async</span>(dispatch_get_main_queue(), ^{
     <span class="pl-c">/**</span>
@@ -431,13 +431,13 @@
 
 <p>To get the subscriber key, use the following snippet (you can assign this value to any variable):</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/MCSubscribeKeyViewController.m#L50">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/MCSubscribeKeyViewController.m#L50">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>self.subscriberKey.text = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">getSubscriberKey</span>];</pre></div>
 
 <p>To set the subscriber key, use the following snippet (substitute self.subscriberKey.text with the appropriate value):</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/MCSubscribeKeyViewController.m#L39">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L39">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">setSubscriberKey:</span><span class="pl-v">self</span>.subscriberKey.text];</pre></div>
 
@@ -452,19 +452,19 @@
 
 <p>To add a tag:</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/MCTagsViewController.m#L112">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/MCTagsViewController.m#L112">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">addTag:</span><span class="pl-s"><span class="pl-pds">@"</span>tag<span class="pl-pds">"</span></span>];</pre></div>
 
 <p>To remove a tag:</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/MCTagsViewController.m#L114">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/MCTagsViewController.m#L114">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">removeTag:</span><span class="pl-s"><span class="pl-pds">@"</span>tag<span class="pl-pds">"</span></span>];</pre></div>
 
 <p>To get all the tags:</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/MCTagsViewController.m#L43">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/MCTagsViewController.m#L43">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>[[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">allTags</span>];</pre></div>
 
@@ -477,7 +477,7 @@
 
 <p>To implement location services, pass a <code>YES</code> value for the <code>andLocationServices</code> parameter and use <code>ETLocationManager</code> to monitor location and geofence for a user.</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L25-L31">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L25-L31">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>successful = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">configureSDKWithAppID:</span><span class="pl-c1">kETAppID_Debug</span>         <span class="pl-c">// set the Debug ID</span>
                                           <span class="pl-c1">andAccessToken:</span><span class="pl-c1">kETAccessToken_Debug</span>   <span class="pl-c">// set the Debug Access Token</span>
@@ -491,7 +491,7 @@
 
 <p>After push notifications are registered, start watching locations to retrieve the fence and location notifications from ET Geofences and Beacons:</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L74-L92">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L74-L92">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre><span class="pl-c">/**   </span>
 <span class="pl-c"> Start geoLocation</span>
@@ -510,7 +510,7 @@
 
 <p>When the application enters background mode, Location Services are disabled through the MobilePush SDK.</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L158-L163">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L158-L163">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)applicationDidEnterBackground:(UIApplication *)application {
     <span class="pl-c">/**</span>
@@ -521,7 +521,7 @@
 
 <p>When the application becomes active, Location Services are initiated through the MobilePush SDK.</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L165-L170">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L165-L170">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)applicationDidBecomeActive:(UIApplication *)application {
     <span class="pl-c">/**</span>
@@ -555,7 +555,7 @@
 
 <p>In the call to configureSDKWithAppID, pass a <code>YES</code> value for the withAnalytics parameter.</p>
 
-<p><a href="/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L25">view the code</a></p>
+<p><a href="https://github.com/salesforce-marketingcloud/LearningAppIos/blob/master/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L25">view the code</a></p>
 
 <div class="highlight highlight-source-objc"><pre>successful = [[ETPush <span class="pl-c1">pushManager</span>] <span class="pl-c1">configureSDKWithAppID:</span><span class="pl-c1">kETAppID_Debug</span>         <span class="pl-c">// set the Debug ID</span>
                                           <span class="pl-c1">andAccessToken:</span><span class="pl-c1">kETAccessToken_Debug</span>   <span class="pl-c">// set the Debug Access Token</span>

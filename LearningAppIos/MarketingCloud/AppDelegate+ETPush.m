@@ -97,6 +97,9 @@
          */
          [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
 				 [ETAnalytics trackPageView:@"data://SDKInitializationCompletedSuccessfully" andTitle:@"SDK Initialization Completed" andItem:nil andSearch:nil];
+			
+			
+				[[ETPush pushManager] addAttributeNamed:@"MyBooleanAttribute" value:@"0"];
     }
 
     return YES;
@@ -135,7 +138,7 @@
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-
+		NSLog(@"Push Notification Received");
     [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
 }
 

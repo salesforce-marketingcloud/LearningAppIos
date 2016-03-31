@@ -4,3 +4,6 @@ MarketingCloud/MarketingCloud.xcodeproj/xcuserdata/kpoorman.xcuserdatad/xcscheme
 MarketingCloud/MarketingCloud.xcodeproj/xcuserdata/kpoorman.xcuserdatad/xcschemes/Documentation.xcscheme
 MarketingCloud/MarketingCloud.xcodeproj/xcuserdata/kpoorman.xcuserdatad/xcschemes/MarketingCloud.xcscheme
 .DS_Store
+project.xcworkspace/xcshareddata
+LearningAppIos/MarketingCloud.xcodeproj/project.xcworkspace/xcshareddata
+project.pbxproj

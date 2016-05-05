@@ -9,6 +9,7 @@
 #import "ETPush.h" // From the SDK
 #import "AppDelegate+ETPushConstants.h"
 #import "ETAnalytics.h"
+#import "ETRegion.h"
 	//#import "ETKeyValueStore.h"
 
 @implementation AppDelegate (ETPush)

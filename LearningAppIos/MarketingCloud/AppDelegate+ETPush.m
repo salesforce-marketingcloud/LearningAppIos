@@ -6,11 +6,10 @@
  */
 
 #import "AppDelegate+ETPush.h"
-#import "ETPush.h" // From the SDK
+#import "ETPush.h"
 #import "AppDelegate+ETPushConstants.h"
 #import "ETAnalytics.h"
 #import "ETRegion.h"
-	//#import "ETKeyValueStore.h"
 
 @implementation AppDelegate (ETPush)
 #pragma mark - SDK Setup
@@ -23,39 +22,28 @@
 	 To enable Debug Log set to YES
 	 */
 	[ETPush setETLoggerToRequiredState:YES];
-	/**
-	 Configure and set initial settings of the JB4ASDK when in DEBUG mode
-	 2016-02 deprecated configureSDKWithAppID:
-														 andAccessToken:
-	 														withAnalytics:
-	 											andLocationServices:
-															andCloudPages:
-	 													withPIAnalytics:
-																			error: 
-	 in favor of a newer method that includes parameters for Proximity.
-	 */
 	
 	successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug					// Configure the SDK with the Debug App ID
-																						andAccessToken:kETAccessToken_Debug		// Configure the SDK with the Debug Access Token
-																						 withAnalytics:YES											// Enable Analytics
-																			 andLocationServices:YES											// Enable Location Services (Geofence Messaging)
-																			andProximityServices:YES											// Enable Proximity services (Beacon Messaging)
-																						 andCloudPages:YES											// Enable Cloud Pages
-																					 withPIAnalytics:YES											// Enable WAMA / PI Analytics
-																										 error:&error];
+                                              andAccessToken:kETAccessToken_Debug		// Configure the SDK with the Debug Access Token
+                                               withAnalytics:YES											// Enable Analytics
+                                         andLocationServices:YES											// Enable Location Services (Geofence Messaging)
+										andProximityServices:YES											// Enable Proximity services (Beacon Messaging)
+											   andCloudPages:YES											// Enable Cloud Pages
+                                             withPIAnalytics:YES											// Enable WAMA / PI Analytics
+												       error:&error];
 	
 #else
 	/**
 	 Configure and set initial settings of the JB4ASDK when in PRODUCTION mode
 	 */
 	successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod						// Configure the SDK with the Debug App ID
-																						andAccessToken:kETAccessToken_Prod			// Configure the SDK with the Debug Access Token
-																						 withAnalytics:YES											// Enable Analytics
-																			 andLocationServices:YES											// Enable Location Services (Geofence Messaging)
-																			andProximityServices:YES											// Enable Proximity services (Beacon Messaging)
-																						 andCloudPages:YES											// Enable Cloud Pages
-																					 withPIAnalytics:YES											// Enable WAMA / PI Analytics
-																										 error:&error];
+											  andAccessToken:kETAccessToken_Prod			// Configure the SDK with the Debug Access Token
+                                               withAnalytics:YES											// Enable Analytics
+                                         andLocationServices:YES											// Enable Location Services (Geofence Messaging)
+                                        andProximityServices:YES											// Enable Proximity services (Beacon Messaging)
+											   andCloudPages:YES											// Enable Cloud Pages
+											 withPIAnalytics:YES											// Enable WAMA / PI Analytics
+                                                       error:&error];
 #endif
 	/**
 	 If configureSDKWithAppID returns NO, check the error object for detailed failure info. See PushConstants.h for codes.
@@ -72,10 +60,10 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 			[[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Failed configureSDKWithAppID!", @"Failed configureSDKWithAppID!")
-																	message:[error localizedDescription]
-																 delegate:nil
-												cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
-												otherButtonTitles:nil] show];
+                                        message:[error localizedDescription]
+                                       delegate:nil
+                              cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                              otherButtonTitles:nil] show];
 #pragma clang diagnostic pop
 			
 		});
@@ -90,7 +78,7 @@
 																						UIUserNotificationTypeBadge |
 																						UIUserNotificationTypeSound |
 																						UIUserNotificationTypeAlert
-																																						 categories:nil];
+                                                                                        categories:nil];
 		// Notify the SDK what user notification settings have been selected
 		[[ETPush pushManager] registerUserNotificationSettings:settings];
 	  [[ETPush pushManager] registerForRemoteNotifications];

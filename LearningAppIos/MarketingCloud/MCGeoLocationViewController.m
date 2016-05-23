@@ -13,6 +13,7 @@
 	// Libraries
 #import "ETPush.h"
 #import "ETAnalytics.h"
+#import "ETRegion.h"
 
 	// helper
 #import "MCCircle.h"

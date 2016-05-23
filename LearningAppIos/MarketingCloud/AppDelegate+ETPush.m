@@ -23,26 +23,26 @@
 	 */
 	[ETPush setETLoggerToRequiredState:YES];
 	
-	successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug					// Configure the SDK with the Debug App ID
+	successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug				// Configure the SDK with the Debug App ID
                                               andAccessToken:kETAccessToken_Debug		// Configure the SDK with the Debug Access Token
-                                               withAnalytics:YES											// Enable Analytics
-                                         andLocationServices:YES											// Enable Location Services (Geofence Messaging)
-										andProximityServices:YES											// Enable Proximity services (Beacon Messaging)
-											   andCloudPages:YES											// Enable Cloud Pages
-                                             withPIAnalytics:YES											// Enable WAMA / PI Analytics
+                                               withAnalytics:YES						// Enable Analytics
+                                         andLocationServices:YES                        // Enable Location Services (Geofence Messaging)
+										andProximityServices:YES						// Enable Proximity services (Beacon Messaging)
+											   andCloudPages:YES						// Enable Cloud Pages
+                                             withPIAnalytics:YES						// Enable WAMA / PI Analytics
 												       error:&error];
 	
 #else
 	/**
 	 Configure and set initial settings of the JB4ASDK when in PRODUCTION mode
 	 */
-	successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod						// Configure the SDK with the Debug App ID
-											  andAccessToken:kETAccessToken_Prod			// Configure the SDK with the Debug Access Token
-                                               withAnalytics:YES											// Enable Analytics
-                                         andLocationServices:YES											// Enable Location Services (Geofence Messaging)
-                                        andProximityServices:YES											// Enable Proximity services (Beacon Messaging)
-											   andCloudPages:YES											// Enable Cloud Pages
-											 withPIAnalytics:YES											// Enable WAMA / PI Analytics
+	successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod				// Configure the SDK with the Debug App ID
+											  andAccessToken:kETAccessToken_Prod		// Configure the SDK with the Debug Access Token
+                                               withAnalytics:YES						// Enable Analytics
+                                         andLocationServices:YES						// Enable Location Services (Geofence Messaging)
+                                        andProximityServices:YES						// Enable Proximity services (Beacon Messaging)
+											   andCloudPages:YES						// Enable Cloud Pages
+											 withPIAnalytics:YES						// Enable WAMA / PI Analytics
                                                        error:&error];
 #endif
 	/**

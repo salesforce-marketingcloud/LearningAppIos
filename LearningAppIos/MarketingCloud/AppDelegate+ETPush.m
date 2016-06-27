@@ -10,6 +10,7 @@
 #import "AppDelegate+ETPushConstants.h"
 #import "ETAnalytics.h"
 #import "ETRegion.h"
+#import "ETWKLandingPagePresenter.h"
 
 @implementation AppDelegate (ETPush)
 #pragma mark - SDK Setup
@@ -121,16 +122,9 @@
 
 - (void)didReceiveCloudPageWithAlertMessageWithContents:(NSString *)payload {
     
-    UIAlertController *alert =  [UIAlertController
-                                  alertControllerWithTitle:@"CloudPage With Alert URL"
-                                  message:payload
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[ETWKLandingPagePresenter alloc] initForLandingPageAt:payload]
+                                                                                 animated:YES
+                                                                               completion:nil];
 }
 
 -(BOOL)shouldDeliverCloudPageWithAlertMessageIfAppIsRunning

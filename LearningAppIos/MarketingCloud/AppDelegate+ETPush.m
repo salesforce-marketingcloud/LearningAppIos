@@ -17,6 +17,8 @@
     BOOL successful = NO;
     NSError *error = nil;
     
+    [[ETPush pushManager] setCloudPageWithAlertDelegate:self];
+    
 #ifdef DEBUG
     /**
      To enable Debug Log set to YES
@@ -114,6 +116,25 @@
         
     }
     
+    return YES;
+}
+
+- (void)didReceiveCloudPageWithAlertMessageWithContents:(NSString *)payload {
+    
+    UIAlertController *alert =  [UIAlertController
+                                  alertControllerWithTitle:@"CloudPage With Alert URL"
+                                  message:payload
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+}
+
+-(BOOL)shouldDeliverCloudPageWithAlertMessageIfAppIsRunning
+{
     return YES;
 }
 

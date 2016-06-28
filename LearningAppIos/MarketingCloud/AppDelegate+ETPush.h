@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate (ETPush)
+@interface AppDelegate (ETPush) <ExactTargetCloudPageWithAlertDelegate>
 
 - (BOOL)application : (UIApplication *)application shouldInitETSDKWithOptions : (NSDictionary *)launchOptions;
 

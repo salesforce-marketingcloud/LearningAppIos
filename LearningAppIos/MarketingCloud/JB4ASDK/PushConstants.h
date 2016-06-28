@@ -175,7 +175,9 @@ typedef NS_OPTIONS(NSUInteger, MobilePushContentType) {
     /** Push Message */
     MobilePushContentTypeAlertMessage   = 1 << 0,
     /** CloudPage */
-    MobilePushContentTypePage           = 1 << 1
+    MobilePushContentTypePage           = 1 << 1,
+    /** Enhanced Cloud Page – Pushed Cloud Pages */
+    MobilePushContentTypeEcp = 1 << 31
 };
 
 /**

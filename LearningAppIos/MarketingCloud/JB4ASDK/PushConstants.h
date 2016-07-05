@@ -135,7 +135,7 @@ typedef NS_ENUM(NSUInteger, MobilePushMessageType)
     /** Basic - A standard push message */
     MobilePushMessageTypeBasic,
     /** Geofence Entry */
-    MobilePushMessageTypeFenceEntry,
+    MobilePushMessageTypeFenceEntry = 3,
     /** Geofence Exit */
     MobilePushMessageTypeFenceExit,
     /** Proximity */
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSUInteger, MobilePushGeofenceType) {
     /** MobilePushGeofenceTypeCircle */
     MobilePushGeofenceTypeCircle,
     /** MobilePushGeofenceTypeProximity */
-    MobilePushGeofenceTypeProximity
+    MobilePushGeofenceTypeProximity = 3
 };
 
 /**

@@ -21,8 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		00858DEE1D20B10000034250 /* JB4ASDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 00858DE81D20B10000034250 /* JB4ASDK.podspec */; };
-		00858DEF1D20B10000034250 /* libJB4ASDK-4.4.0.160400001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00858DE91D20B10000034250 /* libJB4ASDK-4.4.0.160400001.a */; };
+		0021A2FA1D2C0DFB00BF99CD /* JB4ASDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0021A2F41D2C0DFB00BF99CD /* JB4ASDK.podspec */; };
+		0021A2FB1D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0021A2F51D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a */; };
 		00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00858DF11D20B94300034250 /* UIKit.framework */; };
 		8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */; };
 		8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */; };
@@ -67,26 +67,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002FE5B71D23092D0015E9A8 /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
-		00858DDA1D20B10000034250 /* ETAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETAnalytics.h; sourceTree = "<group>"; };
-		00858DDB1D20B10000034250 /* ETCloudPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPage.h; sourceTree = "<group>"; };
-		00858DDC1D20B10000034250 /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPageDataSource.h; sourceTree = "<group>"; };
-		00858DDD1D20B10000034250 /* ETEventMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventMessage.h; sourceTree = "<group>"; };
-		00858DDE1D20B10000034250 /* ETEventRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventRegion.h; sourceTree = "<group>"; };
-		00858DDF1D20B10000034250 /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
-		00858DE01D20B10000034250 /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
-		00858DE11D20B10000034250 /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
-		00858DE21D20B10000034250 /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
-		00858DE31D20B10000034250 /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
-		00858DE41D20B10000034250 /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
-		00858DE51D20B10000034250 /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
-		00858DE61D20B10000034250 /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
-		00858DE71D20B10000034250 /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
-		00858DE81D20B10000034250 /* JB4ASDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JB4ASDK.podspec; sourceTree = "<group>"; };
-		00858DE91D20B10000034250 /* libJB4ASDK-4.4.0.160400001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.4.0.160400001.a"; sourceTree = "<group>"; };
-		00858DEA1D20B10000034250 /* PICart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICart.h; sourceTree = "<group>"; };
-		00858DEB1D20B10000034250 /* PICartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICartItem.h; sourceTree = "<group>"; };
-		00858DEC1D20B10000034250 /* PIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
+		0021A2E61D2C0DFB00BF99CD /* ETAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETAnalytics.h; sourceTree = "<group>"; };
+		0021A2E71D2C0DFB00BF99CD /* ETCloudPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPage.h; sourceTree = "<group>"; };
+		0021A2E81D2C0DFB00BF99CD /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPageDataSource.h; sourceTree = "<group>"; };
+		0021A2E91D2C0DFB00BF99CD /* ETEventMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventMessage.h; sourceTree = "<group>"; };
+		0021A2EA1D2C0DFB00BF99CD /* ETEventRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventRegion.h; sourceTree = "<group>"; };
+		0021A2EB1D2C0DFB00BF99CD /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
+		0021A2EC1D2C0DFB00BF99CD /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
+		0021A2ED1D2C0DFB00BF99CD /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
+		0021A2EE1D2C0DFB00BF99CD /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
+		0021A2EF1D2C0DFB00BF99CD /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
+		0021A2F01D2C0DFB00BF99CD /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
+		0021A2F11D2C0DFB00BF99CD /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
+		0021A2F21D2C0DFB00BF99CD /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
+		0021A2F31D2C0DFB00BF99CD /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		0021A2F41D2C0DFB00BF99CD /* JB4ASDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JB4ASDK.podspec; sourceTree = "<group>"; };
+		0021A2F51D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.4.0.160400001.a"; sourceTree = "<group>"; };
+		0021A2F61D2C0DFB00BF99CD /* PICart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICart.h; sourceTree = "<group>"; };
+		0021A2F71D2C0DFB00BF99CD /* PICartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICartItem.h; sourceTree = "<group>"; };
+		0021A2F81D2C0DFB00BF99CD /* PIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
+		0021A2F91D2C0DFB00BF99CD /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		00858DF11D20B94300034250 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCircle.h; sourceTree = "<group>"; };
 		8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCircle.m; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
-				00858DEF1D20B10000034250 /* libJB4ASDK-4.4.0.160400001.a in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
+				0021A2FB1D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a in Frameworks */,
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
 				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
 			);
@@ -167,26 +167,26 @@
 		00858DD91D20B10000034250 /* JB4ASDK */ = {
 			isa = PBXGroup;
 			children = (
-				00858DDA1D20B10000034250 /* ETAnalytics.h */,
-				00858DDB1D20B10000034250 /* ETCloudPage.h */,
-				00858DDC1D20B10000034250 /* ETCloudPageDataSource.h */,
-				00858DDD1D20B10000034250 /* ETEventMessage.h */,
-				00858DDE1D20B10000034250 /* ETEventRegion.h */,
-				00858DDF1D20B10000034250 /* ETGenericUpdate.h */,
-				00858DE01D20B10000034250 /* ETLandingPagePresenter.h */,
-				00858DE11D20B10000034250 /* ETLocationManager.h */,
-				00858DE21D20B10000034250 /* ETMessage.h */,
-				00858DE31D20B10000034250 /* ETPush.h */,
-				00858DE41D20B10000034250 /* ETRegion.h */,
-				00858DE51D20B10000034250 /* ETWKLandingPagePresenter.h */,
-				00858DE61D20B10000034250 /* ExactTargetEnhancedPushDataSource.h */,
-				00858DE71D20B10000034250 /* JB4ASDK-Bridging-Header.h */,
-				00858DE81D20B10000034250 /* JB4ASDK.podspec */,
-				00858DE91D20B10000034250 /* libJB4ASDK-4.4.0.160400001.a */,
-				00858DEA1D20B10000034250 /* PICart.h */,
-				00858DEB1D20B10000034250 /* PICartItem.h */,
-				00858DEC1D20B10000034250 /* PIOrder.h */,
-				002FE5B71D23092D0015E9A8 /* PushConstants.h */,
+				0021A2E61D2C0DFB00BF99CD /* ETAnalytics.h */,
+				0021A2E71D2C0DFB00BF99CD /* ETCloudPage.h */,
+				0021A2E81D2C0DFB00BF99CD /* ETCloudPageDataSource.h */,
+				0021A2E91D2C0DFB00BF99CD /* ETEventMessage.h */,
+				0021A2EA1D2C0DFB00BF99CD /* ETEventRegion.h */,
+				0021A2EB1D2C0DFB00BF99CD /* ETGenericUpdate.h */,
+				0021A2EC1D2C0DFB00BF99CD /* ETLandingPagePresenter.h */,
+				0021A2ED1D2C0DFB00BF99CD /* ETLocationManager.h */,
+				0021A2EE1D2C0DFB00BF99CD /* ETMessage.h */,
+				0021A2EF1D2C0DFB00BF99CD /* ETPush.h */,
+				0021A2F01D2C0DFB00BF99CD /* ETRegion.h */,
+				0021A2F11D2C0DFB00BF99CD /* ETWKLandingPagePresenter.h */,
+				0021A2F21D2C0DFB00BF99CD /* ExactTargetEnhancedPushDataSource.h */,
+				0021A2F31D2C0DFB00BF99CD /* JB4ASDK-Bridging-Header.h */,
+				0021A2F41D2C0DFB00BF99CD /* JB4ASDK.podspec */,
+				0021A2F51D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a */,
+				0021A2F61D2C0DFB00BF99CD /* PICart.h */,
+				0021A2F71D2C0DFB00BF99CD /* PICartItem.h */,
+				0021A2F81D2C0DFB00BF99CD /* PIOrder.h */,
+				0021A2F91D2C0DFB00BF99CD /* PushConstants.h */,
 			);
 			path = JB4ASDK;
 			sourceTree = "<group>";
@@ -480,7 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00858DEE1D20B10000034250 /* JB4ASDK.podspec in Resources */,
+				0021A2FA1D2C0DFB00BF99CD /* JB4ASDK.podspec in Resources */,
 				B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */,
 				84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */,
 				84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */,

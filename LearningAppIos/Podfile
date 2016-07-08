@@ -1,3 +1,5 @@
+source 'git@github.exacttarget.com:Mobile/Salesforce-JB4ASDK-iOS-Specs.git'
+
 target 'MarketingCloud' do
-     pod 'JB4ASDK'
+     pod 'JB4ASDK','~>4.4.0'
 end

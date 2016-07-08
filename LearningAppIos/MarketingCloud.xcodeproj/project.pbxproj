@@ -21,9 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0021A2FA1D2C0DFB00BF99CD /* JB4ASDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0021A2F41D2C0DFB00BF99CD /* JB4ASDK.podspec */; };
-		0021A2FB1D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0021A2F51D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a */; };
 		00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00858DF11D20B94300034250 /* UIKit.framework */; };
+		72C1A19AB86E72334CEFAB87 /* libPods-MarketingCloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88C75CD27911CEE5B5CD86D /* libPods-MarketingCloud.a */; };
 		8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */; };
 		8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */; };
 		8417EA651BE1186300DD21F7 /* MCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA641BE1186300DD21F7 /* MCInboxViewController.m */; };
@@ -67,27 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0021A2E61D2C0DFB00BF99CD /* ETAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETAnalytics.h; sourceTree = "<group>"; };
-		0021A2E71D2C0DFB00BF99CD /* ETCloudPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPage.h; sourceTree = "<group>"; };
-		0021A2E81D2C0DFB00BF99CD /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPageDataSource.h; sourceTree = "<group>"; };
-		0021A2E91D2C0DFB00BF99CD /* ETEventMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventMessage.h; sourceTree = "<group>"; };
-		0021A2EA1D2C0DFB00BF99CD /* ETEventRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventRegion.h; sourceTree = "<group>"; };
-		0021A2EB1D2C0DFB00BF99CD /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
-		0021A2EC1D2C0DFB00BF99CD /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
-		0021A2ED1D2C0DFB00BF99CD /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
-		0021A2EE1D2C0DFB00BF99CD /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
-		0021A2EF1D2C0DFB00BF99CD /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
-		0021A2F01D2C0DFB00BF99CD /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
-		0021A2F11D2C0DFB00BF99CD /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
-		0021A2F21D2C0DFB00BF99CD /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
-		0021A2F31D2C0DFB00BF99CD /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
-		0021A2F41D2C0DFB00BF99CD /* JB4ASDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JB4ASDK.podspec; sourceTree = "<group>"; };
-		0021A2F51D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.4.0.160400001.a"; sourceTree = "<group>"; };
-		0021A2F61D2C0DFB00BF99CD /* PICart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICart.h; sourceTree = "<group>"; };
-		0021A2F71D2C0DFB00BF99CD /* PICartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICartItem.h; sourceTree = "<group>"; };
-		0021A2F81D2C0DFB00BF99CD /* PIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
-		0021A2F91D2C0DFB00BF99CD /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		00858DF11D20B94300034250 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		087DB35353DC2A4725E889BC /* Pods-MarketingCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketingCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		56055DB40F38F49073E6D328 /* Pods-MarketingCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketingCloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud.release.xcconfig"; sourceTree = "<group>"; };
 		8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCircle.h; sourceTree = "<group>"; };
 		8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCircle.m; sourceTree = "<group>"; };
 		8417EA5F1BE0EBAB00DD21F7 /* MCAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAnnotation.h; sourceTree = "<group>"; };
@@ -141,9 +122,9 @@
 			files = (
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
-				0021A2FB1D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a in Frameworks */,
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
 				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
+				72C1A19AB86E72334CEFAB87 /* libPods-MarketingCloud.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,31 +145,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00858DD91D20B10000034250 /* JB4ASDK */ = {
+		83EE1C3FE3474527DA21E052 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0021A2E61D2C0DFB00BF99CD /* ETAnalytics.h */,
-				0021A2E71D2C0DFB00BF99CD /* ETCloudPage.h */,
-				0021A2E81D2C0DFB00BF99CD /* ETCloudPageDataSource.h */,
-				0021A2E91D2C0DFB00BF99CD /* ETEventMessage.h */,
-				0021A2EA1D2C0DFB00BF99CD /* ETEventRegion.h */,
-				0021A2EB1D2C0DFB00BF99CD /* ETGenericUpdate.h */,
-				0021A2EC1D2C0DFB00BF99CD /* ETLandingPagePresenter.h */,
-				0021A2ED1D2C0DFB00BF99CD /* ETLocationManager.h */,
-				0021A2EE1D2C0DFB00BF99CD /* ETMessage.h */,
-				0021A2EF1D2C0DFB00BF99CD /* ETPush.h */,
-				0021A2F01D2C0DFB00BF99CD /* ETRegion.h */,
-				0021A2F11D2C0DFB00BF99CD /* ETWKLandingPagePresenter.h */,
-				0021A2F21D2C0DFB00BF99CD /* ExactTargetEnhancedPushDataSource.h */,
-				0021A2F31D2C0DFB00BF99CD /* JB4ASDK-Bridging-Header.h */,
-				0021A2F41D2C0DFB00BF99CD /* JB4ASDK.podspec */,
-				0021A2F51D2C0DFB00BF99CD /* libJB4ASDK-4.4.0.160400001.a */,
-				0021A2F61D2C0DFB00BF99CD /* PICart.h */,
-				0021A2F71D2C0DFB00BF99CD /* PICartItem.h */,
-				0021A2F81D2C0DFB00BF99CD /* PIOrder.h */,
-				0021A2F91D2C0DFB00BF99CD /* PushConstants.h */,
+				087DB35353DC2A4725E889BC /* Pods-MarketingCloud.debug.xcconfig */,
+				56055DB40F38F49073E6D328 /* Pods-MarketingCloud.release.xcconfig */,
 			);
-			path = JB4ASDK;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		8417EA621BE0FCDE00DD21F7 /* Inbox */ = {
@@ -285,6 +248,7 @@
 				84D31ECC1BC6D1E400E31DAE /* MarketingCloudUITests */,
 				84D31EA61BC6D1E400E31DAE /* Products */,
 				9D65C2ABA7375300FD677837 /* Frameworks */,
+				83EE1C3FE3474527DA21E052 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -301,7 +265,6 @@
 		84D31EA71BC6D1E400E31DAE /* MarketingCloud */ = {
 			isa = PBXGroup;
 			children = (
-				00858DD91D20B10000034250 /* JB4ASDK */,
 				84D170021BD6814200D563F7 /* Model */,
 				84B068DB1BD1435F00FE115D /* Views */,
 				842ED54D1BD0392700CCDA0E /* Addition */,
@@ -370,9 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84D31ED21BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloud" */;
 			buildPhases = (
+				37A69BDD5FAFBD231669A916 /* 📦 Check Pods Manifest.lock */,
 				84D31EA11BC6D1E400E31DAE /* Sources */,
 				84D31EA21BC6D1E400E31DAE /* Frameworks */,
 				84D31EA31BC6D1E400E31DAE /* Resources */,
+				A17D55A061376B4E8BF69BDF /* 📦 Embed Pods Frameworks */,
+				1CF3D5365B5C0505B49757E4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,7 +446,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0021A2FA1D2C0DFB00BF99CD /* JB4ASDK.podspec in Resources */,
 				B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */,
 				84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */,
 				84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */,
@@ -505,6 +470,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1CF3D5365B5C0505B49757E4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A69BDD5FAFBD231669A916 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		84E639C01BE255BC0058894B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +512,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"Salesforce\";\ncompanyID=\"com.salesforce\";\ncompanyURL=\"http://salesforce.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
+		};
+		A17D55A061376B4E8BF69BDF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -677,6 +687,7 @@
 		};
 		84D31ED31BC6D1E400E31DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 087DB35353DC2A4725E889BC /* Pods-MarketingCloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -696,6 +707,7 @@
 		};
 		84D31ED41BC6D1E400E31DAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56055DB40F38F49073E6D328 /* Pods-MarketingCloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";

@@ -12,6 +12,10 @@
 #import "ETRegion.h"
 #import "ETWKLandingPagePresenter.h"
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
+#import <UserNotifications/UserNotifications.h>
+#endif
+
 @implementation AppDelegate (ETPush)
 #pragma mark - SDK Setup
 - (BOOL)application:(UIApplication *)application shouldInitETSDKWithOptions:(NSDictionary *)launchOptions {
@@ -77,6 +81,15 @@
         /**
          Register for push notifications - enable all notification types, no categories
          */
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
+
+        [[ETPush pushManager] registerForRemoteNotificationsWithDelegate:self options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            
+            NSLog(@"Registered for remote notifications: %d", granted);
+            
+        }];
+#else
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
                                                 UIUserNotificationTypeBadge |
                                                 UIUserNotificationTypeSound |
@@ -85,6 +98,7 @@
         // Notify the SDK what user notification settings have been selected
         [[ETPush pushManager] registerUserNotificationSettings:settings];
         [[ETPush pushManager] registerForRemoteNotifications];
+#endif
         
         /**
          Start geoLocation
@@ -132,7 +146,53 @@
     return YES;
 }
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
+
 #pragma mark - Lifecycle Callbacks
+
+// The method will be called on the delegate only if the application is in the foreground. If the method is not implemented or the handler is not called in a timely manner then the notification will not be presented. The application can choose to have the notification presented as a sound, badge, alert and/or in the notification list. This decision should be based on whether the information in the notification is otherwise visible to the user.
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+    
+    if (completionHandler != nil) {
+        completionHandler(UNNotificationPresentationOptionAlert);
+    }
+}
+
+// The method will be called on the delegate when the user responded to the notification by opening the application, dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from applicationDidFinishLaunching:.
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler {
+    
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    /**
+     Inform the JB4ASDK that the device received a remote notification
+     */
+    [[ETPush pushManager] handleNotification:userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
+    
+    /**
+     Is it a silent push?
+     */
+    if (userInfo[@"aps"][@"content-available"]) {
+        /**
+         Received a silent remote notification...
+         Indicate a silent push
+         */
+        NSLog(@"Silent Push Notification Received");
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+    } else {
+        /**
+         Received a remote notification...
+         Clear the badge
+         */
+        [[ETPush pushManager] resetBadgeCount];
+    }
+
+    if (completionHandler != nil) {
+        completionHandler();
+    }
+}
+
+#endif
+
+
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     /**
      Inform the JB4ASDK of the requested notification settings

@@ -4,6 +4,8 @@
 
 > Marketing Cloud Learning Apps are free to use, but are not official Salesforce.com Marketing Cloud products, and should be considered community projects - these apps are not officially tested or documented. For help on any Marketing Cloud Learning App please consult the Salesforce message boards or the issues section of this repository - Salesforce.com Marketing Cloud support is not available for these applications.
 
+Please make sure you are always using the latest SDK. The Learning App only supports versions 4.4.0 and above.
+
 1. [About](#0001)
 
     1. [Marketing Cloud App Center](#0002)

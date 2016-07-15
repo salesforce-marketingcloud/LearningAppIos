@@ -21,7 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		00E833181CDB79AD006B31B3 /* libJB4ASDK-4.3.0.160300007.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00E833161CDB79AD006B31B3 /* libJB4ASDK-4.3.0.160300007.a */; };
+		00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00858DF11D20B94300034250 /* UIKit.framework */; };
+		72C1A19AB86E72334CEFAB87 /* libPods-MarketingCloud.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B88C75CD27911CEE5B5CD86D /* libPods-MarketingCloud.a */; };
 		8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */; };
 		8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */; };
 		8417EA651BE1186300DD21F7 /* MCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA641BE1186300DD21F7 /* MCInboxViewController.m */; };
@@ -44,7 +45,6 @@
 		84D31ECE1BC6D1E400E31DAE /* MarketingCloudUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
-		B5C75EA31C7F6E10001A9D92 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B5C75EA21C7F6E10001A9D92 /* README.md */; };
 		B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C961BF1CA4432400BE9F33 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,22 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E833081CDB79AD006B31B3 /* ETAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETAnalytics.h; sourceTree = "<group>"; };
-		00E833091CDB79AD006B31B3 /* ETCloudPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPage.h; sourceTree = "<group>"; };
-		00E8330A1CDB79AD006B31B3 /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPageDataSource.h; sourceTree = "<group>"; };
-		00E8330B1CDB79AD006B31B3 /* ETEventMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventMessage.h; sourceTree = "<group>"; };
-		00E8330C1CDB79AD006B31B3 /* ETEventRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventRegion.h; sourceTree = "<group>"; };
-		00E8330D1CDB79AD006B31B3 /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
-		00E8330E1CDB79AD006B31B3 /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
-		00E8330F1CDB79AD006B31B3 /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
-		00E833101CDB79AD006B31B3 /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
-		00E833111CDB79AD006B31B3 /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
-		00E833121CDB79AD006B31B3 /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
-		00E833131CDB79AD006B31B3 /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
-		00E833141CDB79AD006B31B3 /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
-		00E833151CDB79AD006B31B3 /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
-		00E833161CDB79AD006B31B3 /* libJB4ASDK-4.3.0.160300007.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.3.0.160300007.a"; sourceTree = "<group>"; };
-		00E833171CDB79AD006B31B3 /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
+		00858DF11D20B94300034250 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		087DB35353DC2A4725E889BC /* Pods-MarketingCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketingCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		56055DB40F38F49073E6D328 /* Pods-MarketingCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketingCloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud.release.xcconfig"; sourceTree = "<group>"; };
 		8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCircle.h; sourceTree = "<group>"; };
 		8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCircle.m; sourceTree = "<group>"; };
 		8417EA5F1BE0EBAB00DD21F7 /* MCAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAnnotation.h; sourceTree = "<group>"; };
@@ -125,6 +112,7 @@
 		B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		B5C75EA21C7F6E10001A9D92 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5C961BF1CA4432400BE9F33 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B88C75CD27911CEE5B5CD86D /* libPods-MarketingCloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarketingCloud.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +120,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E833181CDB79AD006B31B3 /* libJB4ASDK-4.3.0.160300007.a in Frameworks */,
+				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
 				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
+				72C1A19AB86E72334CEFAB87 /* libPods-MarketingCloud.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83EE1C3FE3474527DA21E052 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				087DB35353DC2A4725E889BC /* Pods-MarketingCloud.debug.xcconfig */,
+				56055DB40F38F49073E6D328 /* Pods-MarketingCloud.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8417EA621BE0FCDE00DD21F7 /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,29 +181,6 @@
 				842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */,
 			);
 			name = Addition;
-			sourceTree = "<group>";
-		};
-		842ED5541BD03AAB00CCDA0E /* JB4A */ = {
-			isa = PBXGroup;
-			children = (
-				00E833081CDB79AD006B31B3 /* ETAnalytics.h */,
-				00E833091CDB79AD006B31B3 /* ETCloudPage.h */,
-				00E8330A1CDB79AD006B31B3 /* ETCloudPageDataSource.h */,
-				00E8330B1CDB79AD006B31B3 /* ETEventMessage.h */,
-				00E8330C1CDB79AD006B31B3 /* ETEventRegion.h */,
-				00E8330D1CDB79AD006B31B3 /* ETGenericUpdate.h */,
-				00E8330E1CDB79AD006B31B3 /* ETLandingPagePresenter.h */,
-				00E8330F1CDB79AD006B31B3 /* ETLocationManager.h */,
-				00E833101CDB79AD006B31B3 /* ETMessage.h */,
-				00E833111CDB79AD006B31B3 /* ETPush.h */,
-				00E833121CDB79AD006B31B3 /* ETRegion.h */,
-				00E833131CDB79AD006B31B3 /* ETWKLandingPagePresenter.h */,
-				00E833141CDB79AD006B31B3 /* ExactTargetEnhancedPushDataSource.h */,
-				00E833151CDB79AD006B31B3 /* JB4ASDK-Bridging-Header.h */,
-				00E833161CDB79AD006B31B3 /* libJB4ASDK-4.3.0.160300007.a */,
-				00E833171CDB79AD006B31B3 /* PushConstants.h */,
-			);
-			name = JB4A;
 			sourceTree = "<group>";
 		};
 		849145FF1BD93DC20086C40D /* GeoLocation */ = {
@@ -273,6 +248,7 @@
 				84D31ECC1BC6D1E400E31DAE /* MarketingCloudUITests */,
 				84D31EA61BC6D1E400E31DAE /* Products */,
 				9D65C2ABA7375300FD677837 /* Frameworks */,
+				83EE1C3FE3474527DA21E052 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,7 +267,6 @@
 			children = (
 				84D170021BD6814200D563F7 /* Model */,
 				84B068DB1BD1435F00FE115D /* Views */,
-				842ED5541BD03AAB00CCDA0E /* JB4A */,
 				842ED54D1BD0392700CCDA0E /* Addition */,
 				84D31EAB1BC6D1E400E31DAE /* AppDelegate.h */,
 				84D31EAC1BC6D1E400E31DAE /* AppDelegate.m */,
@@ -333,9 +308,11 @@
 		9D65C2ABA7375300FD677837 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00858DF11D20B94300034250 /* UIKit.framework */,
 				B5C961BF1CA4432400BE9F33 /* WebKit.framework */,
 				849146051BDA57B10086C40D /* CoreLocation.framework */,
 				849146031BDA4F300086C40D /* MapKit.framework */,
+				B88C75CD27911CEE5B5CD86D /* libPods-MarketingCloud.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -356,9 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84D31ED21BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloud" */;
 			buildPhases = (
+				37A69BDD5FAFBD231669A916 /* 📦 Check Pods Manifest.lock */,
 				84D31EA11BC6D1E400E31DAE /* Sources */,
 				84D31EA21BC6D1E400E31DAE /* Frameworks */,
 				84D31EA31BC6D1E400E31DAE /* Resources */,
+				A17D55A061376B4E8BF69BDF /* 📦 Embed Pods Frameworks */,
+				1CF3D5365B5C0505B49757E4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -490,6 +470,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1CF3D5365B5C0505B49757E4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37A69BDD5FAFBD231669A916 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		84E639C01BE255BC0058894B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +512,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"Salesforce\";\ncompanyID=\"com.salesforce\";\ncompanyURL=\"http://salesforce.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--exit-threshold 2 \\\n\"${PROJECT_DIR}\"";
+		};
+		A17D55A061376B4E8BF69BDF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarketingCloud/Pods-MarketingCloud-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -522,7 +547,6 @@
 				8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */,
 				B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */,
 				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
-				B5C75EA31C7F6E10001A9D92 /* README.md in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
 				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,
 			);
@@ -663,6 +687,7 @@
 		};
 		84D31ED31BC6D1E400E31DAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 087DB35353DC2A4725E889BC /* Pods-MarketingCloud.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -673,8 +698,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK-02",
+					"$(PROJECT_DIR)/MarketingCloud/JB4ASDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -683,6 +707,7 @@
 		};
 		84D31ED41BC6D1E400E31DAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56055DB40F38F49073E6D328 /* Pods-MarketingCloud.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -693,8 +718,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK-02",
+					"$(PROJECT_DIR)/MarketingCloud/JB4ASDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";

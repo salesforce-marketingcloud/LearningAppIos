@@ -40,7 +40,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 	/**
 	 PushManager returns the list of tags as a NSSet collection
 	 */
-	NSSet *setOfTags = [[ETPush pushManager] allTags];
+	NSSet *setOfTags = [[ETPush pushManager] getTags];
 	/**
 	 Init mutable array
 	 */

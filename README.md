@@ -441,7 +441,7 @@ After push notifications are registered, start watching locations to retrieve th
 /**   
  Start geoLocation
  */
-[[ETLocationManager locationManager]startWatchingLocation];
+[[ETLocationManager sharedInstance] startWatchingLocation];
         
 /**
  Begins fence retrieval from ET of Geofences.

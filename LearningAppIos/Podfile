@@ -1,3 +1,0 @@
-target 'MarketingCloud' do
-     pod 'JB4ASDK'
-end

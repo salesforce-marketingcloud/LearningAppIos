@@ -109,9 +109,7 @@ You can use the location capabilities of the *JB4A SDK* to target messages to a 
 
 1. The account must have access to both MobilePush and Location Services.
 
-2. Ensure that you use version 7.8.0 or earlier of Google Play Services to enable geolocation for your app.
-
-3. You must receive user permission to implement location services.
+2. You must receive user permission to implement location services.
 
 <a name="0006b"></a>
 ## Analytics
@@ -325,17 +323,18 @@ The SDK can now be configured with the App ID and Access Token, as explained in 
 
 **AppDelegate+ETPush.m**
 
-The boolean parameters `withAnalytics`, `andLocationServices`, `andCloudPages` and `withPIAnalytics` enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to `NO`.
+The boolean parameters `withAnalytics`, `andLocationServices`, `andProximityServices`, `andCloudPages` and `withPIAnalytics` enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to `NO`.
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L35)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L36)
 ```objective-c
-successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
-                                          andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
-                                           withAnalytics:NO                     
-                                     andLocationServices:NO                     // set geoLocation
-                                           andCloudPages:NO                     
-                                         withPIAnalytics:NO
-                                                   error:&error];
+successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug             // Configure the SDK with the Debug App ID
+                                              andAccessToken:kETAccessToken_Debug       // Configure the SDK with the Debug Access Token
+                                               withAnalytics:YES                        // Enable Analytics
+                                         andLocationServices:YES                        // Enable Location Services (Geofence Messaging)
+                                        andProximityServices:YES                        // Enable Proximity services (Beacon Messaging)
+                                               andCloudPages:YES                        // Enable Cloud Pages
+                                             withPIAnalytics:YES                        // Enable WAMA / PI Analytics
+                                                       error:&error];
 ```
 
 If the configuration is successful and returns YES, the push notifications are registered.
@@ -412,7 +411,7 @@ To get all the tags:
 
 [view the code](/LearningAppIos/MarketingCloud/MCTagsViewController.m#L43)
 ```objective-c
-[[ETPush pushManager] allTags];
+NSSet *setOfTags = [[ETPush pushManager] getTags];
 ```
 
 <a name="0026"></a>
@@ -422,21 +421,22 @@ To get all the tags:
 
 To implement location services, pass a `YES` value for the `andLocationServices` parameter and use `ETLocationManager` to monitor location and geofence for a user.
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L35)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L36)
 ```objective-c
-successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
-                                          andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
-                                           withAnalytics:NO                     
-                                     andLocationServices:YES                    // set geoLocation
-                                           andCloudPages:NO                     
-                                         withPIAnalytics:NO
-                                                   error:&error];
+successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug             // Configure the SDK with the Debug App ID
+                                              andAccessToken:kETAccessToken_Debug       // Configure the SDK with the Debug Access Token
+                                               withAnalytics:YES                        // Enable Analytics
+                                         andLocationServices:YES                        // Enable Location Services (Geofence Messaging)
+                                        andProximityServices:YES                        // Enable Proximity services (Beacon Messaging)
+                                               andCloudPages:YES                        // Enable Cloud Pages
+                                             withPIAnalytics:YES                        // Enable WAMA / PI Analytics
+                                                       error:&error];
 ```
 Make sure you also add the "NSLocationAlwaysUsageDescription" key to your application’s *.plist file. See docs: [NSLocationAlwaysUsageDescription](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) and [NSLocationUsageDescription](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW27).
 
 After push notifications are registered, start watching locations to retrieve the fence and location notifications from ET Geofences and Beacons:
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L83-L93)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L89-L102)
 ```objective-c
 /**   
  Start geoLocation
@@ -455,24 +455,24 @@ After push notifications are registered, start watching locations to retrieve th
 ```
 When the application enters background mode, Location Services are disabled through the MobilePush SDK.
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L171-L176)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L159-L164)
 ```objective-c
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     /**
      Use this method to disable Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager locationManager]stopWatchingLocation];
+    [[ETLocationManager sharedInstance]startWatchingLocation];
 }
 ```
 When the application becomes active, Location Services are initiated through the MobilePush SDK.
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L178-L183)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L166-L171)
 ```objective-c
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     /**
      Use this method to initiate Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager locationManager]startWatchingLocation];
+    [[ETLocationManager sharedInstance]stopWatchingLocation];
 }
 ```
 **MCGeoLocationViewController.m**
@@ -481,15 +481,15 @@ To check if locations are active, use the boolean method:
 
 [view the code](/LearningAppIos/MarketingCloud/MCGeoLocationViewController.m#L34)
 ```objective-c
-[[ETLocationManager locationManager]getWatchingLocation]
+self.geoLocationNotification.on = [[ETLocationManager sharedInstance]getWatchingLocation];
 ```
 If locations are active it returns `YES`, otherwise it returns `NO`.
 
 To obtain the monitored regions use this method:
 
-[view the code](/LearningAppIos/MarketingCloud/MCGeoLocationViewController.m#L58)
+[view the code](/LearningAppIos/MarketingCloud/MCGeoLocationViewController.m#L59)
 ```objective-c
-[[ETLocationManager locationManager] monitoredRegions]
+NSArray *monitoredRegions = [[[ETLocationManager sharedInstance] monitoredRegions] allObjects];
 ```
 
 <a name="0026b"></a>
@@ -499,15 +499,16 @@ To obtain the monitored regions use this method:
 
 In the call to configureSDKWithAppID, pass a `YES` value for the withAnalytics parameter.
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L35)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L36)
 ```objective-c
-successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         // set the Debug ID
-                                          andAccessToken:kETAccessToken_Debug   // set the Debug Access Token
-                                           withAnalytics:YES                    //
-                                     andLocationServices:YES                    // set geoLocation
-                                           andCloudPages:NO                     //
-                                         withPIAnalytics:NO 
-                                                   error:&error];
+successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug             // Configure the SDK with the Debug App ID
+                                              andAccessToken:kETAccessToken_Debug       // Configure the SDK with the Debug Access Token
+                                               withAnalytics:YES                        // Enable Analytics
+                                         andLocationServices:YES                        // Enable Location Services (Geofence Messaging)
+                                        andProximityServices:YES                        // Enable Proximity services (Beacon Messaging)
+                                               andCloudPages:YES                        // Enable Cloud Pages
+                                             withPIAnalytics:YES                        // Enable WAMA / PI Analytics
+                                                       error:&error];
 ```
 
 To see your new Web and Mobile Analytics, open the Web and Mobile Analytics app within the Marketing Cloud and agree to the Terms and Conditions to get started.

@@ -84,11 +84,23 @@
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
 
-        [[ETPush pushManager] registerForRemoteNotificationsWithDelegate:self options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
-            
-            NSLog(@"Registered for remote notifications: %d", granted);
-            
-        }];
+        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
+            [[ETPush pushManager] registerForRemoteNotificationsWithDelegate:nil options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                
+                NSLog(@"Registered for remote notifications: %d", granted);
+                
+            }];
+        }
+        else {
+            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound |
+                                                    UIUserNotificationTypeAlert
+                                                                                     categories:nil];
+            // Notify the SDK what user notification settings have been selected
+            [[ETPush pushManager] registerUserNotificationSettings:settings];
+            [[ETPush pushManager] registerForRemoteNotifications];
+        }
 #else
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
                                                 UIUserNotificationTypeBadge |
@@ -131,20 +143,109 @@
         
     }
     
-    return YES;
-}
-
-- (void)didReceiveCloudPageWithAlertMessageWithContents:(NSString *)payload {
+    [self performSelector:@selector(testNotificationStuff) withObject:nil afterDelay:5.0];
     
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[ETWKLandingPagePresenter alloc] initForLandingPageAt:payload]
-                                                                                 animated:YES
-                                                                               completion:nil];
-}
-
--(BOOL)shouldDeliverCloudPageWithAlertMessageIfAppIsRunning
-{
     return YES;
 }
+
+- (void) testNotificationStuff {
+
+    [[ETPush pushManager] registeredForRemoteNotificationsWithCompletionHandler:^(BOOL registered, UNAuthorizationOptions options) {
+        NSLog(@"registered: %ld, %ld", (long) registered, (unsigned long)options);
+    }];
+    
+    [[ETPush pushManager] currentUserNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings) {
+        NSLog(@"settings: %@", settings);
+    }];
+    
+    [[ETPush pushManager] setUserNotificationCenterDelegate:nil];
+    
+    UNNotificationAction *action = [UNNotificationAction actionWithIdentifier:@"1234567890" title:@"actionTitle" options:UNNotificationActionOptionForeground];
+    UNNotificationCategory *category = [UNNotificationCategory categoryWithIdentifier:@"1234567890" actions:@[action] intentIdentifiers:@[@"867-5309"] options:UNNotificationCategoryOptionNone];
+    NSSet<UNNotificationCategory *> *categories = [NSSet setWithObject:category];
+    
+    [[ETPush pushManager] setUserNotificationCenterCategories:categories];
+    
+    [[ETPush pushManager] getUserNotificationCenterCategoriesWithCompletionHandler:^(NSSet *categories) {
+        NSLog(@"categories: %@", categories);
+    }];
+
+
+    NSString *identifier = [[NSUUID UUID] UUIDString];
+    UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
+    content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
+    content.body = [NSString localizedUserNotificationStringForKey:@"Hello_message_body"
+                                                         arguments:nil];
+    content.sound = [UNNotificationSound defaultSound];
+    content.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
+    
+    // Deliver the notification in ten seconds.
+    UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
+                                                  triggerWithTimeInterval:10 repeats:NO];
+    UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:identifier
+                                                                          content:content trigger:trigger];
+    
+    [[ETPush pushManager] addNotificationRequest:request withCompletionHandler:^(NSError * error) {
+        NSLog(@"addNotificationError: %@", error);
+
+        [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
+            // Count of pending requests should be 1
+            NSLog(@"pendingRequests: %@", requests);
+
+            // Remove our request
+            [[ETPush pushManager] removePendingNotificationRequestsWithIdentifiers:@[identifier]];
+            
+            // Check the count
+            [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
+                // Count of pending requests should now be 0
+                NSLog(@"pendingRequests: %@", requests);
+                
+                // Lets do it again, with that same request
+                [[ETPush pushManager] addNotificationRequest:request withCompletionHandler:^(NSError * error) {
+                    NSLog(@"addNotificationError: %@", error);
+                    
+                    [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
+                        // Count of pending requests should be 1
+                        NSLog(@"pendingRequests: %@", requests);
+                        
+                        // Remove all requests
+                        [[ETPush pushManager] removeAllPendingNotificationRequests];
+                        
+                        // Check the count
+                        [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
+                            // Count of pending requests should now be 0
+                            NSLog(@"pendingRequests: %@", requests);
+                            
+                            // Last time around, with delivery!
+                            [[ETPush pushManager] addNotificationRequest:request withCompletionHandler:^(NSError * error) {
+                                NSLog(@"addNotificationError: %@", error);
+                                
+                                sleep(10);
+                                
+                                [[ETPush pushManager] getDeliveredNotificationsWithCompletionHandler:^(NSArray *notifications) {
+                                    // Count should be 1
+                                    NSLog(@"deliveredNotifications: %@", notifications);
+                                    
+                                    [[ETPush pushManager] removeDeliveredNotificationsWithIdentifiers:@[identifier]];
+                                    
+                                    // or...
+                                    [[ETPush pushManager] removeAllDeliveredNotifications];
+                                    
+                                    // Check the count
+                                    [[ETPush pushManager] getDeliveredNotificationsWithCompletionHandler:^(NSArray *requests) {
+                                        // Count of pending requests should now be 0
+                                        NSLog(@"deliveredRequests: %@", requests);
+                                    }];
+                                }];
+                            }];
+                        }];
+                    }];
+                }];
+            }];
+        }];
+    }];
+}
+
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
 
@@ -161,12 +262,12 @@
 // The method will be called on the delegate when the user responded to the notification by opening the application, dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application returns from applicationDidFinishLaunching:.
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler {
     
-    NSDictionary *userInfo = response.notification.request.content.userInfo;
     /**
      Inform the JB4ASDK that the device received a remote notification
      */
-    [[ETPush pushManager] handleNotification:userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
+    [[ETPush pushManager] handleUserNotificationResponse:response];
     
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
     /**
      Is it a silent push?
      */
@@ -270,5 +371,17 @@
     
     handler(UIBackgroundFetchResultNoData);
 }
+
+#pragma mark Cloud Page delegates
+- (void)didReceiveCloudPageWithAlertMessageWithContents:(NSString *)payload {
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[ETWKLandingPagePresenter alloc] initForLandingPageAt:payload]
+                                                                                 animated:YES
+                                                                               completion:nil];
+}
+
+-(BOOL)shouldDeliverCloudPageWithAlertMessageIfAppIsRunning {
+    return YES;
+}
+
 
 @end

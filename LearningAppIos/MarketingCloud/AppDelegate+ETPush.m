@@ -85,7 +85,7 @@
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
 
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
-            [[ETPush pushManager] registerForRemoteNotificationsWithDelegate:nil options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            [[ETPush pushManager] registerForRemoteNotificationsWithDelegate:self options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
                 
                 NSLog(@"Registered for remote notifications: %d", granted);
                 
@@ -143,109 +143,8 @@
         
     }
     
-    [self performSelector:@selector(testNotificationStuff) withObject:nil afterDelay:5.0];
-    
     return YES;
 }
-
-- (void) testNotificationStuff {
-
-    [[ETPush pushManager] registeredForRemoteNotificationsWithCompletionHandler:^(BOOL registered, UNAuthorizationOptions options) {
-        NSLog(@"registered: %ld, %ld", (long) registered, (unsigned long)options);
-    }];
-    
-    [[ETPush pushManager] currentUserNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings) {
-        NSLog(@"settings: %@", settings);
-    }];
-    
-    [[ETPush pushManager] setUserNotificationCenterDelegate:nil];
-    
-    UNNotificationAction *action = [UNNotificationAction actionWithIdentifier:@"1234567890" title:@"actionTitle" options:UNNotificationActionOptionForeground];
-    UNNotificationCategory *category = [UNNotificationCategory categoryWithIdentifier:@"1234567890" actions:@[action] intentIdentifiers:@[@"867-5309"] options:UNNotificationCategoryOptionNone];
-    NSSet<UNNotificationCategory *> *categories = [NSSet setWithObject:category];
-    
-    [[ETPush pushManager] setUserNotificationCenterCategories:categories];
-    
-    [[ETPush pushManager] getUserNotificationCenterCategoriesWithCompletionHandler:^(NSSet *categories) {
-        NSLog(@"categories: %@", categories);
-    }];
-
-
-    NSString *identifier = [[NSUUID UUID] UUIDString];
-    UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
-    content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
-    content.body = [NSString localizedUserNotificationStringForKey:@"Hello_message_body"
-                                                         arguments:nil];
-    content.sound = [UNNotificationSound defaultSound];
-    content.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
-    
-    // Deliver the notification in ten seconds.
-    UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
-                                                  triggerWithTimeInterval:10 repeats:NO];
-    UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:identifier
-                                                                          content:content trigger:trigger];
-    
-    [[ETPush pushManager] addNotificationRequest:request withCompletionHandler:^(NSError * error) {
-        NSLog(@"addNotificationError: %@", error);
-
-        [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
-            // Count of pending requests should be 1
-            NSLog(@"pendingRequests: %@", requests);
-
-            // Remove our request
-            [[ETPush pushManager] removePendingNotificationRequestsWithIdentifiers:@[identifier]];
-            
-            // Check the count
-            [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
-                // Count of pending requests should now be 0
-                NSLog(@"pendingRequests: %@", requests);
-                
-                // Lets do it again, with that same request
-                [[ETPush pushManager] addNotificationRequest:request withCompletionHandler:^(NSError * error) {
-                    NSLog(@"addNotificationError: %@", error);
-                    
-                    [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
-                        // Count of pending requests should be 1
-                        NSLog(@"pendingRequests: %@", requests);
-                        
-                        // Remove all requests
-                        [[ETPush pushManager] removeAllPendingNotificationRequests];
-                        
-                        // Check the count
-                        [[ETPush pushManager] getPendingNotificationRequestsWithCompletionHandler:^(NSArray *requests) {
-                            // Count of pending requests should now be 0
-                            NSLog(@"pendingRequests: %@", requests);
-                            
-                            // Last time around, with delivery!
-                            [[ETPush pushManager] addNotificationRequest:request withCompletionHandler:^(NSError * error) {
-                                NSLog(@"addNotificationError: %@", error);
-                                
-                                sleep(10);
-                                
-                                [[ETPush pushManager] getDeliveredNotificationsWithCompletionHandler:^(NSArray *notifications) {
-                                    // Count should be 1
-                                    NSLog(@"deliveredNotifications: %@", notifications);
-                                    
-                                    [[ETPush pushManager] removeDeliveredNotificationsWithIdentifiers:@[identifier]];
-                                    
-                                    // or...
-                                    [[ETPush pushManager] removeAllDeliveredNotifications];
-                                    
-                                    // Check the count
-                                    [[ETPush pushManager] getDeliveredNotificationsWithCompletionHandler:^(NSArray *requests) {
-                                        // Count of pending requests should now be 0
-                                        NSLog(@"deliveredRequests: %@", requests);
-                                    }];
-                                }];
-                            }];
-                        }];
-                    }];
-                }];
-            }];
-        }];
-    }];
-}
-
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
 
@@ -255,7 +154,16 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
     
     if (completionHandler != nil) {
-        completionHandler(UNNotificationPresentationOptionAlert);
+        if ([[ETPush pushManager] shouldShowLocalAlert] == YES) {
+            completionHandler(UNNotificationPresentationOptionAlert);
+        }
+        else {
+            [[ETPush pushManager] handleNotification:notification.request.content.userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
+            completionHandler(UNNotificationPresentationOptionNone);
+        }
+    }
+    else {
+        [[ETPush pushManager] handleNotification:notification.request.content.userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
     }
 }
 
@@ -338,11 +246,6 @@
      */
     NSLog(@"Local Notification Receieved");
     [[ETPush pushManager] handleLocalNotification:notification];
-}
-
--(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"Push Notification Received");
-    [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {

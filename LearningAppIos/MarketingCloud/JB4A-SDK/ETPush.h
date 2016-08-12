@@ -14,6 +14,10 @@
 #import "PushConstants.h"
 #import <Availability.h>
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+#import <UserNotifications/UserNotifications.h>
+#endif
+
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Constants
@@ -155,6 +159,13 @@ static NSString * const SDKName = @"JB4ASDK";
                         error:(NSError **)configureError;
 
 /**
+ Returns state of _showLocalAlert flag
+ 
+ @return BOOL
+ */
+- (BOOL)shouldShowLocalAlert;
+
+/**
  Sets the OpenDirect delegate.
  
  @param delegate The object you wish to be called when an OpenDirect message is delivered.
@@ -201,71 +212,38 @@ static NSString * const SDKName = @"JB4ASDK";
  *  ---------------------------------------------------------------------------------------
  */
 
-// Refer to Availability.h for the reasoning behind why the following #if's are used.
-// Basically, this will allow the code to be compiled for different IPHONEOS_DEPLOYMENT_TARGET values to
-// maintain backward compatibility for running on IOS 6.0 and up as well allowing for using different versions
-// of the IOS SDK compiled using XCode 5.X, XCode 6.X and up without getting depricated warnings or undefined warnings.
-
-// IPHONEOS_DEPLOYMENT_TARGET = 6.X or 7.X
-#if __IPHONE_OS_VERSION_MIN_REQUIRED < 80000
-// Supports IOS SDK 8.X (i.e. XCode 6.X and up)
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
-/**
- Wrapper for iOS' application:registerForRemoteNotification; call. It will check that push is allowed, and if so, register with Apple for a token. If push is not enabled, it will notify Salesforce that push is disabled.
- 
- @return Doesn't return a value
- */
--(void)registerForRemoteNotifications;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 
 /**
- Wrapper for iOS' isRegisteredForRemoteNotifications; call.
  
- @return BOOL
- */
-- (BOOL)isRegisteredForRemoteNotifications;
+ A one-shot method to get notification up and running in your app.
+ 
+ @param delegate From Apple: "To guarantee that your app is able to respond to actionable notifications, you must set the delegate before your app finishes launching. For example, this means setting the delegate before an iOS app’s applicationDidFinishLaunching: method returns." If desired, -setUserNotificationCenterDelegate may be called early in the app lifecycle, and registration later.
+ @param options UNAuthorizationOptions must be passed for registration.
+ @param categories A set of UNNotificationCategory objects for push notifications. These may be modified after registration via setUserNotificationCenterCategories.
+ @param completionHandler Returns isGranted and error values to convey the results of registration.
+ 
+*/
+-(void)registerForRemoteNotificationsWithDelegate:(_Nullable id<UNUserNotificationCenterDelegate>) delegate options:(UNAuthorizationOptions)options categories:(NSSet<UNNotificationCategory *> *_Nullable) categories completionHandler:(void (^)(BOOL granted, NSError *_Nullable error))completionHandler;
 
-/**
- Wrapper for iOS' application:registerUserNotificationSettings; call.
- 
- @param notificationSettings The UIUserNotificationSettings object that the application would like to use for push. These are pipe-delimited, and use Apple's native values
- @return Doesn't return a value
- */
-- (void)registerUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
+- (void)registeredForRemoteNotificationsWithCompletionHandler:(void (^)(BOOL registered, UNAuthorizationOptions options))completionHandler;
+- (void)currentUserNotificationSettingsWithCompletionHandler:(void(^)(UNNotificationSettings *settings))completionHandler;
 
-/**
- Wrapper for iOS' currentUserNotificationSettings; call.
- 
- @return Doesn't return a value
- */
-- (nullable UIUserNotificationSettings *)currentUserNotificationSettings;
+- (void)setUserNotificationCenterDelegate:(_Nullable id<UNUserNotificationCenterDelegate>) delegate;
 
-/**
- Wrapper for iOS' didRegisterUserNotificationSettings; callback.
- 
- @param notificationSettings a UIUserNotificationSettings class value.
- @return no value returned.
- */
-- (void)didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
+- (void)setUserNotificationCenterCategories:(NSSet<UNNotificationCategory *> *_Nullable)categories;
+- (void)getUserNotificationCenterCategoriesWithCompletionHandler:(void(^)(NSSet<UNNotificationCategory *> *categories))completionHandler;
 
-/**
- Wrapper for iOS' application:registerForRemoteNotificationTypes; call. It will check that push is allowed, and if so, register with Apple for a token. If push is not enabled, it will notify Salesforce that push is disabled.
- 
- @deprecated June 4 2015
- @param types The UIRemoteNotificationTypes that the application would like to use for push. These are pipe-delimited, and use Apple's native values
- @return Doesn't return a value
- */
--(void)registerForRemoteNotificationTypes:(UIRemoteNotificationType)types;
-#else
-// Supports IOS SDKs < 8.X (i.e. XCode 5.X or less)
-/**
- Wrapper for iOS' application:registerForRemoteNotificationTypes; call. It will check that push is allowed, and if so, register with Apple for a token. If push is not enabled, it will notify Salesforce that push is disabled.
- 
- @param types The UIRemoteNotificationTypes that the application would like to use for push. These are pipe-delimited, and use Apple's native values
- @return Doesn't return a value
- */
--(void)registerForRemoteNotificationTypes:(UIRemoteNotificationType)types;
+- (void)addNotificationRequest:(UNNotificationRequest *)request withCompletionHandler:(nullable void(^)(NSError *__nullable error))completionHandler;
+- (void)getPendingNotificationRequestsWithCompletionHandler:(void(^)(NSArray<UNNotificationRequest *> *requests))completionHandler;
+- (void)removePendingNotificationRequestsWithIdentifiers:(NSArray<NSString *> *)identifiers;
+- (void)removeAllPendingNotificationRequests;
+- (void)getDeliveredNotificationsWithCompletionHandler:(void(^)(NSArray<UNNotification *> *notifications))completionHandler;
+- (void)removeDeliveredNotificationsWithIdentifiers:(NSArray<NSString *> *)identifiers;
+- (void)removeAllDeliveredNotifications;
+
 #endif
-#else
+
 // IPHONEOS_DEPLOYMENT_TARGET >= 8.X
 // Supports IOS SDK 8.X (i.e. XCode 6.X and up)
 /**
@@ -303,7 +281,7 @@ static NSString * const SDKName = @"JB4ASDK";
  @return Doesn't return a value
  */
 - (void)didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
-#endif
+
 
 /**
  Responsible for sending a received token back to Salesforce. It marks the end of the token registration flow. If it is unable to reach ET server, it will save the token and try again later.
@@ -371,27 +349,33 @@ Reset the application's badge number to zero (aka, remove it). Call updateET to 
  */
 -(void)applicationTerminated;
 
-/**
-Handles a push notification received by the app when the application is already running.
 
- This method must be implemented in UIApplication sharedApplication didReceiveRemoteNotification:userInfo.
- Sometimes, when a push comes in, the application will already be running (it happens). This method rises to the occasion of handing that notification, displaying an Alert (if the SDK is configured to do so), and calling all of the analytic methods that wouldn't be called otherwise.
+
+
+
+- (void) handleNotification:(NSDictionary *)userInfo forApplicationState:(UIApplicationState)applicationState;
+
+- (void) handleRemoteNotification:( NSDictionary * _Nullable ) userInfo;
+
+- (void) handleLocalNotification:( UILocalNotification * _Nullable ) localNotification;
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+- (void) handleUserNotificationResponse:(UNNotificationResponse * _Nullable ) notificationResponse;
+#endif
+
+/**
+ Handles a notification received by the app when the application is already running.
+ 
+*** REVISE *** This method must be implemented in UIApplication sharedApplication didReceiveRemoteNotification:userInfo.
+ Sometimes, when a push comes in, the application will already be running (it happens). This method rises to the occasion of handing that notification,  calling all of the analytic methods that wouldn't be called otherwise.
+ 
+ Sometimes the SDK will use local notifications to indicate something to the user. These are handled differently by iOS, and as such, need to be implemented differently in the SDK.
  
  @param userInfo The dictionary containing the push notification
- @param applicationState State of the application at time of notification
+ @param state ETPush's pushOriginationState
  @return Doesn't return a value.
  */
--(void)handleNotification:(NSDictionary *)userInfo forApplicationState:(UIApplicationState)applicationState;
-
-/**
- Handles a local notification received by the application.
- 
- Sometimes the SDK will use local notifications to indicate something to the user. These are handled differently by iOS, and as such, need to be implemented differently in the SDK. Sorry about that.
- 
- @param notification The received UILocalNotification
- @return Doesn't return a value
- */
--(void)handleLocalNotification:(UILocalNotification *)notification;
+- (void) handleNotificationWithUserInfo:( NSDictionary * _Nullable ) userInfo pushOriginationState:(pushOriginationState) state;
 
 
 #pragma mark - Data Interaction

@@ -55,9 +55,10 @@ static NSString * const ETPIAnalyticsActive       = @"ETPIAnalyticsActive";
  */
 typedef NS_ENUM (NSUInteger, pushOriginationState){
     /** PushOriginationStateBackground  */
-    PushOriginationStateBackground                    = 0,
+    PushOriginationStateBackground                      = 0,
     /** PushOriginationStateForeground  */
-    PushOriginationStateForeground
+    PushOriginationStateForeground,
+    PushOriginationStateUnknown                         = 999
 };
 
 /**

@@ -19,6 +19,16 @@
 @implementation AppDelegate (ETPush)
 #pragma mark - SDK Setup
 - (BOOL)application:(UIApplication *)application shouldInitETSDKWithOptions:(NSDictionary *)launchOptions {
+    
+    // Begin setup
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
+    
+#pragma error
+    
+    NSAssert(YES == NO, @"You must add UserNotification.framework to your project if building under Xcode 8. Then, remove this block of code.");
+#endif
+    // End setup
+    
     BOOL successful = NO;
     NSError *error = nil;
     

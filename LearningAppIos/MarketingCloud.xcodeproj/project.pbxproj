@@ -42,7 +42,6 @@
 		84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB61BC6D1E400E31DAE /* LaunchScreen.storyboard */; };
 		84D31EC31BC6D1E400E31DAE /* MarketingCloudTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EC21BC6D1E400E31DAE /* MarketingCloudTests.m */; };
 		84D31ECE1BC6D1E400E31DAE /* MarketingCloudUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */; };
-		9B9742021D5E484700344996 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742011D5E484700344996 /* UserNotifications.framework */; };
 		9B9742041D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742031D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
@@ -138,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B9742021D5E484700344996 /* UserNotifications.framework in Frameworks */,
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,

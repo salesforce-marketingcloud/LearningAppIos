@@ -6,12 +6,16 @@
  */
 
 #import "AppDelegate.h"
-#import <UserNotifications/UserNotifications.h>
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
+#import <UserNotifications/UserNotifications.h>
+
 @interface AppDelegate (ETPush) <UNUserNotificationCenterDelegate, ExactTargetCloudPageWithAlertDelegate>
+
 #else
+
 @interface AppDelegate (ETPush) <ExactTargetCloudPageWithAlertDelegate>
+
 #endif
 
 - (BOOL)application : (UIApplication *)application shouldInitETSDKWithOptions : (NSDictionary *)launchOptions;

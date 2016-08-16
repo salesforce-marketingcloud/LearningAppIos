@@ -683,7 +683,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
-					"$(PROJECT_DIR)/MarketingCloud/JB4ASDK",
 					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;
@@ -703,7 +702,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
-					"$(PROJECT_DIR)/MarketingCloud/JB4ASDK",
 					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;

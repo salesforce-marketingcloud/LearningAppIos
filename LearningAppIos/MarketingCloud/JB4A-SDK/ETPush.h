@@ -350,32 +350,32 @@ Reset the application's badge number to zero (aka, remove it). Call updateET to 
 -(void)applicationTerminated;
 
 
-
-
-
+/** Handles a notification received by the app
+ 
+ @param userInfo The dictionary containing the push notification payload
+ @param applicationState UIApplicationState value used as a hint to the SDK to describe if the app was in the foreground or background when the notification payload is received by the application delegate, thereby facilitating propery SDK behavior and logging
+ */
 - (void) handleNotification:(NSDictionary *)userInfo forApplicationState:(UIApplicationState)applicationState;
 
+/** Handles a notification received by the app (typically, in response to -application:didReceiveRemoteNotification:fetchCompletionHandler:)
+ 
+ @param userInfo The dictionary containing the push notification payload
+ */
 - (void) handleRemoteNotification:( NSDictionary * _Nullable ) userInfo;
 
+/** Handles a notification received by the app (in response to -application:didReceiveLocalNotification:)
+ 
+ @param userInfo The localNotification received by the application
+ */
 - (void) handleLocalNotification:( UILocalNotification * _Nullable ) localNotification;
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+/** Handles an iOS 10 notification received by the app (in response to -userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:)
+ 
+ @param notificationResponse The UNNotificationResponse received by the application
+ */
 - (void) handleUserNotificationResponse:(UNNotificationResponse * _Nullable ) notificationResponse;
 #endif
-
-/**
- Handles a notification received by the app when the application is already running.
- 
-*** REVISE *** This method must be implemented in UIApplication sharedApplication didReceiveRemoteNotification:userInfo.
- Sometimes, when a push comes in, the application will already be running (it happens). This method rises to the occasion of handing that notification,  calling all of the analytic methods that wouldn't be called otherwise.
- 
- Sometimes the SDK will use local notifications to indicate something to the user. These are handled differently by iOS, and as such, need to be implemented differently in the SDK.
- 
- @param userInfo The dictionary containing the push notification
- @param state ETPush's pushOriginationState
- @return Doesn't return a value.
- */
-- (void) handleNotificationWithUserInfo:( NSDictionary * _Nullable ) userInfo pushOriginationState:(pushOriginationState) state;
 
 
 #pragma mark - Data Interaction

@@ -12,22 +12,11 @@
 #import "ETRegion.h"
 #import "ETWKLandingPagePresenter.h"
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
 #import <UserNotifications/UserNotifications.h>
-#endif
 
 @implementation AppDelegate (ETPush)
 #pragma mark - SDK Setup
 - (BOOL)application:(UIApplication *)application shouldInitETSDKWithOptions:(NSDictionary *)launchOptions {
-    
-    // Begin setup
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
-    
-#pragma error
-    
-    NSAssert(YES == NO, @"You must add UserNotification.framework to your project if building under Xcode 8. Then, remove this block of code.");
-#endif
-    // End setup
     
     BOOL successful = NO;
     NSError *error = nil;
@@ -91,9 +80,6 @@
         /**
          Register for push notifications - enable all notification types, no categories
          */
-
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
-
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
             [[ETPush pushManager] registerForRemoteNotificationsWithDelegate:self options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
                 
@@ -111,16 +97,6 @@
             [[ETPush pushManager] registerUserNotificationSettings:settings];
             [[ETPush pushManager] registerForRemoteNotifications];
         }
-#else
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
-                                                UIUserNotificationTypeBadge |
-                                                UIUserNotificationTypeSound |
-                                                UIUserNotificationTypeAlert
-                                                                                 categories:nil];
-        // Notify the SDK what user notification settings have been selected
-        [[ETPush pushManager] registerUserNotificationSettings:settings];
-        [[ETPush pushManager] registerForRemoteNotifications];
-#endif
         
         /**
          Start geoLocation
@@ -155,8 +131,6 @@
     
     return YES;
 }
-
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
 
 #pragma mark - Lifecycle Callbacks
 
@@ -208,9 +182,6 @@
         completionHandler();
     }
 }
-
-#endif
-
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     /**

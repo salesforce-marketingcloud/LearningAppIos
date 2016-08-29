@@ -40,8 +40,6 @@
 		84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB11BC6D1E400E31DAE /* Main.storyboard */; };
 		84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB41BC6D1E400E31DAE /* Assets.xcassets */; };
 		84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB61BC6D1E400E31DAE /* LaunchScreen.storyboard */; };
-		84D31EC31BC6D1E400E31DAE /* MarketingCloudTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31EC21BC6D1E400E31DAE /* MarketingCloudTests.m */; };
-		84D31ECE1BC6D1E400E31DAE /* MarketingCloudUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */; };
 		9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742011D5E484700344996 /* UserNotifications.framework */; };
 		9B6B25581D70CB1B00874782 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B25571D70CB1B00874782 /* NotificationService.m */; };
 		9B6B255D1D70CB1B00874782 /* MarketingCloudServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -52,20 +50,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		84D31EBF1BC6D1E400E31DAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84D31E9D1BC6D1E400E31DAE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84D31EA41BC6D1E400E31DAE;
-			remoteInfo = MarketingCloud;
-		};
-		84D31ECA1BC6D1E400E31DAE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 84D31E9D1BC6D1E400E31DAE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 84D31EA41BC6D1E400E31DAE;
-			remoteInfo = MarketingCloud;
-		};
 		9B6B255A1D70CB1B00874782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84D31E9D1BC6D1E400E31DAE /* Project object */;
@@ -141,10 +125,8 @@
 		84D31EB41BC6D1E400E31DAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D31EB71BC6D1E400E31DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84D31EB91BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84D31EBE1BC6D1E400E31DAE /* MarketingCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketingCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D31EC21BC6D1E400E31DAE /* MarketingCloudTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketingCloudTests.m; sourceTree = "<group>"; };
 		84D31EC41BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84D31EC91BC6D1E400E31DAE /* MarketingCloudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarketingCloudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketingCloudUITests.m; sourceTree = "<group>"; };
 		84D31ECF1BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MarketingCloudServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,20 +155,6 @@
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
 				9B9742041D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a in Frameworks */,
 				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84D31EBB1BC6D1E400E31DAE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84D31EC61BC6D1E400E31DAE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,8 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				84D31EA51BC6D1E400E31DAE /* MarketingCloud.app */,
-				84D31EBE1BC6D1E400E31DAE /* MarketingCloudTests.xctest */,
-				84D31EC91BC6D1E400E31DAE /* MarketingCloudUITests.xctest */,
 				9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */,
 			);
 			name = Products;
@@ -434,42 +400,6 @@
 			productReference = 84D31EA51BC6D1E400E31DAE /* MarketingCloud.app */;
 			productType = "com.apple.product-type.application";
 		};
-		84D31EBD1BC6D1E400E31DAE /* MarketingCloudTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 84D31ED51BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloudTests" */;
-			buildPhases = (
-				84D31EBA1BC6D1E400E31DAE /* Sources */,
-				84D31EBB1BC6D1E400E31DAE /* Frameworks */,
-				84D31EBC1BC6D1E400E31DAE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				84D31EC01BC6D1E400E31DAE /* PBXTargetDependency */,
-			);
-			name = MarketingCloudTests;
-			productName = MarketingCloudTests;
-			productReference = 84D31EBE1BC6D1E400E31DAE /* MarketingCloudTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		84D31EC81BC6D1E400E31DAE /* MarketingCloudUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 84D31ED81BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloudUITests" */;
-			buildPhases = (
-				84D31EC51BC6D1E400E31DAE /* Sources */,
-				84D31EC61BC6D1E400E31DAE /* Frameworks */,
-				84D31EC71BC6D1E400E31DAE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				84D31ECB1BC6D1E400E31DAE /* PBXTargetDependency */,
-			);
-			name = MarketingCloudUITests;
-			productName = MarketingCloudUITests;
-			productReference = 84D31EC91BC6D1E400E31DAE /* MarketingCloudUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		9B6B25531D70CB1B00874782 /* MarketingCloudServiceExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B6B25601D70CB1B00874782 /* Build configuration list for PBXNativeTarget "MarketingCloudServiceExtension" */;
@@ -509,14 +439,6 @@
 							};
 						};
 					};
-					84D31EBD1BC6D1E400E31DAE = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 84D31EA41BC6D1E400E31DAE;
-					};
-					84D31EC81BC6D1E400E31DAE = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 84D31EA41BC6D1E400E31DAE;
-					};
 					84E639BC1BE194200058894B = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
@@ -546,8 +468,6 @@
 			projectRoot = "";
 			targets = (
 				84D31EA41BC6D1E400E31DAE /* MarketingCloud */,
-				84D31EBD1BC6D1E400E31DAE /* MarketingCloudTests */,
-				84D31EC81BC6D1E400E31DAE /* MarketingCloudUITests */,
 				84E639BC1BE194200058894B /* Documentation */,
 				9B6B25531D70CB1B00874782 /* MarketingCloudServiceExtension */,
 			);
@@ -563,20 +483,6 @@
 				84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */,
 				84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */,
 				84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84D31EBC1BC6D1E400E31DAE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84D31EC71BC6D1E400E31DAE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,22 +533,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84D31EBA1BC6D1E400E31DAE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84D31EC31BC6D1E400E31DAE /* MarketingCloudTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84D31EC51BC6D1E400E31DAE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				84D31ECE1BC6D1E400E31DAE /* MarketingCloudUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9B6B25501D70CB1B00874782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -654,16 +544,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		84D31EC01BC6D1E400E31DAE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84D31EA41BC6D1E400E31DAE /* MarketingCloud */;
-			targetProxy = 84D31EBF1BC6D1E400E31DAE /* PBXContainerItemProxy */;
-		};
-		84D31ECB1BC6D1E400E31DAE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 84D31EA41BC6D1E400E31DAE /* MarketingCloud */;
-			targetProxy = 84D31ECA1BC6D1E400E31DAE /* PBXContainerItemProxy */;
-		};
 		9B6B255B1D70CB1B00874782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9B6B25531D70CB1B00874782 /* MarketingCloudServiceExtension */;
@@ -813,54 +693,6 @@
 			};
 			name = Release;
 		};
-		84D31ED61BC6D1E400E31DAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MarketingCloudTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oktana.MarketingCloudTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarketingCloud.app/MarketingCloud";
-			};
-			name = Debug;
-		};
-		84D31ED71BC6D1E400E31DAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MarketingCloudTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oktana.MarketingCloudTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarketingCloud.app/MarketingCloud";
-			};
-			name = Release;
-		};
-		84D31ED91BC6D1E400E31DAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = MarketingCloudUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oktana.MarketingCloudUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = MarketingCloud;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		84D31EDA1BC6D1E400E31DAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = MarketingCloudUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oktana.MarketingCloudUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = MarketingCloud;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 		84E639BD1BE194210058894B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -936,24 +768,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84D31ED51BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloudTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				84D31ED61BC6D1E400E31DAE /* Debug */,
-				84D31ED71BC6D1E400E31DAE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		84D31ED81BC6D1E400E31DAE /* Build configuration list for PBXNativeTarget "MarketingCloudUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				84D31ED91BC6D1E400E31DAE /* Debug */,
-				84D31EDA1BC6D1E400E31DAE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		84E639BF1BE194210058894B /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -970,6 +784,7 @@
 				9B6B255F1D70CB1B00874782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

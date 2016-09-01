@@ -16,7 +16,7 @@ Please make sure you are always using the latest SDK. The Learning App only supp
 
     4. [Tags](#0005)
 
-    5. [Beacon and Geofence Messages](#0006)
+    5. [Geofence and Beacon Messages](#0006)
 
     6. [Analytics](#0006b)
 
@@ -102,10 +102,11 @@ The Salesforce Marketing Cloud interface as well as the Web Service SOAP API sup
 ## Tags
 
 Tags let you implement contact segmentation. You can set tags for subscriptions as defined by user choice.  Additionally, use tags to collect information from the mobile app and for unstructured data or data that can contain many potential unknown values. For example, you can use tags when the number of potential attribute names exceeds the number of potential values of an individual attribute (such as the favorite brand specified by a contact).
+
 <a name="0006"></a>
 ## Beacon and Geofence Messages
 
-You can use the location capabilities of the *JB4A SDK* to target messages to a segmented group of contacts.  Send personalized messages to increase engagement. The app pre-downloads geofence messages and triggers those messages when a mobile device crosses a geofence boundary.  To use this functionality:
+You can use the location capabilities of the *JB4A SDK* to target messages to a segmented group of contacts.  Send personalized messages to increase engagement. The app pre-downloads geofence messages and triggers those messages when a mobile device crosses a geofence boundary. For beacon messages, the app triggers these messages when a mobile device comes into proximity with a known beacon. To use this functionality:
 
 1. The account must have access to both MobilePush and Location Services.
 

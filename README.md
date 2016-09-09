@@ -2,7 +2,7 @@
 
 # README
 
-> Marketing Cloud Learning Apps are free to use, but are not official Salesforce.com Marketing Cloud products, and should be considered community projects - these apps are not officially tested or documented. For help on any Marketing Cloud Learning App please consult the Salesforce message boards or the issues section of this repository - Salesforce.com Marketing Cloud support is not available for these applications.
+> Marketing Cloud Learning Apps are free to use but are not official Salesforce Marketing Cloud products and should be considered community projects. These apps are not officially tested or documented. For help on any Marketing Cloud Learning App, please consult the Salesforce message boards or the issues section of this repository. Salesforce Marketing Cloud support is not available for these applications.
 
 Please make sure you are always using the latest SDK. The Learning App only supports versions 4.4.0 and above.
 
@@ -12,17 +12,17 @@ Please make sure you are always using the latest SDK. The Learning App only supp
 
     2. [Push Notifications](#0003)
 
-    3. [Subscriber key](#0004)
+    3. [Subscriber Key](#0004)
 
     4. [Tags](#0005)
 
-    5. [Beacon and Geofence Messages](#0006)
+    5. [Geofence and Beacon Messages](#0006)
 
     6. [Analytics](#0006b)
 
 2. [Implementation on iOS](#0017)
 
-    1. [Previous steps](#0018)
+    1. [Prerequisite Steps](#0018)
 
         1. [iOS Provisioning Panel](#0019)
 
@@ -47,7 +47,7 @@ Please make sure you are always using the latest SDK. The Learning App only supp
 
 This project provides a template for creating a mobile app (for iOS) that uses the Journey Builder for Apps SDK.  It is also a UI for exploring its features and provides a mechanism to collect and send debugging information to learn about the workings of the SDK as you explore.
 
-The code in this repository includes all of the code used to run the fully functional APK including an App ID and Access Token to let you test and debug the application. These keys will trigger an hourly automated push message of a timestamp, indicating that the application is properly setup. To create a new app the following keys must be set with your own values within the corresponding file.
+The code in this repository includes all of the code used to run the fully functional APK, including an App ID and Access Token to let you test and debug the application. These keys will trigger an hourly automated push message of a timestamp, indicating that the application is properly set up. To create a new app the following keys must be set with your own values within the corresponding file.
 
 **AppDelegate+ETPushConstants.m**
 
@@ -55,7 +55,7 @@ The code in this repository includes all of the code used to run the fully funct
 
 2. `kETAccessToken_Prod`: the Access Token for your development app as defined in the App Center section of the Marketing Cloud.
 
-NB: You can use different keys for the staging/testing phase and the production phase.  Staging/testing keys are called `kETAppID_Debug` and `kETAccessToken_Debug`.
+Note: You can use different keys for the staging/testing phase and the production phase.  Staging/testing keys are called `kETAppID_Debug` and `kETAccessToken_Debug`.
 <a name="0002"></a>
 ## Marketing Cloud App Center
 
@@ -67,11 +67,11 @@ Each app in App Center represents an application connected to the Marketing Clou
 
 * *API Integration* allows you to leverage the Marketing Cloud APIs. Create an API Integration app when you want to use Fuel APIs to automate tasks or integrate business systems. API Integration apps utilize an OAuth2 client credentials flow to acquire access tokens directly from the Fuel authentication service.
 
-* *Marketing Cloud apps* represent apps that live within the Salesforce Marketing Cloud and launch via the Marketing Cloud app menu. Marketing Cloud apps include custom apps built by your organization or apps installed from the Salesforce Marketing Cloud HubExchange. Marketing Cloud apps utilize a JSON Web Token (JWT) to acquire access tokens on behalf of logged in users.
+* *Marketing Cloud apps* are apps that live within the Salesforce Marketing Cloud and launch via the Marketing Cloud app menu. Marketing Cloud apps include custom apps built by your organization or apps installed from the Salesforce Marketing Cloud HubExchange. Marketing Cloud apps utilize a JSON Web Token (JWT) to acquire access tokens on behalf of logged-in users.
 
 * *Application Extensions* allow you to extend the Marketing Cloud with custom Journey Builder activities, Cloud Editor Blocks, and Automation Studio activities.
 
-* *MobilePush apps* represent apps built for the iOS, Android, or Blackberry mobile platforms that use MobilePush to communicate with their users via push messages. The Salesforce Marketing Cloud classifies MobilePush apps as consumer-grade applications and utilize long-lived limited access tokens.
+* *MobilePush apps* are apps built for the iOS, Android, or Blackberry mobile platforms that use MobilePush to communicate with their users via push messages. The Salesforce Marketing Cloud classifies MobilePush apps as consumer-grade applications and utilize long-lived limited-access tokens.
 
 If you haven’t already, you should [create an App Center account](https://appcenter-auth.exacttargetapps.com/create).
 
@@ -79,33 +79,38 @@ If you have an App Center account, you can [log in to that account](https://appc
 <a name="0003"></a>
 ## Push Notifications
 
-MobilePush lets you create and send targeted push messages based on cross-channel consumer data to encourage app usage and deliver increased ROI.  With MobilePush, you view how users navigate through your app and because MobilePush is built on the Salesforce Marketing Cloud, you can easily integrate push message campaigns with any email, SMS, or social campaigns.
+MobilePush lets you create and send targeted push messages based on cross-channel consumer data to encourage app usage and deliver increased ROI.  With MobilePush, you view how users navigate through your app. Because MobilePush is built on the Salesforce Marketing Cloud, you can easily integrate push message campaigns with any email, SMS, or social campaign.
 <a name="0004"></a>
-## Subscriber key
+## Subscriber Key
 
 A subscriber is a person who has opted to receive communications from your organization. 
 
-A valid email address is required to receive emails and a phone number to receive SMS messages.  Additional information about subscribers can be tracked using profile and preference attributes.
+A valid email address is required to receive emails, and a valid phone number is required to receive SMS messages. You can track additional information about subscribers using profile and preference attributes.
 
-The Subscriber Key serves to identify your subscribers.
+The Subscriber Key identifies your subscribers.
 
-It can be set to a specific value provided by the subscriber such as a phone number, email address, or other appropriate value but most importantly a value that you choose.
+It can be set to a specific value provided by the subscriber, such as a phone number, email address, or other appropriate value. It must be a value that you choose that identifies a unique person. The model here is that one subscriber may have multiple devices. For example, Kevin has 3 devices. The subscriber key identifies Kevin, not his 3 devices. 
 
-For example, using a subscriber key to identify a subscriber with a value other than the email address would allow you to:
+Keep in mind that the Marketing Cloud web UI utilizes a send-by-subscriber model. This means:
 
-* Maintain multiple sets of subscriber attributes for a single email address. For example, if a family shares an email address, you can use a subscriber key to uniquely identify each member of the family.
+* The subscriber key is used to identify the devices that will be sent to. This means, if you create a filtered list based on an attribute, it will identify the subscribers who own the devices that have the selected attributes and send to all devices owned by that contact. 
+* The Subscriber key is not required, but it is strongly recommended. 
 
-* Include a single email address multiple times on a list. For example, if a message interaction sends a separate message for each car a subscriber owns, it may be appropriate for a single subscriber to receive multiple messages.
-
-The Salesforce Marketing Cloud interface as well as the Web Service SOAP API support functionality around subscribers identified with a subscriber key.
+The Salesforce Marketing Cloud interface, as well as the Fuel REST API, support functionality for subscribers identified with a subscriber key.
 <a name="0005"></a>
 ## Tags
 
-Tags let you implement contact segmentation. You can set tags for subscriptions as defined by user choice.  Additionally, use tags to collect information from the mobile app and for unstructured data or data that can contain many potential unknown values. For example, you can use tags when the number of potential attribute names exceeds the number of potential values of an individual attribute (such as the favorite brand specified by a contact).
+Tags let you implement contact segmentation on a per-device level. Additionally, use tags to collect information from the mobile app for unstructured data or data that can contain many potential unknown values. For example, you can use tags when the number of potential attribute names exceeds the number of potential values of an individual attribute, such as the favorite brand specified by a contact. Note that tags are device specific, but one-way. Each device has its own set of tags, but a new device will not pull down tags from the Marketing Cloud. If you create a filtered list based on tag data, be aware that sending from the UI will result in sending to all devices owned by subscribers that have any device with that tag.
+
 <a name="0006"></a>
 ## Beacon and Geofence Messages
 
-You can use the location capabilities of the *JB4A SDK* to target messages to a segmented group of contacts.  Send personalized messages to increase engagement. The app pre-downloads geofence messages and triggers those messages when a mobile device crosses a geofence boundary.  To use this functionality:
+You can use the location capabilities of the *JB4A SDK* to target messages to contacts in selected geographic locations. The SDK pre-downloads geofence messages and triggers those messages when a mobile device crosses a geofence boundary. Note that the message must pre-exist on the device before the device crosses the geofence or encounters a beacon. These messages are downloaded whenever:
+
+* The application is brought to the foreground / started.
+* The device moves across the "magic" geofence. The "magic" fence is a geofence with a radius of 5K, and a center point  set to the last-known GPS fix. If the device moves outside that magic fence, the OS will notify the SDK, and the SDK will search for new geofences and beacons to monitor, along with messages for those fences and beacons.
+
+For beacon messages, the app triggers these messages when a mobile device comes into proximity with a known beacon. To use this functionality:
 
 1. The account must have access to both MobilePush and Location Services.
 
@@ -114,15 +119,13 @@ You can use the location capabilities of the *JB4A SDK* to target messages to a 
 <a name="0006b"></a>
 ## Analytics
 
-Mobile Application Analytics enables marketers to gather mobile app actions and behaviors from users and provides powerful visualizations of the data. The data helps you make informative decisions about how to structure your customer journeys, design your client facing experiences and tailor your digital marketing campaigns. The collected data is also available inside the Salesforce Marketing Cloud – ready to be used to segment messaging lists, provide highly personalized messaging content and drive 1:1  Custom Journeys.
-
-After enabling the analytics feature in your app, visit the Web & Mobile Analytics application within the Marketing Cloud.
+Mobile Application Analytics enables marketers to gather mobile app actions and behaviors from users and provides powerful visualizations of the data. The data helps you make informed decisions about how to structure your customer journeys, design your client-facing experiences, and tailor your digital marketing campaigns. The collected data is also available inside the Salesforce Marketing Cloud, ready to be used to segment messaging lists, provide highly personalized messaging content, and drive 1:1  custom Journeys.
 
 <a name="0017"></a>
 # Implementation on iOS
 
 <a name="0018"></a>
-## Previous steps
+## Prerequisite Steps
 
 1. iOS Provisioning Panel
 
@@ -131,7 +134,7 @@ After enabling the analytics feature in your app, visit the Web & Mobile Analyti
 <a name="0019"></a>
 ### iOS Provisioning Panel
 
-You must provision your mobile app in the iOS Provisioning Panel. The certificates issued in the process remain valid for one year. Ensure that you repeat this procedure once per year before your certificates expire to maintain app functionality. Follow the instructions below to integrate version 3.4.2 of the Journey Builder for Apps SDK with your iOS mobile app.
+You must provision your mobile app in the iOS Provisioning Panel. The certificates issued in the process remain valid for one year. Ensure that you repeat this procedure once per year before your certificates expire to maintain app functionality. Follow the instructions below to integrate the most recent version of the Journey Builder for Apps SDK with your iOS mobile app.
 
 1. Log in at the iOS Dev Center.
 
@@ -165,7 +168,7 @@ You must provision your mobile app in the iOS Provisioning Panel. The certificat
 
 11. Click Edit.
 
-12. Click Create Certificate... under Development SSL Certificate or Production SSL Certificate depending on the instance of the app you provision. Note that you must repeat these steps for both the development and production instances of this app.
+12. Click Create Certificate... under Development SSL Certificate or Production SSL Certificate, depending on the instance of the app you provision. Note that you must repeat these steps for both the development and production instances of this app.
 
     ![image alt text](imgReadMe/image_21.jpg)
 
@@ -221,11 +224,11 @@ You must provision your mobile app in the iOS Provisioning Panel. The certificat
 
     ![image alt text](imgReadMe/image_28.jpg)
 
-32. Right-click on the certificate.
+32. Right-click the certificate.
 
-33. Select Export. Ensure that you select only the certificate entry when exporting your certifications. Selecting multiple lines for export will cause an upload failure. Ensure you do not export the certificate as an embedded key.
+33. Select Export. Ensure that you select only the certificate entry when exporting your certifications. Selecting multiple lines for export will cause an upload failure. Ensure that you do not export the certificate as an embedded key.
 
-34. Select a location to which to save the certificate.
+34. Select a location in which to save the certificate.
 
 35. Click Save.
 
@@ -235,7 +238,7 @@ You must provision your mobile app in the iOS Provisioning Panel. The certificat
 
 37. If you entered a password, enter that password again in the Verify field.
 
-38. If you entered a password, Click OK.
+38. If you entered a password, click OK.
 
 39. Use the production and development certificates (the .p12 files) created in the previous steps along with the passwords to add to your MobilePush app in the the *Create your apps in the App Center* step.
 
@@ -255,7 +258,7 @@ In order to connect your app to your Marketing Cloud account, you must follow th
 
 To create a new MobilePush app:
 
-1. [Log in to the App Center](https://appcenter-auth.exacttargetapps.com/redirect) ([create an account](https://appcenter-auth.exacttargetapps.com/create) if necessary).
+1. [Log in to the App Center](https://appcenter-auth.exacttargetapps.com/redirect). ([Create an account](https://appcenter-auth.exacttargetapps.com/create), if necessary.)
 
 2. Create a new app and select the MobilePush template
 
@@ -273,14 +276,14 @@ To create a new MobilePush app:
 
       2. The **Package** has no correlation to anything outside of the MarketingCloud ecosystem and can be **any** unique identifier for your application.
 
-      3. The **Description** & **MobilePush Icon** fields are optional but will help you identify your application within your Marketing Cloud account. 
+      3. The **Description** and **MobilePush Icon** fields are optional but will help you identify your application within your Marketing Cloud account. 
 
 4. Click **Next** in order to integrate this new app with your Marketing Cloud account.
 
 <a name="0022"></a>
 #### Integrate App Center app
 
-The MobilePush app created in the App Center must be connected to a specific Marketing Cloud account. You must have a login for your Marketing Cloud account in order to connect this MobilePush app to the correct Marketing Cloud account.
+The MobilePush app created in the App Center must be connected to a specific Marketing Cloud account. You must have login credentials for your Marketing Cloud account in order to connect this MobilePush app to the correct Marketing Cloud account.
 
 Follow these steps in order to connect this MobilePush app to the correct Marketing Cloud account:
 
@@ -288,7 +291,7 @@ Follow these steps in order to connect this MobilePush app to the correct Market
 
     ![image alt text](imgReadMe/image_12.png)
 
-2. Select the **Production ExactTarget Account** button *unless otherwise instructed by your Salesforce Marketing Cloud relationship manager.*
+2. Select the **Production ExactTarget Account** button *unless otherwise instructed by your Salesforce Marketing Cloud relationship manager*.
 
 3. Click **Link to Account**.
 
@@ -300,7 +303,7 @@ Follow these steps in order to connect this MobilePush app to the correct Market
 
 4. Click **Integrate**.
 
-5. In the APNS Client section, click **Choose File** and upload the APNS certificate provided when you created your app in the[ iOS Dev Center](https://developer.apple.com/devcenter/ios/).
+5. In the APNS Client section, click **Choose File** and upload the APNS certificate that was provided when you created your app in the[ iOS Dev Center](https://developer.apple.com/devcenter/ios/).
 
 6. Type in the APNS certificate password in the **Password** field.
 
@@ -308,9 +311,9 @@ Follow these steps in order to connect this MobilePush app to the correct Market
 
 7. When you have all the fields required for your application’s platform(s) populated, click *Next*.
 
-8. Review the information you provided and check for any potential errors and click **Finish**.
+8. Review the information you provided, check for any errors, and click **Finish**.
 
-    You should be presented with a *Success!* message and an application details screen. Any of the areas can be edited by clicking the edit icon associated with the **Summary** or **Application Provisioning** sections.
+    You should be presented with a *Success!* message and an application details screen. You can edit any of the areas by clicking the edit icon associated with the **Summary** or **Application Provisioning** sections.
 
     ![image alt text](imgReadMe/image_15.png)
 
@@ -323,7 +326,7 @@ The SDK can now be configured with the App ID and Access Token, as explained in 
 
 **AppDelegate+ETPush.m**
 
-The boolean parameters `withAnalytics`, `andLocationServices`, `andProximityServices`, `andCloudPages` and `withPIAnalytics` enable certain functionalities of the SDK, however, they are not required for the push notifications themselves to function which will still be sent even if all are set to `NO`.
+The boolean parameters `withAnalytics`, `andLocationServices`, `andProximityServices`, `andCloudPages`, and `withPIAnalytics` enable certain functionalities of the SDK; however, they are not required for the push notifications themselves to function. Push notifications will still be sent even if all are set to `NO`.
 
 [view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L36)
 ```objective-c
@@ -339,7 +342,7 @@ successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug         
 
 If the configuration is successful and returns YES, the push notifications are registered.
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L68-L102)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L80-L87)
 ```objective-c
 UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
                                         UIUserNotificationTypeBadge |
@@ -352,9 +355,9 @@ UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTy
 …
 [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
 ```
-If the configuration is unsuccessful an error message is shown:
+If the configuration is unsuccessful, an error message is shown:
 
-[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L52-L66)
+[view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L65-L69)
 ```objective-c
 dispatch_async(dispatch_get_main_queue(), ^{
     /**
@@ -376,15 +379,15 @@ To update the subscriber key, you should create a feature for the user to introd
 
 **MCSubscribeKeyViewController.m**
 
-To get the subscriber key, use the following snippet (you can assign this value to any variable):
+To get the subscriber key, use the following snippet. (You can assign this value to any variable.)
 
-[view the code](/LearningAppIos/MarketingCloud/MCSubscribeKeyViewController.m#L53)
+[view the code](/LearningAppIos/MarketingCloud/MCSubscribeKeyViewController.m)
 ```objective-c
 self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
 ```
-To set the subscriber key, use the following snippet (substitute self.subscriberKey.text with the appropriate value):
+To set the subscriber key, use the following snippet (substitute `self.subscriberKey.text` with the appropriate value):
 
-[view the code](/LearningAppIos/MarketingCloud/MCSubscribeKeyViewController.m#L40)
+[view the code](/LearningAppIos/MarketingCloud/MCSubscribeKeyViewController.m)
 ```objective-c
 [[ETPush pushManager] setSubscriberKey:self.subscriberKey.text];
 ```
@@ -397,19 +400,19 @@ To implement contact segmentation by tags, include code to set tags for subscrip
 
 To add a tag:
 
-[view the code](/LearningAppIos/MarketingCloud/MCTagsViewController.m#L114)
+[view the code](/LearningAppIos/MarketingCloud/MCTagsViewController.m)
 ```objective-c
 [[ETPush pushManager] addTag:@"tag"];
 ```
 To remove a tag:
 
-[view the code](/LearningAppIos/MarketingCloud/MCTagsViewController.m#L116)
+[view the code](/LearningAppIos/MarketingCloud/MCTagsViewController.m)
 ```objective-c
 [[ETPush pushManager] removeTag:@"tag"];
 ```
 To get all the tags:
 
-[view the code](/LearningAppIos/MarketingCloud/MCTagsViewController.m#L43)
+[view the code](/LearningAppIos/MarketingCloud/MCTagsViewController.m)
 ```objective-c
 NSSet *setOfTags = [[ETPush pushManager] getTags];
 ```
@@ -485,7 +488,7 @@ self.geoLocationNotification.on = [[ETLocationManager sharedInstance]getWatching
 ```
 If locations are active it returns `YES`, otherwise it returns `NO`.
 
-To obtain the monitored regions use this method:
+To obtain the monitored regions, use this method:
 
 [view the code](/LearningAppIos/MarketingCloud/MCGeoLocationViewController.m#L59)
 ```objective-c
@@ -497,7 +500,7 @@ NSArray *monitoredRegions = [[[ETLocationManager sharedInstance] monitoredRegion
 
 **AppDelegate+ETPush.m**
 
-In the call to configureSDKWithAppID, pass a `YES` value for the withAnalytics parameter.
+In the call to `configureSDKWithAppID`, pass a `YES` value for the `withAnalytics` parameter.
 
 [view the code](/LearningAppIos/MarketingCloud/AppDelegate%2BETPush.m#L29-L36)
 ```objective-c

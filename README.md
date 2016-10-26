@@ -320,7 +320,7 @@ Follow these steps in order to connect this MobilePush app to the correct Market
 <a name="0023"></a>
 ## Implementing the SDK Push Notifications
 
-> The SDK supports iOS 8, 9, and 10 notifications.
+> The SDK supports iOS 8, 9, and 10 notifications. For more information about implementing iOS 10 notifications, see [Use iOS 10 Notifications](http://salesforce-marketingcloud.github.io/JB4A-SDK-iOS/features/iOS10-notifications.html).
 
 **AppDelegate+ETPushConstants.m**
 

@@ -2,7 +2,7 @@
 
 # README
 
-> Marketing Cloud Learning Apps are free to use but are not official Salesforce Marketing Cloud products and should be considered community projects. These apps are not officially tested or documented. For help on any Marketing Cloud Learning App, please consult the Salesforce message boards or the issues section of this repository. Salesforce Marketing Cloud support is not available for these applications.
+> Marketing Cloud Learning Apps are free to use but are not official Salesforce Marketing Cloud products and should be considered community projects. These apps are not officially tested or documented. For help on any Marketing Cloud Learning App, please consult the Salesforce message boards or the issues section of this repository. Salesforce Marketing Cloud support is not available for these applications. For additional information, [view the JB4A SDK documentation](http://salesforce-marketingcloud.github.io/JB4A-SDK-iOS/).
 
 Please make sure you are always using the latest SDK. The Learning App only supports versions 4.4.0 and above.
 

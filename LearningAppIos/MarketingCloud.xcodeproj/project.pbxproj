@@ -43,10 +43,10 @@
 		9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742011D5E484700344996 /* UserNotifications.framework */; };
 		9B6B25581D70CB1B00874782 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B25571D70CB1B00874782 /* NotificationService.m */; };
 		9B6B255D1D70CB1B00874782 /* MarketingCloudServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9B9742041D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742031D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
 		B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C961BF1CA4432400BE9F33 /* WebKit.framework */; };
+		EF54EE8D1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF54EE8C1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +142,7 @@
 		B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		B5C75EA21C7F6E10001A9D92 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5C961BF1CA4432400BE9F33 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		EF54EE8C1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libJB4ASDK-4.6.0.160600002.a"; path = "MarketingCloud/JB4A-SDK/libJB4ASDK-4.6.0.160600002.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,11 +150,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF54EE8D1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a in Frameworks */,
 				9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */,
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
-				9B9742041D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a in Frameworks */,
 				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +361,7 @@
 		9D65C2ABA7375300FD677837 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF54EE8C1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a */,
 				9B9742011D5E484700344996 /* UserNotifications.framework */,
 				00858DF11D20B94300034250 /* UIKit.framework */,
 				B5C961BF1CA4432400BE9F33 /* WebKit.framework */,

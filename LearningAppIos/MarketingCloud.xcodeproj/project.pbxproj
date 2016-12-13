@@ -43,10 +43,10 @@
 		9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742011D5E484700344996 /* UserNotifications.framework */; };
 		9B6B25581D70CB1B00874782 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B25571D70CB1B00874782 /* NotificationService.m */; };
 		9B6B255D1D70CB1B00874782 /* MarketingCloudServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9BFF01431E004024003E203D /* libJB4ASDK-4.7.0.020600001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFF01421E004024003E203D /* libJB4ASDK-4.7.0.020600001.a */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
 		B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C961BF1CA4432400BE9F33 /* WebKit.framework */; };
-		EF54EE8D1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF54EE8C1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +136,7 @@
 		9B6B25611D70CE1C00874782 /* MarketingCloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarketingCloud.entitlements; sourceTree = "<group>"; };
 		9B6B25621D70CF0500874782 /* MarketingCloudServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarketingCloudServiceExtension.entitlements; sourceTree = "<group>"; };
 		9B9742011D5E484700344996 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		9B9742031D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.6.0.160600001.a"; sourceTree = "<group>"; };
+		9BFF01421E004024003E203D /* libJB4ASDK-4.7.0.020600001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.7.0.020600001.a"; sourceTree = "<group>"; };
 		B5104FBD1C21EF11006D6884 /* MCOfficialDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOfficialDocViewController.h; sourceTree = "<group>"; };
 		B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCOfficialDocViewController.m; sourceTree = "<group>"; };
 		B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF54EE8D1DC7C53C00414499 /* libJB4ASDK-4.6.0.160600002.a in Frameworks */,
+				9BFF01431E004024003E203D /* libJB4ASDK-4.7.0.020600001.a in Frameworks */,
 				9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */,
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
@@ -186,11 +186,11 @@
 				001159DF1D46F3B9005B34C8 /* ETWKLandingPagePresenter.h */,
 				001159E01D46F3B9005B34C8 /* ExactTargetEnhancedPushDataSource.h */,
 				001159E11D46F3B9005B34C8 /* JB4ASDK-Bridging-Header.h */,
-				9B9742031D5E498100344996 /* libJB4ASDK-4.6.0.160600001.a */,
 				001159E41D46F3B9005B34C8 /* PICart.h */,
 				001159E51D46F3B9005B34C8 /* PICartItem.h */,
 				001159E61D46F3B9005B34C8 /* PIOrder.h */,
 				001159E71D46F3B9005B34C8 /* PushConstants.h */,
+				9BFF01421E004024003E203D /* libJB4ASDK-4.7.0.020600001.a */,
 			);
 			path = "JB4A-SDK";
 			sourceTree = "<group>";

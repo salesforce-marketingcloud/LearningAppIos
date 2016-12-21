@@ -8,8 +8,8 @@
 #import "MCTagsViewController.h"
 
 	// Libraries
-#import "ETPush.h"
-#import "ETAnalytics.h"
+#import <MarketingCloudSDK/ETPush.h>
+#import <MarketingCloudSDK/ETAnalytics.h>
 
 	// Models
 #import "MCTag.h"

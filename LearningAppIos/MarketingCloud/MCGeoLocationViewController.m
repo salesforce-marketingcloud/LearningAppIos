@@ -11,9 +11,9 @@
 #import <CoreLocation/CoreLocation.h>
 
 // Libraries
-#import "ETPush.h"
-#import "ETAnalytics.h"
-#import "ETRegion.h"
+#import <MarketingCloudSDK/ETPush.h>
+#import <MarketingCloudSDK/ETAnalytics.h>
+#import <MarketingCloudSDK/ETRegion.h>
 
 // helper
 #import "MCCircle.h"

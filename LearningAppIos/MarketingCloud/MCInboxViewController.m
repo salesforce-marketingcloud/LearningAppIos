@@ -10,9 +10,9 @@
 #import "MCInboxViewController.h"
 
 // Libraries
-#import "ETMessage.h"
-#import "ExactTargetEnhancedPushDataSource.h"
-#import "ETAnalytics.h"
+#import <MarketingCloudSDK/ETMessage.h>
+#import <MarketingCloudSDK/ExactTargetEnhancedPushDataSource.h>
+#import <MarketingCloudSDK/ETAnalytics.h>
 
 
 @interface MCInboxViewController ()<UITableViewDelegate>

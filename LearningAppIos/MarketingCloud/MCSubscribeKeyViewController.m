@@ -7,8 +7,8 @@
 
 #import "MCSubscribeKeyViewController.h"
 
-#import "ETPush.h" // From the SDK
-#import "ETAnalytics.h"
+#import <MarketingCloudSDK/ETPush.h> // From the SDK
+#import <MarketingCloudSDK/ETAnalytics.h>
 
 @interface MCSubscribeKeyViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *subscriberKey;

@@ -6,7 +6,7 @@
  */
 
 #import "MCOfficialDocViewController.h"
-#import "ETAnalytics.h"
+#import <MarketingCloudSDK/ETAnalytics.h>
 
 @interface MCOfficialDocViewController ()
 

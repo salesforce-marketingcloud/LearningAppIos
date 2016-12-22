@@ -6,7 +6,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "ETPush.h"
+#import <MarketingCloudSDK/ETPush.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

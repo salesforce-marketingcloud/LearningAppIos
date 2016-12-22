@@ -6,11 +6,11 @@
  */
 
 #import "AppDelegate+ETPush.h"
-#import "ETPush.h"
+#import <MarketingCloudSDK/ETPush.h>
 #import "AppDelegate+ETPushConstants.h"
-#import "ETAnalytics.h"
-#import "ETRegion.h"
-#import "ETWKLandingPagePresenter.h"
+#import <MarketingCloudSDK/ETAnalytics.h>
+#import <MarketingCloudSDK/ETRegion.h>
+#import <MarketingCloudSDK/ETWKLandingPagePresenter.h>
 
 #import <UserNotifications/UserNotifications.h>
 

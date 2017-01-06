@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 // Libraries
-#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 // helper
 #import "MCCircle.h"

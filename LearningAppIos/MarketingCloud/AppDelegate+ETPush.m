@@ -7,7 +7,7 @@
 
 #import "AppDelegate+ETPush.h"
 #import "AppDelegate+ETPushConstants.h"
-#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 #import <UserNotifications/UserNotifications.h>
 
 @implementation AppDelegate (ETPush)
@@ -243,7 +243,7 @@
 }
 
 #pragma mark Cloud Page delegates
-- (void)didReceiveCloudPageWithAlertMessageWithContents:(NSString *)payload {
+- (void)sfmc_didReceiveCloudPageWithAlertMessageWithContents:(NSString *)payload {
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[MarketingCloudSDK sfmcSDK] landingPageWithString:payload]
                                                                                  animated:YES
                                                                                completion:nil];

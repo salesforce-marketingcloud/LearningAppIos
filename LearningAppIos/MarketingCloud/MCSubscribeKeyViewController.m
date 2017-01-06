@@ -6,7 +6,7 @@
  */
 
 #import "MCSubscribeKeyViewController.h"
-#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface MCSubscribeKeyViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *subscriberKey;

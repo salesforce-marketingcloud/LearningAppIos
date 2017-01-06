@@ -10,7 +10,7 @@
 #import "MCInboxViewController.h"
 
 // Libraries
-#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 
 @interface MCInboxViewController ()<UITableViewDelegate>

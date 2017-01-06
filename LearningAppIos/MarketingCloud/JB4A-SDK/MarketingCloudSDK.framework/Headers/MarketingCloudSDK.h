@@ -1,121 +1,31 @@
 //
 //  MarketingCloudSDK.h
-//  MarketingCloudSDK
+//  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/16/16.
+//  Created by Brian Criscuolo on 12/28/16.
 //  Copyright © 2016 Salesforce. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#ifndef MarketingCloudSDK_h
+#define MarketingCloudSDK_h
 
-/**
- MarketingCloudSDK EventBus constants
- */
+#import <MarketingCloudSDK/MarketingCloudSDK+Base.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+Analytics.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+ClientData.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+CloudPage.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+Helpers.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+Location.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+Notifications.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+OpenDirect.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+Recommendations.h>
+#import <MarketingCloudSDK/MarketingCloudSDK+LandingPageWebView.h>
 
-static NSString * _Nonnull const kMarketingCloudSDKDidDisplayLocationMessageNotification = @"MarketingCloudSDKEventBusDidDisplayLocationMessageNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveGeofenceResponseNotification = @"MarketingCloudSDKEventBusDidReceiveGeofenceResponseNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveBeaconResponseNotification = @"MarketingCloudSDKEventBusDidReceiveBeaconResponseNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidEnterGeofenceNotification = @"MarketingCloudSDKEventBusDidEnterGeofenceNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidExitGeofenceNotification = @"MarketingCloudSDKEventBusDidExitGeofenceNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidRangeBeaconNotification = @"MarketingCloudSDKEventBusDidRangeBeaconNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveRichMessagesNotification = @"MarketingCloudSDKEventBusDidReceiveRichMessagesNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveCloudPagesNotification = @"MarketingCloudSDKEventBusDidReceiveRichMessagesNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveLocationUpdateNotification = @"MarketingCloudSDKEventBusDidReceiveLocationUpdateNotification";
-
-//extern NSString * _Nonnull const kMarketingCloudSDKDidDisplayLocationMessageNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveGeofenceResponseNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveBeaconResponseNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidEnterGeofenceNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidExitGeofenceNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidRangeBeaconNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveRichMessagesNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveCloudPagesNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveLocationUpdateNotification;
-
-/**
- Enumeration of the type of MarketingCloudSDKEventMessageObject this is.
- */
-typedef NS_ENUM(NSUInteger, MarketingCloudSDKMobilePushMessageType)
-{
-    /** Initial enum value  */
-    firstMarketingCloudSDKMobilePushMessageTypeIndex = 0,
-    /** Unknown */
-    MarketingCloudSDKMobilePushMessageTypeUnknown = firstMarketingCloudSDKMobilePushMessageTypeIndex,
-    /** Basic - A standard push message */
-    MarketingCloudSDKMobilePushMessageTypeBasic ,
-    /** Geofence Entry */
-    MarketingCloudSDKMobilePushMessageTypeFenceEntry = 3,
-    /** Geofence Exit */
-    MarketingCloudSDKMobilePushMessageTypeFenceExit ,
-    /** Proximity */
-    MarketingCloudSDKMobilePushMessageTypeProximity ,
-    /** lastMobilePushMessageTypeIndex */
-    lastMarketingCloudSDKMobilePushMessageTypeIndex = MarketingCloudSDKMobilePushMessageTypeProximity
-};
-
-/**
- Bitmask of features that a message has. This is the representation of Push (AlertMessage), Push+Page (AlertMessage + Page), Page Only (Page) in the MobilePush UI.
- */
-typedef NS_OPTIONS(NSUInteger, MarketingCloudSDKMobilePushContentType) {
-    /** Unknown */
-    MarketingCloudSDKMobilePushContentTypeNone = 0,
-    /** Push Message */
-    MarketingCloudSDKMobilePushContentTypeAlertMessage = 1 << 0,
-    /** CloudPage */
-    MarketingCloudSDKMobilePushContentTypePage = 1 << 1,
-    /** Enhanced Cloud Page – Pushed Cloud Pages */
-    MarketingCloudSDKMobilePushContentTypeEcp = 1 << 31
-};
-
-@interface MarketingCloudSDK : NSObject
+#import <MarketingCloudSDK/MarketingCloudSDKCloudPageObject.h>
+#import <MarketingCloudSDK/MarketingCloudSDKEventMessageObject.h>
+#import <MarketingCloudSDK/MarketingCloudSDKEventRegionObject.h>
+#import <MarketingCloudSDK/MarketingCloudSDKCartItemObject.h>
+#import <MarketingCloudSDK/MarketingCloudSDKCartObject.h>
+#import <MarketingCloudSDK/MarketingCloudSDKOrderObject.h>
 
 
-- (BOOL) testBase;
-
-/**---------------------------------------------------------------------------------------
- * @name Configuring the app for Salesforce Marketing Cloud
- *  ---------------------------------------------------------------------------------------
- */
-/**
- Returns (or initializes) the shared sdk instance.
- 
- @return The singleton instance of an MarketingCloudSDK sfmcSDK.
- */
-+(nullable instancetype)sfmcSDK;
-
--(nullable instancetype)init;
-
-/**
- This is the main configuration method, responsible for setting credentials needed to communicate with Salesforce. If you are unsure of your accessToken or environment, please visit Code@ExactTarget
- 
- Each of the flags in the method are used to control various aspects of the MobilePush SDK. The act as global on/off switches, meaning that if you disable one here, it is off eveywhere.
- 
- @param appID The App ID generated by Code@ExactTarget to identify the consumer app
- @param accessToken The designed token given to you by Code@ExactTarget that allows you access to the API
- @param analyticsEnabled Whether or not to send analytic data back to Salesforce
- @param locationServicesEnabled Whether or not to use Location Services
- @param proximityServicesEnabled Whether or not to use Proximity Services. Using proximity services requires setting locState to YES
- @param cloudPagesEnabled Whether or not to use Cloud Pages
- @param piAnalyticsEnabled Whether or not to send Web and Mobile analytic data back to Salesforce
- @param configurationError NSError object describing the error
- @return Returns YES if successful or NO if failed. Do not proceed if NO is returned
- */
-- (BOOL) sfmc_configureSDKWithAppID:(NSString * _Nonnull)appID
-                        accessToken:(NSString *_Nonnull)accessToken
-                   analyticsEnabled:(BOOL)analyticsEnabled
-            locationServicesEnabled:(BOOL)locationServicesEnabled
-           proximityServicesEnabled:(BOOL)proximityServicesEnabled
-                  cloudPagesEnabled:(BOOL)cloudPagesEnabled
-                 piAnalyticsEnabled:(BOOL)piAnalyticsEnabled
-                              error:(NSError * _Nullable * _Nullable)configurationError;
-
-/**
- Triggers an immediate send of Registration data to Salesforce Marketing Cloud and will wait 60 seconds to send
- for all calls made after the first call was made while the app is in foreground.
- 
- This is not normally needed as each method (setTag(), setSubscriberKey(), addAttribute() etc) will trigger
- a send to the SFMC 60 seconds after the first request to change any Registration data.
- */
--(void) sfmc_updateMarketingCloud;
-
-@end
+#endif /* MarketingCloudSDK_h */

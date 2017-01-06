@@ -6,7 +6,7 @@
  */
 
 #import "MCOfficialDocViewController.h"
-#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface MCOfficialDocViewController ()
 

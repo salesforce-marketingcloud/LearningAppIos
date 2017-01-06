@@ -6,7 +6,7 @@
  */
 
 #import "MCReadmeViewController.h"
-#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface MCReadmeViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *readmeWeb;

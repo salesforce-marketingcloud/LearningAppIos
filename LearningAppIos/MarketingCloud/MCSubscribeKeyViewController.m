@@ -6,9 +6,7 @@
  */
 
 #import "MCSubscribeKeyViewController.h"
-
-#import <MarketingCloudSDK/ETPush.h> // From the SDK
-#import <MarketingCloudSDK/ETAnalytics.h>
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface MCSubscribeKeyViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *subscriberKey;
@@ -20,8 +18,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 		// Do any additional setup after loading the view, typically from a nib.
-	self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
-	[ETAnalytics trackPageView:@"data://SubscriberkeyViewLoaded" andTitle:@"Subscriber Key View Loaded" andItem:nil andSearch:nil];
+	self.subscriberKey.text = [[MarketingCloudSDK sfmcSDK] sfmc_contactKey];
+	[MarketingCloudSDK sfmc_trackPageView:@"data://SubscriberkeyViewLoaded" andTitle:@"Subscriber Key View Loaded" andItem:nil andSearch:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,8 +35,8 @@
  @return An action for the method to display in the view.
  */
 - (IBAction)saveSubscriberKey:(id)sender {
-	[[ETPush pushManager] setSubscriberKey:self.subscriberKey.text];
-	[ETAnalytics trackPageView:@"data://SubscriberKeySet" andTitle:@"User Set Subscriber key" andItem:nil andSearch:nil];
+	[[MarketingCloudSDK sfmcSDK] sfmc_setContactKey:self.subscriberKey.text];
+	[MarketingCloudSDK sfmc_trackPageView:@"data://SubscriberKeySet" andTitle:@"User Set Subscriber key" andItem:nil andSearch:nil];
 	
 }
 
@@ -50,7 +48,7 @@
  @return An action for the method to display in the view.
  */
 - (IBAction)reloadSubscriberKey:(id)sender {
-	self.subscriberKey.text = [[ETPush pushManager] getSubscriberKey];
+	self.subscriberKey.text = [[MarketingCloudSDK sfmcSDK] sfmc_contactKey];
 }
 
 #pragma mark - <UITextFieldDelegate>

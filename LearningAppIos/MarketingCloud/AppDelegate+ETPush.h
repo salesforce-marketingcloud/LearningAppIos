@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate (ETPush) <UNUserNotificationCenterDelegate, ExactTargetCloudPageWithAlertDelegate>
+@interface AppDelegate (ETPush) <UNUserNotificationCenterDelegate, MarketingCloudSDKCloudPageWithAlertDelegate>
 
 - (BOOL)application : (UIApplication *)application shouldInitETSDKWithOptions : (NSDictionary *)launchOptions;
 

@@ -655,6 +655,7 @@
 					"$(PROJECT_DIR)/MarketingCloud",
 					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -679,6 +680,7 @@
 					"$(PROJECT_DIR)/MarketingCloud",
 					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

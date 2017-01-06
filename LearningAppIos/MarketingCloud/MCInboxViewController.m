@@ -10,21 +10,19 @@
 #import "MCInboxViewController.h"
 
 // Libraries
-#import <MarketingCloudSDK/ETMessage.h>
-#import <MarketingCloudSDK/ExactTargetEnhancedPushDataSource.h>
-#import <MarketingCloudSDK/ETAnalytics.h>
+#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
 
 
 @interface MCInboxViewController ()<UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *inboxTable;
-@property (nonatomic, strong) ExactTargetEnhancedPushDataSource *dataSource;
+@property (nonatomic, strong) MarketingCloudSDKCloudPageDataSource *dataSource;
 @end
 
 @implementation MCInboxViewController
 
-- (ExactTargetEnhancedPushDataSource *) dataSource {
+- (MarketingCloudSDKCloudPageDataSource *) dataSource {
     if(_dataSource == nil) {
-        _dataSource = [[ExactTargetEnhancedPushDataSource alloc]init];
+        _dataSource = [[MarketingCloudSDKCloudPageDataSource alloc]init];
     }
     return _dataSource;
 }
@@ -45,8 +43,8 @@
     /**
      * This is a reference to the tableview in UIViewController. We need a reference to it to reload data periodically.
      */
-    [self.dataSource setInboxTableView:self.inboxTable];
-		[ETAnalytics trackPageView:@"data://CloudPageInboxIndex" andTitle:@"CloudPage Inbox Index" andItem:nil andSearch:nil];
+    self.dataSource.sfmc_inboxTableView = self.inboxTable;
+    [MarketingCloudSDK sfmc_trackPageView:@"data://CloudPageInboxIndex" andTitle:@"CloudPage Inbox Index" andItem:nil andSearch:nil];
 
     
 }
@@ -62,12 +60,12 @@
     /*
      *  Get the ETMessage object from the data source. Refer to the ETMessage.h file that is included in the SDK in order to see the available properties and methods
      */
-    ETMessage *msg = [self.dataSource messages][indexPath.row];
+    MarketingCloudSDKCloudPageObject *msg = [self.dataSource sfmc_messages][indexPath.row];
     
     /*
      * This must be called on a message in order for it to be marked as read
      */
-    [msg markAsRead];
+    [msg sfmc_markAsRead];
     
     /**
      * Open unr in safary

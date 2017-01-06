@@ -11,9 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 // Libraries
-#import <MarketingCloudSDK/ETPush.h>
-#import <MarketingCloudSDK/ETAnalytics.h>
-#import <MarketingCloudSDK/ETRegion.h>
+#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
 
 // helper
 #import "MCCircle.h"
@@ -31,13 +29,13 @@
     // Do any additional setup after loading the view.
     self.mapView.delegate = self;
     
-    if([[ETLocationManager sharedInstance]getWatchingLocation] == YES){
+    if([[MarketingCloudSDK sfmcSDK] sfmc_locationEnabled] == YES){
         self.geoLocationNotification.text = @"GeoNotification: Enabled";
     }else{
         self.geoLocationNotification.text = @"GeoNotification: Disabled";
     }
     
-    [ETAnalytics trackPageView:@"data://GeolocationViewLoaded" andTitle:@"Geolocation View Loaded" andItem:nil andSearch:nil];
+    [MarketingCloudSDK sfmc_trackPageView:@"data://GeolocationViewLoaded" andTitle:@"Geolocation View Loaded" andItem:nil andSearch:nil];
     
 }
 
@@ -61,15 +59,15 @@
     /**
      Get all monitor regions.
      */
-    NSArray *monitoredRegions = [[[ETLocationManager sharedInstance] monitoredRegions] allObjects];
+    NSSet *monitoredRegions = [[MarketingCloudSDK sfmcSDK] sfmc_monitoredRegions];
     
     NSLog(@"monitoredRegions = %@",monitoredRegions);
     
-    for (NSObject *region in monitoredRegions) {
-        if([region isKindOfClass:[CLCircularRegion class]]) {
-            [self placeGeofenceOnMap:(CLCircularRegion*)region];
-        } else if ([region isKindOfClass:[CLBeaconRegion class]]) {
-            [self placeBeaconOnMap:(CLBeaconRegion*)region];
+    for (MarketingCloudSDKEventRegionObject *region in monitoredRegions) {
+        if (region.isGeofenceRegion == YES) {
+            [self placeGeofenceOnMap:region];
+        } else if (region.isBeaconRegion == YES) {
+            [self placeBeaconOnMap:region];
         }
     }
 }
@@ -79,10 +77,10 @@
  
  @param geofence the geofence to draw on the map
  */
-- (void)placeGeofenceOnMap:(CLCircularRegion *)geofence {
-    [self palceRegionOnMap:geofence.center
-                    radius:geofence.radius
-                     title:geofence.identifier
+- (void)placeGeofenceOnMap:(MarketingCloudSDKEventRegionObject *)geofence {
+    [self placeRegionOnMap:CLLocationCoordinate2DMake([geofence.latitude doubleValue], [geofence.longitude doubleValue])
+                    radius:[geofence.radius doubleValue]
+                     title:geofence.fenceIdentifier
                strokeColor:[UIColor redColor]
                  imageName:@"annotation"];
 }
@@ -92,13 +90,11 @@
  
  @param beacon the beacon to draw on the map
  */
-- (void)placeBeaconOnMap:(CLBeaconRegion *)beacon {
+- (void)placeBeaconOnMap:(MarketingCloudSDKEventRegionObject *)beacon {
     
-    ETRegion *region = [ETRegion getBeaconRegionForRegionWithProximityUUID:[beacon.proximityUUID UUIDString]];
-    
-    [self palceRegionOnMap:CLLocationCoordinate2DMake([region.latitude doubleValue], [region.longitude doubleValue])
-                    radius:([region.radius doubleValue] == 0? 10 : [region.radius doubleValue])
-                     title:region.regionName
+    [self placeRegionOnMap:CLLocationCoordinate2DMake([beacon.latitude doubleValue], [beacon.longitude doubleValue])
+                    radius:([beacon.radius doubleValue] == 0? 10 : [beacon.radius doubleValue])
+                     title:beacon.regionName
                strokeColor:[UIColor blueColor]
                  imageName:@"beacon"];
     
@@ -114,7 +110,7 @@
  @param image Name of the image which appears on the annotation
  */
 
-- (void) palceRegionOnMap:(CLLocationCoordinate2D)center
+- (void) placeRegionOnMap:(CLLocationCoordinate2D)center
                    radius:(CLLocationDistance)radius
                     title:(NSString *)title
               strokeColor:(UIColor *)color

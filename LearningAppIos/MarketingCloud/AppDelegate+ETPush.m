@@ -6,12 +6,8 @@
  */
 
 #import "AppDelegate+ETPush.h"
-#import <MarketingCloudSDK/ETPush.h>
 #import "AppDelegate+ETPushConstants.h"
-#import <MarketingCloudSDK/ETAnalytics.h>
-#import <MarketingCloudSDK/ETRegion.h>
-#import <MarketingCloudSDK/ETWKLandingPagePresenter.h>
-
+#import <MarketingCloudSDK/MarketingCloudSDKInterface.h>
 #import <UserNotifications/UserNotifications.h>
 
 @implementation AppDelegate (ETPush)
@@ -21,35 +17,35 @@
     BOOL successful = NO;
     NSError *error = nil;
     
-    [[ETPush pushManager] setCloudPageWithAlertDelegate:self];
+    [[MarketingCloudSDK sfmcSDK] setCloudPageWithAlertDelegate:self];
     
 #ifdef DEBUG
     /**
      To enable Debug Log set to YES
      */
-    [ETPush setETLoggerToRequiredState:YES];
+    [MarketingCloudSDK sfmc_enableSDKLogging:YES];
     
-    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Debug				// Configure the SDK with the Debug App ID
-                                              andAccessToken:kETAccessToken_Debug		// Configure the SDK with the Debug Access Token
-                                               withAnalytics:YES						// Enable Analytics
-                                         andLocationServices:YES                        // Enable Location Services (Geofence Messaging)
-                                        andProximityServices:YES						// Enable Proximity services (Beacon Messaging)
-                                               andCloudPages:YES						// Enable Cloud Pages
-                                             withPIAnalytics:YES						// Enable WAMA / PI Analytics
+    successful = [[MarketingCloudSDK sfmcSDK] sfmc_configureSDKWithAppID:kETAppID_Debug				// Configure the SDK with the Debug App ID
+                                              accessToken:kETAccessToken_Debug		// Configure the SDK with the Debug Access Token
+                                               analyticsEnabled:YES						// Enable Analytics
+                                         locationServicesEnabled:YES                        // Enable Location Services (Geofence Messaging)
+                                        proximityServicesEnabled:YES						// Enable Proximity services (Beacon Messaging)
+                                               cloudPagesEnabled:YES						// Enable Cloud Pages
+                                             piAnalyticsEnabled:YES						// Enable WAMA / PI Analytics
                                                        error:&error];
     
 #else
     /**
      Configure and set initial settings of the JB4ASDK when in PRODUCTION mode
      */
-    successful = [[ETPush pushManager] configureSDKWithAppID:kETAppID_Prod				// Configure the SDK with the Debug App ID
-                                              andAccessToken:kETAccessToken_Prod		// Configure the SDK with the Debug Access Token
-                                               withAnalytics:YES						// Enable Analytics
-                                         andLocationServices:YES						// Enable Location Services (Geofence Messaging)
-                                        andProximityServices:YES						// Enable Proximity services (Beacon Messaging)
-                                               andCloudPages:YES						// Enable Cloud Pages
-                                             withPIAnalytics:YES						// Enable WAMA / PI Analytics
-                                                       error:&error];
+    successful = [[MarketingCloudSDK sfmcSDK] configureSDKWithAppID:kETAppID_Prod				// Configure the SDK with the Debug App ID
+                                              accessToken:kETAccessToken_Prod		// Configure the SDK with the Debug Access Token
+                                                   analyticsEnabled:YES						// Enable Analytics
+                                            locationServicesEnabled:YES                        // Enable Location Services (Geofence Messaging)
+                                           proximityServicesEnabled:YES						// Enable Proximity services (Beacon Messaging)
+                                                  cloudPagesEnabled:YES						// Enable Cloud Pages
+                                                 piAnalyticsEnabled:YES						// Enable WAMA / PI Analytics
+                                                              error:&error];
 #endif
     /**
      If configureSDKWithAppID returns NO, check the error object for detailed failure info. See PushConstants.h for codes.
@@ -74,14 +70,14 @@
             
         });
         
-        [ETAnalytics trackPageView:@"data://SDKInitializationFailed" andTitle:[error localizedDescription] andItem:nil andSearch:nil];
+        [MarketingCloudSDK sfmc_trackPageView:@"data://SDKInitializationFailed" andTitle:[error localizedDescription] andItem:nil andSearch:nil];
         
     } else {
         /**
          Register for push notifications - enable all notification types, no categories
          */
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
-            [[ETPush pushManager] registerForRemoteNotificationsWithDelegate:self options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            [[MarketingCloudSDK sfmcSDK] sfmc_registerForRemoteNotificationsWithDelegate:self options:(UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound) categories:nil completionHandler:^(BOOL granted, NSError * _Nullable error) {
                 
                 NSLog(@"Registered for remote notifications: %d", granted);
                 
@@ -94,38 +90,28 @@
                                                     UIUserNotificationTypeAlert
                                                                                      categories:nil];
             // Notify the SDK what user notification settings have been selected
-            [[ETPush pushManager] registerUserNotificationSettings:settings];
-            [[ETPush pushManager] registerForRemoteNotifications];
+            [[MarketingCloudSDK sfmcSDK] sfmc_registerUserNotificationSettings:settings];
+            [[MarketingCloudSDK sfmcSDK] sfmc_registerForRemoteNotifications];
         }
         
         /**
          Start geoLocation
          */
-        [[ETLocationManager sharedInstance] startWatchingLocation];
-        
-        /**
-         Begins fence retrieval from ET of Geofences.
-         */
-        [ETRegion retrieveGeofencesFromET];
-        
-        /**
-         Begins fence retrieval from ET of Beacons.
-         */
-        [ETRegion retrieveProximityFromET];
+        [[MarketingCloudSDK sfmcSDK] sfmc_startWatchingLocation];
         
         /**
          Inform the JB4ASDK of the launch options - possibly UIApplicationLaunchOptionsRemoteNotificationKey or UIApplicationLaunchOptionsLocalNotificationKey
          */
-        [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
+        [[MarketingCloudSDK sfmcSDK] sfmc_applicationLaunchedWithOptions:launchOptions];
         
-        [ETAnalytics trackPageView:@"data://SDKInitializationCompletedSuccessfully" andTitle:@"SDK Initialization Completed" andItem:nil andSearch:nil];
+        [MarketingCloudSDK sfmc_trackPageView:@"data://SDKInitializationCompletedSuccessfully" andTitle:@"SDK Initialization Completed" andItem:nil andSearch:nil];
         // set an attribute called 'MyBooleanAttribute' with value '0'
-        [[ETPush pushManager] addAttributeNamed:@"MyBooleanAttribute" value:@"0"];
+        [[MarketingCloudSDK sfmcSDK] sfmc_addAttributeNamed:@"MyBooleanAttribute" value:@"0"];
         
         /*
          Example of using the getSDKState Method for rapidly debugging issues
          */
-        [ETPush getSDKState];
+        [MarketingCloudSDK sfmc_sdkState];
         
     }
     
@@ -138,16 +124,16 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
     
     if (completionHandler != nil) {
-        if ([[ETPush pushManager] shouldShowLocalAlert] == YES) {
+        if ([[MarketingCloudSDK sfmcSDK] sfmc_showRemoteNotificationWhenAppInForeground] == YES) {
             completionHandler(UNNotificationPresentationOptionAlert);
         }
         else {
-            [[ETPush pushManager] handleNotification:notification.request.content.userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
+            [[MarketingCloudSDK sfmcSDK] sfmc_handleNotification:notification.request.content.userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
             completionHandler(UNNotificationPresentationOptionNone);
         }
     }
     else {
-        [[ETPush pushManager] handleNotification:notification.request.content.userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
+        [[MarketingCloudSDK sfmcSDK] sfmc_handleNotification:notification.request.content.userInfo forApplicationState:[UIApplication sharedApplication].applicationState];
     }
 }
 
@@ -157,7 +143,7 @@
     /**
      Inform the JB4ASDK that the device received a remote notification
      */
-    [[ETPush pushManager] handleUserNotificationResponse:response];
+    [[MarketingCloudSDK sfmcSDK] sfmc_handleUserNotificationResponse:response];
     
     NSDictionary *userInfo = response.notification.request.content.userInfo;
     /**
@@ -175,7 +161,7 @@
          Received a remote notification...
          Clear the badge
          */
-        [[ETPush pushManager] resetBadgeCount];
+        [[MarketingCloudSDK sfmcSDK] sfmc_resetBadgeCount];
     }
 
     if (completionHandler != nil) {
@@ -187,22 +173,22 @@
     /**
      Inform the JB4ASDK of the requested notification settings
      */
-    [[ETPush pushManager] didRegisterUserNotificationSettings:notificationSettings];
+    [[MarketingCloudSDK sfmcSDK] sfmc_didRegisterUserNotificationSettings:notificationSettings];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     /**
      Inform the JB4ASDK of the device token
      */
-    [[ETPush pushManager] registerDeviceToken:deviceToken];
+    [[MarketingCloudSDK sfmcSDK] sfmc_registerDeviceToken:deviceToken];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     /**
      Inform the JB4ASDK that the device failed to register and did not receive a device token
      */
-    [[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
-    [ETAnalytics trackPageView:@"data://applicationDidFailToRegisterForRemoteNotificationsWithError" andTitle:[error localizedDescription] andItem:nil andSearch:nil];
+    [[MarketingCloudSDK sfmcSDK] sfmc_applicationDidFailToRegisterForRemoteNotificationsWithError:error];
+    [MarketingCloudSDK sfmc_trackPageView:@"data://applicationDidFailToRegisterForRemoteNotificationsWithError" andTitle:[error localizedDescription] andItem:nil andSearch:nil];
     
 }
 
@@ -210,14 +196,14 @@
     /**
      Use this method to disable Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager sharedInstance]startWatchingLocation];
+    [[MarketingCloudSDK sfmcSDK] sfmc_startWatchingLocation];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     /**
      Use this method to initiate Location Services through the MobilePush SDK.
      */
-    [[ETLocationManager sharedInstance]stopWatchingLocation];
+    [[MarketingCloudSDK sfmcSDK] sfmc_stopWatchingLocation];
 }
 
 #pragma mark - Message Received Callbacks
@@ -226,14 +212,14 @@
      Inform the JB4ASDK that the device received a local notification
      */
     NSLog(@"Local Notification Receieved");
-    [[ETPush pushManager] handleLocalNotification:notification];
+    [[MarketingCloudSDK sfmcSDK] sfmc_handleLocalNotification:notification];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler {
     /**
      Inform the JB4ASDK that the device received a remote notification
      */
-    [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
+    [[MarketingCloudSDK sfmcSDK] sfmc_handleNotification:userInfo forApplicationState:application.applicationState];
     
     /**
      Is it a silent push?
@@ -250,7 +236,7 @@
          Received a remote notification...
          Clear the badge
          */
-        [[ETPush pushManager] resetBadgeCount];
+        [[MarketingCloudSDK sfmcSDK] sfmc_resetBadgeCount];
     }
     
     handler(UIBackgroundFetchResultNoData);
@@ -258,7 +244,7 @@
 
 #pragma mark Cloud Page delegates
 - (void)didReceiveCloudPageWithAlertMessageWithContents:(NSString *)payload {
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[ETWKLandingPagePresenter alloc] initForLandingPageAt:payload]
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[[MarketingCloudSDK sfmcSDK] landingPageWithString:payload]
                                                                                  animated:YES
                                                                                completion:nil];
 }

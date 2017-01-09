@@ -110,9 +110,9 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 	 Add or remove tags for the current device.
 	 */
 	if (recive) {
-		[[MarketingCloudSDK sfmcSDK] sfmc_addTags:[NSSet setWithArray:@[tag.name]]];
+		[[MarketingCloudSDK sfmcSDK] sfmc_addTags:@[tag.name]];
 	} else {
-        [[MarketingCloudSDK sfmcSDK] sfmc_removeTags:[NSSet setWithArray:@[tag.name]]];
+        [[MarketingCloudSDK sfmcSDK] sfmc_removeTags:@[tag.name]];
 	}
 	
 }
@@ -140,7 +140,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 	/**
 	 Add tags for the current device.
 	 */
-	[[MarketingCloudSDK sfmcSDK] sfmc_addTags:[NSSet setWithArray:@[tag.name]]];
+	[[MarketingCloudSDK sfmcSDK] sfmc_addTags:@[tag.name]];
 	
 	self.tagName.text  = @"";
 	/**

@@ -67,7 +67,7 @@
  @param tags An array of tags to add to the list
  @return Set of tags added
  */
--(nullable NSSet *)sfmc_addTags:( NSSet * _Nonnull )tags;
+-(nullable NSSet *)sfmc_addTags:( NSArray * _Nonnull )tags;
 
 /**
  Removes the provided Tag (NSString) from the list of tags.
@@ -75,7 +75,7 @@
  @param tags An array of tags to removed from the list
  @return Set of tags removed upon success, or nil if something failed.
  */
--(nullable NSSet *)sfmc_removeTags:( NSSet * _Nonnull )tags;
+-(nullable NSSet *)sfmc_removeTags:( NSArray * _Nonnull )tags;
 
 /**
  Returns the list of tags for this device.
@@ -130,7 +130,7 @@
  @param attributes An set of dictionaries of key (attribute name) and value (attribute value)
  @return A set of all attributes added
  */
-- (nullable NSSet *) sfmc_addAttributes:( NSSet * _Nonnull ) attributes;
+- (nullable NSSet *) sfmc_addAttributes:( NSArray * _Nonnull ) attributes;
 
 /**
  Remove multiple attributes from Salesforce. See comments in -addAttributeNamed
@@ -138,7 +138,7 @@
  @param attributeNames A set of attribute names
  @return A set of all attributes removed
  */
-- (nullable NSSet *) sfmc_removeAttributesNamed:( NSSet * _Nonnull ) attributeNames;
+- (nullable NSSet *) sfmc_removeAttributesNamed:( NSArray * _Nonnull ) attributeNames;
 
 
 @end

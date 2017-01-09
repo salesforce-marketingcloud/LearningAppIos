@@ -29,7 +29,7 @@
 
 /**
  Returns the currently monitored regions.
- @return An NSSet of monitored regions.
+ @return An NSSet of monitored CLRegion regions.
  */
 - (NSSet * _Nonnull)sfmc_monitoredRegions;
 

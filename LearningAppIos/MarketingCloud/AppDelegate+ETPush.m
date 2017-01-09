@@ -17,7 +17,7 @@
     BOOL successful = NO;
     NSError *error = nil;
     
-    [[MarketingCloudSDK sfmcSDK] setCloudPageWithAlertDelegate:self];
+    [[MarketingCloudSDK sfmcSDK] sfmc_setCloudPageWithAlertDelegate:self];
     
 #ifdef DEBUG
     /**

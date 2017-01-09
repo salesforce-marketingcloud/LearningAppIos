@@ -55,14 +55,14 @@
  
  @param delegate The object you wish to be called when an OpenDirect message is delivered.
  */
--(void)setCloudPageWithAlertDelegate:(nullable id<MarketingCloudSDKCloudPageWithAlertDelegate>)delegate;
+-(void)sfmc_setCloudPageWithAlertDelegate:(nullable id<MarketingCloudSDKCloudPageWithAlertDelegate>)delegate;
 
 /**
  Returns the cloudPageWithAlert delegate.
  
  @return delegate The named cloudPageWithAlert delegate, or nil if there isn't one.
  */
--(nullable id<MarketingCloudSDKCloudPageWithAlertDelegate>)cloudPageWithAlertDelegate;
+-(nullable id<MarketingCloudSDKCloudPageWithAlertDelegate>)sfmc_cloudPageWithAlertDelegate;
 
 
 @end

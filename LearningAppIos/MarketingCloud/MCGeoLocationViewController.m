@@ -53,52 +53,18 @@
 }
 
 /**
- Adds annotation per regions to map, for both beacons and geofences.
- */
-- (void) drawGeofences {
-    /**
-     Get all monitor regions.
-     */
-    NSSet *monitoredRegions = [[MarketingCloudSDK sfmcSDK] sfmc_monitoredRegions];
-    
-    NSLog(@"monitoredRegions = %@",monitoredRegions);
-    
-    for (MarketingCloudSDKEventRegionObject *region in monitoredRegions) {
-        if (region.isGeofenceRegion == YES) {
-            [self placeGeofenceOnMap:region];
-        } else if (region.isBeaconRegion == YES) {
-            [self placeBeaconOnMap:region];
-        }
-    }
-}
-
-/**
  Places a geofence on a map with a pin and a circle.
  
  @param geofence the geofence to draw on the map
  */
-- (void)placeGeofenceOnMap:(MarketingCloudSDKEventRegionObject *)geofence {
-    [self placeRegionOnMap:CLLocationCoordinate2DMake([geofence.latitude doubleValue], [geofence.longitude doubleValue])
-                    radius:[geofence.radius doubleValue]
-                     title:geofence.fenceIdentifier
+- (void)placeGeofenceOnMap:(CLCircularRegion *)geofence {
+        [self placeRegionOnMap:geofence.center
+                        radius:geofence.radius
+                         title:geofence.identifier
                strokeColor:[UIColor redColor]
                  imageName:@"annotation"];
 }
 
-/**
- Places a beacon on a map with a pin and a circle.
- 
- @param beacon the beacon to draw on the map
- */
-- (void)placeBeaconOnMap:(MarketingCloudSDKEventRegionObject *)beacon {
-    
-    [self placeRegionOnMap:CLLocationCoordinate2DMake([beacon.latitude doubleValue], [beacon.longitude doubleValue])
-                    radius:([beacon.radius doubleValue] == 0? 10 : [beacon.radius doubleValue])
-                     title:beacon.regionName
-               strokeColor:[UIColor blueColor]
-                 imageName:@"beacon"];
-    
-}
 
 /**
  Creates the annotation and circles to add to map.
@@ -129,6 +95,24 @@
      */
     MCCircle *circle = [MCCircle circleWithCenterCoordinate:center radius:radius strokeColor:color];
     [self.mapView addOverlay:circle];
+}
+
+/**
+ Adds annotation per regions to map, for both beacons and geofences.
+ */
+- (void) drawGeofences {
+    /**
+     Get all monitor regions.
+     */
+    NSSet *monitoredRegions = [[MarketingCloudSDK sfmcSDK] sfmc_monitoredRegions];
+    
+    NSLog(@"monitoredRegions = %@",monitoredRegions);
+    
+    for (NSObject *region in monitoredRegions) {
+        if ([region isKindOfClass:[CLCircularRegion class]]) {
+            [self placeGeofenceOnMap:(CLCircularRegion*)region];
+        }
+    }
 }
 
 #pragma mark - <MKMapViewDelegate>

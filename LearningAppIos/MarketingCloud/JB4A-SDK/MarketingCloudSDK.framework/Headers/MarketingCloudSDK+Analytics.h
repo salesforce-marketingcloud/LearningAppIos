@@ -2,8 +2,7 @@
 //  MarketingCloudSDK+Analytics.h
 //  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/1/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "MarketingCloudSDK.h"
@@ -11,8 +10,6 @@
 #import "MarketingCloudSDKOrderObject.h"
 
 @interface MarketingCloudSDK (Analytics)
-
-- (BOOL) testBaseAnalytics;
 
 /**
  Set Web Analytics Mobile Analytics, Track page views within your application.
@@ -25,13 +22,13 @@
 
 /**
  Set Web Analytics Mobile Analytics, Track cart contents within your application.
- @param cart a non-nil PICart object containing a cartID and an array of PICartItems
+ @param cart a non-nil MarketingCloudSDKCart object containing a cartID and an array of MarketingCloudSDKCartItems
  */
 +(void)sfmc_trackCartContents:(MarketingCloudSDKCart * _Nonnull) cart;
 
 /**
  Set Web Analytics Mobile Analytics, Track cart conversion within your application.
- @param order a non-nil PIOrder object representing an order; created from a cart and cart items and "converted" into a sale of some sort
+ @param order a non-nil MarketingCloudSDKOrder object representing an order; created from a cart and cart items and "converted" into a sale of some sort
  */
 +(void)sfmc_trackCartConversion:(MarketingCloudSDKOrder * _Nonnull) order;
 

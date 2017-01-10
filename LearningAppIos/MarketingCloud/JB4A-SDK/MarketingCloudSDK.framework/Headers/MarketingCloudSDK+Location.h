@@ -2,18 +2,17 @@
 //  MarketingCloudSDK+Helpers.h
 //  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/1/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "MarketingCloudSDK.h"
 
 @interface MarketingCloudSDK (Location)
 
-- (BOOL) testBaseLocation;
-
 /**
  Determines the state of Location Services based on developer setting and OS-level permission. This is the preferred method for checking for location state.
+ 
+ @return A boolean value reflecting if location services are enabled (i.e. authorized) or not.
  */
 -(BOOL)sfmc_locationEnabled;
 

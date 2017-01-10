@@ -2,8 +2,7 @@
 //  MarketingCloudSDK+OpenDirect.h
 //  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/1/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "MarketingCloudSDK.h"
@@ -47,21 +46,19 @@
 
 @interface MarketingCloudSDK (OpenDirect)
 
-- (BOOL) testBaseOpenDirect;
-
 /**
  Sets the OpenDirect delegate.
  
  @param delegate The object you wish to be called when an OpenDirect message is delivered.
  */
--(void)sfmc_setOpenDirectDelegate:(nullable id<MarketingCloudSDKOpenDirectDelegate>)delegate;
+-(void)sfmc_setOpenDirectDelegate:(id<MarketingCloudSDKOpenDirectDelegate> _Nullable)delegate;
 
 /**
  Returns the OpenDirect delegate.
  
- @return delegate The named OpenDirect delegate, or nil if there isn't one.
+ @return delegate The named MarketingCloudSDKOpenDirect delegate, or nil if there isn't one.
  */
--(nullable id<MarketingCloudSDKOpenDirectDelegate>)sfmc_openDirectDelegate;
+-(id<MarketingCloudSDKOpenDirectDelegate> _Nullable)sfmc_openDirectDelegate;
 
 
 

@@ -2,41 +2,38 @@
 //  MarketingCloudSDK+Helpers.h
 //  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/1/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "MarketingCloudSDK.h"
 
 @interface MarketingCloudSDK (Helpers)
 
-- (BOOL) testBaseHelpers;
-
 /**
- Get SDK Version String (X.Y.Z)
+ Get SDK Version String (X.Y.Z).
  
  @return NSString value.
  */
 +(NSString * _Nonnull)sfmc_sdkVersionString;
 
 /**
- Get SDK Version Code
+ Get SDK Version Code.
  
  @return NSString value.
  */
 +(NSString * _Nonnull)sfmc_sdkVersionCode;
 
 /**
- Enable extensive SDK logging
+ Enable extensive SDK logging.
  
  @param enabled Extensive SDK Logging enabled or disabled.
  */
 +(void)sfmc_enableSDKLogging:(BOOL) enabled;
 
 /**
- Set the Log Level
+ Set the Log Level.
  
- @return Value indicating if extensive SDK logging is enabled or disabled
+ @return Value indicating if extensive SDK logging is enabled or disabled.
  */
 +(BOOL)sfmc_sdkLoggingEnabled;
 
@@ -56,17 +53,17 @@
 +(void)sfmc_setSDKLoggerWithHandler:( void (^__nullable)(NSString * _Nonnull))customLogger;
 
 /**
- Outputs a formatted, easily readable block of text describing the current status of the SDK.
+ Outputs a formatted, easily readable block of text describing the current status of the SDK. This is useful for diagnostics and logging.
  
- @return JSON string with values of the current state of the SDK
+ @return JSON string with values of the current state of the SDK.
  */
-+(nullable NSString *)sfmc_sdkState;
++(NSString * _Nullable)sfmc_sdkState;
 
 /**
- Gets the Apple-safe, unique Device Identifier that ET will later use to identify the device.
+ Gets the Apple-safe, unique Device Identifier that Salesforce Marketing Cloud will later use to identify the device.
  
  Note that this method is compliant with Apple's compliance rules, but may not be permanent.
  */
-+(NSString * _Nonnull)sfmc_safeDeviceIdentifier;
++(NSString * _Nullable)sfmc_safeDeviceIdentifier;
 
 @end

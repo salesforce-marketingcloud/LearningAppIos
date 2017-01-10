@@ -6,71 +6,71 @@
 	<dict>
 		<key>Headers/MarketingCloudSDK+Analytics.h</key>
 		<data>
-		bBxXtxiFkP79sPpIQWpZwkcZV/g=
+		muDvZzQt0eCdBcC1mbArl+VtThQ=
 		</data>
 		<key>Headers/MarketingCloudSDK+Base.h</key>
 		<data>
-		QNQfhQkVyH0jsDNC0wd2KKE/WJI=
+		wM/jNXXjPJxtZNzkCtRlqxFgGYQ=
 		</data>
 		<key>Headers/MarketingCloudSDK+ClientData.h</key>
 		<data>
-		GmO0ChOY9Se/iLYtibfajrwTKrU=
+		JrTfVX5PoIayV2/6caFZ4lMn160=
 		</data>
 		<key>Headers/MarketingCloudSDK+CloudPage.h</key>
 		<data>
-		c/SFAur/9n9o8c1bGTWsuURriYU=
+		sNZyOoZbmTToigMDzsI/fZRYHHU=
 		</data>
 		<key>Headers/MarketingCloudSDK+Helpers.h</key>
 		<data>
-		Gxz+R1AinZZiMqO+gAMtsewKPdE=
+		cFJ+O6BWISYGoClAYxvYNSuckcg=
 		</data>
 		<key>Headers/MarketingCloudSDK+LandingPageWebView.h</key>
 		<data>
-		Jn2y0eeRlra/iL4ntkKDGX+wuDQ=
+		SSXGrroaDIv9OenzLDFKtBCVEco=
 		</data>
 		<key>Headers/MarketingCloudSDK+Location.h</key>
 		<data>
-		spE9NLy/3bLVfSl8fsRCAgfP5+Y=
+		IhtcpSMhyIbMUQkmz+YbyIyrSZY=
 		</data>
 		<key>Headers/MarketingCloudSDK+Notifications.h</key>
 		<data>
-		9DpYpK+7sg+IA1ZD5ZXT74gcWo0=
+		8J7ADb5/udhztH97B4mvPuUGvGA=
 		</data>
 		<key>Headers/MarketingCloudSDK+OpenDirect.h</key>
 		<data>
-		SUs1SXP4XyFUQvON1c+5Is+mZeQ=
+		4s+ad253uzonJIbCYfDImu3bIjk=
 		</data>
 		<key>Headers/MarketingCloudSDK+Recommendations.h</key>
 		<data>
-		2lgrKhZWesmrp2UYPlLDIcmNQWU=
+		ixl8Dn86pGGVi9aWELRkVxIgv8A=
 		</data>
 		<key>Headers/MarketingCloudSDK.h</key>
 		<data>
-		94wIXs3U2JVr1KCrALbXrU+RRCY=
+		qjZ2wkUmMcqWXXNRTd2b8WB9/4A=
 		</data>
 		<key>Headers/MarketingCloudSDKCartItemObject.h</key>
 		<data>
-		ubUmEKJPD8wAcXNWHWwSTub4phs=
+		sEq+p5YQsT3LgvK8jUGrRoMEQnM=
 		</data>
 		<key>Headers/MarketingCloudSDKCartObject.h</key>
 		<data>
-		UvaoJfJWK1DJC7hdwYARFX9ZkIo=
+		ovMmqpAdNkrvZXBIaLFVKnnYmhM=
 		</data>
 		<key>Headers/MarketingCloudSDKCloudPageObject.h</key>
 		<data>
-		TJSByqQ0jE8cWGmBHGvJ/ZNPdX4=
+		OT0YQbk0DvDjoNjnGoYxgRKgu/w=
 		</data>
 		<key>Headers/MarketingCloudSDKEventMessageObject.h</key>
 		<data>
-		4GUTUrewZ/SCcRHZyQ08L7eua/k=
+		F1T+0/nMOnphMbbMDg+OfuAOOpU=
 		</data>
 		<key>Headers/MarketingCloudSDKEventRegionObject.h</key>
 		<data>
-		MZ9Cn2fblGukzMfIzuvyT4hC5Wo=
+		ONmMTN3YSGWMXz2keUGwliHYW28=
 		</data>
 		<key>Headers/MarketingCloudSDKOrderObject.h</key>
 		<data>
-		jR4x8DMCsxPfz01wW/8VHb6YDfQ=
+		8gOZZcg0+u5LQ8EqcDoot0EGS+s=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -87,187 +87,187 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bBxXtxiFkP79sPpIQWpZwkcZV/g=
+			muDvZzQt0eCdBcC1mbArl+VtThQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			wcaBtC8HtkOvnU+6Bl/XWZmCrRp4uQl1NL+cyKHq3Ww=
+			rCFauW0C8VOAX01+Z4N9+BxB4fEIOiaaRgoDx1FTqDQ=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+Base.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QNQfhQkVyH0jsDNC0wd2KKE/WJI=
+			wM/jNXXjPJxtZNzkCtRlqxFgGYQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			mECVwwDek/I7rW7ZzO0he35EXtjnKTxy6hMC5ejS7tY=
+			DFdLwBcOoeeBWqgUDEozvslbsv01uuUc7jBD/n6uqKU=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+ClientData.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GmO0ChOY9Se/iLYtibfajrwTKrU=
+			JrTfVX5PoIayV2/6caFZ4lMn160=
 			</data>
 			<key>hash2</key>
 			<data>
-			3INfksmDmzWQW8bDAK6pmaEevin49vmX6L2VLjBuwUI=
+			8jz0GkXOkAndaKWqDWQdMmVGjisDTit6dCWAo6bZ9mQ=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+CloudPage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c/SFAur/9n9o8c1bGTWsuURriYU=
+			sNZyOoZbmTToigMDzsI/fZRYHHU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Dl/i7dgD4/UktIPDfOoDAPvPtUSBZ9QvgD54MpeBF8g=
+			zRGmzrXBCLz8pbWU2ldZ2IKXxyskGMG9VErbVaY58sc=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+Helpers.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Gxz+R1AinZZiMqO+gAMtsewKPdE=
+			cFJ+O6BWISYGoClAYxvYNSuckcg=
 			</data>
 			<key>hash2</key>
 			<data>
-			HPYkbep23XexPeJvK3g9GWamE57XrnPJRrbbwHZZDyE=
+			gXKzJM2MKEh7VHPQUTS5Z6gY7ioXk7fUlP+spRkK92k=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+LandingPageWebView.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jn2y0eeRlra/iL4ntkKDGX+wuDQ=
+			SSXGrroaDIv9OenzLDFKtBCVEco=
 			</data>
 			<key>hash2</key>
 			<data>
-			pxJ/oHGOMAl2l+zZVw8pgVASLwvq9gjeE5dmjQHLL44=
+			bzRGi5s62bQFHahv2f7KzQERGzl5MZIMvI/F5pbmolU=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+Location.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			spE9NLy/3bLVfSl8fsRCAgfP5+Y=
+			IhtcpSMhyIbMUQkmz+YbyIyrSZY=
 			</data>
 			<key>hash2</key>
 			<data>
-			iK32p90s5dwxz/N8gIzty6MBvyRCzqMdTk2ewoC6Nok=
+			friiyjNQ1tHyGnAfP/sfkhNj9J1NGOV5J1X4WooaiFo=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+Notifications.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9DpYpK+7sg+IA1ZD5ZXT74gcWo0=
+			8J7ADb5/udhztH97B4mvPuUGvGA=
 			</data>
 			<key>hash2</key>
 			<data>
-			gcKi3ojp/yKRfIzwyxLW9TjHHEWagAR2tIR63G1svdY=
+			1ru51jriKQmRMCS/rpQX2ideJaaHWr0up53TUU9N8tY=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+OpenDirect.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SUs1SXP4XyFUQvON1c+5Is+mZeQ=
+			4s+ad253uzonJIbCYfDImu3bIjk=
 			</data>
 			<key>hash2</key>
 			<data>
-			AhxVRN8RZobavg0D+bTP4P33orhNGTYTu2lmD3AXo7U=
+			ko9OIYTN4xRyEYSXRRz6DjQN0kSeYtDzFp5XQZ2uXc4=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK+Recommendations.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2lgrKhZWesmrp2UYPlLDIcmNQWU=
+			ixl8Dn86pGGVi9aWELRkVxIgv8A=
 			</data>
 			<key>hash2</key>
 			<data>
-			EAddOEegkAUSfgNj4xjfolVBbPqgxxt6v7PD8MBW+pw=
+			wwv6PkxyCmuiOa9Ym5lTYA89Jp9Z1TVGUcK2iQhBmIU=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			94wIXs3U2JVr1KCrALbXrU+RRCY=
+			qjZ2wkUmMcqWXXNRTd2b8WB9/4A=
 			</data>
 			<key>hash2</key>
 			<data>
-			g0lD2vWzPm8rEbqz3lHpf9IUTqJhHdcvpvJLzgczOG0=
+			noybfZ2OqNMP4gIWNvtdUaIihq2WQn23HwTrpmXWTpk=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDKCartItemObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ubUmEKJPD8wAcXNWHWwSTub4phs=
+			sEq+p5YQsT3LgvK8jUGrRoMEQnM=
 			</data>
 			<key>hash2</key>
 			<data>
-			25EJ2FHqLTChluwWGbD4wyGypvviELAlJEu64HzcNh0=
+			R0f+p4ozm/gLIE9ja67cSMwI/ALj0gzuW3RrjSq9KCE=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDKCartObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UvaoJfJWK1DJC7hdwYARFX9ZkIo=
+			ovMmqpAdNkrvZXBIaLFVKnnYmhM=
 			</data>
 			<key>hash2</key>
 			<data>
-			ITIX9OqGAMO0JlBVIiWWKamIrKoZclzOUYJDgytO/rs=
+			c6vx492DpGh6nfnEuPeekgx22ttvtdveu5+152Dw/0U=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDKCloudPageObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TJSByqQ0jE8cWGmBHGvJ/ZNPdX4=
+			OT0YQbk0DvDjoNjnGoYxgRKgu/w=
 			</data>
 			<key>hash2</key>
 			<data>
-			TlmrM9uGTqZKq8e9q5B97TGMsqwIOxzIA3yH0LqgASw=
+			JsYTxPUIX1tN0y6kVnIDSvPXFy9s8AoBFngaGXlh6z0=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDKEventMessageObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4GUTUrewZ/SCcRHZyQ08L7eua/k=
+			F1T+0/nMOnphMbbMDg+OfuAOOpU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ip3zOWxPq5boHLOUU5TbXhgQqs+0dpWOcBontX1bJeM=
+			ewuNEhzePODuxG2rys1AcbXbmgQyYu71scQb8rDWP48=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDKEventRegionObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MZ9Cn2fblGukzMfIzuvyT4hC5Wo=
+			ONmMTN3YSGWMXz2keUGwliHYW28=
 			</data>
 			<key>hash2</key>
 			<data>
-			pX6YHf2BM+4TMVAM2YHDfQkuvt+jw52ucpG8Q6Z9yHI=
+			uNv3FM40Du4F6bRqyNBE4pofQ56SNQtBZ5XhKYGq31w=
 			</data>
 		</dict>
 		<key>Headers/MarketingCloudSDKOrderObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jR4x8DMCsxPfz01wW/8VHb6YDfQ=
+			8gOZZcg0+u5LQ8EqcDoot0EGS+s=
 			</data>
 			<key>hash2</key>
 			<data>
-			cedlqaihjhTTdNcxO7Q5IiMj2WaGvaTTvLOfoepIbEs=
+			DyKzdPLFTxbtqWJLdkordZDtgZ1G5ye45jl7X6BNuLc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

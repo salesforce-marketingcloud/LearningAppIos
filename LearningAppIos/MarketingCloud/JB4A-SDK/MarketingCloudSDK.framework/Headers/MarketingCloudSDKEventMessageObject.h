@@ -2,16 +2,14 @@
 //  MarketingCloudSDKEventMessageObject.h
 //  JB4A-SDK-iOS
 //
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "MarketingCloudSDK.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 /**
- MarketingCloudSDKEventMessage is the local representation of a Message from Salesforce. They are multipurpose, sometimes representing a message that should be scheduled because of the entrance or exit of a Geofence, the proximal arrival to an iBeacon, or a CloudPage message downloaded from ET. Because of their multipurpose nature, there are a lot of different attributes on them, many of which may be null at any give time depending on the type of message.
+ MarketingCloudSDKEventMessage is the local representation of a Message from Salesforce. They are multipurpose, sometimes representing a message that should be scheduled because of the entrance or exit of a Geofence, the proximal arrival to an iBeacon, or a CloudPage message downloaded from Salesforce Marketing Cloud. Because of their multipurpose nature, there are a lot of different attributes on them, many of which may be null at any give time depending on the type of message.
  */
 
 @interface MarketingCloudSDKEventMessageObject : NSObject
@@ -22,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, copy, nullable) NSString *messageIdentifier;
 
 /**
- This is the name which is set on SalesforceMarketingCloud, while setting the ETMessage
+ This is the name which is set on Salesforce Marketing Cloud, while setting the message
  */
 @property (nonatomic, readonly, copy, nullable) NSString *messageName;
 
@@ -71,7 +69,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly, copy, nullable) NSDate *endDate;
 
-
 /**
  The Site URL for the CloudPage attached to this message. 
  */
@@ -81,7 +78,6 @@ NS_ASSUME_NONNULL_BEGIN
  OpenDirect payload for this message, if there is one.
  */
 @property (nonatomic, readonly, copy, nullable) NSString *openDirectPayload;
-
 
 /**
  Use this for display in an inbox.
@@ -93,7 +89,4 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly, copy, nullable) NSURL *siteURL;
 
-
-
 @end
-NS_ASSUME_NONNULL_END

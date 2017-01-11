@@ -2,15 +2,12 @@
 //  MarketingCloudSDK+ClientData.h
 //  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/1/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "MarketingCloudSDK.h"
 
 @interface MarketingCloudSDK (ClientData)
-
-- (BOOL) testBaseClientData;
 
 #pragma mark - Data Interaction
 /**---------------------------------------------------------------------------------------
@@ -19,23 +16,23 @@
  */
 
 /**
- Accepts and sets the Subscriber Key for the device's user.
+ Accepts and sets the Contact Key for the device's user. Formerly know in the SDK as "subscriberKey".
  
  Cannot be nil or blank.
  
  Will trim leading and trailing whitespace.
  
- @param contactKey The subscriber key to attribute to the user.
- @return YES if set successfully
+ @param contactKey The contact key to attribute to the user.
+ @return YES if set successfully.
  */
 -(BOOL)sfmc_setContactKey:( NSString * _Nonnull )contactKey;
 
 /**
- Returns the subscriber key for the active user, in case you need it.
+ Returns the contact key for the active user, in case you need it.
  
- @return subscriberKey The code-set subscriber key.
+ @return contactKey The code-set contact key.
  */
--(nullable NSString *)sfmc_contactKey;
+-(NSString * _Nullable)sfmc_contactKey;
 
 /**
  Adds the provided Tag (NSString) to the set of unique tags.
@@ -44,7 +41,7 @@
  
  Cannot be nil or blank.
  
- @param  tag A string to add to the list of tags
+ @param  tag A string to add to the list of tags.
  @return YES if added successfully.
  */
 -(BOOL)sfmc_addTag:(NSString * _Nonnull)tag;
@@ -52,37 +49,37 @@
 /**
  Removes the provided Tag (NSString) from the list of tags.
  
- @param tag A string to remove from the list of tags
+ @param tag A string to remove from the list of tags.
  @return tag Echoes the tag back on successful removal, or nil if something failed.
  */
--(nullable NSString *)sfmc_removeTag:(NSString * _Nonnull)tag;
+-(NSString * _Nullable)sfmc_removeTag:(NSString * _Nonnull)tag;
 
 /**
- Adds the provided Tag (NSString) to the set of unique tags.
+ Adds the provided array of Tags (NSString) to the set of unique tags.
  
  Will trim leading and trailing whitespace.
  
  Cannot be nil or blank.
  
- @param tags An array of tags to add to the list
- @return Set of tags added
+ @param tags An array of tags to add to the list.
+ @return Set of tags added, as strings, or nil if something failed.
  */
--(nullable NSSet *)sfmc_addTags:( NSSet * _Nonnull )tags;
+-(NSSet * _Nullable)sfmc_addTags:( NSArray * _Nonnull )tags;
 
 /**
- Removes the provided Tag (NSString) from the list of tags.
+ Removes the provided array of Tags (NSString) from the list of tags.
  
- @param tags An array of tags to removed from the list
- @return Set of tags removed upon success, or nil if something failed.
+ @param tags An array of tags to removed from the list.
+ @return Set of tags removed upon success, as strings, or nil if something failed.
  */
--(nullable NSSet *)sfmc_removeTags:( NSSet * _Nonnull )tags;
+-(NSSet * _Nullable)sfmc_removeTags:( NSArray * _Nonnull )tags;
 
 /**
  Returns the list of tags for this device.
  
- @return All tags associated.
+ @return All tags associated, as strings.
  */
--(nullable NSSet *)sfmc_tags;
+-(NSSet * _Nullable)sfmc_tags;
 
 
 /**
@@ -92,7 +89,7 @@
  
  Will trim leading and trailing whitespace from the name and value.
  
- The attribute must be defined within the SFMC Contact model prior to adding a value.  If the attribute does not exist within the
+ The attribute must be defined within the SFMC Contact model prior to adding a value. If the attribute does not exist within the
  SFMC Contact model, then this attribute will be accepted by the SDK, but will be ignored within the SFMC.
  
  If you previously added a value for the named attribute, then the value will be updated with the new value and sent to the SFMC.
@@ -105,40 +102,40 @@
  
  @param name The name of the attribute you wish to send. This will be the key of the pair.
  @param value The value to set for the data pair.
- @return YES if added successfully
+ @return YES if added successfully.
  */
 - (BOOL)sfmc_addAttributeNamed:( NSString * _Nonnull )name value:( NSString * _Nonnull )value;
 
 /**
- Removes the provided attribute from the data set to send to Salesforce.  The value is not changed on the SFMC.
+ Removes the named attribute from the data set to send to Salesforce. The value is not changed on the SFMC.
  
  @param name The name of the attribute you wish to remove.
  @return Returns the value that was set. It will no longer be sent back to Salesforce.
  */
-- (nullable NSString*)sfmc_removeAttributeNamed:( NSString * _Nonnull )name;
+- (NSString * _Nullable)sfmc_removeAttributeNamed:( NSString * _Nonnull )name;
 
 /**
  Returns a read-only copy of the Attributes dictionary as it is right now.
  
- @return All attributes currently set
+ @return All attributes currently set.
  */
--(nullable NSDictionary *)sfmc_attributes;
+-(NSDictionary * _Nullable)sfmc_attributes;
 
 /**
- Adds multiple attributes (key/value dictionaries) to Salesforce. See comments in -addAttributeNamed
+ Adds multiple attributes (key/value dictionaries) to Salesforce. See comments in -sfmc_addAttributeNamed.
  
- @param attributes An set of dictionaries of key (attribute name) and value (attribute value)
- @return A set of all attributes added
+ @param attributes An array of dictionaries of key (attribute name) and value (attribute value).
+ @return A set of all attributes added.
  */
-- (nullable NSSet *) sfmc_addAttributes:( NSSet * _Nonnull ) attributes;
+- (NSSet * _Nullable) sfmc_addAttributes:( NSArray * _Nonnull ) attributes;
 
 /**
- Remove multiple attributes from Salesforce. See comments in -addAttributeNamed
+ Remove multiple attributes from Salesforce. See comments in -sfmc_addAttributeNamed.
  
- @param attributeNames A set of attribute names
- @return A set of all attributes removed
+ @param attributeNames An array of attribute names.
+ @return A set of all attributes removed.
  */
-- (nullable NSSet *) sfmc_removeAttributesNamed:( NSSet * _Nonnull ) attributeNames;
+- (NSSet * _Nullable) sfmc_removeAttributesNamed:( NSArray * _Nonnull ) attributeNames;
 
 
 @end

@@ -2,8 +2,7 @@
 //  MarketingCloudSDK+CloudPage.h
 //  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/1/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import "MarketingCloudSDK.h"
@@ -48,38 +47,36 @@
 
 @interface MarketingCloudSDK (CloudPage)
 
-- (BOOL) testBaseCloudPage;
-
 /**
  Sets the cloudPageWithAlert delegate.
  
  @param delegate The object you wish to be called when an OpenDirect message is delivered.
  */
--(void)setCloudPageWithAlertDelegate:(nullable id<MarketingCloudSDKCloudPageWithAlertDelegate>)delegate;
+-(void)sfmc_setCloudPageWithAlertDelegate:(id<MarketingCloudSDKCloudPageWithAlertDelegate> _Nullable)delegate;
 
 /**
  Returns the cloudPageWithAlert delegate.
  
  @return delegate The named cloudPageWithAlert delegate, or nil if there isn't one.
  */
--(nullable id<MarketingCloudSDKCloudPageWithAlertDelegate>)cloudPageWithAlertDelegate;
+-(id<MarketingCloudSDKCloudPageWithAlertDelegate> _Nullable)sfmc_cloudPageWithAlertDelegate;
 
 
 @end
 
 /**
- The ETCloudPageDataSource is an interface object for CloudPage support. It was designed to be used as the datasource for a UITableView, and can be allocated and used as such without too much other customization. Of course, you are welcomed to use it any way you want other than that.
+ The MarketingCloudSDKCloudPageDataSource is an interface object for CloudPage support. It was designed to be used as the datasource for a UITableView, and can be allocated and used as such without too much other customization. Of course, you are welcomed to use it any way you want other than that.
  
  Should you wish to customize the display of the Data Source, you should subclass from here. At that time, you may override any typical UITableViewDataSource protocol members. You will likely be the most interested in cellForRowAtIndexPath:. If you do, you can access the current message by asking the messages array for the object corresponding to your NSIndexPath row. It will be an ETCloudPage object.
  
- Or, for the most customization, make a new one of these and only access the messages property. If you do that, you'll need to be both the delegate and data source for your table, but you can do whatever you like. The messages array will contain ETCloudPage objects, and you can see which properties are available on that by checking it's header.
+ Or, for the most customization, make a new one of these and only access the messages property. If you do that, you'll need to be both the delegate and data source for your table, but you can do whatever you like. The sfmc_messages array will contain MarketingCloudSDKCloudPageObject objects, and you can see which properties are available on that by checking it's header.
  
  */
 
 @interface MarketingCloudSDKCloudPageDataSource : NSObject <UITableViewDataSource>
 
 /**
- This array contains ETCloudPages, suitable for display in a UITableView or other presentation apparatus of your liking. Please see ETRichMessage for a list of properties available.
+ This array contains MarketingCloudSDKCloudPageObject, suitable for display in a UITableView or other presentation apparatus of your liking. Please see MarketingCloudSDKCloudPageObject for a list of properties available.
  */
 @property (nonatomic, readonly, copy, nullable) NSArray<__kindof MarketingCloudSDKCloudPageObject *>*sfmc_messages;
 

@@ -2,12 +2,16 @@
 //  MarketingCloudSDK.h
 //  JB4A-SDK-iOS
 //
-//  Created by Brian Criscuolo on 12/28/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #ifndef MarketingCloudSDK_h
 #define MarketingCloudSDK_h
+
+/**---------------------------------------------------------------------------------------
+ * @name This is the framework umbrella header for MarketingCloudSDK.
+ *  ---------------------------------------------------------------------------------------
+ */
 
 #import <MarketingCloudSDK/MarketingCloudSDK+Base.h>
 #import <MarketingCloudSDK/MarketingCloudSDK+Analytics.h>

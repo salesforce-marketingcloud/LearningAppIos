@@ -2,10 +2,7 @@
 //  MarketingCloudSDKCloudPageObject.h
 //  JB4A-SDK-iOS
 //
-//  JB4A iOS SDK GitHub Repository
-//  https://salesforce-marketingcloud.github.io/JB4A-SDK-iOS/
-//
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -22,10 +19,9 @@
 @property (nonatomic, readonly, copy, nullable) NSString *messageIdentifier;
 
 /**
- This is the name which is set on SalesforceMarketingCloud, while setting the ETMessage
+ This is the name which is set on Salesforce Marketing Cloud, while setting the message
  */
 @property (nonatomic, readonly, copy, nullable) NSString *messageName;
-
 
 /**
  The alert text of the message. This displays on the screen.
@@ -52,7 +48,6 @@
  */
 @property (nonatomic, readonly, copy, nullable) NSDate *endDate;
 
-
 /**
  The Site URL for the ClouePage attached to this message. It is saved as an NSString and converted later to NSURL.
  */
@@ -63,12 +58,10 @@
  */
 @property (nonatomic, readonly, copy, nullable) NSString *openDirectPayload;
 
-
 /**
- Whether or not the message has been read. This must be set through markAsRead by the developer.
+ Whether or not the message has been read. This must be set through sfmc_markAsRead by the developer.
  */
-@property (nonatomic, readonly, getter = isRead) BOOL read;
-
+@property (nonatomic, readonly) BOOL read;
 
 /**
  Use this for display in an inbox.
@@ -80,10 +73,8 @@
  */
 @property (nonatomic, readonly, copy, nullable) NSURL *siteURL;
 
-
-
 /**
- Marks a message as deleted. They will not be returned after this, and it's irreversable.
+ Marks a message as deleted. They will not be returned after this, and it is irreversable.
  */
 -(BOOL)sfmc_markAsDeleted;
 

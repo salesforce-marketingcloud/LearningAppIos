@@ -2,8 +2,7 @@
 //  MarketingCloudSDK.h
 //  MarketingCloudSDK
 //
-//  Created by Brian Criscuolo on 12/16/16.
-//  Copyright © 2016 Salesforce. All rights reserved.
+//  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,25 +11,15 @@
  MarketingCloudSDK EventBus constants
  */
 
-static NSString * _Nonnull const kMarketingCloudSDKDidDisplayLocationMessageNotification = @"MarketingCloudSDKEventBusDidDisplayLocationMessageNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveGeofenceResponseNotification = @"MarketingCloudSDKEventBusDidReceiveGeofenceResponseNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveBeaconResponseNotification = @"MarketingCloudSDKEventBusDidReceiveBeaconResponseNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidEnterGeofenceNotification = @"MarketingCloudSDKEventBusDidEnterGeofenceNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidExitGeofenceNotification = @"MarketingCloudSDKEventBusDidExitGeofenceNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidRangeBeaconNotification = @"MarketingCloudSDKEventBusDidRangeBeaconNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveRichMessagesNotification = @"MarketingCloudSDKEventBusDidReceiveRichMessagesNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveCloudPagesNotification = @"MarketingCloudSDKEventBusDidReceiveRichMessagesNotification";
-static NSString * _Nonnull const kMarketingCloudSDKDidReceiveLocationUpdateNotification = @"MarketingCloudSDKEventBusDidReceiveLocationUpdateNotification";
-
-//extern NSString * _Nonnull const kMarketingCloudSDKDidDisplayLocationMessageNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveGeofenceResponseNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveBeaconResponseNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidEnterGeofenceNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidExitGeofenceNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidRangeBeaconNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveRichMessagesNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveCloudPagesNotification;
-//extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveLocationUpdateNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidDisplayLocationMessageNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveGeofenceResponseNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveBeaconResponseNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidEnterGeofenceNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidExitGeofenceNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidRangeBeaconNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveRichMessagesNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveCloudPagesNotification;
+extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveLocationUpdateNotification;
 
 /**
  Enumeration of the type of MarketingCloudSDKEventMessageObject this is.
@@ -67,23 +56,23 @@ typedef NS_OPTIONS(NSUInteger, MarketingCloudSDKMobilePushContentType) {
     MarketingCloudSDKMobilePushContentTypeEcp = 1 << 31
 };
 
+/**---------------------------------------------------------------------------------------
+ * @name This is the main interface to the MarketingCloudSDK, via the shared instance sfmcSDK.
+ *  ---------------------------------------------------------------------------------------
+ */
+
 @interface MarketingCloudSDK : NSObject
-
-
-- (BOOL) testBase;
 
 /**---------------------------------------------------------------------------------------
  * @name Configuring the app for Salesforce Marketing Cloud
  *  ---------------------------------------------------------------------------------------
  */
 /**
- Returns (or initializes) the shared sdk instance.
+ Returns (or initializes) the shared sdk instance. This is the default and suggested reference to the SDK.
  
  @return The singleton instance of an MarketingCloudSDK sfmcSDK.
  */
-+(nullable instancetype)sfmcSDK;
-
--(nullable instancetype)init;
++(instancetype _Nullable)sfmcSDK;
 
 /**
  This is the main configuration method, responsible for setting credentials needed to communicate with Salesforce. If you are unsure of your accessToken or environment, please visit Code@ExactTarget
@@ -94,7 +83,7 @@ typedef NS_OPTIONS(NSUInteger, MarketingCloudSDKMobilePushContentType) {
  @param accessToken The designed token given to you by Code@ExactTarget that allows you access to the API
  @param analyticsEnabled Whether or not to send analytic data back to Salesforce
  @param locationServicesEnabled Whether or not to use Location Services
- @param proximityServicesEnabled Whether or not to use Proximity Services. Using proximity services requires setting locState to YES
+ @param proximityServicesEnabled Whether or not to use Proximity Services. Using proximity services requires setting locationServicesEnabled to YES.
  @param cloudPagesEnabled Whether or not to use Cloud Pages
  @param piAnalyticsEnabled Whether or not to send Web and Mobile analytic data back to Salesforce
  @param configurationError NSError object describing the error
@@ -113,8 +102,8 @@ typedef NS_OPTIONS(NSUInteger, MarketingCloudSDKMobilePushContentType) {
  Triggers an immediate send of Registration data to Salesforce Marketing Cloud and will wait 60 seconds to send
  for all calls made after the first call was made while the app is in foreground.
  
- This is not normally needed as each method (setTag(), setSubscriberKey(), addAttribute() etc) will trigger
- a send to the SFMC 60 seconds after the first request to change any Registration data.
+ This is not normally needed as each method (sfmc_setTag, sfmc_setContactKey, sfmc_addAttribute etc) will trigger
+ a send to Salesforce 60 seconds after the first request to change any Registration data.
  */
 -(void) sfmc_updateMarketingCloud;
 

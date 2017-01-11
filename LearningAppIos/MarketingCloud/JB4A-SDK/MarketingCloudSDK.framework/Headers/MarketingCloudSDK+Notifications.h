@@ -211,7 +211,7 @@
 -(void) sfmc_applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError * _Nullable)error;
 
 /**
- Reset the application's badge number to zero (aka, remove it). Call updateET to refresh the server with the current badge number. Note: updateET may not be fully processed by the server for a number of minutes; the server's badge value may be out of sync with the app for a short amount of time.
+ Reset the application's badge number to zero (aka, remove it). Call sfmc_updateMarketingCloud to refresh the server with the current badge number. Note: sfmc_updateMarketingCloud may not be fully processed by the server for a number of minutes; the server's badge value may be out of sync with the app for a short amount of time.
  
  */
 -(void) sfmc_resetBadgeCount;

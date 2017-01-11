@@ -104,15 +104,15 @@
     /**
      Get all monitor regions.
      */
-    NSSet *monitoredRegions = [[MarketingCloudSDK sfmcSDK] sfmc_monitoredRegions];
-    
-    NSLog(@"monitoredRegions = %@",monitoredRegions);
-    
-    for (NSObject *region in monitoredRegions) {
-        if ([region isKindOfClass:[CLCircularRegion class]]) {
-            [self placeGeofenceOnMap:(CLCircularRegion*)region];
-        }
-    }
+//    NSSet *monitoredRegions = [[MarketingCloudSDK sfmcSDK] sfmc_monitoredRegions];
+//    
+//    NSLog(@"monitoredRegions = %@",monitoredRegions);
+//    
+//    for (NSObject *region in monitoredRegions) {
+//        if ([region isKindOfClass:[CLCircularRegion class]]) {
+//            [self placeGeofenceOnMap:(CLCircularRegion*)region];
+//        }
+//    }
 }
 
 #pragma mark - <MKMapViewDelegate>

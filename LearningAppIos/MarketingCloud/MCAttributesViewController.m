@@ -35,10 +35,10 @@
      */
     NSMutableDictionary *dict1 = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *dict2 = [[NSMutableDictionary alloc] init];
+    
     [dict1 setObject:self.firstNameTxt.text forKey:kPUDAttributeFirstName];
     [dict2 setObject:self.lastNameTxt.text forKey:kPUDAttributeLastName];
     NSArray *attributesArray = [[NSArray alloc] initWithObjects:dict1, dict2, nil];
-    //[[MarketingCloudSDK sfmcSDK] sfmc_addAttributeNamed:kPUDAttributeLastName value:self.lastNameTxt.text];
     [[MarketingCloudSDK sfmcSDK] sfmc_addAttributes:attributesArray];
 }
 

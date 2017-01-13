@@ -29,4 +29,8 @@ FOUNDATION_EXPORT NSString *const kPushDefineOpenDirectPayloadKey;
 FOUNDATION_EXPORT NSString *const kPushDefineCloudPagePayloadKey;
 FOUNDATION_EXPORT NSString *const kPushDefinePersistentNotificationKey;
 
+#pragma mark - Attributes
+extern NSString *const kPUDAttributeFirstName;
+extern NSString *const kPUDAttributeLastName;
+
 @end

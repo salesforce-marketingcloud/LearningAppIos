@@ -1,16 +1,16 @@
 //
 //  MarketingCloudSDKEventRegionObject.h
-//  JB4A-SDK-iOS
+//  MarketingCloudSDK
 //
 //  Copyright © 2017 Salesforce. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-/**---------------------------------------------------------------------------------------
- * @name Representation of a shopping cart for analytics usage.
- *  ---------------------------------------------------------------------------------------
+/**
+    Representation of a shopping cart for analytics usage. 
  */
+
 @interface MarketingCloudSDKCart : NSObject <NSCoding, NSCopying>
 
 /**

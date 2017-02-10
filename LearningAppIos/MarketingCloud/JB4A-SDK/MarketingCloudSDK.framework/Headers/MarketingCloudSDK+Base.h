@@ -17,7 +17,6 @@ extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveBeaconResponseNotif
 extern NSString * _Nonnull const kMarketingCloudSDKDidEnterGeofenceNotification;
 extern NSString * _Nonnull const kMarketingCloudSDKDidExitGeofenceNotification;
 extern NSString * _Nonnull const kMarketingCloudSDKDidRangeBeaconNotification;
-extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveRichMessagesNotification;
 extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveCloudPagesNotification;
 extern NSString * _Nonnull const kMarketingCloudSDKDidReceiveLocationUpdateNotification;
 
@@ -56,17 +55,12 @@ typedef NS_OPTIONS(NSUInteger, MarketingCloudSDKMobilePushContentType) {
     MarketingCloudSDKMobilePushContentTypeEcp = 1 << 31
 };
 
-/**---------------------------------------------------------------------------------------
- * @name This is the main interface to the MarketingCloudSDK, via the shared instance sfmcSDK.
- *  ---------------------------------------------------------------------------------------
+/**
+This is the main interface to the MarketingCloudSDK, via the shared instance sfmcSDK. These methods are used in configuring the app for Salesforce Marketing Cloud.
  */
 
 @interface MarketingCloudSDK : NSObject
 
-/**---------------------------------------------------------------------------------------
- * @name Configuring the app for Salesforce Marketing Cloud
- *  ---------------------------------------------------------------------------------------
- */
 /**
  Returns (or initializes) the shared sdk instance. This is the default and suggested reference to the SDK.
  
@@ -106,5 +100,13 @@ typedef NS_OPTIONS(NSUInteger, MarketingCloudSDKMobilePushContentType) {
  a send to Salesforce 60 seconds after the first request to change any Registration data.
  */
 -(void) sfmc_updateMarketingCloud;
+
+/**
+ Ask MarketingCloudSDK to update its data. MarketingCloudSDK will throttle attempts based on the time since the last time this was called.
+ 
+ @param completionHandler The UIBackgroundFetchResult completion handler. This method will be called with UIBackgroundFetchResultNoData if no attempt was made to update data, otherwise it will be called with UIBackgroundFetchResultNewData after the update completes. If nil is passed, then process of the completion handler must be managed by the caller.
+ @return YES if MarketingCloudSDK did make an attempt at updating data
+ */
+- (BOOL) sfmc_refreshWithFetchCompletionHandler:(void (^__nullable)(UIBackgroundFetchResult result))completionHandler;
 
 @end

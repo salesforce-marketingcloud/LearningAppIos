@@ -1,6 +1,6 @@
 //
 //  MarketingCloudSDKCloudPageObject.h
-//  JB4A-SDK-iOS
+//  MarketingCloudSDK
 //
 //  Copyright © 2017 Salesforce. All rights reserved.
 //

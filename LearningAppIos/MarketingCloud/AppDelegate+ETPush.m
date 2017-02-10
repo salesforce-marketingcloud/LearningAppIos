@@ -106,7 +106,7 @@
         
         [MarketingCloudSDK sfmc_trackPageView:@"data://SDKInitializationCompletedSuccessfully" andTitle:@"SDK Initialization Completed" andItem:nil andSearch:nil];
         // set an attribute called 'MyBooleanAttribute' with value '0'
-        [[MarketingCloudSDK sfmcSDK] sfmc_addAttributeNamed:@"MyBooleanAttribute" value:@"0"];
+        [[MarketingCloudSDK sfmcSDK] sfmc_setAttributeNamed:@"MyBooleanAttribute" value:@"0"];
         
         /*
          Example of using the getSDKState Method for rapidly debugging issues

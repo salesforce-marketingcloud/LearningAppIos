@@ -1,6 +1,6 @@
 //
 //  MarketingCloudSDK+ClientData.h
-//  JB4A-SDK-iOS
+//  MarketingCloudSDK
 //
 //  Copyright © 2017 Salesforce. All rights reserved.
 //
@@ -83,16 +83,16 @@
 
 
 /**
- Adds an attribute to the data set sent to Salesforce.
+ Set an attribute to the data set sent to Salesforce.
  
  The Attribute Name cannot be nil or blank, or one of the reserved words.
  
  Will trim leading and trailing whitespace from the name and value.
  
- The attribute must be defined within the SFMC Contact model prior to adding a value. If the attribute does not exist within the
+ The attribute must be defined within the SFMC Contact model prior to setting a value. If the attribute does not exist within the
  SFMC Contact model, then this attribute will be accepted by the SDK, but will be ignored within the SFMC.
  
- If you previously added a value for the named attribute, then the value will be updated with the new value and sent to the SFMC.
+ If you previously set a value for the named attribute, then the value will be updated with the new value and sent to the SFMC.
  
  If you send in a blank value, then the value will be sent to the SFMC to remove that value from the Contact record.
  
@@ -102,9 +102,9 @@
  
  @param name The name of the attribute you wish to send. This will be the key of the pair.
  @param value The value to set for the data pair.
- @return YES if added successfully.
+ @return YES if set successfully.
  */
-- (BOOL)sfmc_addAttributeNamed:( NSString * _Nonnull )name value:( NSString * _Nonnull )value;
+- (BOOL)sfmc_setAttributeNamed:( NSString * _Nonnull )name value:( NSString * _Nonnull )value;
 
 /**
  Removes the named attribute from the data set to send to Salesforce. The value is not changed on the SFMC.
@@ -112,7 +112,7 @@
  @param name The name of the attribute you wish to remove.
  @return Returns the value that was set. It will no longer be sent back to Salesforce.
  */
-- (NSString * _Nullable)sfmc_removeAttributeNamed:( NSString * _Nonnull )name;
+- (NSString * _Nullable)sfmc_clearAttributeNamed:( NSString * _Nonnull )name;
 
 /**
  Returns a read-only copy of the Attributes dictionary as it is right now.
@@ -122,20 +122,20 @@
 -(NSDictionary * _Nullable)sfmc_attributes;
 
 /**
- Adds multiple attributes (key/value dictionaries) to Salesforce. See comments in -sfmc_addAttributeNamed.
+ Set multiple attributes (key/value dictionaries) to Salesforce. See comments in -sfmc_setAttributeNamed.
  
  @param attributes An array of dictionaries of key (attribute name) and value (attribute value).
- @return A set of all attributes added.
+ @return A set of all attributes set.
  */
-- (NSSet * _Nullable) sfmc_addAttributes:( NSArray * _Nonnull ) attributes;
+- (NSSet * _Nullable) sfmc_setAttributes:( NSArray * _Nonnull ) attributes;
 
 /**
- Remove multiple attributes from Salesforce. See comments in -sfmc_addAttributeNamed.
+ Remove multiple attributes from Salesforce. See comments in -sfmc_setAttributeNamed.
  
  @param attributeNames An array of attribute names.
  @return A set of all attributes removed.
  */
-- (NSSet * _Nullable) sfmc_removeAttributesNamed:( NSArray * _Nonnull ) attributeNames;
+- (NSSet * _Nullable) sfmc_clearAttributesNamed:( NSArray * _Nonnull ) attributeNames;
 
 
 @end

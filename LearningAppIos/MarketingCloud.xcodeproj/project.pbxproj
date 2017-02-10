@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0049A02B1E2881D100A0DFF8 /* MCAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0049A02A1E2881D100A0DFF8 /* MCAttributesViewController.m */; };
 		00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00858DF11D20B94300034250 /* UIKit.framework */; };
 		8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */; };
 		8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */; };
@@ -86,6 +87,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0049A0291E2881D100A0DFF8 /* MCAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAttributesViewController.h; sourceTree = "<group>"; };
+		0049A02A1E2881D100A0DFF8 /* MCAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAttributesViewController.m; sourceTree = "<group>"; };
 		00858DF11D20B94300034250 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCircle.h; sourceTree = "<group>"; };
 		8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCircle.m; sourceTree = "<group>"; };
@@ -170,6 +173,15 @@
 			path = "JB4A-SDK";
 			sourceTree = "<group>";
 		};
+		0049A0281E2881A900A0DFF8 /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				0049A0291E2881D100A0DFF8 /* MCAttributesViewController.h */,
+				0049A02A1E2881D100A0DFF8 /* MCAttributesViewController.m */,
+			);
+			name = Attributes;
+			sourceTree = "<group>";
+		};
 		8417EA621BE0FCDE00DD21F7 /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +236,7 @@
 		84B068DB1BD1435F00FE115D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0049A0281E2881A900A0DFF8 /* Attributes */,
 				B5104FBC1C21EED4006D6884 /* OfficialDocs */,
 				8417EA691BE26F2F00DD21F7 /* Home */,
 				8417EA621BE0FCDE00DD21F7 /* Inbox */,
@@ -504,6 +517,7 @@
 				8417EA6C1BE2709100DD21F7 /* MCReadmeViewController.m in Sources */,
 				8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */,
 				B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */,
+				0049A02B1E2881D100A0DFF8 /* MCAttributesViewController.m in Sources */,
 				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
 				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,

@@ -38,7 +38,7 @@
     /**
      Configure and set initial settings of the JB4ASDK when in PRODUCTION mode
      */
-    successful = [[MarketingCloudSDK sfmcSDK] configureSDKWithAppID:kETAppID_Prod				// Configure the SDK with the Debug App ID
+    successful = [[MarketingCloudSDK sfmcSDK] sfmc_configureSDKWithAppID:kETAppID_Prod				// Configure the SDK with the Debug App ID
                                               accessToken:kETAccessToken_Prod		// Configure the SDK with the Debug Access Token
                                                    analyticsEnabled:YES						// Enable Analytics
                                             locationServicesEnabled:YES                        // Enable Location Services (Geofence Messaging)

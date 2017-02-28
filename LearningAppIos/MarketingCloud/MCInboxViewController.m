@@ -10,19 +10,21 @@
 #import "MCInboxViewController.h"
 
 // Libraries
-#import <MarketingCloudSDK/MarketingCloudSDK.h>
+#import "ETMessage.h"
+#import "ExactTargetEnhancedPushDataSource.h"
+#import "ETAnalytics.h"
 
 
 @interface MCInboxViewController ()<UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *inboxTable;
-@property (nonatomic, strong) MarketingCloudSDKCloudPageDataSource *dataSource;
+@property (nonatomic, strong) ExactTargetEnhancedPushDataSource *dataSource;
 @end
 
 @implementation MCInboxViewController
 
-- (MarketingCloudSDKCloudPageDataSource *) dataSource {
+- (ExactTargetEnhancedPushDataSource *) dataSource {
     if(_dataSource == nil) {
-        _dataSource = [[MarketingCloudSDKCloudPageDataSource alloc]init];
+        _dataSource = [[ExactTargetEnhancedPushDataSource alloc]init];
     }
     return _dataSource;
 }
@@ -43,7 +45,10 @@
     /**
      * This is a reference to the tableview in UIViewController. We need a reference to it to reload data periodically.
      */
-    self.dataSource.sfmc_inboxTableView = self.inboxTable;
+    [self.dataSource setInboxTableView:self.inboxTable];
+		[ETAnalytics trackPageView:@"data://CloudPageInboxIndex" andTitle:@"CloudPage Inbox Index" andItem:nil andSearch:nil];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,17 +60,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     /*
-     *  Get the cloud page object from the data source. Refer to the MarketingCloudSDKCloudPageObject.h file that is included in the SDK in order to see the available properties and methods
+     *  Get the ETMessage object from the data source. Refer to the ETMessage.h file that is included in the SDK in order to see the available properties and methods
      */
-    MarketingCloudSDKCloudPageObject *msg = [self.dataSource sfmc_messages][indexPath.row];
+    ETMessage *msg = [self.dataSource messages][indexPath.row];
     
     /*
      * This must be called on a message in order for it to be marked as read
      */
-    [msg sfmc_markAsRead];
+    [msg markAsRead];
     
     /**
-     * Open url in Safari
+     * Open unr in safary
      */
     [[UIApplication sharedApplication] openURL:msg.siteURL];
     

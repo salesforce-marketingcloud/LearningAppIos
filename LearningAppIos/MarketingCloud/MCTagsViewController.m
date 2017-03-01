@@ -8,7 +8,8 @@
 #import "MCTagsViewController.h"
 
 	// Libraries
-#import <MarketingCloudSDK/MarketingCloudSDK.h>
+#import "ETPush.h"
+#import "ETAnalytics.h"
 
 	// Models
 #import "MCTag.h"
@@ -39,7 +40,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 	/**
 	 PushManager returns the list of tags as a NSSet collection
 	 */
-	NSSet *setOfTags = [[MarketingCloudSDK sfmcSDK] sfmc_tags];
+	NSSet *setOfTags = [[ETPush pushManager] getTags];
 	/**
 	 Init mutable array
 	 */
@@ -56,7 +57,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 		tag.on      = true;
 		[self.tags addObject:tag];
 	}
-	[MarketingCloudSDK sfmc_trackPageView:@"data://TagViewControllerLoaded" andTitle:@"Tag View Loaded" andItem:nil andSearch:nil];
+	[ETAnalytics trackPageView:@"data://TagViewControllerLoaded" andTitle:@"Tag View Loaded" andItem:nil andSearch:nil];
 	
 }
 
@@ -110,9 +111,9 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 	 Add or remove tags for the current device.
 	 */
 	if (recive) {
-		[[MarketingCloudSDK sfmcSDK] sfmc_addTags:@[tag.name]];
+		[[ETPush pushManager] addTag:tag.name];
 	} else {
-        [[MarketingCloudSDK sfmcSDK] sfmc_removeTags:@[tag.name]];
+		[[ETPush pushManager] removeTag:tag.name];
 	}
 	
 }
@@ -140,7 +141,7 @@ static NSString *cellIdentifier = @"MCTagTableCell";
 	/**
 	 Add tags for the current device.
 	 */
-	[[MarketingCloudSDK sfmcSDK] sfmc_addTags:@[tag.name]];
+	[[ETPush pushManager] addTag:tag.name];
 	
 	self.tagName.text  = @"";
 	/**

@@ -135,7 +135,7 @@ static NSString * const SDKName = @"JB4ASDK";
   
  */
 +(nullable instancetype)pushManager;
--(nullable instancetype)init;
+-(instancetype)init;
 
 /**
  This is the main configuration method, responsible for setting credentials needed to communicate with Salesforce. If you are unsure of your accessToken or environment, please visit Code@ExactTarget

@@ -54,20 +54,26 @@ static NSString * const ETPIAnalyticsActive       = @"ETPIAnalyticsActive";
  Push Origination State
  */
 typedef NS_ENUM (NSUInteger, pushOriginationState){
+    /** Initial enum value  */
+    firstPushOriginationStateIndex = 0,
     /** PushOriginationStateBackground  */
-    PushOriginationStateBackground                      = 0,
+    PushOriginationStateBackground = firstPushOriginationStateIndex,
     /** PushOriginationStateForeground  */
     PushOriginationStateForeground,
     /** Unknown state  */
-    PushOriginationStateUnknown                         = 999
+    PushOriginationStateUnknown = 999,
+    /** lastPushOriginationStateIndex */
+    lastPushOriginationStateIndex = PushOriginationStateUnknown
 };
 
 /**
  configureSDKWithAppID errors
  */
 typedef NS_ENUM(NSUInteger, configureSDKWithAppIDError) {
+    /** Initial enum value  */
+    firstconfigureSDKWithAppIDIndex = 0,
     /** configureSDKWithAppIDNoError  */
-    configureSDKWithAppIDNoError                      = 0,
+    configureSDKWithAppIDNoError = firstconfigureSDKWithAppIDIndex,
     /** configureSDKWithAppIDInvalidAppIDError  */
     configureSDKWithAppIDInvalidAppIDError,
     /** configureSDKWithAppIDInvalidAccessTokenError  */
@@ -97,23 +103,29 @@ typedef NS_ENUM(NSUInteger, configureSDKWithAppIDError) {
     /** configureSDKWithAppIDSimulatorBlobError  */
     configureSDKWithAppIDSimulatorBlobError,
     /** configureSDKWithAppIDKeyChainInvalidError  */
-    configureSDKWithAppIDKeyChainInvalidError
+    configureSDKWithAppIDKeyChainInvalidError,
+    /** lastconfigureSDKWithAppIDIndex */
+    lastconfigureSDKWithAppIDIndex = configureSDKWithAppIDKeyChainInvalidError
 };
 
 /**
  requestPIRecommendations errors
  */
 typedef NS_ENUM(NSUInteger, requestPIRecommendationsError) {
+    /** Initial enum value  */
+    firstrequestPIRecommendationsInvalidIndex = 0,
     /** requestPIRecommendationsNoError  */
-    requestPIRecommendationsNoError                   = 0,
+    requestPIRecommendationsNoError = firstrequestPIRecommendationsInvalidIndex,
     /** requestPIRecommendationsInvalidMidParameterError  */
-    requestPIRecommendationsInvalidMidParameterError  = 1024,
+    requestPIRecommendationsInvalidMidParameterError = 1024,
     /** requestPIRecommendationsInvalidRetailerParameterError  */
     requestPIRecommendationsInvalidRetailerParameterError,
     /** requestPIRecommendationsInvalidPageParameterError  */
     requestPIRecommendationsInvalidPageParameterError,
     /** requestPIRecommendationsInvalidCompletionHandlerError  */
-    requestPIRecommendationsInvalidCompletionHandlerError
+    requestPIRecommendationsInvalidCompletionHandlerError,
+    /** lastrequestPIRecommendationsInvalidIndex */
+    lastrequestPIRecommendationsInvalidIndex = requestPIRecommendationsInvalidCompletionHandlerError
 };
 
 
@@ -136,8 +148,10 @@ static NSString * const kDidReceiveLocationUpdateNotification = @"ETEventBusDidR
  */
 typedef NS_ENUM(NSUInteger, MobilePushMessageType)
 {
+    /** Initial enum value  */
+    firstMobilePushMessageTypeIndex = 0,
     /** Unknown */
-    MobilePushMessageTypeUnknown,
+    MobilePushMessageTypeUnknown = firstMobilePushMessageTypeIndex,
     /** Basic - A standard push message */
     MobilePushMessageTypeBasic,
     /** Geofence Entry */
@@ -145,31 +159,41 @@ typedef NS_ENUM(NSUInteger, MobilePushMessageType)
     /** Geofence Exit */
     MobilePushMessageTypeFenceExit,
     /** Proximity */
-    MobilePushMessageTypeProximity
+    MobilePushMessageTypeProximity,
+    /** lastMobilePushMessageTypeIndex */
+    lastMobilePushMessageTypeIndex = MobilePushMessageTypeProximity
 };
 
 /**
  Enumeration of the type of ETRegion that this is - Circle (Geofence) or Proximity (ibeacon). Polygon is not currently used.
  */
 typedef NS_ENUM(NSUInteger, MobilePushGeofenceType) {
+    /** Initial enum value  */
+    firstMobilePushGeofenceTypeIndex = 0,
     /** MobilePushGeofenceTypeNone */
-    MobilePushGeofenceTypeNone = 0,
+    MobilePushGeofenceTypeNone = firstMobilePushGeofenceTypeIndex,
     /** MobilePushGeofenceTypeCircle */
     MobilePushGeofenceTypeCircle,
     /** MobilePushGeofenceTypeProximity */
-    MobilePushGeofenceTypeProximity = 3
+    MobilePushGeofenceTypeProximity = 3,
+    /** lastMobilePushGeofenceTypeIndex */
+    lastMobilePushGeofenceTypeIndex = MobilePushGeofenceTypeProximity
 };
 
 /**
  Enumeration to keep track of if the request is for Geofences or Proximity messages.
  */
 typedef NS_ENUM(NSUInteger, ETRegionRequestType) {
+    /** Initial enum value  */
+    firstETRegionRequestTypeProximityIndex = 0,
     /** ETRegionRequestTypeUnknown */
-    ETRegionRequestTypeUnknown,
+    ETRegionRequestTypeUnknown = firstETRegionRequestTypeProximityIndex,
     /** ETRegionRequestTypeGeofence */
     ETRegionRequestTypeGeofence,
     /** ETRegionRequestTypeProximity */
-    ETRegionRequestTypeProximity
+    ETRegionRequestTypeProximity,
+    /** lastETRegionRequestTypeProximityIndex */
+    lastETRegionRequestTypeProximityIndex = ETRegionRequestTypeProximity
 };
 
 /**
@@ -177,11 +201,11 @@ typedef NS_ENUM(NSUInteger, ETRegionRequestType) {
  */
 typedef NS_OPTIONS(NSUInteger, MobilePushContentType) {
     /** Unknown */
-    MobilePushContentTypeNone           = 0,
+    MobilePushContentTypeNone = 0,
     /** Push Message */
-    MobilePushContentTypeAlertMessage   = 1 << 0,
+    MobilePushContentTypeAlertMessage = 1 << 0,
     /** CloudPage */
-    MobilePushContentTypePage           = 1 << 1,
+    MobilePushContentTypePage = 1 << 1,
     /** Enhanced Cloud Page – Pushed Cloud Pages */
     MobilePushContentTypeEcp = 1 << 31
 };
@@ -190,8 +214,10 @@ typedef NS_OPTIONS(NSUInteger, MobilePushContentType) {
  Time Unit enumeration for Message limiting.
  */
 typedef NS_ENUM(NSUInteger, MobilePushMessageFrequencyUnit) {
+    /** Initial enum value  */
+    firstMobilePushMessageFrequencyIndex = 0,
     /** Unknown */
-    MobilePushMessageFrequencyUnitNone,
+    MobilePushMessageFrequencyUnitNone = firstMobilePushMessageFrequencyIndex,
     /** Year */
     MobilePushMessageFrequencyUnitYear,
     /** Month */
@@ -201,6 +227,8 @@ typedef NS_ENUM(NSUInteger, MobilePushMessageFrequencyUnit) {
     /** Day */
     MobilePushMessageFrequencyUnitDay,
     /** Hour */
-    MobilePushMessageFrequencyUnitHour
+    MobilePushMessageFrequencyUnitHour,
+    /** lastMobilePushMessageFrequencyIndex */
+    lastMobilePushMessageFrequencyIndex = MobilePushMessageFrequencyUnitHour
 };
 

@@ -27,4 +27,7 @@ NSString *const kPushDefineOpenDirectPayloadKey      = @"_od";
 NSString *const kPushDefineCloudPagePayloadKey       = @"_x";
 NSString *const kPushDefinePersistentNotificationKey = @"_p";
 
+NSString *const kPUDAttributeFirstName = @"FirstName";
+NSString *const kPUDAttributeLastName = @"LastName";
+
 @end

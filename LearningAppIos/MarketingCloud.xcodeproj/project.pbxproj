@@ -45,7 +45,7 @@
 		9B6B25581D70CB1B00874782 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B25571D70CB1B00874782 /* NotificationService.m */; };
 		9B6B255D1D70CB1B00874782 /* MarketingCloudServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B6CB8871E65FD6A00BD676E /* JB4ASDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */; };
-		9B6CB8881E65FD6A00BD676E /* libJB4ASDK-4.8.0.20700001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6CB8821E65FD6A00BD676E /* libJB4ASDK-4.8.0.20700001.a */; };
+		9B915B3B1ED4A97200B5A2FC /* libJB4ASDK-4.9.0.20800000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B915B3A1ED4A97200B5A2FC /* libJB4ASDK-4.9.0.20800000.a */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
 		B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C961BF1CA4432400BE9F33 /* WebKit.framework */; };
@@ -146,11 +146,11 @@
 		9B6CB87F1E65FD6A00BD676E /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
 		9B6CB8801E65FD6A00BD676E /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JB4ASDK.podspec; sourceTree = "<group>"; };
-		9B6CB8821E65FD6A00BD676E /* libJB4ASDK-4.8.0.20700001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.8.0.20700001.a"; sourceTree = "<group>"; };
 		9B6CB8831E65FD6A00BD676E /* PICart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICart.h; sourceTree = "<group>"; };
 		9B6CB8841E65FD6A00BD676E /* PICartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICartItem.h; sourceTree = "<group>"; };
 		9B6CB8851E65FD6A00BD676E /* PIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
 		9B6CB8861E65FD6A00BD676E /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
+		9B915B3A1ED4A97200B5A2FC /* libJB4ASDK-4.9.0.20800000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.0.20800000.a"; sourceTree = "<group>"; };
 		9B9742011D5E484700344996 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B5104FBD1C21EF11006D6884 /* MCOfficialDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOfficialDocViewController.h; sourceTree = "<group>"; };
 		B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCOfficialDocViewController.m; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6CB8881E65FD6A00BD676E /* libJB4ASDK-4.8.0.20700001.a in Frameworks */,
+				9B915B3B1ED4A97200B5A2FC /* libJB4ASDK-4.9.0.20800000.a in Frameworks */,
 				9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */,
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
@@ -201,11 +201,11 @@
 				9B6CB87F1E65FD6A00BD676E /* ExactTargetEnhancedPushDataSource.h */,
 				9B6CB8801E65FD6A00BD676E /* JB4ASDK-Bridging-Header.h */,
 				9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */,
-				9B6CB8821E65FD6A00BD676E /* libJB4ASDK-4.8.0.20700001.a */,
 				9B6CB8831E65FD6A00BD676E /* PICart.h */,
 				9B6CB8841E65FD6A00BD676E /* PICartItem.h */,
 				9B6CB8851E65FD6A00BD676E /* PIOrder.h */,
 				9B6CB8861E65FD6A00BD676E /* PushConstants.h */,
+				9B915B3A1ED4A97200B5A2FC /* libJB4ASDK-4.9.0.20800000.a */,
 			);
 			path = "JB4A-SDK";
 			sourceTree = "<group>";

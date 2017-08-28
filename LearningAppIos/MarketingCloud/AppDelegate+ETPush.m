@@ -159,25 +159,6 @@
      */
     [[ETPush pushManager] handleUserNotificationResponse:response];
     
-    NSDictionary *userInfo = response.notification.request.content.userInfo;
-    /**
-     Is it a silent push?
-     */
-    if (userInfo[@"aps"][@"content-available"]) {
-        /**
-         Received a silent remote notification...
-         Indicate a silent push
-         */
-        NSLog(@"Silent Push Notification Received");
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-    } else {
-        /**
-         Received a remote notification...
-         Clear the badge
-         */
-        [[ETPush pushManager] resetBadgeCount];
-    }
-
     if (completionHandler != nil) {
         completionHandler();
     }
@@ -234,25 +215,7 @@
      Inform the JB4ASDK that the device received a remote notification
      */
     [[ETPush pushManager] handleNotification:userInfo forApplicationState:application.applicationState];
-    
-    /**
-     Is it a silent push?
-     */
-    if (userInfo[@"aps"][@"content-available"]) {
-        /**
-         Received a silent remote notification...
-         Indicate a silent push
-         */
-        NSLog(@"Silent Push Notification Received");
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-    } else {
-        /**
-         Received a remote notification...
-         Clear the badge
-         */
-        [[ETPush pushManager] resetBadgeCount];
-    }
-    
+        
     handler(UIBackgroundFetchResultNoData);
 }
 

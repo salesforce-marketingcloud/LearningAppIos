@@ -103,21 +103,6 @@
          */
         [[ETLocationManager sharedInstance] startWatchingLocation];
         
-        /**
-         Begins fence retrieval from ET of Geofences.
-         */
-        [ETRegion retrieveGeofencesFromET];
-        
-        /**
-         Begins fence retrieval from ET of Beacons.
-         */
-        [ETRegion retrieveProximityFromET];
-        
-        /**
-         Inform the JB4ASDK of the launch options - possibly UIApplicationLaunchOptionsRemoteNotificationKey or UIApplicationLaunchOptionsLocalNotificationKey
-         */
-        [[ETPush pushManager] applicationLaunchedWithOptions:launchOptions];
-        
         [ETAnalytics trackPageView:@"data://SDKInitializationCompletedSuccessfully" andTitle:@"SDK Initialization Completed" andItem:nil andSearch:nil];
         // set an attribute called 'MyBooleanAttribute' with value '0'
         [[ETPush pushManager] addAttributeNamed:@"MyBooleanAttribute" value:@"0"];
@@ -185,20 +170,6 @@
     [[ETPush pushManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
     [ETAnalytics trackPageView:@"data://applicationDidFailToRegisterForRemoteNotificationsWithError" andTitle:[error localizedDescription] andItem:nil andSearch:nil];
     
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    /**
-     Use this method to disable Location Services through the MobilePush SDK.
-     */
-    [[ETLocationManager sharedInstance]startWatchingLocation];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    /**
-     Use this method to initiate Location Services through the MobilePush SDK.
-     */
-    [[ETLocationManager sharedInstance]stopWatchingLocation];
 }
 
 #pragma mark - Message Received Callbacks

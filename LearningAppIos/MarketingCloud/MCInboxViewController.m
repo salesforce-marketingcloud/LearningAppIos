@@ -8,45 +8,37 @@
  */
 
 #import "MCInboxViewController.h"
-
-// Libraries
-#import "ETMessage.h"
-#import "ExactTargetEnhancedPushDataSource.h"
-#import "ETAnalytics.h"
-
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface MCInboxViewController ()<UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *inboxTable;
-@property (nonatomic, strong) ExactTargetEnhancedPushDataSource *dataSource;
+@property (nonatomic, strong) MarketingCloudSDKInboxMessagesDataSource *dataSource;
+@property (nonatomic, strong) MarketingCloudSDKInboxMessagesDelegate *delegate;
 @end
 
 @implementation MCInboxViewController
 
-- (ExactTargetEnhancedPushDataSource *) dataSource {
-    if(_dataSource == nil) {
-        _dataSource = [[ExactTargetEnhancedPushDataSource alloc]init];
-    }
-    return _dataSource;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    /**
-     * set delegate to table
-     */
-    self.inboxTable.delegate    = self;
+
     /**
      * set data sourse to table
      */
-    self.inboxTable.dataSource  = self.dataSource;
-    
+    self.dataSource = [[MarketingCloudSDKInboxMessagesDataSource alloc] initWithMarketingCloudSDK:[MarketingCloudSDK sharedInstance] tableView:self.inboxTable];
+
+    /**
+     * set delegate to table
+     */
+    self.delegate = [[MarketingCloudSDKInboxMessagesDelegate alloc] initWithMarketingCloudSDK:[MarketingCloudSDK sharedInstance] tableView:self.inboxTable dataSource:self.inboxTable.dataSource];
+
+    self.inboxTable.dataSource = self.dataSource;
+    self.inboxTable.delegate = self.delegate;
+
     /**
      * This is a reference to the tableview in UIViewController. We need a reference to it to reload data periodically.
      */
-    [self.dataSource setInboxTableView:self.inboxTable];
-		[ETAnalytics trackPageView:@"data://CloudPageInboxIndex" andTitle:@"CloudPage Inbox Index" andItem:nil andSearch:nil];
+    [[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://CloudPageInboxIndex" title:@"CloudPage Inbox Index" item:nil search:nil];
 
     
 }
@@ -57,27 +49,5 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    /*
-     *  Get the ETMessage object from the data source. Refer to the ETMessage.h file that is included in the SDK in order to see the available properties and methods
-     */
-    ETMessage *msg = [self.dataSource messages][indexPath.row];
-    
-    /*
-     * This must be called on a message in order for it to be marked as read
-     */
-    [msg markAsRead];
-    
-    /**
-     * Open unr in safary
-     */
-    [[UIApplication sharedApplication] openURL:msg.siteURL];
-    
-    /**
-     * reload table
-     */
-    [self.inboxTable reloadData];
-}
 
 @end

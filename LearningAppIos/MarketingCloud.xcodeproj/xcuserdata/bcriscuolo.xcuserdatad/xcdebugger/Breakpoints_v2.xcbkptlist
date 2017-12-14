@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MarketingCloud/MCTagsViewController.m"
-            timestampString = "505860843.861278"
+            filePath = "MarketingCloud/MCSubscribeKeyViewController.m"
+            timestampString = "534973040.998652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "-newTag:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-reloadSubscriberKey:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketingCloud/MCSubscribeKeyViewController.m"
+            timestampString = "534973042.688577"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-saveSubscriberKey:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

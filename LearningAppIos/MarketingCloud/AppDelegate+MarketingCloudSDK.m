@@ -5,26 +5,31 @@
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
-#import "AppDelegate+ETPush.h"
-#import "AppDelegate+ETPushConstants.h"
+#import "AppDelegate+MarketingCloudSDK.h"
 
 #import <UserNotifications/UserNotifications.h>
 
-@implementation AppDelegate (ETPush)
+@implementation AppDelegate (MarketingCloudSDK)
 #pragma mark - SDK Setup
-- (BOOL)application:(UIApplication *)application shouldInitETSDKWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application shouldInitMarketingCloudSDKWithOptions:(NSDictionary *)launchOptions {
     
     // weak reference to avoid retain cycle within block
     __weak __typeof__(self) weakSelf = self;
     
     NSError *configureError = nil;
-    BOOL configured = [[MarketingCloudSDK sharedInstance] sfmc_configure:&configureError
-                                                       completionHandler:^(BOOL success, NSString *appId, NSError *error) {
-        // The SDK has been fully configured and is ready for use!
+    
+    NSURL *configurationFileURL = [[NSBundle mainBundle] URLForResource:@"MarketingCloudSDKConfiguration" withExtension:@"json"];
+    NSInteger configIndex = 0; // index of production configuration in the JSON file dictionary
+#ifdef DEBUG
+    configIndex = 1;    // index of development/debug configuration
+#endif
+    BOOL configured = [[MarketingCloudSDK sharedInstance] sfmc_configureWithURL:configurationFileURL configurationIndex:@(configIndex) error:&configureError
+                                                              completionHandler:^(BOOL success, NSString *appId, NSError *error) {        // The SDK has been fully configured and is ready for use!
 
         // set the delegate if needed then ask if we are authorized - the delegate must be set here if used
         [UNUserNotificationCenter currentNotificationCenter].delegate = weakSelf;
 
+        dispatch_async(dispatch_get_main_queue(), ^{
         [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge completionHandler:^(BOOL granted, NSError * _Nullable error) {
            if (error == nil) {
                if (granted == YES) {
@@ -51,6 +56,7 @@
                }
            }
        }];
+        });
     }];
     if (configured == YES) {
         // The configuation process is underway.

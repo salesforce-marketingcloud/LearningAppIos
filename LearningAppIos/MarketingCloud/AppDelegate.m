@@ -6,17 +6,17 @@
  */
 
 #import "AppDelegate.h"
-#import "AppDelegate+ETPush.h"
+#import "AppDelegate+MarketingCloudSDK.h"
 @implementation AppDelegate
 
 // DO NOT COPY AND PASTE THIS DIRECTLY INTO YOUR APP DELEGATE.M FILE.
 // YOUR APPDELEGATE.M FILE ALREADY CONTAINS THIS METHOD, YOU
-// ONLY NEED TO ADD THE CALL to the shouldInitETSDKWithOptions method below
+// ONLY NEED TO ADD THE CALL to the shouldInitMarketingCloudSDKWithOptions method below
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // This line is a required addition to your AppDelegate.m's method of the same name.
     // it is responsible for the initialization of the SDK from our category.
-    [self application:application shouldInitETSDKWithOptions:launchOptions];
+    [self application:application shouldInitMarketingCloudSDKWithOptions:launchOptions];
 	
     return YES;
 }

@@ -1,7 +1,7 @@
  [{
   "name": "production",
-  "appid": "<appid from Marketing Cloud here>",
-  "accesstoken": "<accesstoken from Marketing Cloud here>",
+  "appid": "19b787e6-5f35-4465-8cbf-5f27a574d52d",
+  "accesstoken": "gpkymn5gb7y2z3wph3t4yhzh",
   "analytics": true,
   "location": true,
   "inbox": true

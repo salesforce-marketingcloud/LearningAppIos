@@ -25,8 +25,7 @@
 		00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00858DF11D20B94300034250 /* UIKit.framework */; };
 		8417EA651BE1186300DD21F7 /* MCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA641BE1186300DD21F7 /* MCInboxViewController.m */; };
 		8417EA6C1BE2709100DD21F7 /* MCReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA6B1BE2709100DD21F7 /* MCReadmeViewController.m */; };
-		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; };
-		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; };
+		842ED5501BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m */; };
 		846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC0911BD5349E000D8062 /* MCTagsViewController.m */; };
 		849146041BDA4F300086C40D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146031BDA4F300086C40D /* MapKit.framework */; };
 		849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146051BDA57B10086C40D /* CoreLocation.framework */; };
@@ -91,10 +90,8 @@
 		8417EA641BE1186300DD21F7 /* MCInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCInboxViewController.m; sourceTree = "<group>"; };
 		8417EA6A1BE2709100DD21F7 /* MCReadmeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCReadmeViewController.h; sourceTree = "<group>"; };
 		8417EA6B1BE2709100DD21F7 /* MCReadmeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCReadmeViewController.m; sourceTree = "<group>"; };
-		842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPush.h"; sourceTree = "<group>"; };
-		842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPush.m"; sourceTree = "<group>"; };
-		842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPushConstants.h"; sourceTree = "<group>"; };
-		842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPushConstants.m"; sourceTree = "<group>"; };
+		842ED54E1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+MarketingCloudSDK.h"; sourceTree = "<group>"; };
+		842ED54F1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+MarketingCloudSDK.m"; sourceTree = "<group>"; };
 		846FC0901BD5349E000D8062 /* MCTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagsViewController.h; sourceTree = "<group>"; };
 		846FC0911BD5349E000D8062 /* MCTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTagsViewController.m; sourceTree = "<group>"; };
 		849146031BDA4F300086C40D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -188,10 +185,8 @@
 		842ED54D1BD0392700CCDA0E /* Addition */ = {
 			isa = PBXGroup;
 			children = (
-				842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */,
-				842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */,
-				842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */,
-				842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */,
+				842ED54E1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.h */,
+				842ED54F1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m */,
 			);
 			name = Addition;
 			sourceTree = "<group>";
@@ -490,9 +485,8 @@
 				8417EA6C1BE2709100DD21F7 /* MCReadmeViewController.m in Sources */,
 				B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */,
 				0049A02B1E2881D100A0DFF8 /* MCAttributesViewController.m in Sources */,
-				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
+				842ED5501BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
-				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

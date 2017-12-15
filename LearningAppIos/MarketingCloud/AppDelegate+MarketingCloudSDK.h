@@ -10,6 +10,6 @@
 
 @interface AppDelegate (ETPush) <UNUserNotificationCenterDelegate, MarketingCloudSDKInboxMessagesNotificationHandlerDelegate>
 
-- (BOOL)application : (UIApplication *)application shouldInitETSDKWithOptions : (NSDictionary *)launchOptions;
+- (BOOL)application : (UIApplication *)application shouldInitMarketingCloudSDKWithOptions : (NSDictionary *)launchOptions;
 
 @end

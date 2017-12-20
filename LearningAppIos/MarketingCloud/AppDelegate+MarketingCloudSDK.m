@@ -29,7 +29,7 @@
                                                                       UIAlertController *theAlertController = [UIAlertController
                                                                                                                alertControllerWithTitle:NSLocalizedString(@"Error", nil)
                                                                                                                message:error ? error.localizedDescription : NSLocalizedString(@"An error occurred calling configure", nil)
-                                                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                                                                                                               preferredStyle:UIAlertControllerStyleAlert];
                                                                       
                                                                       UIAlertAction *okAction = [UIAlertAction
                                                                                                  actionWithTitle:NSLocalizedString(@"OK", nil)
@@ -39,59 +39,62 @@
                                                                       
                                                                       dispatch_async(dispatch_get_main_queue(), ^{
                                                                           [[weakSelf topMostController] presentViewController:theAlertController animated:YES completion:^{}];
-                                                                          });
+                                                                      });
                                                                   }
-        // set the delegate if needed then ask if we are authorized - the delegate must be set here if used
-        [UNUserNotificationCenter currentNotificationCenter].delegate = weakSelf;
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge completionHandler:^(BOOL granted, NSError * _Nullable error) {
-           if (error == nil) {
-               if (granted == YES) {
-                   os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
-                   
-                   // we are authorized to use notifications, request a device token for remote notifications
-                   dispatch_async(dispatch_get_main_queue(), ^{
-                       [[UIApplication sharedApplication] registerForRemoteNotifications];
-                   });
-                   /**
-                    Start geoLocation
-                    */
-                   [[MarketingCloudSDK sharedInstance] sfmc_startWatchingLocation];
-                   
-                   [[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://SDKInitializationCompletedSuccessfully" title:@"SDK Initialization Completed" item:nil search:nil];
-                   // set an attribute called 'MyBooleanAttribute' with value '0'
-                   [[MarketingCloudSDK sharedInstance] sfmc_setAttributeNamed:@"MyBooleanAttribute" value:@"0"];
-                   
-                   /*
-                    Example of using the getSDKState Method for rapidly debugging issues
-                    */
-                   [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
-                   
-                   [[MarketingCloudSDK sharedInstance] sfmc_setInboxMessagesNotificationHandlerDelegate:self];
-               }
-           }
-       }];
-        });
-    }];
+                                                                  else {
+                                                                      // set the delegate if needed then ask if we are authorized - the delegate must be set here if used
+                                                                      [UNUserNotificationCenter currentNotificationCenter].delegate = weakSelf;
+                                                                      
+                                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                                          [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                                                              if (error == nil) {
+                                                                                  if (granted == YES) {
+                                                                                      os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
+                                                                                      
+                                                                                      // we are authorized to use notifications, request a device token for remote notifications
+                                                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                          [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                                                                      });
+                                                                                      /**
+                                                                                       Start geoLocation
+                                                                                       */
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_startWatchingLocation];
+                                                                                      
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://SDKInitializationCompletedSuccessfully" title:@"SDK Initialization Completed" item:nil search:nil];
+                                                                                      // set an attribute called 'MyBooleanAttribute' with value '0'
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setAttributeNamed:@"MyBooleanAttribute" value:@"0"];
+                                                                                      
+                                                                                      /*
+                                                                                       Example of using the getSDKState Method for rapidly debugging issues
+                                                                                       */
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
+                                                                                      
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setInboxMessagesNotificationHandlerDelegate:self];
+                                                                                  }
+                                                                              }
+                                                                          }];
+                                                                      });
+                                                                  }
+                                                              }];
     if (configured == YES) {
         // The configuation process is underway.
     }
-    else {                                                                     UIAlertController *theAlertController = [UIAlertController
-                                                                                                                        alertControllerWithTitle:NSLocalizedString(@"Error", nil)
-                                                                                                                        message:NSLocalizedString(@"An error occurred calling configure", nil)
-                                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *okAction = [UIAlertAction
-                               actionWithTitle:NSLocalizedString(@"OK", nil)
-                               style:UIAlertActionStyleDefault
-                               handler:nil];
-    [theAlertController addAction:okAction];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[self topMostController] presentViewController:theAlertController animated:YES completion:^{}];
-    });
-}
+    else {
+        UIAlertController *theAlertController = [UIAlertController
+                                                 alertControllerWithTitle:NSLocalizedString(@"Error", nil)
+                                                 message:NSLocalizedString(@"An error occurred calling configure", nil)
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", nil)
+                                   style:UIAlertActionStyleDefault
+                                   handler:nil];
+        [theAlertController addAction:okAction];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self topMostController] presentViewController:theAlertController animated:YES completion:^{}];
+        });
+    }
     
     return YES;
 }

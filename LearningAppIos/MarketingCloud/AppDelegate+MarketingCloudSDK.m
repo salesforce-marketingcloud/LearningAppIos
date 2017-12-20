@@ -52,8 +52,9 @@
                                                                                       os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
                                                                                       
                                                                                       // we are authorized to use notifications, request a device token for remote notifications
+                                                                                      dispatch_async(dispatch_get_main_queue(), ^{
                                                                                       [[UIApplication sharedApplication] registerForRemoteNotifications];
-                                                                                      
+                                                                                      });
                                                                                       /**
                                                                                        Start geoLocation
                                                                                        */

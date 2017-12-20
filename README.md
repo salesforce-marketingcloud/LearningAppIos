@@ -14,6 +14,4 @@ This project provides a template for creating a mobile app (iOS) that uses the M
 
 
 
-#Resources
-
-For more information, check out our [developer documentation](http://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS).
+For more information, check out our [developer documentation](https://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS).

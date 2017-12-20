@@ -6,7 +6,7 @@
  */
 
 #import "MCOfficialDocViewController.h"
-#import "ETAnalytics.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface MCOfficialDocViewController ()
 
@@ -20,8 +20,8 @@
 	[super viewDidLoad];
 		// Do any additional setup after loading the view.
 	self.navigationController.navigationBarHidden = YES;
-	[self.readmeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://salesforce-marketingcloud.github.io/JB4A-SDK-iOS/"]]];
-	[ETAnalytics trackPageView:@"data://OfficialDocsLoaded" andTitle:@"Official Docs Loaded" andItem:nil andSearch:nil];
+	[self.readmeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS/"]]];
+	[[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://OfficialDocsLoaded" title:@"Official Docs Loaded" item:nil search:nil];
 
 }
 

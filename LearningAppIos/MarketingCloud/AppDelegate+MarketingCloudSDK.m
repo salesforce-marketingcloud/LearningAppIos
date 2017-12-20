@@ -25,7 +25,22 @@
 #endif
     BOOL configured = [[MarketingCloudSDK sharedInstance] sfmc_configureWithURL:configurationFileURL configurationIndex:@(configIndex) error:&configureError
                                                               completionHandler:^(BOOL success, NSString *appId, NSError *error) {        // The SDK has been fully configured and is ready for use!
-
+                                                                  if (success == NO) {
+                                                                      UIAlertController *theAlertController = [UIAlertController
+                                                                                                               alertControllerWithTitle:NSLocalizedString(@"Error", nil)
+                                                                                                               message:error ? error.localizedDescription : NSLocalizedString(@"An error occurred calling configure", nil)
+                                                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                                                                      
+                                                                      UIAlertAction *okAction = [UIAlertAction
+                                                                                                 actionWithTitle:NSLocalizedString(@"OK", nil)
+                                                                                                 style:UIAlertActionStyleDefault
+                                                                                                 handler:nil];
+                                                                      [theAlertController addAction:okAction];
+                                                                      
+                                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                                          [[weakSelf topMostController] presentViewController:theAlertController animated:YES completion:^{}];
+                                                                          });
+                                                                  }
         // set the delegate if needed then ask if we are authorized - the delegate must be set here if used
         [UNUserNotificationCenter currentNotificationCenter].delegate = weakSelf;
 
@@ -36,8 +51,9 @@
                    os_log_info(OS_LOG_DEFAULT, "Authorized for notifications = %s", granted ? "YES" : "NO");
                    
                    // we are authorized to use notifications, request a device token for remote notifications
-                   [[UIApplication sharedApplication] registerForRemoteNotifications];
-                   
+                   dispatch_async(dispatch_get_main_queue(), ^{
+                       [[UIApplication sharedApplication] registerForRemoteNotifications];
+                   });
                    /**
                     Start geoLocation
                     */
@@ -61,6 +77,22 @@
     if (configured == YES) {
         // The configuation process is underway.
     }
+    else {                                                                     UIAlertController *theAlertController = [UIAlertController
+                                                                                                                        alertControllerWithTitle:NSLocalizedString(@"Error", nil)
+                                                                                                                        message:NSLocalizedString(@"An error occurred calling configure", nil)
+                                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"OK", nil)
+                               style:UIAlertActionStyleDefault
+                               handler:nil];
+    [theAlertController addAction:okAction];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[self topMostController] presentViewController:theAlertController animated:YES completion:^{}];
+    });
+}
+
     
 //#ifdef DEBUG
 //    /**
@@ -172,6 +204,15 @@
     }
 }
 
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+    content.userInfo = userInfo;
+    UNNotificationRequest *silentPushRequest = [UNNotificationRequest requestWithIdentifier:[NSUUID UUID].UUIDString content:content trigger:nil];
+    
+    [[MarketingCloudSDK sharedInstance] sfmc_setNotificationRequest:silentPushRequest];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
 
 #pragma mark Cloud Page delegates
 - (void)sfmc_didReceiveInboxMessagesNotificationWithContents:(NSDictionary *)inboxMessage {
@@ -183,5 +224,14 @@
     }
 }
 
+- (UIViewController*) topMostController {
+    UITabBarController *topController = (UITabBarController *)self.window.rootViewController;
+    UIViewController *topViewController = [topController viewControllers].firstObject;
+    while (topViewController.presentedViewController) {
+        topViewController = topViewController.presentedViewController;
+    }
+    
+    return topViewController;
+}
 
 @end

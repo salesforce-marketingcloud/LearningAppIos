@@ -1,7 +1,15 @@
  [{
   "name": "production",
-  "appid": "19b787e6-5f35-4465-8cbf-5f27a574d52d",
-  "accesstoken": "gpkymn5gb7y2z3wph3t4yhzh",
+  "appid": "<your production appid>",
+  "accesstoken": "<your production accesstoken",
+  "analytics": true,
+  "location": true,
+  "inbox": true
+  },
+  {
+  "name": "debug",
+  "appid": "<your debug/test appid>",
+  "accesstoken": "<your debug/test accesstoken",
   "analytics": true,
   "location": true,
   "inbox": true

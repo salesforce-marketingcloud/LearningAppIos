@@ -6,7 +6,7 @@
  */
 
 #import "MCReadmeViewController.h"
-#import "ETAnalytics.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
 
 @interface MCReadmeViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *readmeWeb;
@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.readmeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://salesforce-marketingcloud.github.io/LearningAppIos/"]]];
-		[ETAnalytics trackPageView:@"data://HomeScreen" andTitle:@"Learning App Docs Loaded" andItem:nil andSearch:nil];
+		[[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://HomeScreen" title:@"Learning App Docs Loaded" item:nil search:nil];
 
 }
 

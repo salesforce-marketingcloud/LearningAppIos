@@ -23,14 +23,10 @@
 /* Begin PBXBuildFile section */
 		0049A02B1E2881D100A0DFF8 /* MCAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0049A02A1E2881D100A0DFF8 /* MCAttributesViewController.m */; };
 		00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00858DF11D20B94300034250 /* UIKit.framework */; };
-		8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */; };
-		8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */; };
 		8417EA651BE1186300DD21F7 /* MCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA641BE1186300DD21F7 /* MCInboxViewController.m */; };
 		8417EA6C1BE2709100DD21F7 /* MCReadmeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8417EA6B1BE2709100DD21F7 /* MCReadmeViewController.m */; };
-		842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */; };
-		842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */; };
+		842ED5501BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 842ED54F1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m */; };
 		846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846FC0911BD5349E000D8062 /* MCTagsViewController.m */; };
-		849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849146011BD953ED0086C40D /* MCGeoLocationViewController.m */; };
 		849146041BDA4F300086C40D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146031BDA4F300086C40D /* MapKit.framework */; };
 		849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849146051BDA57B10086C40D /* CoreLocation.framework */; };
 		84B068DE1BD1437F00FE115D /* MCSubscribeKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B068DD1BD1437F00FE115D /* MCSubscribeKeyViewController.m */; };
@@ -41,11 +37,12 @@
 		84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB11BC6D1E400E31DAE /* Main.storyboard */; };
 		84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB41BC6D1E400E31DAE /* Assets.xcassets */; };
 		84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB61BC6D1E400E31DAE /* LaunchScreen.storyboard */; };
-		9B3C4B181F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3C4B171F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a */; };
 		9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742011D5E484700344996 /* UserNotifications.framework */; };
 		9B6B25581D70CB1B00874782 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B25571D70CB1B00874782 /* NotificationService.m */; };
 		9B6B255D1D70CB1B00874782 /* MarketingCloudServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9B6CB8871E65FD6A00BD676E /* JB4ASDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */; };
+		9BC7D9EC1FE2FC8800B5C044 /* MarketingCloudSDKConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9BC7D9E91FE2FC8800B5C044 /* MarketingCloudSDKConfiguration.json */; };
+		9BC7D9ED1FE2FC8800B5C044 /* MarketingCloudSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC7D9EA1FE2FC8800B5C044 /* MarketingCloudSDK.framework */; };
+		9BC7D9EE1FE2FC8800B5C044 /* MarketingCloudSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BC7D9EB1FE2FC8800B5C044 /* MarketingCloudSDK.bundle */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
 		B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C961BF1CA4432400BE9F33 /* WebKit.framework */; };
@@ -89,22 +86,14 @@
 		0049A0291E2881D100A0DFF8 /* MCAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAttributesViewController.h; sourceTree = "<group>"; };
 		0049A02A1E2881D100A0DFF8 /* MCAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAttributesViewController.m; sourceTree = "<group>"; };
 		00858DF11D20B94300034250 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCircle.h; sourceTree = "<group>"; };
-		8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCircle.m; sourceTree = "<group>"; };
-		8417EA5F1BE0EBAB00DD21F7 /* MCAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAnnotation.h; sourceTree = "<group>"; };
-		8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAnnotation.m; sourceTree = "<group>"; };
 		8417EA631BE1186300DD21F7 /* MCInboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCInboxViewController.h; sourceTree = "<group>"; };
 		8417EA641BE1186300DD21F7 /* MCInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCInboxViewController.m; sourceTree = "<group>"; };
 		8417EA6A1BE2709100DD21F7 /* MCReadmeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCReadmeViewController.h; sourceTree = "<group>"; };
 		8417EA6B1BE2709100DD21F7 /* MCReadmeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCReadmeViewController.m; sourceTree = "<group>"; };
-		842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPush.h"; sourceTree = "<group>"; };
-		842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPush.m"; sourceTree = "<group>"; };
-		842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ETPushConstants.h"; sourceTree = "<group>"; };
-		842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ETPushConstants.m"; sourceTree = "<group>"; };
+		842ED54E1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+MarketingCloudSDK.h"; sourceTree = "<group>"; };
+		842ED54F1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+MarketingCloudSDK.m"; sourceTree = "<group>"; };
 		846FC0901BD5349E000D8062 /* MCTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagsViewController.h; sourceTree = "<group>"; };
 		846FC0911BD5349E000D8062 /* MCTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTagsViewController.m; sourceTree = "<group>"; };
-		849146001BD953ED0086C40D /* MCGeoLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGeoLocationViewController.h; sourceTree = "<group>"; };
-		849146011BD953ED0086C40D /* MCGeoLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGeoLocationViewController.m; sourceTree = "<group>"; };
 		849146031BDA4F300086C40D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		849146051BDA57B10086C40D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		84B068DC1BD1437F00FE115D /* MCSubscribeKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSubscribeKeyViewController.h; sourceTree = "<group>"; };
@@ -125,33 +114,16 @@
 		84D31EC41BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketingCloudUITests.m; sourceTree = "<group>"; };
 		84D31ECF1BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B3C4B171F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.6.21000000.a"; sourceTree = "<group>"; };
 		9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MarketingCloudServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B25561D70CB1B00874782 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		9B6B25571D70CB1B00874782 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		9B6B25591D70CB1B00874782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6B25611D70CE1C00874782 /* MarketingCloud.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarketingCloud.entitlements; sourceTree = "<group>"; };
 		9B6B25621D70CF0500874782 /* MarketingCloudServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarketingCloudServiceExtension.entitlements; sourceTree = "<group>"; };
-		9B6CB8731E65FD6A00BD676E /* ETAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETAnalytics.h; sourceTree = "<group>"; };
-		9B6CB8741E65FD6A00BD676E /* ETCloudPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPage.h; sourceTree = "<group>"; };
-		9B6CB8751E65FD6A00BD676E /* ETCloudPageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETCloudPageDataSource.h; sourceTree = "<group>"; };
-		9B6CB8761E65FD6A00BD676E /* ETEventMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventMessage.h; sourceTree = "<group>"; };
-		9B6CB8771E65FD6A00BD676E /* ETEventRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETEventRegion.h; sourceTree = "<group>"; };
-		9B6CB8781E65FD6A00BD676E /* ETGenericUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGenericUpdate.h; sourceTree = "<group>"; };
-		9B6CB8791E65FD6A00BD676E /* ETLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLandingPagePresenter.h; sourceTree = "<group>"; };
-		9B6CB87A1E65FD6A00BD676E /* ETLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETLocationManager.h; sourceTree = "<group>"; };
-		9B6CB87B1E65FD6A00BD676E /* ETMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETMessage.h; sourceTree = "<group>"; };
-		9B6CB87C1E65FD6A00BD676E /* ETPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETPush.h; sourceTree = "<group>"; };
-		9B6CB87D1E65FD6A00BD676E /* ETRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRegion.h; sourceTree = "<group>"; };
-		9B6CB87E1E65FD6A00BD676E /* ETWKLandingPagePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETWKLandingPagePresenter.h; sourceTree = "<group>"; };
-		9B6CB87F1E65FD6A00BD676E /* ExactTargetEnhancedPushDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExactTargetEnhancedPushDataSource.h; sourceTree = "<group>"; };
-		9B6CB8801E65FD6A00BD676E /* JB4ASDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JB4ASDK-Bridging-Header.h"; sourceTree = "<group>"; };
-		9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JB4ASDK.podspec; sourceTree = "<group>"; };
-		9B6CB8831E65FD6A00BD676E /* PICart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICart.h; sourceTree = "<group>"; };
-		9B6CB8841E65FD6A00BD676E /* PICartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICartItem.h; sourceTree = "<group>"; };
-		9B6CB8851E65FD6A00BD676E /* PIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
-		9B6CB8861E65FD6A00BD676E /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		9B9742011D5E484700344996 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9BC7D9E91FE2FC8800B5C044 /* MarketingCloudSDKConfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MarketingCloudSDKConfiguration.json; sourceTree = "<group>"; };
+		9BC7D9EA1FE2FC8800B5C044 /* MarketingCloudSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MarketingCloudSDK.framework; sourceTree = "<group>"; };
+		9BC7D9EB1FE2FC8800B5C044 /* MarketingCloudSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MarketingCloudSDK.bundle; sourceTree = "<group>"; };
 		B5104FBD1C21EF11006D6884 /* MCOfficialDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOfficialDocViewController.h; sourceTree = "<group>"; };
 		B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCOfficialDocViewController.m; sourceTree = "<group>"; };
 		B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -164,8 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC7D9ED1FE2FC8800B5C044 /* MarketingCloudSDK.framework in Frameworks */,
 				9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */,
-				9B3C4B181F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a in Frameworks */,
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
@@ -183,33 +155,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		001159D31D46F3B9005B34C8 /* JB4A-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				9B6CB8731E65FD6A00BD676E /* ETAnalytics.h */,
-				9B6CB8741E65FD6A00BD676E /* ETCloudPage.h */,
-				9B6CB8751E65FD6A00BD676E /* ETCloudPageDataSource.h */,
-				9B6CB8761E65FD6A00BD676E /* ETEventMessage.h */,
-				9B6CB8771E65FD6A00BD676E /* ETEventRegion.h */,
-				9B6CB8781E65FD6A00BD676E /* ETGenericUpdate.h */,
-				9B6CB8791E65FD6A00BD676E /* ETLandingPagePresenter.h */,
-				9B6CB87A1E65FD6A00BD676E /* ETLocationManager.h */,
-				9B6CB87B1E65FD6A00BD676E /* ETMessage.h */,
-				9B6CB87C1E65FD6A00BD676E /* ETPush.h */,
-				9B6CB87D1E65FD6A00BD676E /* ETRegion.h */,
-				9B6CB87E1E65FD6A00BD676E /* ETWKLandingPagePresenter.h */,
-				9B6CB87F1E65FD6A00BD676E /* ExactTargetEnhancedPushDataSource.h */,
-				9B6CB8801E65FD6A00BD676E /* JB4ASDK-Bridging-Header.h */,
-				9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */,
-				9B6CB8831E65FD6A00BD676E /* PICart.h */,
-				9B6CB8841E65FD6A00BD676E /* PICartItem.h */,
-				9B6CB8851E65FD6A00BD676E /* PIOrder.h */,
-				9B6CB8861E65FD6A00BD676E /* PushConstants.h */,
-				9B3C4B171F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a */,
-			);
-			path = "JB4A-SDK";
-			sourceTree = "<group>";
-		};
 		0049A0281E2881A900A0DFF8 /* Attributes */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,25 +185,10 @@
 		842ED54D1BD0392700CCDA0E /* Addition */ = {
 			isa = PBXGroup;
 			children = (
-				842ED54E1BD0393B00CCDA0E /* AppDelegate+ETPush.h */,
-				842ED54F1BD0393B00CCDA0E /* AppDelegate+ETPush.m */,
-				842ED5511BD039A700CCDA0E /* AppDelegate+ETPushConstants.h */,
-				842ED5521BD039A700CCDA0E /* AppDelegate+ETPushConstants.m */,
+				842ED54E1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.h */,
+				842ED54F1BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m */,
 			);
 			name = Addition;
-			sourceTree = "<group>";
-		};
-		849145FF1BD93DC20086C40D /* GeoLocation */ = {
-			isa = PBXGroup;
-			children = (
-				8417EA5C1BE0E9E700DD21F7 /* MCCircle.h */,
-				8417EA5D1BE0E9E700DD21F7 /* MCCircle.m */,
-				8417EA5F1BE0EBAB00DD21F7 /* MCAnnotation.h */,
-				8417EA601BE0EBAB00DD21F7 /* MCAnnotation.m */,
-				849146001BD953ED0086C40D /* MCGeoLocationViewController.h */,
-				849146011BD953ED0086C40D /* MCGeoLocationViewController.m */,
-			);
-			name = GeoLocation;
 			sourceTree = "<group>";
 		};
 		8491460A1BDABFC30086C40D /* SubscribeKey */ = {
@@ -278,7 +208,6 @@
 				8417EA691BE26F2F00DD21F7 /* Home */,
 				8417EA621BE0FCDE00DD21F7 /* Inbox */,
 				8491460A1BDABFC30086C40D /* SubscribeKey */,
-				849145FF1BD93DC20086C40D /* GeoLocation */,
 				84D170061BD6896900D563F7 /* Tag */,
 			);
 			name = Views;
@@ -330,8 +259,10 @@
 		84D31EA71BC6D1E400E31DAE /* MarketingCloud */ = {
 			isa = PBXGroup;
 			children = (
+				9BC7D9EB1FE2FC8800B5C044 /* MarketingCloudSDK.bundle */,
+				9BC7D9EA1FE2FC8800B5C044 /* MarketingCloudSDK.framework */,
+				9BC7D9E91FE2FC8800B5C044 /* MarketingCloudSDKConfiguration.json */,
 				9B6B25611D70CE1C00874782 /* MarketingCloud.entitlements */,
-				001159D31D46F3B9005B34C8 /* JB4A-SDK */,
 				84D170021BD6814200D563F7 /* Model */,
 				84B068DB1BD1435F00FE115D /* Views */,
 				842ED54D1BD0392700CCDA0E /* Addition */,
@@ -451,7 +382,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MC;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Oktana;
 				TargetAttributes = {
 					84D31EA41BC6D1E400E31DAE = {
@@ -506,11 +437,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6CB8871E65FD6A00BD676E /* JB4ASDK.podspec in Resources */,
 				B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */,
+				9BC7D9EC1FE2FC8800B5C044 /* MarketingCloudSDKConfiguration.json in Resources */,
 				84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */,
 				84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */,
 				84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */,
+				9BC7D9EE1FE2FC8800B5C044 /* MarketingCloudSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,18 +479,14 @@
 				84B068DE1BD1437F00FE115D /* MCSubscribeKeyViewController.m in Sources */,
 				846FC0921BD5349E000D8062 /* MCTagsViewController.m in Sources */,
 				84D31EAD1BC6D1E400E31DAE /* AppDelegate.m in Sources */,
-				8417EA5E1BE0E9E700DD21F7 /* MCCircle.m in Sources */,
 				84D31EAA1BC6D1E400E31DAE /* main.m in Sources */,
 				8417EA651BE1186300DD21F7 /* MCInboxViewController.m in Sources */,
 				84D170011BD58F9100D563F7 /* MCTagTableCell.m in Sources */,
-				849146021BD953ED0086C40D /* MCGeoLocationViewController.m in Sources */,
 				8417EA6C1BE2709100DD21F7 /* MCReadmeViewController.m in Sources */,
-				8417EA611BE0EBAB00DD21F7 /* MCAnnotation.m in Sources */,
 				B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */,
 				0049A02B1E2881D100A0DFF8 /* MCAttributesViewController.m in Sources */,
-				842ED5501BD0393B00CCDA0E /* AppDelegate+ETPush.m in Sources */,
+				842ED5501BD0393B00CCDA0E /* AppDelegate+MarketingCloudSDK.m in Sources */,
 				84D170051BD6819900D563F7 /* MCTag.m in Sources */,
-				842ED5531BD039A700CCDA0E /* AppDelegate+ETPushConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,14 +536,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -654,14 +588,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -696,18 +636,19 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
+					"$(PROJECT_DIR)/MarketingCloud",
 				);
 				INFOPLIST_FILE = MarketingCloud/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -721,18 +662,19 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
+					"$(PROJECT_DIR)/MarketingCloud",
 				);
 				INFOPLIST_FILE = MarketingCloud/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MarketingCloud",
-					"$(PROJECT_DIR)/MarketingCloud/JB4A-SDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exacttarget.la.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};

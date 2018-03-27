@@ -41,11 +41,11 @@
 		84D31EB31BC6D1E400E31DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB11BC6D1E400E31DAE /* Main.storyboard */; };
 		84D31EB51BC6D1E400E31DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB41BC6D1E400E31DAE /* Assets.xcassets */; };
 		84D31EB81BC6D1E400E31DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D31EB61BC6D1E400E31DAE /* LaunchScreen.storyboard */; };
-		9B3C4B181F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3C4B171F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a */; };
 		9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9742011D5E484700344996 /* UserNotifications.framework */; };
 		9B6B25581D70CB1B00874782 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6B25571D70CB1B00874782 /* NotificationService.m */; };
 		9B6B255D1D70CB1B00874782 /* MarketingCloudServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9B6CB8871E65FD6A00BD676E /* JB4ASDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */; };
+		9BCF66D3206AC14700967170 /* libJB4ASDK-4.9.7.21010001.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCF66D2206AC14700967170 /* libJB4ASDK-4.9.7.21010001.a */; };
 		B5104FBF1C21EF11006D6884 /* MCOfficialDocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */; };
 		B5C75EA11C7F68A1001A9D92 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */; };
 		B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C961BF1CA4432400BE9F33 /* WebKit.framework */; };
@@ -125,7 +125,6 @@
 		84D31EC41BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84D31ECD1BC6D1E400E31DAE /* MarketingCloudUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketingCloudUITests.m; sourceTree = "<group>"; };
 		84D31ECF1BC6D1E400E31DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B3C4B171F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.6.21000000.a"; sourceTree = "<group>"; };
 		9B6B25541D70CB1B00874782 /* MarketingCloudServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MarketingCloudServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6B25561D70CB1B00874782 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		9B6B25571D70CB1B00874782 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
@@ -152,6 +151,7 @@
 		9B6CB8851E65FD6A00BD676E /* PIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIOrder.h; sourceTree = "<group>"; };
 		9B6CB8861E65FD6A00BD676E /* PushConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushConstants.h; sourceTree = "<group>"; };
 		9B9742011D5E484700344996 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9BCF66D2206AC14700967170 /* libJB4ASDK-4.9.7.21010001.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libJB4ASDK-4.9.7.21010001.a"; sourceTree = "<group>"; };
 		B5104FBD1C21EF11006D6884 /* MCOfficialDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOfficialDocViewController.h; sourceTree = "<group>"; };
 		B5104FBE1C21EF11006D6884 /* MCOfficialDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCOfficialDocViewController.m; sourceTree = "<group>"; };
 		B5C75EA01C7F68A1001A9D92 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B44186C1D6C938F00696DFF /* UserNotifications.framework in Frameworks */,
-				9B3C4B181F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a in Frameworks */,
 				00858DF31D20BAAA00034250 /* UIKit.framework in Frameworks */,
+				9BCF66D3206AC14700967170 /* libJB4ASDK-4.9.7.21010001.a in Frameworks */,
 				B5C961C01CA4432400BE9F33 /* WebKit.framework in Frameworks */,
 				849146061BDA57B10086C40D /* CoreLocation.framework in Frameworks */,
 				849146041BDA4F300086C40D /* MapKit.framework in Frameworks */,
@@ -201,11 +201,11 @@
 				9B6CB87F1E65FD6A00BD676E /* ExactTargetEnhancedPushDataSource.h */,
 				9B6CB8801E65FD6A00BD676E /* JB4ASDK-Bridging-Header.h */,
 				9B6CB8811E65FD6A00BD676E /* JB4ASDK.podspec */,
+				9BCF66D2206AC14700967170 /* libJB4ASDK-4.9.7.21010001.a */,
 				9B6CB8831E65FD6A00BD676E /* PICart.h */,
 				9B6CB8841E65FD6A00BD676E /* PICartItem.h */,
 				9B6CB8851E65FD6A00BD676E /* PIOrder.h */,
 				9B6CB8861E65FD6A00BD676E /* PushConstants.h */,
-				9B3C4B171F7BD71B00E04493 /* libJB4ASDK-4.9.6.21000000.a */,
 			);
 			path = "JB4A-SDK";
 			sourceTree = "<group>";

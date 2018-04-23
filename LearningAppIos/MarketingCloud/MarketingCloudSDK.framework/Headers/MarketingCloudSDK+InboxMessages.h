@@ -141,10 +141,9 @@ FOUNDATION_EXTERN NSString * _Nonnull const MarketingCloudSDKInboxMessageKey;
  Note: this information is persisted locally and would be reset if the SDK's data is reset (via app delete and reinstall, for instance).
 
  @param messageDictionary a dictionary representing an Inbox message
- @param read a value indicating that the message is read or not
  @return a value indicatating success in setting the message to read
  */
-- (BOOL) sfmc_markMessage:(NSDictionary *_Nonnull) messageDictionary read:(BOOL) read;
+- (BOOL) sfmc_markMessageRead:(NSDictionary *_Nonnull) messageDictionary;
 
 /**
  Mark an Inbox message as deleted.
@@ -152,10 +151,9 @@ FOUNDATION_EXTERN NSString * _Nonnull const MarketingCloudSDKInboxMessageKey;
  Note: this information is persisted locally and would be reset if the SDK's data is reset (via app delete and reinstall, for instance).
  
  @param messageDictionary a dictionary representing an Inbox message
- @param deleted a value indicating that the message is deleted or not
  @return a value indicatating success in setting the message to deleted
  */
-- (BOOL) sfmc_markMessage:(NSDictionary *_Nonnull) messageDictionary deleted:(BOOL) deleted;
+- (BOOL) sfmc_markMessageDeleted:(NSDictionary *_Nonnull) messageDictionary;
 
 /**
  Mark all Inbox messages as read.
@@ -167,15 +165,6 @@ FOUNDATION_EXTERN NSString * _Nonnull const MarketingCloudSDKInboxMessageKey;
 - (BOOL) sfmc_markAllMessagesRead;
 
 /**
- Mark all Inbox messages as Unread.
- 
- Note: this information is persisted locally and would be reset if the SDK's data is reset (via app delete and reinstall, for instance).
- 
- @return a value indicatating success in setting the messages to unread
- */
-- (BOOL) sfmc_markAllMessagesUnread;
-
-/**
  Mark all Inbox messages as deleted.
  
  Note: this information is persisted locally and would be reset if the SDK's data is reset (via app delete and reinstall, for instance).
@@ -185,23 +174,18 @@ FOUNDATION_EXTERN NSString * _Nonnull const MarketingCloudSDKInboxMessageKey;
 - (BOOL) sfmc_markAllMessagesDeleted;
 
 /**
- Mark all Inbox messages as undeleted.
- 
- Note: this information is persisted locally and would be reset if the SDK's data is reset (via app delete and reinstall, for instance).
- 
- @return a value indicatating success in setting the messages to undeleted
- */
-- (BOOL) sfmc_markAllMessagesUndeleted;
-
-/**
  Reload and refresh Inbox messages from the MarketingCloud server.
+ 
+ Note: The underlying request to the server will be throttled such that it will execute at most every 60 seconds. If the method has been called less than 60s after the preceeding method call, NO will be returned and the request will not be made. If NO is returned, it is suggested that any UI used to reflect the refresh operation is updated (pull to refresh indicators, loading spinners, etc.).
  
  This method will cause notifications to be posted to NSNotificationCenter: 
  
  - SFMCInboxMessagesRefreshCompleteNotification: posted when the refresh process has completed
  - SFMCInboxMessagesNewInboxMessagesNotification: posted if there are new Inbox messages
+ 
+  @return A BOOL value indicating that refreshing has been started.
  */
-- (void) sfmc_refreshMessages;
+- (BOOL) sfmc_refreshMessages;
 
 /**
  Create an instance of a basic UITableView data source to handle all loading for a simple view controller showing Inbox messages.

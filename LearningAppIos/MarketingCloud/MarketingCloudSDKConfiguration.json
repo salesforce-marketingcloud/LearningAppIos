@@ -2,7 +2,8 @@
   "name": "production",
   "appid": "<your production appid>",
   "accesstoken": "<your production accesstoken",
-  "analytics": true,
+  "etanalytics": true,
+  "pianalytics": true,
   "location": true,
   "inbox": true
   },
@@ -10,7 +11,8 @@
   "name": "debug",
   "appid": "<your debug/test appid>",
   "accesstoken": "<your debug/test accesstoken",
-  "analytics": true,
+  "etanalytics": true,
+  "pianalytics": true,
   "location": true,
   "inbox": true
   }]

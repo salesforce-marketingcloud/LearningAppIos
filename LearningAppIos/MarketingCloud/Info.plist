@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>212</string>
+	<string>213.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -27,10 +27,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Your location information will used by this app</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Your location information will used for demonstration purposes (iOS 11)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location information will used by this app</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location information will used for demonstration purposes</string>
 	<key>UIBackgroundModes</key>

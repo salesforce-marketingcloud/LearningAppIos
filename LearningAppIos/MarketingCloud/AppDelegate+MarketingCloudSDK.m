@@ -53,24 +53,26 @@
                                                                                       
                                                                                       // we are authorized to use notifications, request a device token for remote notifications
                                                                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                                                                      [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                                                                          [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                                                                          
+                                                                                          /**
+                                                                                           Start geoLocation
+                                                                                           */
+                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_startWatchingLocation];
+                                                                                          
+                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://SDKInitializationCompletedSuccessfully" title:@"SDK Initialization Completed" item:nil search:nil];
+                                                                                          
+                                                                                          // set an attribute called 'MyBooleanAttribute' with value '0'
+                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_setAttributeNamed:@"MyBooleanAttribute" value:@"0"];
+                                                                                          
+                                                                                          /*
+                                                                                           Example of using the getSDKState Method for rapidly debugging issues
+                                                                                           */
+                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
+                                                                                          
+                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_setInboxMessagesNotificationHandlerDelegate:self];
                                                                                       });
-                                                                                      /**
-                                                                                       Start geoLocation
-                                                                                       */
-                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_startWatchingLocation];
-                                                                                      
-                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://SDKInitializationCompletedSuccessfully" title:@"SDK Initialization Completed" item:nil search:nil];
-                                                                                      // set an attribute called 'MyBooleanAttribute' with value '0'
-                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setAttributeNamed:@"MyBooleanAttribute" value:@"0"];
-                                                                                      
-                                                                                      /*
-                                                                                       Example of using the getSDKState Method for rapidly debugging issues
-                                                                                       */
-                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
-                                                                                      
-                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setInboxMessagesNotificationHandlerDelegate:self];
-                                                                                  }
+                                                                                 }
                                                                               }
                                                                           }];
                                                                       });

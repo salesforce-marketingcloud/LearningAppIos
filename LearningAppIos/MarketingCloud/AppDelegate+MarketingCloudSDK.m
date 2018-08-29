@@ -6,10 +6,12 @@
  */
 
 #import "AppDelegate+MarketingCloudSDK.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
+#import <SafariServices/SafariServices.h>
 
 #import <UserNotifications/UserNotifications.h>
 
-@implementation AppDelegate (MarketingCloudSDK)
+@implementation AppDelegate (MarketingCloudSDK) 
 #pragma mark - SDK Setup
 - (BOOL)application:(UIApplication *)application shouldInitMarketingCloudSDKWithOptions:(NSDictionary *)launchOptions {
     
@@ -69,7 +71,9 @@
                                                                                        */
                                                                                       [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
                                                                                       
-                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setInboxMessagesNotificationHandlerDelegate:self];
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setURLHandlingDelegate:self];
+                                                                                      
+                                                                                      [weakSelf testUserNotificationHandler];
                                                                                   }
                                                                               }
                                                                           }];
@@ -97,6 +101,30 @@
     }
     
     return YES;
+}
+
+- (void) testUserNotificationHandler
+{
+    
+    if (@available(iOS 10.0, *)) {
+        NSDictionary *payload = @{@"_m":@"NTQxMjoxMTQ6MA", @"_x":@"https://www.google.com"};
+        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+        content.userInfo = payload;
+        UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"NDY5NjoxMTQ6MA"
+                                                                              content:content
+                                                                              trigger:nil];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:SFMCFoundationUNNotificationReceivedNotification
+                                                            object:self
+                                                          userInfo:@{@"SFMCFoundationUNNotificationReceivedNotificationKeyUNNotificationRequest": request}];
+    }
+    else {
+        NSDictionary *userInfo = @{@"_m":@"NTQxMjoxMTQ6MA", @"_x":@"https://www.google.com"};
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:SFMCFoundationUNNotificationReceivedNotification
+                                                            object:self
+                                                          userInfo:@{@"SFMCFoundationNotificationReceivedNotificationKeyUserInfo": userInfo}];
+    }
 }
 
 #pragma mark - Lifecycle Callbacks
@@ -138,15 +166,6 @@
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
-#pragma mark Cloud Page delegates
-- (void)sfmc_didReceiveInboxMessagesNotificationWithContents:(NSDictionary *)inboxMessage {
-    
-    NSString *urlString = [inboxMessage objectForKey:MarketingCloudSDKInboxMessageKey];
-    if (urlString != nil) {
-        // use the url in any way you'd like
-        NSLog(@"%@", urlString);
-    }
-}
 
 - (UIViewController*) topMostController {
     UITabBarController *topController = (UITabBarController *)self.window.rootViewController;
@@ -158,4 +177,14 @@
     return topViewController;
 }
 
+// Implement the protocol method and use SFSafariViewController to present the URL within your application
+- (void) sfmc_handleURL:(NSURL *) url type:(NSString *) type
+{
+    UIViewController *topViewController = [self topMostController];
+    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
+    if (safariViewController != nil) {
+        [topViewController presentViewController:safariViewController animated:YES completion:^{
+        }];
+    }
+}
 @end

@@ -8,7 +8,7 @@
 #import "AppDelegate.h"
 #import <MarketingCloudSDK/MarketingCloudSDK.h>
 
-@interface AppDelegate (ETPush) <UNUserNotificationCenterDelegate, MarketingCloudSDKInboxMessagesNotificationHandlerDelegate>
+@interface AppDelegate (ETPush) <UNUserNotificationCenterDelegate, MarketingCloudSDKURLHandlingDelegate>
 
 - (BOOL)application : (UIApplication *)application shouldInitMarketingCloudSDKWithOptions : (NSDictionary *)launchOptions;
 

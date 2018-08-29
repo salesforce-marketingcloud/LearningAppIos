@@ -72,8 +72,6 @@
                                                                                       [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
                                                                                       
                                                                                       [[MarketingCloudSDK sharedInstance] sfmc_setURLHandlingDelegate:self];
-                                                                                      
-                                                                                      [weakSelf testUserNotificationHandler];
                                                                                   }
                                                                               }
                                                                           }];
@@ -101,30 +99,6 @@
     }
     
     return YES;
-}
-
-- (void) testUserNotificationHandler
-{
-    
-    if (@available(iOS 10.0, *)) {
-        NSDictionary *payload = @{@"_m":@"NTQxMjoxMTQ6MA", @"_x":@"https://www.google.com"};
-        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-        content.userInfo = payload;
-        UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"NDY5NjoxMTQ6MA"
-                                                                              content:content
-                                                                              trigger:nil];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:SFMCFoundationUNNotificationReceivedNotification
-                                                            object:self
-                                                          userInfo:@{@"SFMCFoundationUNNotificationReceivedNotificationKeyUNNotificationRequest": request}];
-    }
-    else {
-        NSDictionary *userInfo = @{@"_m":@"NTQxMjoxMTQ6MA", @"_x":@"https://www.google.com"};
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:SFMCFoundationUNNotificationReceivedNotification
-                                                            object:self
-                                                          userInfo:@{@"SFMCFoundationNotificationReceivedNotificationKeyUserInfo": userInfo}];
-    }
 }
 
 #pragma mark - Lifecycle Callbacks

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.readmeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://salesforce-marketingcloud.github.io/LearningAppIos/"]]];
+    [self.readmeWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS/"]]];
 		[[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://HomeScreen" title:@"Learning App Docs Loaded" item:nil search:nil];
 
 }

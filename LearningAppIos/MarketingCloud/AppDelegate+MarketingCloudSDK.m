@@ -6,10 +6,12 @@
  */
 
 #import "AppDelegate+MarketingCloudSDK.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
+#import <SafariServices/SafariServices.h>
 
 #import <UserNotifications/UserNotifications.h>
 
-@implementation AppDelegate (MarketingCloudSDK)
+@implementation AppDelegate (MarketingCloudSDK) 
 #pragma mark - SDK Setup
 - (BOOL)application:(UIApplication *)application shouldInitMarketingCloudSDKWithOptions:(NSDictionary *)launchOptions {
     
@@ -53,26 +55,24 @@
                                                                                       
                                                                                       // we are authorized to use notifications, request a device token for remote notifications
                                                                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                                                                          [[UIApplication sharedApplication] registerForRemoteNotifications];
-                                                                                          
-                                                                                          /**
-                                                                                           Start geoLocation
-                                                                                           */
-                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_startWatchingLocation];
-                                                                                          
-                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://SDKInitializationCompletedSuccessfully" title:@"SDK Initialization Completed" item:nil search:nil];
-                                                                                          
-                                                                                          // set an attribute called 'MyBooleanAttribute' with value '0'
-                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_setAttributeNamed:@"MyBooleanAttribute" value:@"0"];
-                                                                                          
-                                                                                          /*
-                                                                                           Example of using the getSDKState Method for rapidly debugging issues
-                                                                                           */
-                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
-                                                                                          
-                                                                                          [[MarketingCloudSDK sharedInstance] sfmc_setInboxMessagesNotificationHandlerDelegate:self];
+                                                                                      [[UIApplication sharedApplication] registerForRemoteNotifications];
                                                                                       });
-                                                                                 }
+                                                                                      /**
+                                                                                       Start geoLocation
+                                                                                       */
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_startWatchingLocation];
+                                                                                      
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_trackPageViewWithURL:@"data://SDKInitializationCompletedSuccessfully" title:@"SDK Initialization Completed" item:nil search:nil];
+                                                                                      // set an attribute called 'MyBooleanAttribute' with value '0'
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setAttributeNamed:@"MyBooleanAttribute" value:@"0"];
+                                                                                      
+                                                                                      /*
+                                                                                       Example of using the getSDKState Method for rapidly debugging issues
+                                                                                       */
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_getSDKState];
+                                                                                      
+                                                                                      [[MarketingCloudSDK sharedInstance] sfmc_setURLHandlingDelegate:self];
+                                                                                  }
                                                                               }
                                                                           }];
                                                                       });
@@ -140,15 +140,6 @@
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
-#pragma mark Cloud Page delegates
-- (void)sfmc_didReceiveInboxMessagesNotificationWithContents:(NSDictionary *)inboxMessage {
-    
-    NSString *urlString = [inboxMessage objectForKey:MarketingCloudSDKInboxMessageKey];
-    if (urlString != nil) {
-        // use the url in any way you'd like
-        NSLog(@"%@", urlString);
-    }
-}
 
 - (UIViewController*) topMostController {
     UITabBarController *topController = (UITabBarController *)self.window.rootViewController;
@@ -160,4 +151,14 @@
     return topViewController;
 }
 
+// Implement the protocol method and use SFSafariViewController to present the URL within your application
+- (void) sfmc_handleURL:(NSURL *) url type:(NSString *) type
+{
+    UIViewController *topViewController = [self topMostController];
+    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:url];
+    if (safariViewController != nil) {
+        [topViewController presentViewController:safariViewController animated:YES completion:^{
+        }];
+    }
+}
 @end

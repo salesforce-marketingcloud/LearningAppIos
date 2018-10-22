@@ -7,6 +7,8 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+MarketingCloudSDK.h"
+#import <MarketingCloudSDK/MarketingCloudSDK.h>
+
 @implementation AppDelegate
 
 // DO NOT COPY AND PASTE THIS DIRECTLY INTO YOUR APP DELEGATE.M FILE.

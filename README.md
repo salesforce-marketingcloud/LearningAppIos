@@ -1,3 +1,5 @@
+# This version of the MobilePush SDK LearningApp has been DEPRECATED. You can find the new version [here](https://github.com/salesforce-marketingcloud/MarketingCloudSDK-iOS/LearningApp).
+
 ![Marketing Cloud](imgReadMe/marketing_cloud_logo.png)
 
 # README
